@@ -94,3 +94,13 @@ node projects/006-drama-skills/app/check.cjs
 首次发布：2026-09-10，提交 `d01ee23`，[Pages 流程成功](https://github.com/yydshly/0911_codex_project/actions/runs/34497060467)。21 个线上文件均返回 200，文本换行归一后与本地一致，PNG 原始字节一致；含既有子站、三页展示、主预览、六张微缩图及定制证据。详见[验证记录](../projects/007-xxd-panel-028/deployment-verification.json)。
 
 研究 009 的中文样张与交付预览位于 `projects/007-xxd-panel-028/app/`，构建目录为 `app/dist/`，使用独立子路径 `007-xxd-panel-028/`。已合并发布清单与构建检查，保留现有站点产物；现已发布并完成线上内容核对。现已补充七场景、十二次实际生成及原图与提示词记录，含婚纱、亲子做饭和伴侣沙滩散步；上游样张和本次输出分别标注，模式及尺寸偏差原样保留。新增同目录 extensions.html，包含五任务六次真实生成的风格扩展、保留程度与系列参考，以及三种可交互成品版式；随同一站点构建发布，不新增研究条目或站点。同目录 miniatures.html 进一步展示五类微缩场景扩展、六张实际 PNG 和花艺修改前后切换；视频与可旋转三维未制作。主预览统一采用淡蓝花艺定制最终图；首页与微缩页同步补全原库能力、本地扩展、二维／三维区别和产品价值假设，完整结论见[理解文档](../projects/007-xxd-panel-028/understanding.md)。
+
+## FreeLLMAPI · 模型网关理解与对比
+
+研究 005，历史目录与发布子路径为 `008-freellmapi/`。原库是自托管模型网关：对外统一模型接口，对内选路、适配并管理额度与失败。
+
+本地新增讨论中的引导图、四种请求场景教学模拟、七个产品对比、未来网关开发取舍和六篇完整阅读文档。场景不调用模型，网页不提供在线网关服务。
+
+构建源为 `projects/008-freellmapi/app/dist/`；先安装本项目 `app/requirements.txt`，执行 `python projects/008-freellmapi/app/build.py` 和 `node projects/008-freellmapi/app/check.cjs`，再由统一站点脚本汇总。已合并清单和工作流，保留已有五个发布子站，正在发布与验证。
+
+[项目说明](../projects/008-freellmapi/README.md) · [我们的理解](../projects/008-freellmapi/understanding.md) · [同类产品](../projects/008-freellmapi/comparison.md)

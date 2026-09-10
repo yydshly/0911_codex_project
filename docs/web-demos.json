@@ -53,6 +53,26 @@
       "showPreview": true
     },
     {
+      "id": "008",
+      "researchIndex": "005",
+      "slug": "008-freellmapi",
+      "name": "FreeLLMAPI · 模型网关理解与对比",
+      "sourceDirectory": "projects/008-freellmapi/app/dist",
+      "readme": "projects/008-freellmapi/README.md",
+      "research": "projects/008-freellmapi/understanding.md",
+      "upstream": "https://github.com/tashfeenahmed/freellmapi",
+      "upstreamName": "FreeLLMAPI",
+      "capability": "自托管模型网关：对外统一模型接口，对内选择供应商、模型与密钥路线，适配接口差异并管理额度、冷却和失败回退；应用 / Agent 负责组织任务，实际模型负责推理。",
+      "extension": "采用讨论确认的核心交互图，整理应用、网关、模型三方职责、四种固定教学场景、七个同类产品及未来开发取舍。场景不调用模型，上游网关运行待复现。",
+      "image": "projects/008-freellmapi/assets/guide.png",
+      "kind": "理解与产品对比",
+      "entryLabel": "理解模型网关与同类产品 →",
+      "imageAlt": "FreeLLMAPI 模型网关：统一接入、路线选择、适配调用、结果返回与失败管理",
+      "imageCaption": "沿用讨论中的 Mermaid 核心交互图，非软件截图或实际运行记录；有效输出提交后的失败不能保证透明回退。",
+      "showPreview": true,
+      "previewAnchor": "#guide"
+    },
+    {
       "id": "006",
       "researchIndex": "008",
       "slug": "006-drama-skills",

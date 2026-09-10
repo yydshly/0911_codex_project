@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>架构详解 · FreeLLMAPI 研究</title><meta name="description" content="FreeLLMAPI 的中文能力、架构与模型网关产品研究。"><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#content">跳到正文</a><header class="top"><a class="brand" href="index.html">FreeLLMAPI <span>研究 005</span></a><nav aria-label="主导航"><a href="index.html#flow">核心交互</a><a href="index.html#compare">产品对比</a><a href="index.html#library">完整研究</a></nav></header><main id="content" class="reader"><a class="back" href="index.html">← 返回理解展示</a><h1 id="架构详解">架构详解</h1>
+<p><a href="readme.html">返回项目介绍</a> · <a href="understanding.html">我们的理解</a> · <a href="capabilities.html">能力与场景</a> · <a href="comparison.html">同类产品</a> · <a href="notes.html">来源与验证边界</a></p>
+<h2 id="架构定位">架构定位</h2>
+<p>FreeLLMAPI 是一个以单用户为目标的自托管模型网关。主程序为 Node.js / Express 服务，SQLite 保存配置与运行状态；React 管理界面通过管理 API 操作服务。Electron 桌面应用封装同一类网关与界面，提供托盘入口。它没有自建模型推理引擎，推理由供应商或自定义端点完成。</p>
+<p>可从三个部分理解：<strong>请求路径</strong>负责格式转换、路线选择和调用；<strong>状态管理</strong>保存密钥、模型、额度和统计；<strong>后台维护</strong>负责健康检查、目录同步、恢复与备份。它们是理解上的分层，不代表独立部署的微服务。</p>
+<p><img alt="FreeLLMAPI 架构" src="assets/architecture.png"></p>
+<p>原创示意图，非上游运行截图。<a href="assets/architecture.svg">SVG</a> · <a href="assets/architecture.mmd">Mermaid 源文件</a></p>
+<h2 id="模块与源码入口">模块与源码入口</h2>
+<p>下列链接全部固定到研究提交 <code>83562ad360a65d80b6319297fee4cd47dc5a2ff3</code>。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>职责</th>
+<th>源码入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动与后台调度</td>
+<td>初始化数据库、配置与缓存，启动健康检查、冷却探测、目录同步、备份和唤醒恢复</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/index.ts">index.ts</a></td>
+</tr>
+<tr>
+<td>HTTP 应用</td>
+<td>挂载管理、推理、Gemini、MCP 等入口以及认证、限流与静态资源中间件</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/app.ts">app.ts</a></td>
+</tr>
+<tr>
+<td>协议与请求处理</td>
+<td>接收客户端消息，转换请求和返回事件，协调请求处理流程</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/routes/proxy.ts">proxy.ts</a>、<a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/routes">其他 routes</a></td>
+</tr>
+<tr>
+<td>路由器</td>
+<td>解析 auto / profile / 指定模型，筛选能力与上下文，选择模型和密钥</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/router.ts">router.ts</a></td>
+</tr>
+<tr>
+<td>评分</td>
+<td>可靠性后验采样、速度归一化、能力等级和额度惩罚</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/scoring.ts">scoring.ts</a></td>
+</tr>
+<tr>
+<td>额度引擎</td>
+<td>记录四类用量、在途占用、冷却与上游报告的限制</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/ratelimit.ts">ratelimit.ts</a>、<a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/provider-quota.ts">provider-quota.ts</a></td>
+</tr>
+<tr>
+<td>故障循环</td>
+<td>分类失败、预算控制、跳过不可用路线、记录切换轨迹并生成最终错误</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/lib/fallback-loop.ts">fallback-loop.ts</a></td>
+</tr>
+<tr>
+<td>供应商适配器</td>
+<td>统一调用抽象，转换上游地址、鉴权、请求参数与返回</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/providers">providers</a></td>
+</tr>
+<tr>
+<td>工具调用修复</td>
+<td>将部分文本形式的工具调用转换回结构化调用</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/lib/tool-call-rescue.ts">tool-call-rescue.ts</a></td>
+</tr>
+<tr>
+<td>多模型融合</td>
+<td>并行收集草稿，选择综合模型，处理参与模型失败</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/fusion.ts">fusion.ts</a></td>
+</tr>
+<tr>
+<td>存储与加密</td>
+<td>SQLite 模型、密钥、配置与状态；AES-256-GCM 加密密钥</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/db">db</a>、<a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/lib/crypto.ts">crypto.ts</a></td>
+</tr>
+<tr>
+<td>目录维护</td>
+<td>拉取签名目录，校验并事务性更新本地元数据</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/server/src/services/catalog-sync.ts">catalog-sync.ts</a></td>
+</tr>
+<tr>
+<td>交互与客户端工具</td>
+<td>React 管理台、配置生成 CLI、Electron 桌面壳</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/client">client</a>、<a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/cli">cli</a>、<a href="https://github.com/tashfeenahmed/freellmapi/tree/83562ad360a65d80b6319297fee4cd47dc5a2ff3/desktop">desktop</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="一次聊天请求如何完成">一次聊天请求如何完成</h2>
+<p>以下以聊天请求为主，其他协议与媒体端点存在差异，不能将这一流程视为所有接口的逐行执行顺序。</p>
+<ol>
+<li><strong>进入统一入口。</strong> 客户端携带统一令牌，提交模型选择、消息、工具定义和参数。服务执行鉴权、输入检查和协议转换。</li>
+<li><strong>准备请求。</strong> 按配置执行压缩、profile 系统提示词、图片规范化和上下文估算；符合条件的幂等结果或缓存命中可以跳过上游调用。</li>
+<li><strong>构造候选链。</strong> 解析自动路由、指定模型或 profile；检查视觉、工具、结构化输出和上下文能力，并考虑会话保持与模型分组。</li>
+<li><strong>排序并取得可用路线。</strong> 按策略评分，检查密钥健康、冷却与用量，选择 <code>(供应商, 模型, 密钥)</code>。模型排序与同模型内密钥选择是不同决策。</li>
+<li><strong>预留在途占用并调用。</strong> 额度引擎让并发请求看到尚未完成的消耗，避免都基于同一份旧余额通过检查。适配器使用内存中解密的密钥调用供应商。</li>
+<li><strong>返回结果或恢复。</strong> 成功则转换返回协议、记录用量和表现；可重试错误更新冷却与跳过集合，再选择下一条路线。在途预留随请求收尾释放。</li>
+</ol>
+<p>可通过 <code>X-Routed-Via</code> 等响应信息观察实际路线，失败链有独立的轨迹头。可观测性有助于解释一次调用，但完整任务仍需要自己的运行标识与验收记录。</p>
+<h2 id="路由为什么会选择某个模型">路由为什么会选择某个模型</h2>
+<p>评分分成基础分与保护系数：</p>
+<pre><code class="language-text">基础分 = 可靠性权重 × 可靠性 + 速度权重 × 速度 + 能力权重 × 能力等级
+有效分 = 基础分 × 额度余量系数 × 限流惩罚系数
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>可靠性权重</th>
+<th>速度权重</th>
+<th>能力权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>balanced（默认）</td>
+<td>0.50</td>
+<td>0.25</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>smartest</td>
+<td>0.35</td>
+<td>0.10</td>
+<td>0.55</td>
+</tr>
+<tr>
+<td>fastest</td>
+<td>0.35</td>
+<td>0.55</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td>reliable</td>
+<td>0.70</td>
+<td>0.15</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>用户配置并归一化</td>
+<td>用户配置并归一化</td>
+<td>用户配置并归一化</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>按人工顺序与惩罚处理，不使用上述加权排名</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>可靠性来自近期成功与失败的衰减统计。系统构造 Beta 后验分布，并用 Thompson Sampling 抽样，兼顾利用已有表现与探索证据不足的模型。界面显示期望值，实际路由可使用采样值，所以界面分数并非每次请求的固定顺序。</p>
+<p>速度综合首个 Token 等待和输出吞吐量；能力轴使用目录中的模型层级与排名；额度接近上限会降低得分，近期频繁限流也会受到惩罚。其他筛选、会话规则、用户权重和模型分组仍会影响最终选择。</p>
+<p><strong>这是一种调用调度策略，不是任务答案质量评测。</strong> 即使请求顺利返回，代码仍可能测试失败，摘要仍可能遗漏事实。详见<a href="notes.html#固定版本来源">来源 S3</a>及评分源码。</p>
+<h2 id="额度与故障处理">额度与故障处理</h2>
+<p>RPM / RPD 对应每分钟 / 每天请求数；TPM / TPD 对应每分钟 / 每天 Token 数。实现包含分钟窗口、日计数、供应商共享池、在途占用和持久化。日边界与冷却使用内部规则及可解析的上游提示，实际供应商行为仍需验证；新建多个密钥不一定产生独立配额。</p>
+<table>
+<thead>
+<tr>
+<th>失败</th>
+<th>核心处理思路</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td>暂停有问题的密钥并触发后续验证</td>
+</tr>
+<tr>
+<td>402 / 403</td>
+<td>识别额度或访问权限问题，避免作为普通短暂网络错误反复尝试</td>
+</tr>
+<tr>
+<td>429</td>
+<td>区分临时限流与日额度耗尽，利用 Retry-After 等信息设置冷却</td>
+</tr>
+<tr>
+<td>5xx / 超时 / 传输故障</td>
+<td>跳过受影响路线或平台，记录表现并尝试其他候选</td>
+</tr>
+<tr>
+<td>上下文过长 / 输出格式不适配</td>
+<td>排除不能满足请求的模型，保留明确的最终错误</td>
+</tr>
+</tbody>
+</table>
+<p>故障循环有次数和时间预算；所读版本默认回退时间预算为 45 秒，并有可配置尝试上限。该预算不是所有请求都能在 45 秒内成功的承诺。候选耗尽后返回可解释的错误，而不是无限重试。<a href="notes.html#固定版本来源">来源 S4、S6</a></p>
+<h2 id="流式响应和工具调用的边界">流式响应和工具调用的边界</h2>
+<p>聊天、Responses 和 Messages 的主要流式路径使用 SSE。服务会在合适的首个有效载荷前保留响应头，争取让早期上游失败可以透明回退。</p>
+<ul>
+<li><strong>尚未提交有效输出：</strong> 可以重新选择路线，客户端通常不必看到失败中间结果。</li>
+<li><strong>已经提交输出：</strong> 中途失败返回流错误，回退循环停止；不能静默将另一模型的回答接在后面。</li>
+<li><strong>工具调用：</strong> 缓冲和组装参数，尝试模式修复或文本调用恢复，再返回结构化调用。真正执行工具由客户端 Agent 负责，修复不能证明参数语义正确。</li>
+</ul>
+<p>因此，长任务 Agent 仍需保留外部任务状态、工具结果和断流恢复流程。<a href="notes.html#固定版本来源">来源 S5</a></p>
+<h2 id="多模型融合的独立路径">多模型融合的独立路径</h2>
+<p><code>fusion</code> 是网关识别的虚拟模型：默认选取四个参与模型并行起草，再由综合模型形成答案；参数可改变参与者、数量与综合者。足够成功草稿才值得进入综合阶段，单个幸存回答可直接返回。</p>
+<p><code>best_of</code> 在固定源码中按答案长度选择；综合失败时也可能使用这种回退。它不是真实正确率排名。融合还会多次发送提示词和消耗额度，应与普通单模型调用分别统计。</p>
+<h2 id="状态管理和后台任务">状态、管理和后台任务</h2>
+<p>SQLite 保存模型元数据、密钥、profile、设置、用量与运行统计等状态。部分热点数据还有内存缓存或数据库故障时的退路，因此不能仅凭“使用 SQLite”推断具备多实例一致性。</p>
+<p>供应商密钥以 AES-256-GCM 加密存储，在调用时于内存解密。管理界面通过 <code>/api</code> 配置模型、密钥与策略，推理客户端主要访问 <code>/v1</code>，Gemini 使用 <code>/v1beta</code>，MCP 有 <code>/mcp</code> 入口。管理认证和统一推理令牌是不同入口的机制，不等于完整多租户隔离。</p>
+<p>启动流程加载配置、初始化数据库、恢复缓存，再启动服务与后台任务。健康检查、冷却探测和自定义模型同步维护候选可用性；备份及唤醒检测处理运行状态维护。</p>
+<p>目录服务提供的是<strong>模型元数据更新</strong>，不是推理中转。客户端定期拉取目录并校验 Ed25519 签名，再以事务更新 SQLite；已知用户自定义和关闭选择有保护规则。目录每 12 小时检查与免费内容约滞后 30 天并不矛盾。签名说明内容来自受信任签名方，不证明每个额度或模型元数据一定准确。<a href="notes.html#固定版本来源">来源 S7</a></p>
+<h2 id="架构的价值与代价">架构的价值与代价</h2>
+<p>统一入口和供应商适配器减少业务端耦合；共享的额度和故障机制避免每个客户端各写一份恢复逻辑；管理界面与日志让路线选择可检查。</p>
+<p>相应代价是协议细节、供应商变化和流式状态机的维护复杂度。自动回退提升“有结果”的机会，也可能使模型质量、输出格式和上下文行为发生变化。应用应自行决定哪些任务允许降级，不能只用接口成功率验收整个系统。</p>
+<p>本项目当前为架构研究，尚未验证实际性能、安全性、兼容性或运行可用性；下一步按<a href="notes.html#后续复现方案尚未执行">复现方案</a>补充证据。</p><p class="download"><a href="downloads/architecture.md" download>下载本篇 Markdown</a></p></main><footer>文档与源码研究 · 真实模型调用待验证 · 对比日期 2026-09-10</footer></body></html>

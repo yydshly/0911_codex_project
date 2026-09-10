@@ -1,0 +1,3 @@
+# Static assets and generated reading pages are part of the reviewable artifact.
+!dist/
+!dist/**

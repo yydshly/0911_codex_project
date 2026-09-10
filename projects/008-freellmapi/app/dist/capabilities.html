@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>能力、场景与扩展价值 · FreeLLMAPI 研究</title><meta name="description" content="FreeLLMAPI 的中文能力、架构与模型网关产品研究。"><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#content">跳到正文</a><header class="top"><a class="brand" href="index.html">FreeLLMAPI <span>研究 005</span></a><nav aria-label="主导航"><a href="index.html#flow">核心交互</a><a href="index.html#compare">产品对比</a><a href="index.html#library">完整研究</a></nav></header><main id="content" class="reader"><a class="back" href="index.html">← 返回理解展示</a><h1 id="能力场景与扩展价值">能力、场景与扩展价值</h1>
+<p><a href="readme.html">返回项目介绍</a> · <a href="understanding.html">我们的理解</a> · <a href="architecture.html">架构详解</a> · <a href="comparison.html">同类产品</a> · <a href="notes.html">研究记录与固定来源</a></p>
+<h2 id="核心定位">核心定位</h2>
+<p>FreeLLMAPI 将供应商接口、凭证、额度、能力元数据和故障切换集中管理，为个人应用提供一个统一模型入口。推理由实际供应商或自定义本地端点完成；网关负责选择、适配和管理。</p>
+<p>固定版本 README 宣称目录覆盖 34 个供应商、474 个模型家族、635 个免费端点及约每月 74 亿 Token 的目录额度。这是<strong>作者公布的目录汇总</strong>，不是本地实测结果；同一模型的多个供应商端点可能重复出现，账户资格、共享配额、地域、限流和免费政策都会改变实际可用量。<a href="notes.html#固定版本来源">来源 S1</a></p>
+<h2 id="上游已有能力">上游已有能力</h2>
+<table>
+<thead>
+<tr>
+<th>能力</th>
+<th>实际行为</th>
+<th>使用边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多协议接入</td>
+<td>Chat Completions、Responses、Anthropic Messages、Gemini 原生入口、可选 Ollama 模拟</td>
+<td>协议兼容不等于底层模型能力相同，也不保证所有客户端版本完全兼容</td>
+</tr>
+<tr>
+<td>自动路由</td>
+<td>六类策略：均衡、能力优先、速度优先、可靠性优先、自定义权重、手工优先级</td>
+<td>评分优化调用表现；没有证明任务结论正确</td>
+</tr>
+<tr>
+<td>模型链与统一分组</td>
+<td>命名 profile 对应不同候选链；同模型跨供应商可归为统一组</td>
+<td>分组模式限制组内切换，自动链可能跨模型降级</td>
+</tr>
+<tr>
+<td>配额跟踪</td>
+<td>每分钟 / 每天请求与 Token 计数，供应商共享额度、冷却与密钥选择</td>
+<td>本地估算与目录限额可能偏离上游真实状态，仍需处理 429</td>
+</tr>
+<tr>
+<td>工具调用</td>
+<td>转换工具协议、缓冲流式参数，修复部分文本形式的调用</td>
+<td>修复结构不等于修复工具选择或参数语义；实际工具由客户端执行</td>
+</tr>
+<tr>
+<td>多模态与向量</td>
+<td>提供向量、图像、视频、语音合成与转录等接口，按支持能力分发</td>
+<td>端点支持依赖具体供应商及可用凭证，不能假设共享聊天的全部重试行为</td>
+</tr>
+<tr>
+<td>多模型融合</td>
+<td><code>fusion</code> 默认四个草稿模型加一个综合模型；可指定参与模型</td>
+<td>多次调用增加额度消耗；综合可能保留共同错误；<code>best_of</code> 按长度选答案</td>
+</tr>
+<tr>
+<td>会话与上下文</td>
+<td>约 30 分钟会话保持；可选交接摘要、压缩</td>
+<td>不能保证长任务状态完全恢复，重要事实仍需要外部记录</td>
+</tr>
+<tr>
+<td>缓存与幂等</td>
+<td>可选响应缓存；部分非流式完成请求支持幂等结果重放</td>
+<td>流式与截断结果有限制；相同键的在途请求不保证合并</td>
+</tr>
+<tr>
+<td>管理与可观测性</td>
+<td>React 管理界面、Playground、用量与延迟统计、健康状态、MCP 查询入口</td>
+<td>管理界面是控制入口，MCP 服务不等于完整 Agent 编排器</td>
+</tr>
+<tr>
+<td>密钥与目录</td>
+<td>SQLite 中加密存储供应商密钥；签名目录更新；支持自定义兼容端点</td>
+<td>提示词仍会发送给实际推理端；免费目录更新存在滞后</td>
+</tr>
+</tbody>
+</table>
+<p>证据：协议与工具见 S5，路由见 S3，额度见 S4，幂等见 S6，目录见 S7；具体源码链接见<a href="architecture.html">架构详解</a>。</p>
+<h2 id="使用场景判断">使用场景判断</h2>
+<p>以下是基于实现的研究判断，尚未验证收益。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>价值</th>
+<th>使用条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学习与原型</td>
+<td>统一接入多个模型，降低适配成本</td>
+<td>能接受供应商变化与失败</td>
+</tr>
+<tr>
+<td>多模型评测</td>
+<td>使用同一请求格式收集结果、延迟与路线</td>
+<td>对照实验应固定模型和配置，避免自动路由干扰归因</td>
+</tr>
+<tr>
+<td>非紧急批处理</td>
+<td>摘要、分类、标签和草稿任务可在额度内执行</td>
+<td>增加结果校验、去重和重试；允许延迟</td>
+</tr>
+<tr>
+<td>编程 Agent 实验</td>
+<td>减少临时限流造成的停顿</td>
+<td>验证工具参数、多轮上下文、断流恢复和最终测试结果</td>
+</tr>
+<tr>
+<td>本地与云模型混用</td>
+<td>同一应用可选择不同推理端</td>
+<td>配置数据流向和能力约束，本地部署网关不等于所有推理都在本地</td>
+</tr>
+<tr>
+<td>多人关键业务</td>
+<td>现有定位与治理能力不足</td>
+<td>上游为单用户设计，缺少完整多租户认证与计费；需要另行建设并验证</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对我们的意义">对我们的意义</h2>
+<p>已有<a href="https://github.com/yydshly/0911_codex_project/blob/main/projects/002-engineering-casebook/README.md">工程案例手册</a>提供经验资料，<a href="https://github.com/yydshly/0911_codex_project/blob/main/projects/003-longhorizon-harness/README.md">LongHorizon-Harness</a>关注任务拆解与验收，<a href="https://github.com/yydshly/0911_codex_project/blob/main/projects/004-oh-my-pi/README.md">oh-my-pi</a>关注 Agent 实际执行。FreeLLMAPI 补充模型接入和调度层：每轮请求选择什么模型、消耗多少额度、失败如何处理。</p>
+<p>可研究的组合是“任务编排 → 执行 Agent → 模型网关 → 实际模型”，但不同后端是否允许修改端点、其工具协议是否稳定均需验证，不能把它写成已经集成的系统。</p>
+<p>衡量收益应使用<strong>每个通过验收的任务总成本</strong>：除 Token 费用，还考虑重试、融合、返工、等待和人工纠错。调用免费但失败更多的路线，可能让整个任务更昂贵。</p>
+<h2 id="建议扩展方向">建议扩展方向</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>建议新增或增强</th>
+<th>相比上游基础能力的增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>用任务验收结果修正路由</td>
+<td>在已有调用成功率与目录等级之外，加入测试通过率、事实核对和结构化输出正确率</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>按规划、执行、审计角色设置质量下限</td>
+<td>基于现有 profiles，限制关键角色跨模型降级，允许低风险任务灵活切换</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>整个任务的预算账本</td>
+<td>将多轮、重试、融合与返工关联到同一任务，按总预算停止或升级</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>免费与付费升级策略</td>
+<td>在已有自定义端点接入之上增加价格、质量阈值及支出上限决策</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>可验证的上下文交接</td>
+<td>在已有摘要和会话机制上保存事实、工具结果、未完成事项，并验收切换后的连续性</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>按数据敏感度限定路线</td>
+<td>将本地 / 指定供应商选择变成可检查的策略，记录实际数据去向</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>团队服务治理</td>
+<td>新增身份与配额隔离、审计、共享状态一致性和高可用，工程范围明显大于个人网关</td>
+</tr>
+</tbody>
+</table>
+<p>建议先比较固定模型、自动路由、角色配置三组方案，再决定扩展投入。复现样本与验收项见<a href="notes.html#后续复现方案尚未执行">研究记录</a>。</p><p class="download"><a href="downloads/capabilities.md" download>下载本篇 Markdown</a></p></main><footer>文档与源码研究 · 真实模型调用待验证 · 对比日期 2026-09-10</footer></body></html>

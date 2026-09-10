@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>研究记录与来源 · FreeLLMAPI 研究</title><meta name="description" content="FreeLLMAPI 的中文能力、架构与模型网关产品研究。"><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#content">跳到正文</a><header class="top"><a class="brand" href="index.html">FreeLLMAPI <span>研究 005</span></a><nav aria-label="主导航"><a href="index.html#flow">核心交互</a><a href="index.html#compare">产品对比</a><a href="index.html#library">完整研究</a></nav></header><main id="content" class="reader"><a class="back" href="index.html">← 返回理解展示</a><h1 id="研究记录与来源">研究记录与来源</h1>
+<p><a href="readme.html">返回项目介绍</a> · <a href="understanding.html">我们的理解</a> · <a href="capabilities.html">能力与场景</a> · <a href="architecture.html">架构详解</a> · <a href="comparison.html">同类产品</a></p>
+<h2 id="版本与证据边界">版本与证据边界</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>记录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上游</td>
+<td><code>tashfeenahmed/freellmapi</code></td>
+</tr>
+<tr>
+<td>固定提交</td>
+<td><code>83562ad360a65d80b6319297fee4cd47dc5a2ff3</code></td>
+</tr>
+<tr>
+<td>提交时间</td>
+<td>2026-09-07T11:13:21+01:00</td>
+</tr>
+<tr>
+<td>研究日期</td>
+<td>2026-09-10</td>
+</tr>
+<tr>
+<td>分析环境</td>
+<td>Windows；通过临时研究副本只读检查源码，未启动网关</td>
+</tr>
+<tr>
+<td>上游环境要求</td>
+<td>根 package.json：Node.js &gt;=20.18.0 且 &lt;25.0.0，npm &gt;=10</td>
+</tr>
+<tr>
+<td>关键组件</td>
+<td>Express 5、TypeScript 5、SQLite（better-sqlite3）、React / Vite；Electron 桌面封装</td>
+</tr>
+<tr>
+<td>包版本注意</td>
+<td>server/package.json 为 0.2.1，desktop/package.json 为 0.9.8；不将某个子包版本当作整个项目的统一版本</td>
+</tr>
+<tr>
+<td>许可证</td>
+<td>MIT；原文见来源 S10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>源码核对</strong>表示确认存在相应实现与控制流程，不能替代运行测试。目录规模、额度及客户端兼容性等作者声明需要结合账户、网络、实际端点继续验证。</p>
+<h2 id="2026-09-10-能力与架构整理">2026-09-10 · 能力与架构整理</h2>
+<ul>
+<li>阅读 README、架构总览、路由评分、额度账本、流式处理、故障恢复和目录同步说明。</li>
+<li>核对 <code>app.ts</code> 的路由挂载，<code>index.ts</code> 的数据库初始化与后台调度，<code>scoring.ts</code> 的评分方式，<code>router.ts</code> 的路线选择。</li>
+<li>核对 <code>fallback-loop.ts</code> 的失败处理、<code>fusion.ts</code> 的融合路径、<code>crypto.ts</code> 的密钥加密算法。</li>
+<li>从项目模板新建研究目录，新增能力说明、架构详解与原创架构图，关联已有 Agent 研究。</li>
+<li>未安装上游依赖，未执行上游测试，未进行真实 API 调用，当时未发布网页演示。</li>
+</ul>
+<h3 id="初版文档验证结果">初版文档验证结果</h3>
+<ul>
+<li>本目录及两个索引中的 104 个相对文件链接检查通过；本项目使用的 Markdown 锚点检查通过。</li>
+<li>29 个固定版本上游引用与研究副本的真实文件或目录对应，版本一致。</li>
+<li>总索引条目、预览顺序、数量及已登记研究索引的唯一性检查通过；本目录未残留模板占位内容。</li>
+<li>PNG（1600 × 1120）可读取，SVG XML 可解析；已人工查看架构图并修正文字与边框间距。</li>
+<li><code>git diff --check</code> 通过。以上仅为文档与图片验证，不代表上游功能或性能实测。</li>
+</ul>
+<h2 id="2026-09-10-同类产品与网页展示">2026-09-10 · 同类产品与网页展示</h2>
+<ul>
+<li>新增 <code>understanding.md</code>，归纳对外统一模型接口、对内路由与适配，以及应用 / 网关 / 模型三方职责。</li>
+<li>新增 <code>comparison.md</code>，基于已查阅的官方文档比较 LiteLLM、New API、Portkey、Bifrost、OpenRouter 和 Cloudflare AI Gateway；版本差异和建议单独标注。</li>
+<li>本地新增静态教学网页，包含正常返回、主路线限流、全部不可用、输出后中断四种固定场景；没有真实模型请求。</li>
+<li>阅读页及首页对比表从 Markdown 自动生成，保留可下载文档和内容哈希以检查同步。</li>
+<li>已合并 GitHub Pages 发布清单与检查步骤，保留其他项目。当前没有 Sites 发布工具；当时未创建 Sites 项目，也未公开部署。</li>
+<li>验证覆盖本地资源与锚点、JavaScript 语法、四种场景状态、文档同步、页面入口的本地 HTTP 响应及统一站点打包。未执行浏览器截图或浏览器交互测试。</li>
+</ul>
+<h2 id="2026-09-10-模型网关定位与正式发布">2026-09-10 · 模型网关定位与正式发布</h2>
+<ul>
+<li>统一根摘要、项目介绍与网页首屏：FreeLLMAPI 是一个自托管模型网关，负责统一接入、选路、协议适配和额度／失败管理。</li>
+<li>主引导图沿用讨论中的 Mermaid 图，保留应用、网关、实际模型、失败回退与状态反馈关系；PNG 和 SVG 已检查。</li>
+<li>补充未来自研网关的取舍：确定用户与首要问题，选择主参考，再按场景补充能力；不以所有产品的功能并集作为首版目标。</li>
+<li>正在通过仓库统一 GitHub Pages 工作流发布，完成后补充线上验证记录。上游模型服务仍未启动。</li>
+</ul>
+<h2 id="需要谨慎解读的上游描述">需要谨慎解读的上游描述</h2>
+<ol>
+<li>README 的目录端点和月度额度属于作者公布的目录统计，不代表我们的可用资源，更不代表单一模型的独占额度。</li>
+<li>README 与架构文档关于前沿模型可得性的描述存在差异；本文不将具体免费模型或额度当成稳定承诺。</li>
+<li>“智能路由”的可靠性来自调用表现，能力等级来自目录元数据，不是我们的任务正确率。</li>
+<li><code>fusion</code> 的 <code>best_of</code> 在所读源码中按答案长度选择，不能直接解释为质量最优。</li>
+<li>流式响应已经发送有效内容后失败，不能再隐式换模型拼接答案。</li>
+<li>目录同步的“每天检查两次”与“免费目录约滞后 30 天”是不同维度：前者是拉取频率，后者是可获取内容的新鲜度。</li>
+</ol>
+<h2 id="后续复现方案尚未执行">后续复现方案（尚未执行）</h2>
+<p>在独立上游检出目录进行，避免把依赖引入研究总仓库。根据 S1 与 S8：</p>
+<pre><code class="language-powershell">git clone https://github.com/tashfeenahmed/freellmapi.git freellmapi-upstream
+Set-Location freellmapi-upstream
+git checkout 83562ad360a65d80b6319297fee4cd47dc5a2ff3
+npm ci
+npm test
+npm run build
+</code></pre>
+<p>后续按固定版本安装文档配置环境与密钥后启动开发服务。使用非敏感样本，至少验证以下场景，并记录实际供应商、模型、版本、配置、时间和结果。</p>
+<table>
+<thead>
+<tr>
+<th>验证项</th>
+<th>验收依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通与流式问答</td>
+<td>返回格式正确，实际路线可追溯；验证中途断流的客户端行为</td>
+</tr>
+<tr>
+<td>工具与结构化输出</td>
+<td>参数通过模式校验，工具结果能在后续轮次正确使用</td>
+</tr>
+<tr>
+<td>限流与故障恢复</td>
+<td>用模拟供应商注入 429、5xx 和超时，检查冷却、重试预算与最终错误；不靠冲击真实免费额度制造故障</td>
+</tr>
+<tr>
+<td>会话与模型切换</td>
+<td>关键事实、工具结果和未完成事项保持一致；记录偏差</td>
+</tr>
+<tr>
+<td>固定模型 / 自动路由 / 角色配置</td>
+<td>对同一组任务比较验收通过率、耗时、重试、人工返工和总成本</td>
+</tr>
+<tr>
+<td>本地 / 云模型混用</td>
+<td>验证自定义端点、上下文上限及数据实际流向</td>
+</tr>
+</tbody>
+</table>
+<p>文档维护时检查：相对链接与图片存在、研究索引唯一且有序、模板占位清除、根首页状态与本项目一致。未部署时不添加在线演示地址。</p>
+<h2 id="固定版本来源">固定版本来源</h2>
+<p>以下引用均属于同一研究提交。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>来源</th>
+<th>支撑内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/README.md">README</a></td>
+<td>产品能力、目录声明、个人实验定位</td>
+</tr>
+<tr>
+<td>S2</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/00-high-level-index.md">架构总览</a></td>
+<td>技术栈、支持范围与限制</td>
+</tr>
+<tr>
+<td>S3</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/01-routing-and-bandit-scoring.md">路由与评分</a></td>
+<td>模型链、Thompson Sampling、会话与分组</td>
+</tr>
+<tr>
+<td>S4</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/02-quota-and-cooldown-engine.md">额度与冷却</a></td>
+<td>RPM / RPD / TPM / TPD、占用预留、冷却</td>
+</tr>
+<tr>
+<td>S5</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/03-streaming-pipeline.md">流式管线</a></td>
+<td>协议转换、工具调用修复、断流边界</td>
+</tr>
+<tr>
+<td>S6</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/04-degraded-mode-and-failover.md">降级与故障切换</a></td>
+<td>重试预算、错误轨迹与幂等限制</td>
+</tr>
+<tr>
+<td>S7</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/architecture/05-catalog-sync.md">目录同步</a></td>
+<td>Ed25519、快照、事务更新与覆盖规则</td>
+</tr>
+<tr>
+<td>S8</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/docs/en/install/01-install.md">安装说明</a></td>
+<td>源码、容器与桌面部署方式</td>
+</tr>
+<tr>
+<td>S9</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/package.json">根 package.json</a></td>
+<td>工作区、运行要求与测试命令</td>
+</tr>
+<tr>
+<td>S10</td>
+<td><a href="https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/LICENSE">LICENSE</a></td>
+<td>MIT 许可与版权信息</td>
+</tr>
+</tbody>
+</table>
+<p>具体实现入口见<a href="architecture.html#模块与源码入口">架构模块表</a>。</p><p class="download"><a href="downloads/notes.md" download>下载本篇 Markdown</a></p></main><footer>文档与源码研究 · 真实模型调用待验证 · 对比日期 2026-09-10</footer></body></html>

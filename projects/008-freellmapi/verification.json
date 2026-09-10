@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-10",
+  "scope": "Static understanding site; no real model requests",
+  "publicDeployment": "not deployed at this historical check",
+  "browserQA": "not performed; not requested",
+  "checks": {
+    "readingPages": 7,
+    "synchronizedDocuments": 6,
+    "scenarioStates": 4,
+    "htmlLocalReferences": 116,
+    "sourceMarkdownLinks": 169,
+    "combinedPagesAssembly": "passed"
+  },
+  "localHttp": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "7f400975e524732c48b055050c8a28bcbf30131d955afa6687a7c2c865fa993a"
+    },
+    {
+      "path": "understanding.html",
+      "status": 200,
+      "sha256": "3407e49a32d492834a7d3367f6ed4e30b3a4d23adf80196ae351945922fb5ada"
+    },
+    {
+      "path": "architecture.html",
+      "status": 200,
+      "sha256": "de77bd871cd3d254e16add82911caba6a0e583870c045f0762731b97a9cc47af"
+    },
+    {
+      "path": "comparison.html",
+      "status": 200,
+      "sha256": "daf90c6011a2a0e5a98deec47bf5006be0b4b8ca57f106bc8b922c2513c675ad"
+    },
+    {
+      "path": "capabilities.html",
+      "status": 200,
+      "sha256": "7f045695ee2398e52fce0401cce777bbb689a7671bccbc257aa75f416912f58e"
+    },
+    {
+      "path": "notes.html",
+      "status": 200,
+      "sha256": "7b9f665f626acd7f8ad266ea608ebbf1cde7ffc8bbdd6e5cb3efae106b614d12"
+    },
+    {
+      "path": "readme.html",
+      "status": 200,
+      "sha256": "2dfc81b627ed32959f2240874c1d18d5d0837e089a7e37d9ab3a647a2eebe381"
+    },
+    {
+      "path": "style.css",
+      "status": 200,
+      "sha256": "a2f3e93df1a52377dfa9a753c63a04b7b041363e1231751d3f9d3bb3352fda6b"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "sha256": "c151c3353cc23965f17b935ca0e870f352049a9dd61f00ffae9c8cc8a0e197fb"
+    },
+    {
+      "path": "assets/architecture.png",
+      "status": 200,
+      "sha256": "dcdf55bf178f085e57e7f1abd16e41fe1337aed8bf6279c87337e8147592d124"
+    }
+  ],
+  "recordScope": "Historical local checks before the final guide and deployment; current public verification is recorded separately."
+}

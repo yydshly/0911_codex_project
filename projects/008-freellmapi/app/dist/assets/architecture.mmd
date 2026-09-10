@@ -1,0 +1,16 @@
+flowchart TB
+    client[应用 / 编程 Agent] --> entry[统一接口与协议转换]
+    entry --> prepare[输入校验 / 可选压缩与缓存]
+    prepare --> router[能力筛选 / 路由评分 / 密钥选择]
+    router --> adapter[供应商适配器]
+    adapter --> upstream[云模型 / 自定义本地模型]
+    upstream --> result[转换响应 / 记录统计与用量]
+    result --> client
+    adapter -->|可重试且输出尚未提交| retry[冷却 / 错误分类 / 回退预算]
+    retry --> router
+    state[(SQLite 与内存状态)] <--> router
+    result --> state
+    admin[React 管理界面] --> state
+    background[健康检查 / 冷却探测 / 备份] --> state
+    catalog[签名模型目录] --> sync[验签 / 事务更新]
+    sync --> state

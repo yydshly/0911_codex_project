@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FreeLLMAPI · 理解模型网关</title><meta name="description" content="通过请求流程、失败场景与七个产品对照，理解 FreeLLMAPI 的统一接入、模型路由和容错机制。"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<a class="skip" href="#content">跳到正文</a>
+<header class="top"><a class="brand" href="index.html">FreeLLMAPI <span>研究 005</span></a><nav aria-label="主导航"><a href="index.html#flow">核心交互</a><a href="index.html#compare">产品对比</a><a href="index.html#library">完整研究</a></nav></header>
+<main id="content">
+<section class="intro">
+ <p class="eyebrow">我们的理解 / 模型网关</p>
+ <h1>FreeLLMAPI 是一个模型网关。</h1>
+ <p class="lede">对外统一模型接口，对内选路、适配并管理额度和失败。<strong>路由决定调用谁，适配处理怎么调用。</strong></p>
+ <div class="responsibility"><span><b>应用 / Agent</b> 组织任务、执行工具、验收</span><span><b>网关</b> 接入、选路、适配、容错</span><span><b>模型</b> 推理与生成</span></div>
+</section>
+<section id="guide" class="section guide-section">
+ <div class="section-head"><div><p class="eyebrow">核心交互引导图</p><h2>接入 → 选路 → 调用 → 返回</h2></div><a href="assets/guide.svg">放大原图 ↗</a></div>
+ <a href="assets/guide.svg"><img class="core-guide" src="assets/guide.png" alt="讨论确认的模型网关交互图：应用提交请求，网关选路与适配，模型推理，结果返回或进入失败管理"></a>
+ <p class="muted">沿用讨论中的核心交互图，非实际运行轨迹。有效流式输出已提交后，不能保证无缝换模型。</p>
+</section>
+<section id="flow" class="section">
+ <div class="section-head"><div><p class="eyebrow">01 / 核心交互</p><h2>一个请求，怎样穿过网关？</h2></div><a href="understanding.html">读完整理解 ↗</a></div>
+ <p class="muted">切换场景查看机制。以下为固定教学模拟，A、B 是虚构候选，没有实际模型调用。</p>
+ <div class="scenarios" role="group" aria-label="请求场景">
+  <button type="button" data-scenario="success" aria-pressed="true">正常返回</button>
+  <button type="button" data-scenario="limited" aria-pressed="false">主路线限流</button>
+  <button type="button" data-scenario="exhausted" aria-pressed="false">全部不可用</button>
+  <button type="button" data-scenario="stream" aria-pressed="false">输出后中断</button>
+ </div>
+ <div class="flow-workspace">
+  <div class="diagram">
+   <div class="edge-box"><b>应用 / Agent</b><span>消息 · 上下文 · 工具定义 · 统一令牌</span></div>
+   <div class="connector" aria-hidden="true">↓</div>
+   <div class="gateway"><p class="gateway-label">FreeLLMAPI / 统一模型接口</p><div class="route-stages">
+    <div class="stage"><small>01 接入</small><b>检查与转换</b><p>鉴权、输入校验<br>请求格式适配</p></div>
+    <div class="stage focal"><small>02 选路</small><b>供应商 + 模型 + 密钥</b><p>能力、额度、健康状态<br>优先级或动态评分</p></div>
+    <div class="stage"><small>03 调用</small><b>供应商适配</b><p>转换上游协议<br>发送请求</p></div>
+   </div><div class="route-state" id="route-state">选取模型 A 的可用路线</div></div>
+   <div class="connector" aria-hidden="true">↓</div>
+   <div class="edge-box model"><b id="model-title">实际模型 A</b><span id="model-desc">完成推理，生成回答</span></div>
+   <div class="return-line"><span aria-hidden="true">↩</span><p><b>返回应用</b><span id="return-copy">网关转换返回格式，同时记录额度与调用表现。</span></p></div>
+  </div>
+  <aside class="trace" aria-live="polite" aria-atomic="true"><p class="eyebrow">场景解释 / 非真实日志</p><h3 id="trace-title">正常返回</h3><ol id="trace-list"><li>应用提交消息和调用参数。</li><li>候选 A 符合能力要求，密钥健康且有额度。</li><li>适配器调用 A，网关整理回答并返回。</li><li>记录消耗、耗时与成功状态，供后续路由参考。</li></ol><div class="outcome" id="outcome"><b>返回回答</b><p>调用成功，任务结果仍由应用或 Agent 验收。</p></div></aside>
+ </div>
+ <noscript><p class="note">JavaScript 已关闭，当前展示正常返回。其余三个场景可在<a href="understanding.html">我们的理解</a>中阅读。</p></noscript>
+</section>
+<section class="section architecture">
+ <div class="section-head"><div><p class="eyebrow">02 / 架构与边界</p><h2>主干很清楚，难点在细节。</h2></div><a href="architecture.html">查看模块与源码 ↗</a></div>
+ <div class="three"><article><span class="number">A</span><h3>接口适配层</h3><p>把不同消息、工具参数和流式事件，转换为可接入的格式。</p></article><article><span class="number">B</span><h3>路由控制层</h3><p>检查能力与额度，选择路线；在预算内进行冷却和失败回退。</p></article><article><span class="number">C</span><h3>状态与管理层</h3><p>保存模型、密钥、用量和表现，后台维护健康状态与模型目录。</p></article></div>
+ <div class="boundary"><b>调用成功 ≠ 任务正确</b><p>免费额度会变化，换模型可能改变能力。流式内容已提交后，不能保证无缝切换；云模型调用仍会离开本机。</p></div>
+ <details><summary>展开完整架构图</summary><a href="assets/architecture.svg"><img src="assets/architecture.png" width="1600" height="1120" loading="lazy" alt="FreeLLMAPI 请求路径、状态管理与后台维护架构"></a><p class="muted">原创说明图，非上游截图或实际运行轨迹。</p></details>
+</section>
+<section id="compare" class="section">
+ <div class="section-head"><div><p class="eyebrow">03 / 同类产品</p><h2>骨架相似，解决的管理问题不同。</h2></div><a href="comparison.html">完整对比与官方来源 ↗</a></div>
+ <p class="muted">依据官方文档，比较日期 2026-09-10。开源、托管和企业功能分别看待；没有进行统一性能实测。</p>
+ <div class="table-scroll" tabindex="0" role="region" aria-label="七个模型网关产品对照表"><table>
+<thead>
+<tr>
+<th>产品</th>
+<th>主要目标</th>
+<th>路由与管理机制</th>
+<th>部署与使用侧重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/tashfeenahmed/freellmapi">FreeLLMAPI</a></td>
+<td>利用个人模型资源与免费额度</td>
+<td>能力筛选、动态评分、额度跟踪、冷却和失败回退</td>
+<td>自托管；个人实验优先，单用户设计</td>
+</tr>
+<tr>
+<td><a href="https://docs.litellm.ai/docs/proxy/quick_start">LiteLLM</a></td>
+<td>通用模型接入与团队共享网关</td>
+<td>多部署负载均衡、限流感知、延迟 / 成本策略、虚拟密钥与预算</td>
+<td>可自托管；需要管理配置、运行状态和依赖；部分企业治理另分版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/QuantumNous/new-api">New API</a></td>
+<td>模型渠道、用户配额与费用管理</td>
+<td>渠道加权选择、失败重试、用户与令牌分组、模型限制及费用核算</td>
+<td>可自托管；重点是渠道和使用者的管理</td>
+</tr>
+<tr>
+<td><a href="https://portkey.ai/docs/product/ai-gateway">Portkey</a></td>
+<td>网关策略与应用运行管理</td>
+<td>条件路由、负载均衡、可组合回退、缓存与观察能力</td>
+<td>有开源网关、托管与企业部署；不能将商业管理平台等同于开源包</td>
+</tr>
+<tr>
+<td><a href="https://docs.getbifrost.ai/providers/provider-routing">Bifrost</a></td>
+<td>注重性能和治理的模型网关</td>
+<td>虚拟密钥规则、加权路由与回退；企业版提供实时表现驱动的自适应均衡</td>
+<td>开源网关与企业功能分别核对；性能优势需在我们的负载上验证</td>
+</tr>
+<tr>
+<td><a href="https://openrouter.ai/docs/guides/routing/provider-selection">OpenRouter</a></td>
+<td>托管模型聚合与调用</td>
+<td>同模型供应商选择、供应商回退、跨模型回退，支持自带供应商密钥</td>
+<td>直接使用托管入口，减少自建网关工作；依赖平台规则与可用路线</td>
+</tr>
+<tr>
+<td><a href="https://developers.cloudflare.com/ai-gateway/features/dynamic-routing/">Cloudflare AI Gateway</a></td>
+<td>云端模型调用与路由管理</td>
+<td>可视化 / JSON 条件流程、预算与限流节点、流量分配、回退和版本管理</td>
+<td>托管；可自带密钥，也有统一账单路径，凭证选择有具体规则</td>
+</tr>
+</tbody>
+</table></div>
+ <div class="distinctions"><article><h3>上游额度 / 下游预算</h3><p>供应商还能调用多少，与某个用户允许花多少，是两本不同的账。</p></article><article><h3>可用性 / 任务质量</h3><p>请求成功、速度快、费用低，都需要与任务正确率分别衡量。</p></article><article><h3>自托管 / 托管服务</h3><p>自己维护网关换取控制权；使用聚合服务减少部署工作，也引入平台依赖。</p></article></div>
+</section>
+<section class="section recommendation"><p class="eyebrow">04 / 对我们的意义</p><h2>先完成一条可解释的调用链路。</h2><p>FreeLLMAPI 补充模型接入与调度；LongHorizon-Harness 关注编排与验收，执行 Agent 负责实际工具操作。它们可以互补，但尚未完成集成验证。</p><p>如果以后开发网关，以 <strong>LiteLLM 学整体结构、FreeLLMAPI 学额度与容错</strong>，其他产品按具体问题借鉴。第一版先做好统一入口、少量供应商、明确选路、额度检查、有界回退和调用记录。</p><p>参考所有产品来建立视野，不追求一次补齐所有功能。用任务通过率、重试、耗时、调用费用与人工返工验收收益。<a href="understanding.html#如果以后自己开发模型网关">阅读开发取舍与第一版范围 →</a></p></section>
+<section id="library" class="section"><div class="section-head"><div><p class="eyebrow">05 / 研究资料</p><h2>从理解继续到证据。</h2></div></div><div class="library">
+ <a href="understanding.html"><b>我们的理解</b><span>目标、职责、入口出口与四种场景 →</span></a>
+ <a href="capabilities.html"><b>能力与场景</b><span>上游已有能力、限制与扩展方向 →</span></a>
+ <a href="architecture.html"><b>架构详解</b><span>模块、评分、额度、流式和源码入口 →</span></a>
+ <a href="comparison.html"><b>同类产品对比</b><span>七个产品、关键差异与选型建议 →</span></a>
+ <a href="notes.html"><b>研究记录</b><span>固定版本、证据范围与复现计划 →</span></a>
+ <a href="readme.html"><b>项目介绍</b><span>索引、许可、维护方式与当前状态 →</span></a>
+ </div></section>
+</main>
+<footer><span>上游研究提交 83562ad · 真实 API 运行待复现</span><a href="https://github.com/tashfeenahmed/freellmapi">上游仓库 ↗</a><a href="https://github.com/yydshly/0911_codex_project">研究总仓库 ↗</a></footer>
+</body></html>
