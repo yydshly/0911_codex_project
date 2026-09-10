@@ -9,11 +9,11 @@
 | 003 | [oh-my-pi（OMP）](004-oh-my-pi/README.md) | [oh-my-pi](https://github.com/can1357/oh-my-pi) | 基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠模型并完善代码编辑、调试、执行反馈与协作能力 | 研究中（理解与模块已整理，运行待复现） | [研究笔记](004-oh-my-pi/notes.md)；演示未部署 |
 | 004 | [XXG Portrait Rebuild Light](005-xxg-portrait-rebuild-light/README.md) | [xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 研究中（三次布光与商品扩展已运行，完整技能待复现） | [能力展示说明](005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) |
 | 008 | [Drama Skills](006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](006-drama-skills/demos/README.md) |
-| 009 | [XXD Panel 028](007-xxd-panel-028/README.md) | [xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 以微缩审美和交付流程指导图像模型生成二维插画，支持模式、比例、文字与批量验收；无三维输出 | 七场景及六张微缩扩展已实测；价值待验证 | [理解与价值](007-xxd-panel-028/understanding.md) · [微缩效果](007-xxd-panel-028/extensions/miniature-scenes/README.md)；发布待验证 |
+| 009 | [XXD Panel 028](007-xxd-panel-028/README.md) | [xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 以微缩审美和交付流程指导图像模型生成二维插画，支持模式、比例、文字与批量验收；无三维输出 | 七场景及六张微缩扩展已实测；价值待验证 | [理解与价值](007-xxd-panel-028/understanding.md) · [微缩效果](007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线微缩展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/miniatures.html)；已部署并验证 |
 
 ## 编号与目录
 
-- XXD Panel 028 保留研究索引 009 与历史目录 007；原库二维微缩能力、实际扩展效果和价值边界已整理，发布待验证。
+- XXD Panel 028 保留研究索引 009 与历史目录 007；原库二维微缩能力、实际扩展效果和价值边界已整理，已部署并验证。
 
 - Drama Skills 保留登记研究索引 008 与历史目录 006；支持小说或点子生成短剧，两种案例和完整流程图已整理，网页已部署并验证。
 

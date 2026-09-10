@@ -1,0 +1,135 @@
+{
+  "verifiedAt": "2026-09-10T15:41:05.269531+00:00",
+  "commit": "d01ee23d10938d3af2f6a1b794b4e9d47015cb2e",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34497060467",
+  "workflowConclusion": "success",
+  "baseUrl": "https://yydshly.github.io/0911_codex_project/",
+  "files": [
+    {
+      "path": "index.html",
+      "httpStatus": 200,
+      "sha256": "6b3752a8007c4ba22fd3e7d22707c7dbef3b8598b771fe19f2fd2c9efe36f9f2",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "assets/007-xxd-panel-028.png",
+      "httpStatus": 200,
+      "sha256": "324b101218b36b0f9e6d931ce895237a6de56b2246e27942a3fc14ecb5ef7886",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "002-engineering-casebook/index.html",
+      "httpStatus": 200,
+      "sha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "003-longhorizon-harness/index.html",
+      "httpStatus": 200,
+      "sha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "005-xxg-portrait-rebuild-light/index.html",
+      "httpStatus": 200,
+      "sha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "006-drama-skills/index.html",
+      "httpStatus": 200,
+      "sha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/index.html",
+      "httpStatus": 200,
+      "sha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/miniatures.html",
+      "httpStatus": 200,
+      "sha256": "87d93a7bc0c15acac3eb011e3c312d3454dc631ee669139f4913807a5b78c7ef",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/extensions.html",
+      "httpStatus": 200,
+      "sha256": "be929c5a1fc5d01bb89db59ceb2b447cd48183040ee124bab15fac1cc5ac0969",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/style.css",
+      "httpStatus": 200,
+      "sha256": "eafebc1285b63484a16f439da0243d9f5511320beee59a8aa678eb8be337231a",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/app.js",
+      "httpStatus": 200,
+      "sha256": "768ba80409bce4cbe53f1b754f7bd94e21180b49e0d9c51356303702dc30af23",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/miniatures.js",
+      "httpStatus": 200,
+      "sha256": "86090bea3f856f3d49eac315302dece017cd60f60ef547f2054010af41fe24e5",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/miniatures.css",
+      "httpStatus": 200,
+      "sha256": "cabd2f906bf51a2b6dba3d4c26850b16c216a7be80dd1430650780fee7b393c6",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/coffee-story-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "1b5a387b805b5120574cde2979791bb73a3c3241e52239aab9a11694f994398e",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/life-map-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "48296aca02f43ecbfd2e09901e540009f30d28f763aadec7c3718e2dcdea2edf",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/room-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "82e5ee87a6618f6367ce7a5c298b65dc69ef9cee2a49731a564e98ee0e9e2f2a",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/travel-story-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "bf5d7aa9ea7159b7072a547406e4c0b2e6c944f098744614ec5bd2e48ceac15c",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/venue-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "2dabb812b7b874a6f4c58e745d77fd347439031cc8572e76d71c53cd4e92827a",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-assets/venue-edit-1536x1024.png",
+      "httpStatus": 200,
+      "sha256": "324b101218b36b0f9e6d931ce895237a6de56b2246e27942a3fc14ecb5ef7886",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-evidence/venue-edit.json",
+      "httpStatus": 200,
+      "sha256": "d12de13998e46d1e9687f247c8023b1cf250066ca5f67781cb0b1e0e40517a86",
+      "comparison": "text LF-normalized"
+    },
+    {
+      "path": "007-xxd-panel-028/miniature-evidence/venue-edit.txt",
+      "httpStatus": 200,
+      "sha256": "3c198ba664040c0142822fb68c0c32bdf9d9c9f3d063d6554f8e5ab704e248a8",
+      "comparison": "text LF-normalized"
+    }
+  ]
+}

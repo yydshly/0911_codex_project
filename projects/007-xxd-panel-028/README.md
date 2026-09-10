@@ -4,6 +4,8 @@
 
 [我们的理解与价值边界](understanding.md) · [微缩场景效果与说明](extensions/miniature-scenes/README.md) · [扩展效果说明](extensions/style-lab/README.md) · [扩展实际图片与提示词](runs/20260910-style-extensions-03/README.md) · [返回总索引](../../README.md#项目索引) · [研究笔记](notes.md) · [此前四场景实测与实际提示词](runs/20260910-real-scenes-01/README.md) · [展示页源文件](app/index.html) · [配图与来源](assets/README.md) · [上游仓库](https://github.com/nevertoday/xxd-panel-028)
 
+[在线能力展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/) · [六张微缩扩展效果](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/miniatures.html) · [花艺修改对照](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/miniatures.html#customize)
+
 ## 项目信息
 
 | 项目 | 内容 |
@@ -17,8 +19,8 @@
 | 本地技术 | 原生 HTML / CSS / JavaScript；Node.js 22+ 构建检查，无第三方依赖 |
 | 上游许可证 | [PolyForm Noncommercial 1.0.0](UPSTREAM-LICENSE.txt)，含非商业用途限制 |
 | 研究状态 | 研究中；已按固定上游 Skill 实测七个场景、共十二次生成，保留验收偏差 |
-| 展示状态 | 以淡蓝花艺微缩扩展成品为主预览；补充原库能力、本地扩展、二维／三维区别与产品价值边界；发布待验证 |
-| 部署方式 | 已并入仓库 GitHub Pages 清单，待实际发布验证 |
+| 展示状态 | 以淡蓝花艺微缩扩展成品为主预览；补充原库能力、本地扩展、二维／三维区别与产品价值边界；已部署并验证 |
+| 部署方式 | GitHub Pages 统一发布；首页、扩展页与原始图片已验证 |
 
 ## 我们的理解
 
@@ -107,6 +109,10 @@ python -m http.server 8028 --bind 127.0.0.1 --directory app/dist
 
 最值得研究的是“审美原文保持稳定、交付变量参数化、逐张生成与验收”的封装方式。它不是独立图像模型；批量、主体保真与文字控制不能仅凭 Skill 文字视为可靠性保证。尺寸校准可能缩放或裁切，四场景实测已观察到模式、文字、尺寸与内容补全偏差；完整质量评测、成本和耗时对比仍待实验。
 
-已检查交付数量公式、多模式与壁纸组合、无效输入、命令分支、锚点及资源、脚本语法、构建一致性和发布样张的字节一致性。另已核对四组实际输入、八份实际提示词和八张生成文件的哈希、尺寸与验收记录；网页已在本地检查浏览与前后切换；线上发布待验证。
+已检查交付数量公式、多模式与壁纸组合、无效输入、命令分支、锚点及资源、脚本语法、构建一致性和发布样张的字节一致性。另已核对四组实际输入、八份实际提示词和八张生成文件的哈希、尺寸与验收记录；网页已在本地检查浏览与前后切换；线上已部署并验证。
 
 现已保存[固定上游执行快照](vendor/README.md)，含原样 Python 辅助脚本；本次遵循内置生图路径，没有运行 API 桥接脚本。引用原样图片并保留[许可证](UPSTREAM-LICENSE.txt)、[素材说明](assets/README.md)与固定提交链接。商业集成需确认授权，原始素材权利不因本展示而扩大。
+
+## 线上发布验证
+
+2026-09-10，提交 `d01ee23d10938d3af2f6a1b794b4e9d47015cb2e` 的 [Pages 构建与部署](https://github.com/yydshly/0911_codex_project/actions/runs/34497060467)成功。已核对 21 个线上文件，覆盖总入口、既有子站、三个展示页、样式与脚本、六张微缩原图和定制提示词／记录；均返回 HTTP 200，文本按换行归一比较，PNG 原始字节一致。见[逐文件验证记录](deployment-verification.json)。
