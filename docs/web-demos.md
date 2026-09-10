@@ -73,3 +73,14 @@
 构建检查：`node projects/005-xxg-portrait-rebuild-light/app/scripts/build.cjs`；统一汇总仍为 `node scripts/build-pages.cjs`，保留已有两个子路径。公开地址：[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/)。
 
 XXG 部署验证：2026-09-10，首次发布提交 `f04a91b5a2c9f1e9668a48a65cb8d9422425337a`，[Actions 成功记录](https://github.com/yydshly/0911_codex_project/actions/runs/34489688585)。核对线上 35 个文件，覆盖总入口、两个已有子站、XXG 全部发布文件与实际效果预览；文本按换行归一比较、图像按原始字节比较。
+
+## Drama Skills · 小说或点子生成短剧
+
+研究 008，历史路径 `006-drama-skills/`。新增只读中文网页，使用讨论中的完整流程图作引导，逐步关联原始技能、两种案例和实际效果；视频生产与剪辑未执行。构建零第三方依赖：
+
+```text
+node projects/006-drama-skills/app/build.cjs
+node projects/006-drama-skills/app/check.cjs
+```
+
+发布清单合并 `projects/006-drama-skills/app/dist`，保留既有案例手册、LongHorizon 和 XXG 等站点。仅导出明确列出的文档和图片，原库本地创作台与运行令牌不公开。目标子路径为 `006-drama-skills/`，远端发布待验证。

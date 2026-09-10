@@ -1,0 +1,16 @@
+{
+  "upstream_commit": "dc9b0fac15225629856f17ca06640b470c89cfca",
+  "checked_at_utc": "2026-09-10T13:58:50.513141+00:00",
+  "checks": [
+    {
+      "check": "source-index",
+      "exit_code": 0,
+      "log": "source-index.txt"
+    },
+    {
+      "check": "creator-check",
+      "exit_code": 1,
+      "log": "creator-check.txt"
+    }
+  ]
+}

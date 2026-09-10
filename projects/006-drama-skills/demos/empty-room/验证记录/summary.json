@@ -1,0 +1,32 @@
+{
+  "upstream_commit": "dc9b0fac15225629856f17ca06640b470c89cfca",
+  "checked_at_utc": "2026-09-10T14:47:48.788974+00:00",
+  "checks": [
+    {
+      "name": "creator-check",
+      "exit_code": 1,
+      "log": "creator-check.txt"
+    },
+    {
+      "name": "project-status",
+      "exit_code": 0,
+      "log": "project-status.txt"
+    }
+  ],
+  "planned_episodes": 3,
+  "written_episodes": [
+    "EP001"
+  ],
+  "shot_count": 6,
+  "planned_seconds": 60.0,
+  "timing_measured": false,
+  "creator_check_errors": 18,
+  "creator_check_scope": "Only missing video reference preparation remains; no other structural errors reported.",
+  "image_v1": {
+    "path": "剧集/EP001/制作成果/images/storyboard-v1.png",
+    "bytes": 2118469,
+    "sha256": "471cbfe944fcd6f3de8065156e7927835fc93adf2ce772102e51b7341980b456",
+    "purpose": "narrative_display",
+    "approved_as_video_input": false
+  }
+}

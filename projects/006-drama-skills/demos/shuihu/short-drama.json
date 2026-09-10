@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-09-10T13:31:44.381446Z",
+  "creator_authority": {
+    "constraints": [],
+    "decisions_artifact": "创作者决策/",
+    "delivery_surface": {
+      "aspect": null,
+      "overlay_regions": [],
+      "source_ref": null,
+      "status": "unset"
+    },
+    "production_profile": {
+      "choices": {},
+      "status": "unset"
+    },
+    "visual_direction": {
+      "choices": {
+        "look_development": null
+      },
+      "status": "unset"
+    }
+  },
+  "format": {
+    "aspect_ratio": "9:16",
+    "episode_count": 1,
+    "pacing": {
+      "seconds_per_action_paragraph": null,
+      "spoken_characters_per_second": null
+    },
+    "prompt_language": "zh-CN",
+    "target_seconds_per_episode": 60.0
+  },
+  "language": "zh-CN",
+  "project_id": "SD-73AB78E10C23",
+  "schema_version": "1.0.0-draft",
+  "title": "风雪山神庙·门内一分钟"
+}

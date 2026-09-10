@@ -51,6 +51,24 @@
       "imageAlt": "本次实际图像编辑的夕阳逆光输出",
       "imageCaption": "实际 ImageGen 夕阳布光输出，输入为 AI 合成人像；非软件截图或原库自行渲染。暖色轮廓光明显，但正面仍亮，部分约束未达标。",
       "showPreview": true
+    },
+    {
+      "id": "006",
+      "researchIndex": "008",
+      "slug": "006-drama-skills",
+      "name": "Drama Skills · 从小说或点子到短剧",
+      "sourceDirectory": "projects/006-drama-skills/app/dist",
+      "readme": "projects/006-drama-skills/README.md",
+      "research": "projects/006-drama-skills/notes.md",
+      "upstream": "https://github.com/zenstory-ai/drama-skills",
+      "upstreamName": "Drama Skills",
+      "capability": "支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。",
+      "extension": "完整流程引导图、11 个技能与 7 种入口；水浒原著改编和一句话开发两例逐步对照，24 份资料可阅读复制。《空房签收》已有真实六格图并记录偏差；视频未生成，网页不提供在线生产。",
+      "image": "projects/006-drama-skills/assets/capability-workflow.png",
+      "kind": "能力与实际案例展示",
+      "entryLabel": "打开完整流程与两种入口实演 →",
+      "imageAlt": "Drama Skills 从多种入口、全部技能与阶段产物到最终交付的完整流程图",
+      "imageCaption": "中文原创流程图，非运行截图或成片证据；依据固定提交 dc9b0fa。网页另外展示真实六格图与创作台截图。"
     }
   ]
 }

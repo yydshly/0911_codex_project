@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1130" viewBox="0 0 1560 1130" role="img" aria-labelledby="title desc">
+<title id="title">Drama Skills 原库能力总览</title>
+<desc id="desc">故事开发、视觉资产、分镜关键帧、视频提示词、确认后媒体生产与剪辑；审查按需进行。原创示意图，非真实运行成果。</desc>
+<rect x="0" y="0" width="1560" height="1130" rx="0" fill="#F4F6F3"/>
+<rect x="0" y="0" width="1560" height="223" rx="0" fill="#183A36"/>
+<text x="54" y="32" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#BDE1CF">DRAMA SKILLS   /   原库能力总览</text>
+<text x="54" y="79" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="44" fill="#FFFFFF">从故事想法，到可交接的制作材料与成片</text>
+<text x="54" y="153" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" fill="#DBEAE3">专业方法指导 Agent · 文件保存创作决定 · 程序检查引用与执行</text>
+<text x="54" y="249" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#203A38">可从小说、点子、剧本、分镜或已有素材进入；下图是一种常见组合。</text>
+<rect x="54" y="303" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="54" y="303" width="464" height="6" rx="3" fill="#246755"/>
+<text x="77" y="325" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">01</text>
+<text x="121" y="321" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">故事与剧本</text>
+<text x="77" y="368" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">原著分析 / 故事开发 / 分集写作</text>
+<text x="77" y="414" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">识别冲突、人物与剧情功能</text>
+<text x="77" y="449" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">建立分集目标、动作和对白</text>
+<line x1="77" y1="496" x2="495" y2="496" stroke="#E2E8E3" stroke-width="1"/>
+<text x="77" y="514" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">产出：原著分析、分集地图、剧本</text>
+<rect x="542" y="303" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="542" y="303" width="464" height="6" rx="3" fill="#246755"/>
+<text x="565" y="325" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">02</text>
+<text x="609" y="321" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">视觉资产</text>
+<text x="565" y="368" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">人物 / 造型 / 地点 / 道具</text>
+<text x="565" y="414" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">确定固定身份与本集状态</text>
+<text x="565" y="449" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">写清参考图需要呈现的内容</text>
+<line x1="565" y1="496" x2="983" y2="496" stroke="#E2E8E3" stroke-width="1"/>
+<text x="565" y="514" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">产出：视觉设定、图片提示词</text>
+<rect x="1030" y="303" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="1030" y="303" width="464" height="6" rx="3" fill="#246755"/>
+<text x="1053" y="325" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">03</text>
+<text x="1097" y="321" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">分镜与关键帧</text>
+<text x="1053" y="368" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">镜头职责 / 空间关系 / 动作边界</text>
+<text x="1053" y="414" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">每镜写清起点、动作和终点</text>
+<text x="1053" y="449" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">冻结关键帧只表现起始画面</text>
+<line x1="1053" y1="496" x2="1471" y2="496" stroke="#E2E8E3" stroke-width="1"/>
+<text x="1053" y="514" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">产出：分镜、关键帧提示词</text>
+<rect x="54" y="583" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="54" y="583" width="464" height="6" rx="3" fill="#246755"/>
+<text x="77" y="605" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">04</text>
+<text x="121" y="601" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">视频与声音提示词</text>
+<text x="77" y="648" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">表演 / 运镜 / 声音 / 参考绑定</text>
+<text x="77" y="694" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">把分镜翻译成生成要求</text>
+<text x="77" y="729" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">按目标模型组织参考与时长</text>
+<line x1="77" y1="776" x2="495" y2="776" stroke="#E2E8E3" stroke-width="1"/>
+<text x="77" y="794" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#246755">产出：视频提示词、音乐规格</text>
+<rect x="542" y="583" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="542" y="583" width="464" height="6" rx="3" fill="#9B5C24"/>
+<text x="565" y="605" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#9B5C24">05</text>
+<text x="609" y="601" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">确认后生产</text>
+<text x="565" y="648" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">预览任务 → 明确确认 → 执行</text>
+<text x="565" y="694" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">通过适配器调用外部服务</text>
+<text x="565" y="729" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">保存实际素材与运行记录</text>
+<line x1="565" y1="776" x2="983" y2="776" stroke="#E2E8E3" stroke-width="1"/>
+<text x="565" y="794" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#9B5C24">产出：图片、视频、配音或音乐</text>
+<rect x="1030" y="583" width="464" height="251" rx="12" fill="#FFFFFF" stroke="#D7E0D9"/>
+<rect x="1030" y="583" width="464" height="6" rx="3" fill="#9B5C24"/>
+<text x="1053" y="605" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#9B5C24">06</text>
+<text x="1097" y="601" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" fill="#203A38">剪辑成片</text>
+<text x="1053" y="648" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#62736C">素材取舍 / 入出点 / 字幕 / 声音</text>
+<text x="1053" y="694" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">依据已有素材安排镜序</text>
+<text x="1053" y="729" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">拼接、处理字幕并统一响度</text>
+<line x1="1053" y1="776" x2="1471" y2="776" stroke="#E2E8E3" stroke-width="1"/>
+<text x="1053" y="794" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#9B5C24">产出：剪辑单、实际成片</text>
+<rect x="54" y="865" width="1440" height="91" rx="12" fill="#E6EADF"/>
+<text x="78" y="883" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" fill="#455A35">按需审查</text>
+<text x="239" y="884" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#203A38">查来源与遗漏、连续性和制作质量；输出有证据的修订要求。</text>
+<text x="239" y="920" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" fill="#53664E">总入口另提供：项目初始化、阶段路由、视觉方向探索、本地创作台与导出。</text>
+<text x="54" y="985" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#915722">使用条件</text>
+<text x="185" y="985" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#203A38">文字创作依赖 Agent 与模型；媒体生产需可用服务；剪辑需真实素材与 FFmpeg。</text>
+<text x="54" y="1032" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" fill="#53675E">提示词就绪 ≠ 已有媒体     ·     文档检查通过 ≠ 画面质量达标</text>
+<text x="54" y="1081" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" fill="#6B7D73">原创能力示意图，非上游界面或实跑成果  |  研究提交 dc9b0fa  |  2026-09-10</text>
+</svg>

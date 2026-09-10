@@ -12,6 +12,7 @@ on:
       - 'projects/002-engineering-casebook/assets/overview-guide.png'
       - 'projects/003-longhorizon-harness/**'
       - 'projects/005-xxg-portrait-rebuild-light/**'
+      - 'projects/006-drama-skills/**'
   workflow_dispatch:
 
 permissions:
@@ -41,6 +42,10 @@ jobs:
           git diff --exit-code -- dist/data.js ../cases.md
       - name: Build and check portrait showcase
         run: node projects/005-xxg-portrait-rebuild-light/app/scripts/build.cjs
+      - name: Build and check Drama Skills showcase
+        run: |
+          node projects/006-drama-skills/app/build.cjs
+          node projects/006-drama-skills/app/check.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact
