@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="完整理解 Upscayl：超分辨率能力、模型与推理原理、部署条件、同类工具，以及与生成式大模型在保真度和成本上的取舍。">
+<meta name="description" content="Upscayl 通过预训练模型与 NCNN/Vulkan 在本地放大图片、批量改善细节观感。摘要比较生成式大模型的保真与编辑取舍，以及 Topaz、Adobe、chaiNNer、Real-ESRGAN、SwinIR/HAT、SUPIR 等产品和技术路线。">
 <meta name="theme-color" content="#101c35"><title>Upscayl 研究手册 · 超分辨率、模型与保真</title>
 <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
 <body><a class="skip" href="#content">跳到正文</a>
@@ -18,15 +18,77 @@
 <a href="#sources">10 · 证据范围、版本与来源</a></nav></details><p class="scope-note">依据官方资料与源码<br>核对：2026-09-11<br>上游效果与性能未实测</p></aside>
 <main id="content"><section id="overview" class="overview"><p class="eyebrow">图像超分辨率 / 原理与应用研究</p><h1>让小图更可用。<br><span>也看清“变清晰”的边界。</span></h1><p class="lead">Upscayl 把预训练模型、本地 GPU 推理和批量图片处理整合成桌面工具。核心价值是尽量保留原图内容地放大，而不是保证恢复全部真实细节。</p>
 <div class="facts"><div><strong>500 → 2000</strong><span>宽高 4 倍，像素数量 16 倍</span></div><div><strong>模型预测细节</strong><span>新增像素 ≠ 新增真实信息</span></div><div><strong>结构保真优先</strong><span>相对优势，不是绝对保证</span></div></div>
-<figure class="architecture"><a href="assets/capability-overview.png" aria-label="打开高清能力总览图"><img src="assets/capability-overview.png" width="2400" height="2960" alt="Upscayl 能力与理解总览：输入、五步处理与输出；模型训练和推理；九类产品及底层技术对照；专用超分辨率与生成式大模型；结构保真、细节真实、重复稳定和时序连续四种一致性。"></a><figcaption>点击图片放大。本地原创研究图解，非软件截图或增强样张。<a href="assets/capability-overview.png" download>下载高清 PNG</a> · <a href="assets/capability-overview.svg">打开矢量 SVG</a> · <a href="#principle">阅读底层原理</a></figcaption></figure></section>
-<div class="research-intro"><p>研究索引 <strong>013</strong> · 历史目录 <strong>013-upscayl</strong> · 核对日期 <strong>2026-09-11</strong></p>
+<div class="research-intro" id="summary"><p>研究索引 <strong>013</strong> · 历史目录 <strong>013-upscayl</strong> · 核对日期 <strong>2026-09-11</strong></p>
 <p>本文汇总我们对能力、价值、算法、模型、部署、同类产品、生成式大模型及一致性的讨论。文档与配套网页使用同一份正文，避免两处结论漂移。</p>
 <blockquote>
 <p><strong>核心结论：在尽量保留原图内容的前提下，稳定、批量地提高图片分辨率和细节观感。</strong> 这是专用超分辨率方案的相对优势，并非 Upscayl 独有；增加像素不等于恢复丢失的真实信息。</p>
 </blockquote>
-</div><section class="chapter"><h2 id="capability">01 · 核心能力：让小图更可用</h2>
+<h3 id="_1">摘要：能力、大模型差异与同类路线</h3>
+<p><strong>这个库能做什么？</strong> Upscayl 是开源、本地运行的图片超分辨率桌面工具。输入单张图片或文件夹，选择模型、倍率与格式，输出尺寸更大、边缘与纹理观感更清楚的图片；适合商品图、插画、旧素材的放大和批量处理。它集成预训练模型，通过 NCNN 执行网络、Vulkan 调用 GPU，用户正常使用时只做推理。核心价值是降低使用模型的门槛，把本地处理、模型选择、批量输出和前后对比整合起来。严重失焦图片不在其擅长范围，新增细节也不保证真实。<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md">上游说明</a>、<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/utils/get-arguments.ts">处理参数</a>、<a href="https://github.com/upscayl/upscayl-ncnn/blob/0beb39028a0ddd83250e845b4c3333c0675e3b97/src/realesrgan.cpp">后端实现</a></p>
+<p><strong>与大模型实现有何差异？</strong> 这里比较的是能输出图片的生成／编辑大模型；只输出文字的模型需要调用图像工具。Upscayl 常用专用超分辨率网络，围绕原图预测高分辨率像素，通常更便于固定尺寸放大、保留整体结构和稳定批量处理。生成式图像大模型利用更广泛的图像与语义先验，擅长文字引导的修复、补全和编辑，也可能改变纹理、文字或身份细节；多步生成通常需要更多计算。修复约束与固定随机种子可以改善保真和重复性，因此区别不能简单归结为“大模型不一致、Upscayl 保证一致”。两者都可能猜错缺失细节，单图处理也不自动保证视频连续性。这是工程倾向，不是统一性能排名。<a href="https://github.com/Fanghua-Yu/SUPIR">SUPIR 实现</a>、<a href="https://arxiv.org/abs/2401.13627">论文</a>、<a href="https://github.com/QwenLM/Qwen-Image">Qwen-Image</a></p>
+<p><strong>同类有哪些，原理是否相同？</strong> 产品、流程工具与模型需要分开比较：</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
+<thead>
+<tr>
+<th style="text-align: left;">产品／项目</th>
+<th style="text-align: left;">主要能力</th>
+<th style="text-align: left;">底层原理与区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Upscayl</td>
+<td style="text-align: left;">本地图片放大、批量与对比</td>
+<td style="text-align: left;">集成超分辨率模型、NCNN 和 Vulkan；应用本身不等于一种独有网络</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://docs.topazlabs.com/gigapixel-ai/filters-panel/basic-ai-models">Topaz Gigapixel</a></td>
+<td style="text-align: left;">商业图片放大与增强</td>
+<td style="text-align: left;">官方区分核心与生成式模型；完整架构未公开，不能断言共用 Upscayl 算法</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://helpx.adobe.com/camera-raw/desktop/edit-and-enhance-images/sharpening-and-noise/enhance.html">Adobe Camera Raw Super Resolution</a></td>
+<td style="text-align: left;">摄影工作流中的超分辨率</td>
+<td style="text-align: left;">采用机器学习增强，完整模型结构未公开；侧重摄影编辑集成</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/chaiNNer-org/chaiNNer">chaiNNer</a></td>
+<td style="text-align: left;">可视化串联图片处理和模型</td>
+<td style="text-align: left;">是流程编排工具，可调用多种推理框架与模型；结果取决于完整处理链</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a></td>
+<td style="text-align: left;">真实退化图片的超分辨率</td>
+<td style="text-align: left;">卷积网络结合重建、感知和对抗训练，用模拟退化学习放大；与 Upscayl 直接相关</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/nagadomi/waifu2x">waifu2x</a></td>
+<td style="text-align: left;">动漫放大、降噪，也支持照片</td>
+<td style="text-align: left;">经典实现使用卷积网络；后续开发迁往 nunif，不能将所有版本视为同一模型</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/JingyunLiang/SwinIR">SwinIR</a> / <a href="https://github.com/XPixelGroup/HAT">HAT</a></td>
+<td style="text-align: left;">图像重建与超分辨率</td>
+<td style="text-align: left;">使用窗口／混合注意力 Transformer；与卷积网络的特征建模方式不同</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/Fanghua-Yu/SUPIR">SUPIR</a></td>
+<td style="text-align: left;">文字引导的生成式图像修复</td>
+<td style="text-align: left;">结合 SDXL 扩散先验与修复约束，在丰富细节、保真与计算成本间取舍</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/QwenLM/Qwen-Image">Qwen-Image 系列</a></td>
+<td style="text-align: left;">通用图像生成与编辑</td>
+<td style="text-align: left;">图像基础模型路线；编辑能力不等于支持任意原生放大倍率</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>原理要分层理解：</strong> CNN／Transformer 是网络结构，GAN 是对抗训练方法，扩散是生成建模与采样机制，NCNN／Vulkan 是执行层；它们可以组合，不能当成互斥产品类别。判断方案要看模型、处理链、输出约束和实际结果，不能只看“用了 AI”。</p>
+</div>
+<figure class="architecture"><a href="assets/capability-overview.png" aria-label="打开高清能力总览图"><img src="assets/capability-overview.png" width="2400" height="2960" alt="Upscayl 能力与理解总览：输入、五步处理与输出；模型训练和推理；九类产品及底层技术对照；专用超分辨率与生成式大模型；结构保真、细节真实、重复稳定和时序连续四种一致性。"></a><figcaption>点击图片放大。本地原创研究图解，非软件截图或增强样张。<a href="assets/capability-overview.png" download>下载高清 PNG</a> · <a href="assets/capability-overview.svg">打开矢量 SVG</a> · <a href="#principle">阅读底层原理</a></figcaption></figure></section>
+<section class="chapter"><h2 id="capability">01 · 核心能力：让小图更可用</h2>
 <p>Upscayl 是 Windows、macOS、Linux 上的本地图像增强桌面应用，将预训练超分辨率模型、GPU 推理、文件处理和结果预览整合起来。用户正常使用时不需要训练模型。<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md">官方说明</a></p>
-<h3 id="_1">分辨率增加了什么？</h3>
+<h3 id="_2">分辨率增加了什么？</h3>
 <p><strong>500 × 500 → 2000 × 2000</strong>：宽高各变为 4 倍，总像素从 25 万增加到 400 万，是原来的 16 倍。“4 倍放大”不是总像素只增加 4 倍，文件体积也不会必然增加 16 倍。</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
@@ -54,7 +116,7 @@
 </tr>
 </tbody>
 </table></div>
-<h3 id="_2">上游已有能力</h3>
+<h3 id="_3">上游已有能力</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -163,7 +225,7 @@
 <p>如果可以拿到高清原图，应优先使用原图。文字截图可重新导出，矢量素材可重新渲染，商品可重新拍摄。增强后的文字、人脸、图纸细节不能直接作为原始事实证据。</p>
 </section>
 <section class="chapter"><h2 id="principle">03 · 底层原理：五层分工与完整流程</h2>
-<h3 id="_3">算法、模型、框架不是同一个东西</h3>
+<h3 id="_4">算法、模型、框架不是同一个东西</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -201,13 +263,13 @@
 </tbody>
 </table></div>
 <p>依据：<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/package.json">项目配置</a>、<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/utils/spawn-upscayl.ts">子进程启动</a>、<a href="https://github.com/upscayl/upscayl-ncnn/blob/0beb39028a0ddd83250e845b4c3333c0675e3b97/src/realesrgan.cpp">核心推理源码</a>。NCNN、Vulkan 不是增强模型，Electron 和 Next.js 也不学习高清细节。</p>
-<h3 id="_4">训练：从退化图片学习高清重建</h3>
+<h3 id="_5">训练：从退化图片学习高清重建</h3>
 <p>以 Real-ESRGAN 为例，对高清图模拟模糊、重采样、噪声、JPEG 压缩等复合退化，构造低清／高清训练对。网络学习从退化图预测高清结果；对抗训练配合重建与感知目标，促使纹理看起来更自然。<a href="https://arxiv.org/abs/2107.10833">Real-ESRGAN 论文</a></p>
 <p>流程是：<strong>高清图 → 模拟现实退化 → 训练对 → 优化网络 → 保存权重。</strong> 这解释典型底层方法，不代表所有内置及自定义模型采用完全相同的架构、数据和训练方式。</p>
-<h3 id="_5">使用：调用已有模型进行推理</h3>
+<h3 id="_6">使用：调用已有模型进行推理</h3>
 <p>流程是：<strong>低清图 → 加载模型 → 执行计算 → 输出高清估计。</strong> 普通图片处理不会重新训练；GAN 判别器主要用于训练，不是每次推理都要现场进行两个网络的对抗。</p>
 <p>同一张低清图可能对应很多高清原图，丢失的内容通常无法唯一反推。模型补出的毛发或织纹可以符合视觉经验，却不一定真实存在。因此“更清晰”不能直接推导为“更准确”。</p>
-<h3 id="_6">桌面应用实际调用链</h3>
+<h3 id="_7">桌面应用实际调用链</h3>
 <ol>
 <li>React / Next.js 界面收集图片、模型、倍率和输出设置。</li>
 <li>Electron 经进程间通信接收请求，处理文件路径和参数。</li>
@@ -226,7 +288,7 @@
 <p>依据：<a href="https://github.com/upscayl/upscayl-ncnn/blob/0beb39028a0ddd83250e845b4c3333c0675e3b97/src/realesrgan.cpp">核心推理中的 tile 与 TTA</a>、<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/commands/double-upscayl.ts">Double Upscayl</a>。</p>
 </section>
 <section class="chapter"><h2 id="deployment">04 · 部署条件：本机、源码与服务器</h2>
-<h3 id="_7">直接安装到本机</h3>
+<h3 id="_8">直接安装到本机</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -266,16 +328,16 @@
 </tbody>
 </table></div>
 <p>依据：<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md">官方安装要求</a>、<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/docs/Compatibility-List.md">兼容性表</a>、<a href="https://github.com/upscayl/upscayl/tree/a00d55fee90e0f9435d5eaa86e76700df8199af8/resources">运行资源</a>。本地推理不等于应用绝不联网，更新、新闻及分析等功能需按具体版本设置核查。本研究不提供未经实测的显存、内存或速度数字。</p>
-<h3 id="_8">修改源码</h3>
+<h3 id="_9">修改源码</h3>
 <p>应用开发需要源码、Node.js 和 npm 依赖。固定研究配置记录 Node.js <code>18.20.5</code>，属于该版本的复现信息，不是新项目无条件采用旧版本的建议。官方流程为 <code>npm install</code>、<code>npm run start</code>，打包为 <code>npm run dist</code>；这些上游命令本次未执行。<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/package.json">配置与脚本</a></p>
 <p>只改界面通常可复用 <code>resources</code> 中的平台二进制和模型。改 C++ 后端则需 CMake、C++ 编译器、Vulkan 开发环境及相关依赖。另查的后端源码快照不应自动视为主仓库打包二进制对应的版本。<a href="https://github.com/upscayl/upscayl-ncnn/tree/0beb39028a0ddd83250e845b4c3333c0675e3b97">独立后端</a></p>
-<h3 id="_9">做成多人网页服务</h3>
+<h3 id="_10">做成多人网页服务</h3>
 <p>可采用：<strong>浏览器上传 → HTTP 接口 → 任务队列 → GPU worker → 文件存储 → 状态查询与下载。</strong> 需额外实现并发控制、重试、超时取消、上传限制、文件清理；容器和虚拟机也必须实际访问 GPU 与 Vulkan 驱动。</p>
 <p>仓库已有 Upscayl Cloud API 文档和请求集合，但这不等于完整可自托管云端服务源码，也不表示本地推理必须调用云 API。<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/apis/upscayl/Readme.md">API 集合说明</a></p>
 <p><strong>本地新增网页是只读研究手册，没有图片上传、在线增强或 GPU 后端。</strong> GitHub Pages 承载静态手册，不能直接运行 GPU 推理服务。</p>
 </section>
 <section class="chapter"><h2 id="comparison">05 · 同类产品、模型与技术路线</h2>
-<h3 id="_10">应用产品：比较使用体验与工作流</h3>
+<h3 id="_11">应用产品：比较使用体验与工作流</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -308,7 +370,7 @@
 </tbody>
 </table></div>
 <p>同一模型在不同工具中运行，若预处理、倍率、tile、后处理与编码相近，输出可能接近。不能只按产品名归因，也不能仅凭同一模型就承诺逐像素一致。这里没有进行产品盲测、当前价格比较或性能排名。</p>
-<h3 id="_11">底层项目：比较网络和生成机制</h3>
+<h3 id="_12">底层项目：比较网络和生成机制</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -354,7 +416,7 @@
 <p><strong>NCNN／Vulkan 属于执行层，不决定模型学到了什么。</strong> 自定义模型需满足算子、输入输出名称、数据范围、倍率等条件，不能把 HAT、SUPIR 或 Qwen-Image 的权重直接放进 Upscayl 就认为可用。<a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/docs/Model-Conversion-Guide.md">模型转换指南</a></p>
 </section>
 <section class="chapter"><h2 id="large-models">06 · 大模型能做什么，与 Upscayl 有何差别？</h2>
-<h3 id="_12">先区分“大模型”的能力类型</h3>
+<h3 id="_13">先区分“大模型”的能力类型</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -378,10 +440,10 @@
 </tbody>
 </table></div>
 <p>具备图片编辑能力不代表每个模型都擅长高保真超分辨率。提示词写“8K”也不保证输出真是 8K，尺寸由具体模型、接口和后处理决定。<a href="https://github.com/QwenLM/Qwen-Image">Qwen-Image 官方项目</a></p>
-<h3 id="_13">同一张猫咪照片，两条处理思路</h3>
+<h3 id="_14">同一张猫咪照片，两条处理思路</h3>
 <p>这是机制解释，不是实测样张：专用超分辨率网络根据轮廓、像素及学到的纹理规律预测毛发。生成式模型可利用更丰富的语义先验，补出复杂毛发和眼睛细节，但花纹、瞳孔、胡须也可能改变。</p>
 <p>两者都估计未知细节。差异在于<strong>任务目标、模型先验、输入约束与生成自由度</strong>，不能说“一个真实、一个虚构”。有保真约束的扩散修复也不能等同于自由重绘。</p>
-<h3 id="_14">相对优缺点</h3>
+<h3 id="_15">相对优缺点</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -474,7 +536,7 @@
 <p>这是专用超分辨率方案类别的相对优势，不是 Upscayl 独有护城河。项目的工程价值还在跨平台封装、模型接入、批量任务和易用性。未做控制变量实验，不能给出“保真提高多少”的数字。</p>
 </section>
 <section class="chapter"><h2 id="selection">08 · 如何选择并验证实际效果</h2>
-<h3 id="_15">按任务选择</h3>
+<h3 id="_16">按任务选择</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="对比表，可横向滚动"><table>
 <thead>
 <tr>
@@ -517,7 +579,7 @@
 </tbody>
 </table></div>
 <p>这是任务与架构层面的建议，不是购买推荐或画质排名。</p>
-<h3 id="_16">建议验证流程（本次尚未执行）</h3>
+<h3 id="_17">建议验证流程（本次尚未执行）</h3>
 <ol>
 <li>保留原件，选择同一业务的干净小图、压缩图、文字、人物与纹理样本。</li>
 <li>固定目标尺寸，设置普通插值基线，与候选模型在相同显示尺度比较。</li>
@@ -622,7 +684,7 @@
 </tbody>
 </table></div>
 <p>本地仅编写中文解读、网页和技术示意图，没有复制模型权重、上游运行二进制，也未修改上游代码。不要把主代码许可证自动套用到所有模型。</p>
-<h3 id="_17">主要来源</h3>
+<h3 id="_18">主要来源</h3>
 <ol>
 <li><a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md">固定 README：定位、安装与 FAQ</a></li>
 <li><a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/common/models-list.ts">模型列表</a> · <a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/utils/get-arguments.ts">处理参数</a> · <a href="https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/commands/double-upscayl.ts">两轮处理</a> · <a href="https://github.com/upscayl/upscayl/tree/a00d55fee90e0f9435d5eaa86e76700df8199af8/renderer/components">界面组件</a></li>

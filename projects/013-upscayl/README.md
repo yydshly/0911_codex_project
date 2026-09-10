@@ -19,13 +19,28 @@
 | 网页状态 | [已部署并验证](https://yydshly.github.io/0911_codex_project/013-upscayl/) |
 | 发布方式 | 接入仓库统一 GitHub Pages 清单，独立子路径 013-upscayl/ |
 
-## 我们的理解
+## 摘要：能力、大模型差异与同类路线
 
-- 核心任务是图像超分辨率，500×500 放大到 2000×2000 时宽高各 4 倍、像素总量 16 倍，但不等于信息真实性提高 16 倍。
-- 模型负责预测细节；NCNN 执行网络，Vulkan 连接 GPU，Upscayl 负责应用体验与任务管理。
-- 相对生成式编辑，更容易保持原图结构并稳定批量处理，但仍可能出现错误文字、伪纹理、过锐和面部偏差。
-- 原貌保持、真实细节、重复结果、多图／视频连续性需要分别评价，不能互相替代。
-- 同类工具的画质取决于模型及完整处理链；Upscayl 的产品化价值不等于独有算法优势。
+**这个库能做什么？** Upscayl 是开源、本地运行的图片超分辨率桌面工具。输入单张图片或文件夹，选择模型、倍率与格式，输出尺寸更大、边缘与纹理观感更清楚的图片；适合商品图、插画、旧素材的放大和批量处理。它集成预训练模型，通过 NCNN 执行网络、Vulkan 调用 GPU，用户正常使用时只做推理。核心价值是降低使用模型的门槛，把本地处理、模型选择、批量输出和前后对比整合起来。严重失焦图片不在其擅长范围，新增细节也不保证真实。[上游说明](https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md)、[处理参数](https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/electron/utils/get-arguments.ts)、[后端实现](https://github.com/upscayl/upscayl-ncnn/blob/0beb39028a0ddd83250e845b4c3333c0675e3b97/src/realesrgan.cpp)
+
+**与大模型实现有何差异？** 这里比较的是能输出图片的生成／编辑大模型；只输出文字的模型需要调用图像工具。Upscayl 常用专用超分辨率网络，围绕原图预测高分辨率像素，通常更便于固定尺寸放大、保留整体结构和稳定批量处理。生成式图像大模型利用更广泛的图像与语义先验，擅长文字引导的修复、补全和编辑，也可能改变纹理、文字或身份细节；多步生成通常需要更多计算。修复约束与固定随机种子可以改善保真和重复性，因此区别不能简单归结为“大模型不一致、Upscayl 保证一致”。两者都可能猜错缺失细节，单图处理也不自动保证视频连续性。这是工程倾向，不是统一性能排名。[SUPIR 实现](https://github.com/Fanghua-Yu/SUPIR)、[论文](https://arxiv.org/abs/2401.13627)、[Qwen-Image](https://github.com/QwenLM/Qwen-Image)
+
+**同类有哪些，原理是否相同？** 产品、流程工具与模型需要分开比较：
+
+| 产品／项目 | 主要能力 | 底层原理与区别 |
+| :--- | :--- | :--- |
+| Upscayl | 本地图片放大、批量与对比 | 集成超分辨率模型、NCNN 和 Vulkan；应用本身不等于一种独有网络 |
+| [Topaz Gigapixel](https://docs.topazlabs.com/gigapixel-ai/filters-panel/basic-ai-models) | 商业图片放大与增强 | 官方区分核心与生成式模型；完整架构未公开，不能断言共用 Upscayl 算法 |
+| [Adobe Camera Raw Super Resolution](https://helpx.adobe.com/camera-raw/desktop/edit-and-enhance-images/sharpening-and-noise/enhance.html) | 摄影工作流中的超分辨率 | 采用机器学习增强，完整模型结构未公开；侧重摄影编辑集成 |
+| [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) | 可视化串联图片处理和模型 | 是流程编排工具，可调用多种推理框架与模型；结果取决于完整处理链 |
+| [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) | 真实退化图片的超分辨率 | 卷积网络结合重建、感知和对抗训练，用模拟退化学习放大；与 Upscayl 直接相关 |
+| [waifu2x](https://github.com/nagadomi/waifu2x) | 动漫放大、降噪，也支持照片 | 经典实现使用卷积网络；后续开发迁往 nunif，不能将所有版本视为同一模型 |
+| [SwinIR](https://github.com/JingyunLiang/SwinIR) / [HAT](https://github.com/XPixelGroup/HAT) | 图像重建与超分辨率 | 使用窗口／混合注意力 Transformer；与卷积网络的特征建模方式不同 |
+| [SUPIR](https://github.com/Fanghua-Yu/SUPIR) | 文字引导的生成式图像修复 | 结合 SDXL 扩散先验与修复约束，在丰富细节、保真与计算成本间取舍 |
+| [Qwen-Image 系列](https://github.com/QwenLM/Qwen-Image) | 通用图像生成与编辑 | 图像基础模型路线；编辑能力不等于支持任意原生放大倍率 |
+
+**原理要分层理解：** CNN／Transformer 是网络结构，GAN 是对抗训练方法，扩散是生成建模与采样机制，NCNN／Vulkan 是执行层；它们可以组合，不能当成互斥产品类别。判断方案要看模型、处理链、输出约束和实际结果，不能只看“用了 AI”。
+
 
 ## 本地新增的网页与文档
 
@@ -33,7 +48,7 @@
 
 对比包括 Topaz Gigapixel、Adobe Camera Raw、chaiNNer，以及 Real-ESRGAN、waifu2x、SwinIR、HAT、SUPIR、Qwen-Image；区分商业产品、流程工具和底层模型，不编造性能排名或价格。
 
-网页支持章节导航、移动端表格横向阅读、文档下载和浏览器打印。没有图片上传、在线增强、模型调用或真实效果模拟。没有执行上游推理、竞品盲测和浏览器视觉测试。
+网页开头提供能力、大模型差异和九类产品／技术路线摘要，后接完整总览图与十章正文；支持章节导航、移动端表格横向阅读、文档下载和浏览器打印。没有图片上传、在线增强、模型调用或真实效果模拟。没有执行上游推理、竞品盲测和浏览器视觉测试。
 
 ## 完整能力与理解总览图
 

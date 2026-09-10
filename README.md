@@ -22,7 +22,11 @@ Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定�
 
 gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。研究索引 011，历史目录 `012-gstack/`；附能力全图、逐项原理与九阶段真实案例，网页已部署并验证。
 
-Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强调结构保持与稳定批量处理，但不保证恢复真实细节。研究索引 013，历史目录 `013-upscayl/`；本地新增完整中文手册、完整能力总览图、同类产品及生成式大模型对比，[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
+Upscayl 是开源本地图片超分辨率桌面工具：输入单张图片或文件夹，调用预训练模型和 NCNN / Vulkan GPU 推理，输出更大、细节观感更清楚的图片，支持批量、多模型、输出尺寸与前后对比，适合商品图、插画和旧素材放大。核心价值是把模型做成易用的本地处理流程；不保证恢复真实细节。
+
+与生成式图像大模型相比，Upscayl 常用专用网络，通常更便于保留整体结构、固定尺寸放大和稳定批量处理；生成式模型侧重文字引导的修复、补全与编辑，生成自由度和计算成本通常更高，也可能改动内容。固定种子和修复约束能改善一致性，两类方法都可能补错细节，不能将“稳定”视为“真实”。
+
+同类产品包括 Topaz Gigapixel、Adobe Camera Raw Super Resolution、chaiNNer：前两者未完整公开模型架构，chaiNNer 是可组合多种模型的流程工具。底层路线包括 Real-ESRGAN 的卷积网络与对抗训练、waifu2x 的经典卷积网络、SwinIR / HAT 的注意力 Transformer、SUPIR 的扩散先验与修复约束；Qwen-Image 属于通用生成／编辑参照。研究索引 013，历史目录 `013-upscayl/`；本地新增完整手册、能力全图与原理对照，[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证，上游效果与竞品性能未实测。
 
 Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库，核心采用 3DGS 算法：先定位相机与空间点，再优化高斯外观并实时渲染。其他路线还有摄影测量、NeRF 和神经隐式表面；预训练几何预测与生成式三维也可参与流程。本地新增完整总览图、原理和 21 个产品对比，关联 Splat.js 实测；[在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。
 
@@ -44,7 +48,7 @@ Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库�
 | 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 | 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
 | 012 | [Gaussian Splatting](projects/014-gaussian-splatting/README.md) | [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) | 多角度照片生成可交互三维效果：先求解相机与空间，再用 3DGS（三维高斯泼溅）优化场景，支持新视角实时浏览；原生输出是高斯资产，不自动等于精确网格。 | 已完成本轮文档与网页；上游训练未实测 | [在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)；已部署并验证 |
-| 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图像超分辨率：调用预训练模型与 NCNN / Vulkan GPU 推理，在尽量保留原图结构的前提下放大图片并改善细节观感，支持多模型、批量与自定义输出。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
+| 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图片超分辨率与批量放大：预训练模型 + NCNN / Vulkan，支持多模型、输出尺寸与对比；较生成式编辑更侧重结构保持与固定尺寸处理，仍不保证真实细节。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
