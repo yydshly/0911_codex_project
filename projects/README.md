@@ -1,15 +1,16 @@
 # 研究项目
 
-这里存放实际收录的项目，目前已收录 3 个。
+按原库去重，目前已收录 **2 个研究项目**，对应 3 个历史目录；其中 002 是 001 的配套案例手册，不单独计数。
 
 | 编号 | 项目 | 原库 | 核心能力 | 状态 | 在线入口 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 001 | [Awesome Engineering Articles](001-awesome-engineering-articles/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 收集、分类并导航工程实践文章，帮助发现问题相关案例和原始资料 | 研究中 | [配套案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) |
-| 002 | [工程案例手册](002-engineering-casebook/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 基于原库提供中文导读、案例搜索筛选和部分原文结构化总结 | 研究中（展示页已上线） | [在线展示](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) |
 | 003 | [LongHorizon-Harness](003-longhorizon-harness/README.md) | [LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导 Agent 分轮执行，以独立验收、可信进度和失败反馈持续推进并支持续接 | 研究中（文档已整理，上游运行待复现） | [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
 
 ## 编号与目录
 
+- [002 · 工程案例手册](002-engineering-casebook/README.md) 归属 001，保留独立目录、依赖和已发布地址，用于中文导读、搜索筛选和原文总结。
+- 项目总索引按原库去重；同一原库的研究、展示与实验关联到同一个研究条目，不重复计数。
 - 使用 `001-project-slug` 格式：三位数字编号 + 小写英文短名，单词用连字符连接。
 - 首个项目为 `001`，之后按收录顺序递增；超过 `999` 后扩展编号宽度。
 - 分配后保持编号稳定。归档项目保留条目和编号，不重新编号或复用编号。

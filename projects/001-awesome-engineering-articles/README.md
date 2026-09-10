@@ -4,7 +4,7 @@
 
 [返回总索引](../../README.md#项目索引) · [研究笔记](notes.md) · [配图说明](assets/README.md)
 
-配套展示项目已独立建立：[002 · 工程案例手册](../002-engineering-casebook/README.md)，包含全部条目的中文导读与部分原文总结。
+本研究的配套展示为[工程案例手册](../002-engineering-casebook/README.md)，包含全部条目的中文导读与部分原文总结。手册保留历史目录编号 002，归属本研究，不作为另一个原库项目计数。
 
 ## 项目信息
 
@@ -17,7 +17,7 @@
 | 类型与技术栈 | 资料索引；Markdown、Git、GitHub 页面展示 |
 | 上游许可证 | [MIT 原文](https://github.com/ashishps1/awesome-engineering-articles/blob/9ef9509126254406440c0e5ee09f609d0876418a/LICENSE) |
 | 研究状态 | 研究中；已完成初步分析及三篇原文抽查 |
-| 关联展示 | [在线工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/)，由 002 项目提供 |
+| 关联展示 | [在线工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/)，位于配套目录 002 |
 | 展示部署方式 | GitHub Pages；原库本身仍为 Markdown 文章索引 |
 
 ## 为什么研究
