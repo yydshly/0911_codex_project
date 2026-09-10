@@ -2,7 +2,7 @@
 
 > **FreeLLMAPI 是一个自托管模型网关。对外提供统一模型接口，对内选择“供应商 + 模型 + 密钥”路线、适配接口差异，并管理额度、冷却和失败回退。已有应用或 Agent 负责组织任务与执行工具，实际模型负责推理与生成。**
 
-[返回总索引](../../README.md#项目索引) · [网页展示](app/dist/index.html) · [我们的理解](understanding.md) · [能力与场景](capabilities.md) · [架构详解](architecture.md) · [同类产品](comparison.md) · [研究记录与来源](notes.md)
+[返回总索引](../../README.md#项目索引) · [在线理解展示](https://yydshly.github.io/0911_codex_project/008-freellmapi/) · [我们的理解](understanding.md) · [能力与场景](capabilities.md) · [架构详解](architecture.md) · [同类产品](comparison.md) · [研究记录与来源](notes.md)
 
 ## 项目信息
 
@@ -16,7 +16,7 @@
 | 技术栈 | TypeScript、Node.js、Express、React / Vite、SQLite；Electron 桌面封装 |
 | 上游许可证 | [MIT 原文](https://github.com/tashfeenahmed/freellmapi/blob/83562ad360a65d80b6319297fee4cd47dc5a2ff3/LICENSE)，Copyright (c) 2026 Tashfeen Ahmed |
 | 研究状态 | 研究中：能力、架构和关键源码已整理；上游运行待复现 |
-| 网页展示 | 中文理解、四种请求场景教学模拟、七个产品对比与完整研究页面已完成；正在发布与验证 |
+| 网页展示 | 中文理解、四种请求场景教学模拟、七个产品对比与完整研究页面已完成；GitHub Pages 已部署并验证 |
 
 ## 能力摘要
 
@@ -59,7 +59,7 @@
 python -m http.server 8145 --bind 127.0.0.1 --directory projects/008-freellmapi/app/dist
 ```
 
-访问 `http://127.0.0.1:8145/`，只用于本机。已接入统一 GitHub Pages 清单，正在发布与验证。Sites 静态配置作为可选托管入口保留；当前环境未提供可调用的 Sites 发布工具，没有创建 Sites 项目。
+访问 `http://127.0.0.1:8145/`，只用于本机。已通过统一 GitHub Pages 清单部署并完成线上核对。[在线理解展示](https://yydshly.github.io/0911_codex_project/008-freellmapi/)；[部署验证记录](deployment-verification.json)。Sites 静态配置作为可选托管入口保留；当前环境未提供可调用的 Sites 发布工具，没有创建 Sites 项目。
 
 ### 文档同步与检查
 
@@ -81,7 +81,7 @@ node projects/008-freellmapi/app/check.cjs
 - [x] 整理能力、模块、请求流程与源码证据
 - [x] 绘制原创架构图，记录场景与扩展建议
 - [x] 同步根目录与项目索引，检查文档链接、编号和占位内容
-- [x] 整理共同架构、产品差异与选型建议，提供本地中文网页展示
+- [x] 整理共同架构、产品差异与选型建议，部署并验证中文理解网页
 - [ ] 接入真实模型并验证流式输出、工具调用和故障切换
 - [ ] 评测固定模型与自动路由的任务质量和成本
 - [ ] 获取上游网关真实运行截图

@@ -3,11 +3,11 @@
   "comparisonDate": "2026-09-10",
   "hashEncoding": "UTF-8 without BOM, LF newlines",
   "documents": {
-    "README.md": "e3580f457d4236496582e9f30bfda1647c797b21e1dbd49c9846321a793f1b99",
+    "README.md": "30e506557627b68de2e485f98e7b3176ea101331d3ab33fbc343deff4b63b4e7",
     "understanding.md": "b6c0d4a9319008bd8fa1dcb68089ee4e096db033b0b93e652729d69672176455",
     "capabilities.md": "bacc76b80b84b378ed0bf68bf04369e453ee468d63dc792fa674be6a7fe65fce",
     "architecture.md": "4fe273172e1e46be869dbd4a71fe6708aa514ff93c2cc4be7c10388f15d53499",
     "comparison.md": "67c2d9c5dab28dee9b5efa026abfef99b18fb3cf00c22640db989fd78a9ff8c1",
-    "notes.md": "b880648fc1a816ddd4acc2cfc7629bbcd649b469b8dea4003b2da127534d7cd4"
+    "notes.md": "2ec4cb3186255ce2938a96b063d53a78f87e9522eb3b45f1f78573ba58691940"
   }
 }

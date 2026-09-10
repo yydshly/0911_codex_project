@@ -1,0 +1,184 @@
+{
+  "verifiedAt": "2026-09-10T15:57:11.447952+00:00",
+  "url": "https://yydshly.github.io/0911_codex_project/008-freellmapi/",
+  "commit": "76b886f986a20c3ff6e6ebc703a70069687fdf20",
+  "workflowRun": "https://github.com/yydshly/0911_codex_project/actions/runs/34498793268",
+  "result": "All listed public files return HTTP 200 and match local build output.",
+  "scope": "Static research website only; no real model API calls; no browser QA.",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "5ddcfb6c942f5f2d083c71e81e8e78ce7e3706c208897aaec927428723dee9b1",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "assets/008-freellmapi.png",
+      "status": 200,
+      "sha256": "fa3d7083e7935efaaa4c3517328d83fc6f050c385b321de525aa345edb3a02da",
+      "comparison": "raw bytes"
+    },
+    {
+      "path": "008-freellmapi/app.js",
+      "status": 200,
+      "sha256": "c151c3353cc23965f17b935ca0e870f352049a9dd61f00ffae9c8cc8a0e197fb",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/architecture.html",
+      "status": 200,
+      "sha256": "39dd886699832a9fdda3f6351092076a491c6bd76739ef4f115e0c7813e8de53",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/capabilities.html",
+      "status": 200,
+      "sha256": "f151598c08f518b2b09aea5d7b999975c9fd3a884644332bd2eef56a64cd28fc",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/comparison.html",
+      "status": 200,
+      "sha256": "f61f3f0a898749164f4edd7efaceba79b9417dc48a6087689136bf2cb62bc373",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/index.html",
+      "status": 200,
+      "sha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/notes.html",
+      "status": 200,
+      "sha256": "bbaeabf92ec516d4e8aa8a06f5673c1f56004581f962e864c2d9bbc62eb47433",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/readme.html",
+      "status": 200,
+      "sha256": "dcd9b3e1229ef81c525e3672fb618c50155ea8e27e4a381f4ec1d9ec717bcbe2",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/source-manifest.json",
+      "status": 200,
+      "sha256": "4c4c539973872bfb3694545757fe8dc82eb352c5953d080c868dc0a0cc060e10",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/style.css",
+      "status": 200,
+      "sha256": "ac4cad8fa65c027cc8c6ded9313358a2def22a9cd1f6b3c2be9f8a079c7bde35",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/understanding.html",
+      "status": 200,
+      "sha256": "b8ad6efd84d340f0346fa4587fc539eb88c56511bbd1b99e6147179f24cacc2f",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/architecture.mmd",
+      "status": 200,
+      "sha256": "4de33023280b19462785a34b7dbfaff9828a1475553fb90bcaeb78b6ee4b5890",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/architecture.png",
+      "status": 200,
+      "sha256": "dcdf55bf178f085e57e7f1abd16e41fe1337aed8bf6279c87337e8147592d124",
+      "comparison": "raw bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/architecture.svg",
+      "status": 200,
+      "sha256": "3b502ea751ff28ca0712b86181bcb13e16ffa4a358fa09c80f0bf0cff4b67cb1",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/guide.mmd",
+      "status": 200,
+      "sha256": "4b424c85a151ca634e7e1c34ed3a9671c26f5f3b9f697f0b7a7dfad269799466",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/guide.png",
+      "status": 200,
+      "sha256": "fa3d7083e7935efaaa4c3517328d83fc6f050c385b321de525aa345edb3a02da",
+      "comparison": "raw bytes"
+    },
+    {
+      "path": "008-freellmapi/assets/guide.svg",
+      "status": 200,
+      "sha256": "5146c6f41c5bc9c1b9707930601e08e9b942843a61838581e0eb803193a2c72d",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/architecture.md",
+      "status": 200,
+      "sha256": "4fe273172e1e46be869dbd4a71fe6708aa514ff93c2cc4be7c10388f15d53499",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/capabilities.md",
+      "status": 200,
+      "sha256": "bacc76b80b84b378ed0bf68bf04369e453ee468d63dc792fa674be6a7fe65fce",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/comparison.md",
+      "status": 200,
+      "sha256": "67c2d9c5dab28dee9b5efa026abfef99b18fb3cf00c22640db989fd78a9ff8c1",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/notes.md",
+      "status": 200,
+      "sha256": "b880648fc1a816ddd4acc2cfc7629bbcd649b469b8dea4003b2da127534d7cd4",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/README.md",
+      "status": 200,
+      "sha256": "e3580f457d4236496582e9f30bfda1647c797b21e1dbd49c9846321a793f1b99",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "008-freellmapi/downloads/understanding.md",
+      "status": 200,
+      "sha256": "b6c0d4a9319008bd8fa1dcb68089ee4e096db033b0b93e652729d69672176455",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "002-engineering-casebook/index.html",
+      "status": 200,
+      "sha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "003-longhorizon-harness/index.html",
+      "status": 200,
+      "sha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "005-xxg-portrait-rebuild-light/index.html",
+      "status": 200,
+      "sha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "006-drama-skills/index.html",
+      "status": 200,
+      "sha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a",
+      "comparison": "LF-normalized UTF-8 bytes"
+    },
+    {
+      "path": "007-xxd-panel-028/index.html",
+      "status": 200,
+      "sha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216",
+      "comparison": "LF-normalized UTF-8 bytes"
+    }
+  ]
+}

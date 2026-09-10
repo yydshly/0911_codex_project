@@ -99,8 +99,10 @@ node projects/006-drama-skills/app/check.cjs
 
 研究 005，历史目录与发布子路径为 `008-freellmapi/`。原库是自托管模型网关：对外统一模型接口，对内选路、适配并管理额度与失败。
 
-本地新增讨论中的引导图、四种请求场景教学模拟、七个产品对比、未来网关开发取舍和六篇完整阅读文档。场景不调用模型，网页不提供在线网关服务。
+[在线理解展示](https://yydshly.github.io/0911_codex_project/008-freellmapi/)包含讨论中的引导图、四种固定请求场景、七个产品对比、后续自研网关取舍与六篇完整文档。网页不提供在线网关服务，场景没有调用真实模型。
 
-构建源为 `projects/008-freellmapi/app/dist/`；先安装本项目 `app/requirements.txt`，执行 `python projects/008-freellmapi/app/build.py` 和 `node projects/008-freellmapi/app/check.cjs`，再由统一站点脚本汇总。已合并清单和工作流，保留已有五个发布子站，正在发布与验证。
+安装本项目 `app/requirements.txt` 后，执行 `python projects/008-freellmapi/app/build.py` 和 `node projects/008-freellmapi/app/check.cjs`，由统一脚本汇总 `app/dist/`；已有五个子站保留。
+
+2026-09-10 首次发布提交 `76b886f986a20c3ff6e6ebc703a70069687fdf20`，[Pages 流程成功](https://github.com/yydshly/0911_codex_project/actions/runs/34498793268)。核对 29 个线上文件，覆盖完整新站、引导图、总入口和既有子站，全部返回 200 并与本地构建一致；文本按 LF 归一比较，图片按原始字节比较。[验证证据](../projects/008-freellmapi/deployment-verification.json)。
 
 [项目说明](../projects/008-freellmapi/README.md) · [我们的理解](../projects/008-freellmapi/understanding.md) · [同类产品](../projects/008-freellmapi/comparison.md)
