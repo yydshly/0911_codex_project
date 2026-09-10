@@ -1,0 +1,143 @@
+{
+  "verifiedAt": "2026-09-10T16:09:18.434787+00:00",
+  "sourceCommit": "21f6bac31d06ff70ea5a4b152718577f8a94c017",
+  "url": "https://yydshly.github.io/0911_codex_project/011-munder-difflin/",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34500138183",
+  "scope": "All Munder public files, aggregate entry, existing subsite entries and preview images; no upstream Agent execution.",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "bb62a5f5c7b8d790828a840376ce115a77c99148a7b5d0e48b1e0d3b4337cb73"
+    },
+    {
+      "path": "011-munder-difflin/app.js",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "968239c97b100b37cf7cd94f6a4c8bbb7ac1d56407e3836f4e262a484c3d68e0"
+    },
+    {
+      "path": "011-munder-difflin/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206"
+    },
+    {
+      "path": "011-munder-difflin/style.css",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "7ab0ee26b647e3e5589ff936a3d6f8b308f5a9dbe5a6d43613ddcab036787a9b"
+    },
+    {
+      "path": "011-munder-difflin/assets/overview.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "e4eb1a5732f26ce43e1d29b463d051d853c27cc69ac35ff1a959090107c22f19"
+    },
+    {
+      "path": "011-munder-difflin/assets/overview.svg",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "4229e3945e9c3045460f1cbc0bef87fa27bfd2995ca820d8bc4f49e2ac35aded"
+    },
+    {
+      "path": "002-engineering-casebook/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370"
+    },
+    {
+      "path": "003-longhorizon-harness/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4"
+    },
+    {
+      "path": "005-xxg-portrait-rebuild-light/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72"
+    },
+    {
+      "path": "008-freellmapi/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70"
+    },
+    {
+      "path": "006-drama-skills/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a"
+    },
+    {
+      "path": "007-xxd-panel-028/index.html",
+      "status": 200,
+      "matches": true,
+      "comparison": "LF-normalized",
+      "sha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216"
+    },
+    {
+      "path": "assets/002-engineering-casebook.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "f7f558ab0016381df724c7c1ae0d19d7f806330589765f33f9ee31465d04b024"
+    },
+    {
+      "path": "assets/003-longhorizon-harness.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "519db710fa53daf2b6b92df229ab8b5f873eceafdf5e0972692af81c49954b85"
+    },
+    {
+      "path": "assets/005-xxg-portrait-rebuild-light.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "99fef081d6cbe53dffcaa7453fdd872a7fd85e9f13e24a6ebc16db6e7c7aa15d"
+    },
+    {
+      "path": "assets/008-freellmapi.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "fa3d7083e7935efaaa4c3517328d83fc6f050c385b321de525aa345edb3a02da"
+    },
+    {
+      "path": "assets/006-drama-skills.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "16f4a5369a22349e7ff19ef49fc4b0ef24e0bfd6d78f5fe08bb3711acca10ffb"
+    },
+    {
+      "path": "assets/007-xxd-panel-028.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "324b101218b36b0f9e6d931ce895237a6de56b2246e27942a3fc14ecb5ef7886"
+    },
+    {
+      "path": "assets/011-munder-difflin.png",
+      "status": 200,
+      "matches": true,
+      "comparison": "bytes",
+      "sha256": "e4eb1a5732f26ce43e1d29b463d051d853c27cc69ac35ff1a959090107c22f19"
+    }
+  ],
+  "passed": true
+}

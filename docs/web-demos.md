@@ -113,3 +113,6 @@ node projects/006-drama-skills/app/check.cjs
 研究 010，发布子路径 `011-munder-difflin/`，静态目录 `projects/011-munder-difflin/app/dist/`。原库是管理多个已有 Agent 的多 Agent 工具，以文件收发箱实现通信；本地新增能力说明、总览图与六步交互讲解，上游未运行，网页不是在线 Agent 服务。
 
 安装项目 `app/requirements.txt`，运行 `app/build.py` 与 `app/check.cjs` 后，由统一发布脚本合并产物；保留现有站点。发布结果以实际线上验证记录为准。
+
+
+Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/)。提交 `21f6bac31d06ff70ea5a4b152718577f8a94c017` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34500138183)成功；19 个线上文件与构建一致，覆盖新页、总入口、已有子站及预览图。[验证记录](../projects/011-munder-difflin/deployment-verification.json)。

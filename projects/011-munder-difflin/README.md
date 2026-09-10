@@ -4,6 +4,8 @@
 
 [返回总索引](../../README.md#项目索引) · [简要研究记录](notes.md) · [上游仓库](https://github.com/chaitanyagiri/munder-difflin)
 
+[在线阅读：多 Agent 与文件通信](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) · [部署验证记录](deployment-verification.json)
+
 ## 一图总览
 
 ![Munder Difflin：核心能力、文件消息与唤醒流程、同类差异、场景和验证边界](assets/overview.png)
@@ -87,3 +89,8 @@ node scripts/build-pages.cjs
 ```
 
 发布遵循[统一 GitHub Pages 约定](../../docs/web-demos.md)，子路径固定为 `011-munder-difflin/`，合并发布清单以保留其他站点。
+
+
+## 发布记录
+
+2026-09-11 已通过 GitHub Pages 发布并验证。首次发布提交 `21f6bac31d06ff70ea5a4b152718577f8a94c017`，[发布流程成功](https://github.com/yydshly/0911_codex_project/actions/runs/34500138183)。19 个线上文件核对通过，覆盖新页全部资源、总入口、已有子站入口及预览图；文本按 LF 归一、PNG 按原始字节比较。上游 Agent 未运行，项目暂不归档。

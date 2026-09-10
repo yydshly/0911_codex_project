@@ -14,7 +14,7 @@ XXD Panel 028 以审美提示词和交付流程指导图像模型，将照片转
 
 Drama Skills 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 本地新增完整流程引导、技能对照与两种入口的实际案例；视频暂不执行，中文网页已部署并验证。
 
-Munder Difflin 是多 Agent 工具，以本地文件收发箱实现 Agent 间通信；能力、通信流程与同类对比已整理为总览图和中文研究页，上游未实测，暂不归档。
+Munder Difflin 是多 Agent 工具，以本地文件收发箱实现 Agent 间通信；能力、通信流程与同类对比已整理为总览图和中文研究页，中文研究页已发布并验证；上游未实测，暂不归档。
 
 ## 项目索引
 
@@ -29,7 +29,7 @@ Munder Difflin 是多 Agent 工具，以本地文件收发箱实现 Agent 间通
 | 005 | [FreeLLMAPI](projects/008-freellmapi/README.md) | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 自托管模型网关：对外统一模型接口，对内选择供应商、模型与密钥路线，适配接口差异并管理额度、冷却和失败回退；应用 / Agent 负责组织任务，实际模型负责推理。 | 能力、架构与同类对比已整理；上游运行待复现 | [在线模型网关理解](https://yydshly.github.io/0911_codex_project/008-freellmapi/) · [产品对比](projects/008-freellmapi/comparison.md)；已部署并验证 |
 | 008 | [Drama Skills](projects/006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](projects/006-drama-skills/demos/README.md) |
 | 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线效果展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/)；已部署并验证 |
-| 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；网页发布验证中 |
+| 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -124,7 +124,7 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 
 原创研究示意图，非上游截图；中文网页提供完整理解和六步通信讲解，未运行上游 Agent。暂不归档，后期按需深入。
 
-[完整理解](projects/011-munder-difflin/README.md) · [矢量图](projects/011-munder-difflin/assets/overview.svg) · [上游仓库](https://github.com/chaitanyagiri/munder-difflin)
+[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) · [完整理解](projects/011-munder-difflin/README.md) · [矢量图](projects/011-munder-difflin/assets/overview.svg) · [上游仓库](https://github.com/chaitanyagiri/munder-difflin)
 
 ## 仓库导航
 
