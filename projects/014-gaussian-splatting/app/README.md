@@ -27,4 +27,6 @@ python -m http.server 8774 --bind 127.0.0.1 --directory projects/014-gaussian-sp
 
 已纳入 [部署清单](../../../docs/web-demos.json)与 [Pages 工作流](../../../.github/workflows/pages.yml)。构建后通过根命令 `node scripts/build-pages.cjs` 汇总到 `_site/014-gaussian-splatting/`，与其他项目统一发布。
 
-本轮未推送或部署；预留路径不能当作已验证在线入口。上线后核对页面和资源再更新状态。
+[正式研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。首次发布记录见 [部署验证](../deployment-verification.json)。后续更新仍由统一工作流发布，避免覆盖其他子站。
+
+在线验证命令：`node projects/014-gaussian-splatting/app/verify-deployment.cjs`。先完成本地构建与统一打包，再核对发布内容；文本统一换行为 LF 后比较，高斯总览 PNG 等二进制按原始字节比较，同时检查其他子站可访问性。

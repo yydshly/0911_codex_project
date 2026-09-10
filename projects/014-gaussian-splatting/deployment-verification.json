@@ -1,0 +1,325 @@
+{
+  "checkedAt": "2026-09-10T17:34:50.060Z",
+  "deploymentCommit": "5d28334b5ce86265bcc941cd903cfd46ed89a70b",
+  "workflowUrl": "https://github.com/yydshly/0911_codex_project/actions/runs/34508962655",
+  "baseUrl": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/",
+  "status": "passed",
+  "scope": "全部新站文件与本地构建对照、总入口及预览图、既有子站可访问性；不含浏览器视觉测试和上游模型训练",
+  "total": 42,
+  "checks": [
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/",
+      "status": 200,
+      "bytes": 21588,
+      "comparison": "normalized LF text",
+      "sha256": "1d1b411e9956fb422a2feab7059aba04d1192bf779073d0eb48870527cbd9483",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/002-engineering-casebook/",
+      "status": 200,
+      "bytes": 5410,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
+      "status": 200,
+      "bytes": 33181,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/",
+      "status": 200,
+      "bytes": 19537,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/006-drama-skills/",
+      "status": 200,
+      "bytes": 8649,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/",
+      "status": 200,
+      "bytes": 40886,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/008-freellmapi/",
+      "status": 200,
+      "bytes": 11332,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/009-graphify/",
+      "status": 200,
+      "bytes": 20760,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/010-marketingskills/",
+      "status": 200,
+      "bytes": 30564,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/011-munder-difflin/",
+      "status": 200,
+      "bytes": 16253,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/",
+      "status": 200,
+      "bytes": 2857,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/",
+      "status": 200,
+      "bytes": 44555,
+      "existingSite": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/applications.html",
+      "status": 200,
+      "bytes": 8958,
+      "comparison": "normalized LF text",
+      "sha256": "4b5736a7e84547ed69aa7973796ea2942e7812811f55fb0edff311722b94e936",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/assets/architecture.svg",
+      "status": 200,
+      "bytes": 2926,
+      "comparison": "normalized LF text",
+      "sha256": "ad44cffc7c9ec13f8076c92d9db86b2a896d2f4bbd50a87e2f68729e6e85a0f1",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/assets/core-understanding-prompt.md",
+      "status": 200,
+      "bytes": 4063,
+      "comparison": "normalized LF text",
+      "sha256": "644cbeb4641198df7cd31ed1de82153c8ff273cdf18249f6829ec9dd7f18e260",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/assets/core-understanding.png",
+      "status": 200,
+      "bytes": 1846366,
+      "comparison": "exact bytes",
+      "sha256": "fdb24adaa8e8a8747cdc5582a73881b67564923907ba02a2f8cf70cac92797c4",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/assets/README.md",
+      "status": 200,
+      "bytes": 1039,
+      "comparison": "normalized LF text",
+      "sha256": "d48af8dc398f0f2687770b8e11c6babd776af293078bd3d376e04f243960eb08",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/chatgpt.html",
+      "status": 200,
+      "bytes": 7119,
+      "comparison": "normalized LF text",
+      "sha256": "796c7e9ea3a6c3b0cd4b0bb34a189531f2405776081c056a74a38a8344730aef",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/comparison.html",
+      "status": 200,
+      "bytes": 14090,
+      "comparison": "normalized LF text",
+      "sha256": "d285b381966fca863bbf1e4ab1274e005aab04f082f697775f9a4644708872ff",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/app/README.md",
+      "status": 200,
+      "bytes": 1354,
+      "comparison": "normalized LF text",
+      "sha256": "404bcae2513b69661fce1d460b6de371db975f0587102d24635d8dfc32bbe428",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/applications.md",
+      "status": 200,
+      "bytes": 5241,
+      "comparison": "normalized LF text",
+      "sha256": "c105986aca4ab2a9f4e874126a9662f1b2bc0b2a52cbabc822c3f43a73171e5d",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/assets/architecture.svg",
+      "status": 200,
+      "bytes": 2926,
+      "comparison": "normalized LF text",
+      "sha256": "ad44cffc7c9ec13f8076c92d9db86b2a896d2f4bbd50a87e2f68729e6e85a0f1",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/assets/core-understanding-prompt.md",
+      "status": 200,
+      "bytes": 4063,
+      "comparison": "normalized LF text",
+      "sha256": "644cbeb4641198df7cd31ed1de82153c8ff273cdf18249f6829ec9dd7f18e260",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/assets/core-understanding.png",
+      "status": 200,
+      "bytes": 1846366,
+      "comparison": "exact bytes",
+      "sha256": "fdb24adaa8e8a8747cdc5582a73881b67564923907ba02a2f8cf70cac92797c4",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/assets/README.md",
+      "status": 200,
+      "bytes": 1039,
+      "comparison": "normalized LF text",
+      "sha256": "d48af8dc398f0f2687770b8e11c6babd776af293078bd3d376e04f243960eb08",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/chatgpt.md",
+      "status": 200,
+      "bytes": 4122,
+      "comparison": "normalized LF text",
+      "sha256": "1232801c61c731f4102ec2cbc1caffffc6e038e9160d7e8da4175d12910208d5",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/comparison.md",
+      "status": 200,
+      "bytes": 9052,
+      "comparison": "normalized LF text",
+      "sha256": "1b99e773dcdbc9833520cb9463ba96ad50137cbd2938e47f87002a2528acd398",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/implementation.md",
+      "status": 200,
+      "bytes": 8596,
+      "comparison": "normalized LF text",
+      "sha256": "aba30ee4e64cd416fc6d80af7ebf9a31dd6ba6f0bf238c742239ab83a3820bac",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/notes.md",
+      "status": 200,
+      "bytes": 7527,
+      "comparison": "normalized LF text",
+      "sha256": "9dfe8cb05bed6bb591d123a0018a939fd101b5ce30f4a01961ff22584d6e4a64",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/principles.md",
+      "status": 200,
+      "bytes": 8995,
+      "comparison": "normalized LF text",
+      "sha256": "cdc0a1b81d6e7c934ba7aec00520a36da2d88336cac9660385303e1eeef32655",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/README.md",
+      "status": 200,
+      "bytes": 5050,
+      "comparison": "normalized LF text",
+      "sha256": "c661391d9b959583c2e67b7579f9ce3522042b1f09ed89338c53039466ce7ddb",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/sources.json",
+      "status": 200,
+      "bytes": 8184,
+      "comparison": "normalized LF text",
+      "sha256": "f5a41c1a5a3e63c69784204e05e249555401d1cf33f917554a29542872e1fd4d",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/understanding.md",
+      "status": 200,
+      "bytes": 6738,
+      "comparison": "normalized LF text",
+      "sha256": "1120114299544d0754ad982d1a16a86a54328aa0fdb53165d59441c0005e48c5",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/UPSTREAM-LICENSE.txt",
+      "status": 200,
+      "bytes": 4662,
+      "comparison": "normalized LF text",
+      "sha256": "c5ba70a2194af2aefe85dfe3da68608dcb3abd21a3aa53b55aa297c2f0b60eb3",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/upstream.json",
+      "status": 200,
+      "bytes": 469,
+      "comparison": "normalized LF text",
+      "sha256": "cce65999b718ee4f0fbf10c37912035ce7c8b480bb8dd13543cda238f698e6b2",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/documents/validation.json",
+      "status": 200,
+      "bytes": 740,
+      "comparison": "normalized LF text",
+      "sha256": "18b6b41194be4414b9732974f02d5226e50b76d54af1f69f2f19a7a24628ac9f",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/implementation.html",
+      "status": 200,
+      "bytes": 13527,
+      "comparison": "normalized LF text",
+      "sha256": "d8238d5d90cc04eee6ec0d378c9fd400acde1b43b4c59ae8d79901cec0836d43",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/index.html",
+      "status": 200,
+      "bytes": 10291,
+      "comparison": "normalized LF text",
+      "sha256": "a0f06ceb37ef3491315ee055c0f3983c62a345eea38cd7b48e472ca26bc70c41",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/notes.html",
+      "status": 200,
+      "bytes": 12082,
+      "comparison": "normalized LF text",
+      "sha256": "b52d7487c183f18183f620d7b88b6a7003f584a18f910cc405b4ea52699efd66",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/principles.html",
+      "status": 200,
+      "bytes": 12800,
+      "comparison": "normalized LF text",
+      "sha256": "981a9776664a47878ac4f4176940ee2f6208e2e092218e5e9d9091012a5382fc",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/style.css",
+      "status": 200,
+      "bytes": 4260,
+      "comparison": "normalized LF text",
+      "sha256": "a8b070e4d3f7c016f801c537b82fa106ac98c8482b0e67fa82c921ce492ed527",
+      "matchesBuild": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/assets/014-gaussian-splatting.png",
+      "status": 200,
+      "bytes": 1846366,
+      "comparison": "exact bytes",
+      "sha256": "fdb24adaa8e8a8747cdc5582a73881b67564923907ba02a2f8cf70cac92797c4",
+      "matchesBuild": true
+    }
+  ]
+}

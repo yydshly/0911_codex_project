@@ -163,8 +163,8 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 ## Gaussian Splatting 中文研究
 
-研究索引 012，历史路径 `014-gaussian-splatting/`。七章中文网页涵盖多视角重建、六条技术路线、官方 3DGS 实现、21 个产品与框架、ChatGPT 公开证据边界及扩展验证。SVG 为原创关系图；此前 Splat.js 实验通过历史链接关联，官方库未在本机训练。
+研究索引 012，历史路径 `014-gaussian-splatting/`。七章中文网页涵盖多视角重建、六条技术路线、官方 3DGS 实现、21 个产品与框架、ChatGPT 公开证据边界及扩展验证。新增 AI 输入、原理与输出总览图，并保留原创 SVG 关系图；此前 Splat.js 实验通过历史链接关联，官方库未在本机训练。
 
-构建与检查：`node projects/014-gaussian-splatting/app/build.cjs`、`node projects/014-gaussian-splatting/app/check.cjs`。已纳入统一清单与工作流，静态源为 `projects/014-gaussian-splatting/app/dist/`。本地构建、链接检查、统一打包与 HTTP 访问已验证；本轮未推送或部署，不将预留路径作为在线成功记录。
+构建与检查：`node projects/014-gaussian-splatting/app/build.cjs`、`node projects/014-gaussian-splatting/app/check.cjs`。已纳入统一清单与工作流，静态源为 `projects/014-gaussian-splatting/app/dist/`。[正式研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。首次发布提交 `5d28334b5ce86265bcc941cd903cfd46ed89a70b` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34508962655)成功，42 项线上核验通过，覆盖新站文件、总入口、图片与既有子站。[验证记录](../projects/014-gaussian-splatting/deployment-verification.json)。
 
 [项目说明](../projects/014-gaussian-splatting/README.md) · [网页运行说明](../projects/014-gaussian-splatting/app/README.md)

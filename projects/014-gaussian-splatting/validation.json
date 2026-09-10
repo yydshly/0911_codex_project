@@ -3,7 +3,7 @@
   "runtime": "v22.15.0",
   "scope": "中文研究文档与静态网页；不包含上游模型训练或浏览器视觉验证",
   "pages": 7,
-  "checkedLinks": 276,
+  "checkedLinks": 280,
   "documents": 10,
   "sources": 41,
   "comparedEntries": 21,
@@ -14,7 +14,7 @@
     "status": 200
   },
   "upstreamTrainingPerformed": false,
-  "deployed": false,
+  "deployed": true,
   "imageUpdate": {
     "date": "2026-09-11",
     "file": "assets/core-understanding.png",
@@ -27,5 +27,6 @@
     "httpStatus": 200,
     "siteCheck": "passed",
     "sharedPagesBuild": "passed"
-  }
+  },
+  "deploymentEvidence": "deployment-verification.json"
 }

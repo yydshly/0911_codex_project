@@ -6,7 +6,7 @@
 
 本地整理完整实现、21 个产品与框架、此前 Splat.js 实测，以及 ChatGPT 可能实现方式与公开证据边界。
 
-[返回总索引](../../README.md) · [开始阅读](understanding.md) · [网页运行说明](app/README.md) · [来源与记录](notes.md)
+[返回总索引](../../README.md) · [在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/) · [开始阅读](understanding.md) · [网页运行说明](app/README.md) · [来源与记录](notes.md)
 
 ## 项目信息
 
@@ -19,7 +19,7 @@
 | 上游技术栈 | Python / PyTorch / CUDA / C++ / SIBR |
 | 许可证 | Inria / MPII 专用研究与评估许可，商业使用需另行取得许可，详见 [上游原文](UPSTREAM-LICENSE.txt) |
 | 研究状态 | 已完成本轮文档研究与网页整理；未运行官方库训练 |
-| 网页状态 | 文档与网页已完成，统一 Pages 发布准备中；发布结果随后核验 |
+| 网页状态 | [已部署并验证](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)；2026-09-11 首次发布 42 项线上核验通过 |
 
 ## 结论先读
 
@@ -63,3 +63,7 @@ python -m http.server 8774 --bind 127.0.0.1 --directory projects/014-gaussian-sp
 ## 本地新增与上游边界
 
 本轮新增中文研究、原创 SVG、AI 总览图、静态阅读网站、来源登记和检查脚本。未修改或复制上游训练代码；保留上游许可证原文。历史 Splat.js 鞋子实验通过公开记录关联，未将其当作本库实测。后续复现训练应另记数据来源、配置、耗时和独立测试视角。
+
+## 发布记录
+
+首次发布提交 `5d28334b5ce86265bcc941cd903cfd46ed89a70b` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34508962655)成功。42 项线上核验通过，包括新站全部文件与本地构建对照、总入口与总览图，以及其他既有子站可访问性。[验证记录](deployment-verification.json)。发布的是研究手册，上游训练未实测。
