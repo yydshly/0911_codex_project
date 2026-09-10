@@ -4,7 +4,7 @@
 >
 > 面向编剧、编导、漫剧工作室与独立创作者。它将专业方法、文件交接和程序检查交给 Agent 执行，帮助减少长材料遗漏、跨镜不一致与制作交接中的返工。
 
-[中文网页与运行说明](app/README.md) · [返回总索引](../../README.md#项目索引) · [先看能力与产物](capabilities.md) · [技术原理与研究记录](notes.md) · [配图说明](assets/README.md) · [原库](https://github.com/zenstory-ai/drama-skills)
+[在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [网页运行说明](app/README.md) · [返回总索引](../../README.md#项目索引) · [先看能力与产物](capabilities.md) · [技术原理与研究记录](notes.md) · [配图说明](assets/README.md) · [原库](https://github.com/zenstory-ai/drama-skills)
 
 ## 实际场景演示：一句话点子与已有原著
 
@@ -18,7 +18,7 @@
 
 ![原库创作台载入水浒传项目的真实截图](demos/shuihu/生成记录/dashboard-script.png)
 
-本机实际运行截图，非网页仿制。未生成视频成片。另新增中文静态展示页，发布待验证；原库创作台仍只在本机运行。
+本机实际运行截图，非网页仿制。未生成视频成片。另新增中文静态展示页，已部署并验证；原库创作台仍只在本机运行。
 
 ## 先看它能做什么
 
@@ -73,7 +73,7 @@
 | 研究状态 | 研究中：能力研究与部分离线测试完成；已运行水浒原著改编与《空房签收》一句话开发案例，后者实际获得六格图片 |
 | 验证结果 | 所选 145 项离线测试中 142 项通过、3 项跳过；《空房签收》通过宿主 imagegen 实际生成展示图；未执行上游生产适配器或剪辑成片 |
 | 展示入口 | [两种入口演示合集](demos/README.md)、[《空房签收》](demos/empty-room/README.md)、[《水浒传》](demos/shuihu/README.md)、[完整流程图](assets/capability-workflow.png) |
-| 在线演示 | 中文静态展示页已构建，发布待验证；原库创作台仅本地运行，不提供在线生成 |
+| 在线演示 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/)，已部署并验证；原库创作台仅本地运行，不提供在线生成 |
 
 ## 本地新增内容与后续研究
 
@@ -94,4 +94,10 @@
 
 新增公开阅读页面，以本页完整流程图作为引导，提供 7 种材料入口、11 个技能职责、两种案例的 12 个步骤及 24 份可阅读资料。展示实际图片和偏差，可复制剧本或提示词。技术原理、团队价值和扩展方向集中整理；不提供在线生图与后台编辑。
 
-[构建、检查与预览](app/README.md)。发布按 GitHub Pages 统一约定，部署结果待远端验证。
+[构建、检查与预览](app/README.md)。发布按 GitHub Pages 统一约定，已公开部署并验证。
+
+### 远端发布证据
+
+2026-09-10，[GitHub Pages 构建与部署成功](https://github.com/yydshly/0911_codex_project/actions/runs/34494114594)。已验证[在线页面](https://yydshly.github.io/0911_codex_project/006-drama-skills/)、完整流程图、实际六格图及其余发布资源可访问，并与本地构建内容一致；总入口已出现该研究条目。源码提交 `22328cc` 包含研究、案例、图片和网页；后续提交补充本记录与跨平台换行标准化。
+
+[网页验证记录](app/validation.md)。原库创作台继续在本机工作，公开页为中文阅读展示。

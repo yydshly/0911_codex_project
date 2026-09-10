@@ -18,3 +18,5 @@ node projects/006-drama-skills/app/check.cjs
 检查覆盖技能和入口数量、案例与文档关联、六镜结构、静态资源、锚点、脚本语法及本地运行地址泄露。浏览器另检查案例切换、资料阅读、关闭、入口切换、技能展开和窄屏布局。
 
 发布使用仓库既有的 [GitHub Pages 统一约定](../../../docs/web-demos.md)。完整制作与失败边界以 [研究说明](../README.md) 和案例原始记录为准。
+
+[已验证的在线展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [实际检查记录](validation.md)

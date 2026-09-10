@@ -83,4 +83,6 @@ node projects/006-drama-skills/app/build.cjs
 node projects/006-drama-skills/app/check.cjs
 ```
 
-发布清单合并 `projects/006-drama-skills/app/dist`，保留既有案例手册、LongHorizon 和 XXG 等站点。仅导出明确列出的文档和图片，原库本地创作台与运行令牌不公开。目标子路径为 `006-drama-skills/`，远端发布待验证。
+发布清单合并 `projects/006-drama-skills/app/dist`，保留既有案例手册、LongHorizon 和 XXG 等站点。仅导出明确列出的文档和图片，原库本地创作台与运行令牌不公开。目标子路径为 `006-drama-skills/`，远端已部署并验证。
+
+首次部署验证：2026-09-10，[Drama Skills 在线展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/)。提交 `22328ccddf11edd8c4a64c9d4658187f4065a0e5` 的 [GitHub Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34494114594) 构建与部署成功；远端 HTML、样式、脚本、24 份阅读数据、完整流程图 PNG/SVG、真实六格图与创作台截图共 8 个文件返回 200，内容与标准化本地构建一致。在线总入口已收录本页。
