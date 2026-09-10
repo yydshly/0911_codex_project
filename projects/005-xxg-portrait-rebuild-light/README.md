@@ -2,7 +2,7 @@
 
 > 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 适合人像修图、效果预演与摄影教学；本地用实际效果图、逐字提示词和偏差记录展示能力。
 
-[返回总索引](../../README.md#项目索引) · [研究笔记](notes.md) · [照片产品扩展](extensions.md) · [配图来源](assets/README.md) · [展示页源码](app/public/index.html)
+[在线展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) · [返回总索引](../../README.md#项目索引) · [研究笔记](notes.md) · [照片产品扩展](extensions.md) · [配图来源](assets/README.md) · [展示页源码](app/public/index.html)
 
 ## 项目信息
 
@@ -16,7 +16,7 @@
 | 本地技术栈 | HTML / CSS / 原生 JavaScript，Node.js 内置模块构建，无额外依赖 |
 | 上游许可证 | [MIT 原文](assets/LICENSE.upstream)，Copyright (c) 2026 moskoo |
 | 研究状态 | 研究中：完成三次配方编辑与商品扩展；婚纱编辑、老照片未出图，完整技能流程待复现 |
-| 展示状态 | 中文静态展示已建立；未部署，不提供在线修图 |
+| 展示状态 | 已部署 GitHub Pages 并验证；不提供在线修图 |
 | 发布方式 | 已合并 GitHub Pages 清单，随仓库统一构建发布 |
 
 ## 原库的核心能力
@@ -71,7 +71,7 @@ node app/scripts/check.cjs
 python -m http.server 8765 --bind 127.0.0.1 --directory app/dist
 ```
 
-预览地址 `http://127.0.0.1:8765/` 仅对本机有效。根目录执行 `node scripts/build-pages.cjs` 可检查汇总发布产物。公开链接仅在部署成功并实际验证后补充。
+预览地址 `http://127.0.0.1:8765/` 仅对本机有效。根目录执行 `node scripts/build-pages.cjs` 可检查汇总发布产物。[公开展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) 已于 2026-09-10 部署并验证。
 
 ## 验证与来源
 
@@ -79,6 +79,10 @@ python -m http.server 8765 --bind 127.0.0.1 --directory app/dist
 - 本地检查覆盖示例、配方、提示词格式与长度、来源声明、JavaScript 语法和静态资源。
 - 已用内置 ImageGen 从同一原图进行三次独立编辑，保留原始输出与逐字提示词；未自动执行上游完整技能或严格像素保护流程。
 - 新增虚构商品实际编辑与职业头像布光方向的既有参考，保留完整记录；婚纱编辑、老照片输入各两次网络失败，未完成。
-- 已检查各类实验切换时提示词与输出匹配、输入一致性和文件哈希；未进行浏览器交互或视觉测试，尚未公开部署。
+- 已检查各类实验切换时提示词与输出匹配、输入一致性和文件哈希；未进行浏览器交互或视觉测试；已部署并核对线上内容和图片字节。
 - 上游图像为 `assets/skill-demo1.jpg` 至 `skill-demo4.jpg`，来源和 SHA-256 见[素材清单](assets/sources.json)，许可证已保留。
 - 本地页面、中文研究和示例提示词组织为新增内容；未安装上游技能或复制其运行程序。
+
+## 部署验证
+
+2026-09-10 发布成功，首次发布提交 `f04a91b5a2c9f1e9668a48a65cb8d9422425337a`，见[Actions 记录](https://github.com/yydshly/0911_codex_project/actions/runs/34489688585)。已核对线上首页、已有两个子站、XXG 页面及资源共 35 个文件；效果图按原始字节一致性核验。

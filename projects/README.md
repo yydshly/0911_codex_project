@@ -8,11 +8,11 @@
 | 002 | [LongHorizon-Harness](003-longhorizon-harness/README.md) | [LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导 Agent 分轮执行，以独立验收、可信进度和失败反馈持续推进并支持续接 | 研究中（文档已整理，上游运行待复现） | [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
 | 003 | [oh-my-pi（OMP）](004-oh-my-pi/README.md) | [oh-my-pi](https://github.com/can1357/oh-my-pi) | 基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠模型并完善代码编辑、调试、执行反馈与协作能力 | 研究中（理解与模块已整理，运行待复现） | [研究笔记](004-oh-my-pi/notes.md)；演示未部署 |
 
-| 004 | [XXG Portrait Rebuild Light](005-xxg-portrait-rebuild-light/README.md) | [xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 研究中（三次布光与商品扩展已运行，完整技能待复现） | [能力展示说明](005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；未部署 |
+| 004 | [XXG Portrait Rebuild Light](005-xxg-portrait-rebuild-light/README.md) | [xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 研究中（三次布光与商品扩展已运行，完整技能待复现） | [能力展示说明](005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) |
 
 ## 编号与目录
 
-- XXG Portrait Rebuild Light 的研究索引为 004，存储目录为 `005-xxg-portrait-rebuild-light`；新增中文静态展示、三次布光与商品扩展记录，另标注婚纱编辑和老照片输入连接失败未完成，尚未公开发布或运行上游完整技能。
+- XXG Portrait Rebuild Light 的研究索引为 004，存储目录为 `005-xxg-portrait-rebuild-light`；新增中文静态展示、三次布光与商品扩展记录，另标注婚纱编辑和老照片输入连接失败未完成，已公开发布并验证，上游完整技能待复现。
 
 - [工程案例手册（历史目录 002）](002-engineering-casebook/README.md) 归属 001，保留独立目录、依赖和已发布地址，用于中文导读、搜索筛选和原文总结。
 - 项目总索引按原库去重；同一原库的研究、展示与实验关联到同一个研究条目，不重复计数。

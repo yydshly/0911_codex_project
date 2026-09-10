@@ -66,8 +66,10 @@
 
 参考：[GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
-## XXG 人像光影展示（待本次部署验证）
+## XXG 人像光影展示（已部署）
 
 研究 004，路径 `005-xxg-portrait-rebuild-light/`。通过光源方向、软硬、颜色与阴影描述指导图像大模型编辑原图。展示包含三次布光、商品新样例、职业头像方向的既有参考、完整提示词与局限；婚纱编辑和老照片输入因网络失败未完成。入口使用实际夕阳布光效果图，不把说明图或网页截图当作生成结果。
 
-构建检查：`node projects/005-xxg-portrait-rebuild-light/app/scripts/build.cjs`；统一汇总仍为 `node scripts/build-pages.cjs`，保留已有两个子路径。公开地址将在部署成功并验证后记录。
+构建检查：`node projects/005-xxg-portrait-rebuild-light/app/scripts/build.cjs`；统一汇总仍为 `node scripts/build-pages.cjs`，保留已有两个子路径。公开地址：[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/)。
+
+XXG 部署验证：2026-09-10，首次发布提交 `f04a91b5a2c9f1e9668a48a65cb8d9422425337a`，[Actions 成功记录](https://github.com/yydshly/0911_codex_project/actions/runs/34489688585)。核对线上 35 个文件，覆盖总入口、两个已有子站、XXG 全部发布文件与实际效果预览；文本按换行归一比较、图像按原始字节比较。
