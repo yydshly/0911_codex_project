@@ -16,7 +16,7 @@ window.REAL_CASE = {
   "steps": [
     {
       "skill": "product-marketing",
-      "file": ".agents/product-marketing.md",
+      "file": "context/product-marketing.md",
       "title": "明确定位",
       "input": "仓库索引、Graphify 说明与实际回执",
       "method": "按十二类信息形成共享背景；把事实与受众假设分开",

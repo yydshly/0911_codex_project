@@ -35,9 +35,17 @@ const receipt = JSON.parse(fs.readFileSync(path.join(run,'inputs/fastapi-receipt
 const files = [];
 function walk(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})) {const full=path.join(dir,item.name); if(item.isDirectory()) walk(full);else if(item.name!=='manifest.json') files.push({path:path.relative(run,full).replaceAll('\\','/'),sha256:crypto.createHash('sha256').update(fs.readFileSync(full)).digest('hex')});}}
 walk(run);
+files.sort((a,b)=>a.path<b.path?-1:a.path>b.path?1:0);
+for(const f of files){
+  f.publicPath=f.path.replace(/^\.agents\//,'context/');
+  let raw=fs.readFileSync(path.join(run,f.path));
+  if(f.path==='README.md')raw=Buffer.from(raw.toString('utf8').replaceAll('](.agents/','](context/'));
+  f.publicSha256=crypto.createHash('sha256').update(raw).digest('hex');
+  const target=path.join(dist,'real-case',f.publicPath);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,raw);
+}
 const manifest = {upstream:'https://github.com/coreyhaines31/marketingskills',commit:sha,executor:'本任务中的 Agent 读取原文后逐步产出；非上游 CLI 或自主工作流引擎',status:'定位草案；业务验证尚无反馈',files};
 fs.writeFileSync(path.join(run,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
-fs.cpSync(run,path.join(dist,'real-case'),{recursive:true});
-const data={sha,receipt:{files:receipt.files,nodes:receipt.nodes,edges:receipt.edges,communities:receipt.communities,confidence:receipt.confidence,commit:receipt.commit,graphifyCommit:receipt.graphifyCommit,scope:receipt.scope},steps:steps.map(([skill,file,title,input,method,decision])=>({skill,file,title,input,method,decision,output:fs.readFileSync(path.join(run,file),'utf8')}))};
+fs.copyFileSync(path.join(run,'manifest.json'),path.join(dist,'real-case/manifest.json'));
+const data={sha,receipt:{files:receipt.files,nodes:receipt.nodes,edges:receipt.edges,communities:receipt.communities,confidence:receipt.confidence,commit:receipt.commit,graphifyCommit:receipt.graphifyCommit,scope:receipt.scope},steps:steps.map(([skill,file,title,input,method,decision])=>({skill,file:file.replace(/^\.agents\//,'context/'),title,input,method,decision,output:fs.readFileSync(path.join(run,file),'utf8')}))};
 fs.writeFileSync(path.join(dist,'real-case-data.js'),'window.REAL_CASE = '+JSON.stringify(data,null,2)+';\n');
 console.log('已构建真实应用场景：5 份技能原文、5 份产物、输入快照与 SHA-256 清单。');

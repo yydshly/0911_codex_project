@@ -8,7 +8,7 @@
 
 | 顺序 | 实際使用的上游技能 | 输入如何传递 | 产物 |
 | --- | --- | --- | --- |
-| 1 | [product-marketing 原文](upstream/product-marketing/SKILL.md) | 读取研究索引、Graphify 说明与运行记录，整理十二类背景 | [共享产品背景 0.1](.agents/product-marketing.md) |
+| 1 | [product-marketing 原文](upstream/product-marketing/SKILL.md) | 读取研究索引、Graphify 说明与运行记录，整理十二类背景 | [共享产品背景 0.1](context/product-marketing.md) |
 | 2 | [offers 原文](upstream/offers/SKILL.md) | 复用背景与证据，检查价值因素及六个交付组成部分 | [交付方案](02-offer.md) |
 | 3 | [copywriting 原文](upstream/copywriting/SKILL.md) | 复用定位和交付方案，为一个明确行动写文案 | [产品入口文案与备选](03-copy.md) |
 | 4 | [analytics 原文](upstream/analytics/SKILL.md) | 从页面行动推导事件与任务成功口径 | [验证与度量计划](04-validation.md) |
@@ -38,7 +38,7 @@ inputs 下的两份说明是原始文档快照，其相对链接保持源文件�
 
 `node projects/010-marketingskills/app/scripts/run-product-loop.cjs`
 
-记录文件为 [feedback.json](feedback.json)；当前为空。[下一步建议](next-actions.md)、[持久状态](.agents/loops/product-validation.json)、[追加日志](.agents/loops/product-validation.log) 可复核首次建立基线及复查结果。网页下载的 JSON 是单条记录，需要手动追加到 records 数组；不要直接覆盖整个文件。收录反馈后重新构建 real-case，将新状态同步到静态展示。
+记录文件为 [feedback.json](feedback.json)；当前为空。[下一步建议](next-actions.md)、[持久状态](context/loops/product-validation.json)、[追加日志](context/loops/product-validation.log) 可复核首次建立基线及复查结果。网页下载的 JSON 是单条记录，需要手动追加到 records 数组；不要直接覆盖整个文件。收录反馈后重新构建 real-case，将新状态同步到静态展示。
 
 ## 当前验收边界
 

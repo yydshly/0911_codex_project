@@ -1,7 +1,8 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto'),os=require('node:os'),cp=require('node:child_process');
 const project=path.resolve(__dirname,'../..'),dist=path.join(project,'app/dist'),run=path.join(project,'runs/product-positioning');
 const manifest=JSON.parse(fs.readFileSync(path.join(run,'manifest.json'),'utf8'));
-for(const f of manifest.files){const raw=fs.readFileSync(path.join(run,f.path));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),f.sha256);assert.ok(raw.equals(fs.readFileSync(path.join(dist,'real-case',f.path))));}
+for(const f of manifest.files){const raw=fs.readFileSync(path.join(run,f.path));assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),f.sha256);assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(dist,'real-case',f.publicPath))).digest('hex'),f.publicSha256);assert.ok(!f.publicPath.startsWith('.'),'公开路径不使用隐藏目录');}
+assert.deepEqual(manifest.files.map(f=>f.path),manifest.files.map(f=>f.path).sort(),'清单跨系统稳定排序');
 const html=fs.readFileSync(path.join(dist,'real-case.html'),'utf8');
 const ids=[...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
 for(const [,link] of html.matchAll(/(?:src|href)="([^"]+)"/g)){if(/^https?:/.test(link))continue;if(link.startsWith('#'))assert.ok(ids.includes(link.slice(1)),link);else assert.ok(fs.existsSync(path.join(dist,link)),link);}
