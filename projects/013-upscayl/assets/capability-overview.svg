@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2960" viewBox="0 0 2400 2960" role="img" aria-labelledby="title desc">
+<title id="title">Upscayl 能力与理解全图：输入、处理、输出、同类产品、模型原理和一致性</title>
+<desc id="desc">本地图像超分辨率。应用组织任务，模型预测细节，NCNN 与 Vulkan 执行计算。对比商业工具、开源模型和生成式大模型，说明结构保真、细节真实、重复稳定与时序连续的不同。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#2455ce" stroke-width="2"/></marker></defs>
+<rect x="0" y="0" width="2400" height="2960" rx="0" fill="#f3f7fc" stroke="#f3f7fc"/>
+<rect x="0" y="0" width="2400" height="238" rx="0" fill="#101f3c" stroke="#101f3c"/>
+<text x="80" y="57" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#aac5ff">UPSCAYL  /  开源项目研究 013</text>
+<text x="80" y="137" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="58" font-weight="700" fill="white">让低清图片更可用，而不是保证找回真实细节。</text>
+<text x="80" y="198" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="33" font-weight="400" fill="#d8e5ff">核心价值：尽量保留原图内容，稳定、批量地提高分辨率和细节观感。</text>
+<rect x="80" y="274" width="56" height="48" rx="6" fill="#2455ce" stroke="#2455ce"/>
+<text x="91" y="305" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">01</text>
+<text x="155" y="311" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="39" font-weight="700" fill="#172945">输入 → 如何处理 → 得到什么</text>
+<rect x="80" y="342" width="490" height="421" rx="12" fill="white" stroke="#cfdbeb"/>
+<rect x="620" y="342" width="1110" height="421" rx="12" fill="#eef3ff" stroke="#cfdbeb"/>
+<rect x="1780" y="342" width="540" height="421" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="110" y="402" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">输入 / 已有图片与要求</text>
+<text x="110" y="460" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="30" font-weight="400" fill="#4b5f7e">低清照片、商品图、插画</text>
+<text x="110" y="504" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="30" font-weight="400" fill="#4b5f7e">单张图片或文件夹</text>
+<text x="110" y="548" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="30" font-weight="400" fill="#4b5f7e">选择模型、倍率、输出格式</text>
+<text x="110" y="616" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="34" font-weight="700" fill="#2455ce">示例：500 × 500</text>
+<text x="110" y="667" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">已有高清原件时优先用原件；</text>
+<text x="110" y="707" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">严重失焦不属于擅长范围。</text>
+<text x="650" y="402" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">处理 / 应用组织任务，模型完成计算</text>
+<text x="650" y="458" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">1</text>
+<text x="694" y="459" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#172945">桌面界面</text>
+<text x="858" y="457" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">选择文件、模型和参数；Electron 管理任务</text>
+<text x="650" y="516" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">2</text>
+<text x="694" y="517" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#172945">启动后端</text>
+<text x="858" y="515" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">调用独立 upscayl-bin，传入输入与输出路径</text>
+<text x="650" y="574" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">3</text>
+<text x="694" y="575" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#172945">加载模型</text>
+<text x="858" y="573" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">读取 .param 结构与 .bin 权重，预测高清细节</text>
+<text x="650" y="632" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">4</text>
+<text x="694" y="633" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#172945">执行推理</text>
+<text x="858" y="631" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">NCNN 安排计算，Vulkan 使用兼容 GPU；可分块</text>
+<text x="650" y="690" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">5</text>
+<text x="694" y="691" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#172945">生成文件</text>
+<text x="858" y="689" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">拼接，按需调整最终尺寸、编码；返回进度与结果</text>
+<text x="1810" y="402" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">输出 / 更大、更清楚的图</text>
+<text x="1810" y="467" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="38" font-weight="700" fill="#2455ce">2000 × 2000</text>
+<text x="1810" y="518" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">宽高各 4 倍，像素总量 16 倍</text>
+<text x="1810" y="561" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">PNG / JPEG / WebP</text>
+<text x="1810" y="604" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">前后对比、批量输出</text>
+<text x="1810" y="672" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#172945">新增像素 ≠ 新增真实信息</text>
+<text x="1810" y="712" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#172945">仍可能出现伪纹理和错误文字</text>
+<path d="M580 548 L607 548" stroke="#2455ce" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<path d="M1740 548 L1767 548" stroke="#2455ce" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<rect x="80" y="790" width="2240" height="72" rx="8" fill="#e8eef9" stroke="#e8eef9"/>
+<text x="106" y="840" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">已有功能：7 种内置模型 · 自定义兼容模型 · 批处理 · 分块 · TTA · 两轮放大 · 输出控制</text>
+<rect x="80" y="902" width="56" height="48" rx="6" fill="#2455ce" stroke="#2455ce"/>
+<text x="91" y="933" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">02</text>
+<text x="155" y="939" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="39" font-weight="700" fill="#172945">底层原理：训练与使用分开，倍率与真实信息分开</text>
+<rect x="80" y="970" width="1100" height="251" rx="12" fill="white" stroke="#cfdbeb"/>
+<rect x="1210" y="970" width="1110" height="251" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="110" y="1025" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">模型怎样学会？以 Real-ESRGAN 为例</text>
+<text x="110" y="1073" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">高清图 → 模糊、缩小、噪声、压缩等模拟退化</text>
+<text x="110" y="1116" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">低清／高清训练对 → 优化网络 → 保存权重</text>
+<text x="110" y="1159" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">结合重建、感知与对抗训练，学习较自然的细节。</text>
+<text x="110" y="1205" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#2455ce">正常使用只做推理，不会为每张图片重新训练。</text>
+<text x="1240" y="1025" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="32" font-weight="700" fill="#172945">为什么能放大？为什么不保证真实？</text>
+<text x="1240" y="1073" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">低清图可以对应多种高清原图，无法唯一反推。</text>
+<text x="1240" y="1116" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">模型按先验估计细节；框架、GPU 和界面负责执行。</text>
+<text x="1240" y="1159" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">内置模型标为 4×，其他输出尺寸可含后续普通缩放。</text>
+<text x="1240" y="1205" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#2455ce">TTA 增加推理；Double Upscayl 是两轮模型处理。</text>
+<rect x="80" y="1262" width="56" height="48" rx="6" fill="#2455ce" stroke="#2455ce"/>
+<text x="91" y="1293" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">03</text>
+<text x="155" y="1299" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="39" font-weight="700" fill="#172945">相关产品与底层项目：先分清“软件”和“模型”</text>
+<rect x="80" y="1330" width="2240" height="60" rx="0" fill="#101f3c" stroke="#101f3c"/>
+<text x="100" y="1372" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">产品 / 项目</text>
+<text x="475" y="1372" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">能力与定位</text>
+<text x="1050" y="1372" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">底层方式 / 公开信息</text>
+<text x="1720" y="1372" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">与 Upscayl 的关系</text>
+<rect x="80" y="1390" width="2240" height="65" rx="0" fill="white" stroke="#cfdbeb"/>
+<text x="100" y="1429" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">Upscayl</text>
+<text x="475" y="1429" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">本地图片放大、批处理与对比</text>
+<text x="1050" y="1429" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">超分辨率模型 + NCNN / Vulkan</text>
+<text x="1720" y="1429" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">应用集成；不等于独创所有模型</text>
+<rect x="80" y="1455" width="2240" height="65" rx="0" fill="#eaf0f9" stroke="#cfdbeb"/>
+<text x="100" y="1494" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">Topaz Gigapixel</text>
+<text x="475" y="1494" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">商业图片放大与增强工具</text>
+<text x="1050" y="1494" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">官方区分核心与生成式模型</text>
+<text x="1720" y="1494" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">闭源；不能断言与 Upscayl 同算法</text>
+<rect x="80" y="1520" width="2240" height="65" rx="0" fill="white" stroke="#cfdbeb"/>
+<text x="100" y="1559" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">Adobe Camera Raw</text>
+<text x="475" y="1559" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">摄影工作流中的超分辨率</text>
+<text x="1050" y="1559" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">机器学习增强，完整结构未公开</text>
+<text x="1720" y="1559" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">工作流整合；不推断共用同一模型</text>
+<rect x="80" y="1585" width="2240" height="65" rx="0" fill="#eaf0f9" stroke="#cfdbeb"/>
+<text x="100" y="1624" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">chaiNNer</text>
+<text x="475" y="1624" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">可视化串联模型与图片处理</text>
+<text x="1050" y="1624" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">调用多种推理框架和兼容模型</text>
+<text x="1720" y="1624" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">更灵活；同模型也需比较完整处理链</text>
+<rect x="80" y="1650" width="2240" height="65" rx="0" fill="white" stroke="#cfdbeb"/>
+<text x="100" y="1689" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">Real-ESRGAN</text>
+<text x="475" y="1689" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">真实退化图片的超分辨率</text>
+<text x="1050" y="1689" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">卷积网络 + 对抗训练等目标</text>
+<text x="1720" y="1689" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">Upscayl 直接相关的底层技术</text>
+<rect x="80" y="1715" width="2240" height="65" rx="0" fill="#eaf0f9" stroke="#cfdbeb"/>
+<text x="100" y="1754" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">waifu2x</text>
+<text x="475" y="1754" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">偏动漫放大、降噪，也支持照片</text>
+<text x="1050" y="1754" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">经典版为卷积网络；后续迁至 nunif</text>
+<text x="1720" y="1754" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">同类方法，不等同于同一组权重</text>
+<rect x="80" y="1780" width="2240" height="65" rx="0" fill="white" stroke="#cfdbeb"/>
+<text x="100" y="1819" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">SwinIR / HAT</text>
+<text x="475" y="1819" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">图像重建、超分辨率等</text>
+<text x="1050" y="1819" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">窗口 / 混合注意力 Transformer</text>
+<text x="1720" y="1819" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">网络结构路线不同；需适配后使用</text>
+<rect x="80" y="1845" width="2240" height="65" rx="0" fill="#eaf0f9" stroke="#cfdbeb"/>
+<text x="100" y="1884" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">SUPIR</text>
+<text x="475" y="1884" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">文字引导的生成式图像修复</text>
+<text x="1050" y="1884" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">扩散模型 + SDXL 先验 + 修复约束</text>
+<text x="1720" y="1884" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">细节丰富，需平衡保真与计算成本</text>
+<rect x="80" y="1910" width="2240" height="65" rx="0" fill="white" stroke="#cfdbeb"/>
+<text x="100" y="1949" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#172945">Qwen-Image 系列</text>
+<text x="475" y="1949" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">通用图像生成与编辑</text>
+<text x="1050" y="1949" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">图像基础模型；具体能力依版本</text>
+<text x="1720" y="1949" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="26" font-weight="400" fill="#4b5f7e">可修复 / 编辑，不等于任意倍率放大</text>
+<text x="95" y="2018" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#2455ce">概念纠偏：CNN / Transformer 是网络结构；GAN 是训练方法；扩散是生成机制。它们并非互斥分类。</text>
+<rect x="80" y="2062" width="56" height="48" rx="6" fill="#2455ce" stroke="#2455ce"/>
+<text x="91" y="2093" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">04</text>
+<text x="155" y="2099" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="39" font-weight="700" fill="#172945">专用超分辨率 vs 生成式大模型：目标与代价不同</text>
+<rect x="80" y="2130" width="1100" height="241" rx="12" fill="#eaf1ff" stroke="#cfdbeb"/>
+<rect x="1210" y="2130" width="1110" height="241" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="110" y="2188" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="34" font-weight="700" fill="#172945">专用路线：侧重保留与批量</text>
+<text x="110" y="2240" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">适合：商品图、插画、已有素材的固定尺寸放大。</text>
+<text x="110" y="2284" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">通常更易保持整体结构、结果稳定、处理成本较低。</text>
+<text x="110" y="2328" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">局限：仍会补错纹理和文字，严重模糊可能无改善。</text>
+<text x="1240" y="2188" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="34" font-weight="700" fill="#172945">生成式路线：侧重修复与编辑</text>
+<text x="1240" y="2240" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">适合：补全、复杂修复、创意编辑、文字指令控制。</text>
+<text x="1240" y="2284" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">可生成丰富细节，但内容可能变化、计算通常更重。</text>
+<text x="1240" y="2328" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#4b5f7e">修复约束与固定种子有帮助，不能保证真实或不变。</text>
+<text x="95" y="2420" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="27" font-weight="400" fill="#4b5f7e">两者都会估计缺失细节；以上为工程倾向，不是竞品实测排名。只输出文字的模型需调用图片处理工具。</text>
+<rect x="80" y="2462" width="56" height="48" rx="6" fill="#2455ce" stroke="#2455ce"/>
+<text x="91" y="2493" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="29" font-weight="700" fill="white">05</text>
+<text x="155" y="2499" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="39" font-weight="700" fill="#172945">我们的理解：四种一致性，不能互相替代</text>
+<rect x="80" y="2530" width="530" height="173" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="104" y="2583" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="33" font-weight="700" fill="#2455ce">结构保真</text>
+<text x="104" y="2633" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">较易保持构图与物体</text>
+<text x="104" y="2673" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">仍然有内容变化可能</text>
+<rect x="650" y="2530" width="530" height="173" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="674" y="2583" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="33" font-weight="700" fill="#2455ce">细节真实</text>
+<text x="674" y="2633" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">纹理、字符可能猜错</text>
+<text x="674" y="2673" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">没有真实性保证</text>
+<rect x="1220" y="2530" width="530" height="173" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="1244" y="2583" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="33" font-weight="700" fill="#2455ce">重复稳定</text>
+<text x="1244" y="2633" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">固定配置与环境通常稳定</text>
+<text x="1244" y="2673" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">不保证跨设备逐比特一致</text>
+<rect x="1790" y="2530" width="530" height="173" rx="12" fill="white" stroke="#cfdbeb"/>
+<text x="1814" y="2583" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="33" font-weight="700" fill="#2455ce">时序连续</text>
+<text x="1814" y="2633" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">单图增强没有时序保证</text>
+<text x="1814" y="2673" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#172945">多图与视频需另行验证</text>
+<rect x="80" y="2740" width="2240" height="105" rx="10" fill="#101f3c" stroke="#101f3c"/>
+<text x="110" y="2796" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="38" font-weight="700" fill="white">观感更清楚 ≠ 细节更真实；输出稳定 ≠ 内容正确。</text>
+<text x="110" y="2835" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#d8e5ff">产品价值在于提高旧素材可用性、降低操作成本；保真优势属于专用方案类别，并非 Upscayl 独有。</text>
+<text x="80" y="2897" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="25" font-weight="400" fill="#4b5f7e">研究示意图，非软件截图或真实增强样张；上游与竞品效果未实测。主仓库 a00d55f / 2.15.0 · 2026-09-11</text>
+<text x="80" y="2934" font-family="Microsoft YaHei,Segoe UI,sans-serif" font-size="24" font-weight="400" fill="#4b5f7e">来源：Upscayl、各产品官方文档、Real-ESRGAN / SUPIR 论文。完整30项来源：yydshly.github.io/0911_codex_project/013-upscayl/</text>
+</svg>

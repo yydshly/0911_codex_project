@@ -18,6 +18,13 @@ assert.equal(manifest.researchIndex, '013');
 assert.equal(manifest.directory, '013-upscayl');
 assert.equal(manifest.sourceSha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(project, 'notes.md'))).digest('hex'), '构建使用当前正文');
 assert.deepEqual(fs.readFileSync(path.join(project, 'notes.md')), fs.readFileSync(path.join(dist, 'downloads/upscayl-research.md')), '下载和主文档一致');
+for (const name of ['capability-overview.svg', 'capability-overview.png']) {
+  assert.deepEqual(fs.readFileSync(path.join(project, 'assets', name)), fs.readFileSync(path.join(dist, 'assets', name)), `总览图同步 ${name}`);
+}
+const overview = fs.readFileSync(path.join(dist, 'assets/capability-overview.png'));
+assert.equal(overview.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+assert.equal(overview.readUInt32BE(16), 2400);
+assert.equal(overview.readUInt32BE(20), 2960);
 for (const id of manifest.chapters) {
   assert.ok(ids.includes(id), `存在章节 ${id}`);
   assert.ok(page.includes(`href="#${id}"`), `存在导航 ${id}`);

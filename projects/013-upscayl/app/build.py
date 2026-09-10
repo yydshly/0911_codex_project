@@ -26,7 +26,8 @@ page = template.replace('<!--TOC-->', toc).replace('<!--INTRO-->', intro).replac
 for name in ['styles.css', 'app.js']:
     shutil.copyfile(APP / name, DIST / name)
 (DIST / 'assets').mkdir(exist_ok=True)
-shutil.copyfile(PROJECT / 'assets' / 'architecture.svg', DIST / 'assets' / 'architecture.svg')
+for name in ['architecture.svg', 'capability-overview.svg', 'capability-overview.png']:
+    shutil.copyfile(PROJECT / 'assets' / name, DIST / 'assets' / name)
 (DIST / 'downloads').mkdir(exist_ok=True)
 shutil.copyfile(PROJECT / 'notes.md', DIST / 'downloads' / 'upscayl-research.md')
 manifest = {

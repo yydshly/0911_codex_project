@@ -22,7 +22,7 @@ Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定�
 
 gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。研究索引 011，历史目录 `012-gstack/`；附能力全图、逐项原理与九阶段真实案例，网页已部署并验证。
 
-Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强调结构保持与稳定批量处理，但不保证恢复真实细节。研究索引 013，历史目录 `013-upscayl/`；本地新增完整中文手册、底层关系图、同类产品及生成式大模型对比，[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
+Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强调结构保持与稳定批量处理，但不保证恢复真实细节。研究索引 013，历史目录 `013-upscayl/`；本地新增完整中文手册、完整能力总览图、同类产品及生成式大模型对比，[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
 
 Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库，核心采用 3DGS 算法：先定位相机与空间点，再优化高斯外观并实时渲染。其他路线还有摄影测量、NeRF 和神经隐式表面；预训练几何预测与生成式三维也可参与流程。本地新增完整总览图、原理和 21 个产品对比，关联 Splat.js 实测；[在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。
 
@@ -187,11 +187,11 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 
 **原库能力：本地 AI 图片放大与细节观感增强。** 预训练模型负责预测细节，NCNN / Vulkan 执行 GPU 推理，桌面应用组织文件、批量任务、输出与对比。内容保真、真实细节、重复稳定与视频连续性需分别判断。
 
-![Upscayl 应用、模型、推理与生成式修复区别](projects/013-upscayl/assets/architecture.svg)
+![Upscayl 输入输出、处理原理、九类产品对照及四种一致性](projects/013-upscayl/assets/capability-overview.png)
 
 本地原创技术图解，非软件截图或增强样张；暂无真实软件截图。本地手册完整覆盖十章、同类产品、模型路线、大模型取舍及部署条件，并给出验证与扩展建议。上游运行与竞品效果未实测；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
 
-[项目介绍](projects/013-upscayl/README.md) · [完整手册](projects/013-upscayl/notes.md) · [原库](https://github.com/upscayl/upscayl) · [矢量图](projects/013-upscayl/assets/architecture.svg)
+[项目介绍](projects/013-upscayl/README.md) · [完整手册](projects/013-upscayl/notes.md) · [原库](https://github.com/upscayl/upscayl) · [高清总览图](projects/013-upscayl/assets/capability-overview.png) · [矢量图](projects/013-upscayl/assets/capability-overview.svg)
 
 ## 仓库导航
 
