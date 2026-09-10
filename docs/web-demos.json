@@ -92,6 +92,25 @@
       "imageLabel": "查看完整能力总览"
     },
     {
+      "id": "010",
+      "slug": "010-marketingskills",
+      "researchIndex": "007",
+      "name": "Marketing Skills 能力与原理展示",
+      "sourceDirectory": "projects/010-marketingskills/app/dist",
+      "readme": "projects/010-marketingskills/README.md",
+      "research": "projects/010-marketingskills/notes.md",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "upstreamName": "Marketing Skills",
+      "capability": "50 个营销方法技能覆盖定位、内容、搜索、转化、推广、客户关系、留存和实验；宿主 Agent 复用产品背景与真实资料，产出研究、方案、文案及验证计划。账户和工具另行配置。",
+      "extension": "中文完整手册、八类能力与输入输出全图、六个教学流程；五个原始技能真实应用于当前研究，生成定位、交付方案、任务单入口和手动反馈规则。无在线模型、投放或账户操作，业务价值待验证。",
+      "image": "projects/010-marketingskills/assets/capabilities-flow.png",
+      "kind": "能力与原理展示",
+      "entryLabel": "理解能力与执行流程 →",
+      "imageLabel": "查看能力与输入输出全流程图",
+      "imageAlt": "Marketing Skills：核心能力、相关技能、每步输入输出与最终交付",
+      "imageCaption": "原创全流程说明图：核心能力、八类代表技能、五步实际应用与最终交付。区分原库方法、本地产物与待验证效果，非软件截图；固定研究提交 5b2c000。"
+    },
+    {
       "id": "006",
       "researchIndex": "008",
       "slug": "006-drama-skills",

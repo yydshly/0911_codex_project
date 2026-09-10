@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>Marketing Skills：能力与执行原理</title><rect width="1600" height="900" fill="white"/>
+<text x="65" y="78" fill="#122434" font-size="38" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">Marketing Skills / 让专业方法进入执行流程</text>
+<text x="65" y="129" fill="#506174" font-size="24" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">结构化技能 + 共享产品背景 + 可用工具；由宿主 Agent 理解、执行与核验。</text>
+<rect x="540" y="180" width="470" height="140" rx="8" fill="#edf3fc" stroke="#c8d5e5" stroke-width="2"/>
+<text x="566" y="224" fill="#1254bf" font-size="27" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">共享背景 · 产品与用户</text>
+<text x="566" y="267" fill="#122434" font-size="22" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">.agents/product-marketing.md</text>
+<text x="566" y="302" fill="#506174" font-size="21" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">定位 / 受众 / 品牌用语 / 事实证据</text>
+<rect x="60" y="390" width="300" height="180" rx="8" fill="#112b48" stroke="#112b48" stroke-width="2"/>
+<text x="85" y="443" fill="#ffffff" font-size="27" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">01 用户任务</text>
+<text x="85" y="493" fill="#ffffff" font-size="24" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">目标、资料与约束</text>
+<text x="85" y="537" fill="#c4d7ed" font-size="21" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">例如：改善研究入口</text>
+<rect x="540" y="380" width="470" height="205" rx="8" fill="#1254bf" stroke="#1254bf" stroke-width="2"/>
+<text x="566" y="433" fill="#ffffff" font-size="28" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">02 宿主 Agent + 技能</text>
+<text x="566" y="482" fill="#ffffff" font-size="22" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">匹配 description → 读取 SKILL.md</text>
+<text x="566" y="524" fill="#ffffff" font-size="22" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">遵循分析步骤，形成可检查的产物</text>
+<text x="566" y="565" fill="#dbe9ff" font-size="21" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">需要细节时读取 references/</text>
+<rect x="1190" y="390" width="350" height="180" rx="8" fill="#112b48" stroke="#112b48" stroke-width="2"/>
+<text x="1215" y="443" fill="#ffffff" font-size="27" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">03 可用工具</text>
+<text x="1215" y="492" fill="#ffffff" font-size="23" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">文件 / 页面 / API / MCP</text>
+<text x="1215" y="537" fill="#c4d7ed" font-size="21" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">实际能力取决于环境与权限</text>
+<rect x="540" y="660" width="470" height="135" rx="8" fill="#edf3fc" stroke="#c8d5e5" stroke-width="2"/>
+<text x="566" y="706" fill="#1254bf" font-size="27" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">04 结果核验与反馈</text>
+<text x="566" y="754" fill="#122434" font-size="23" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">检查真实产物、数据与任务目标</text>
+<text x="566" y="786" fill="#506174" font-size="21" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">证据不足 → 保留假设，继续验证</text>
+<polyline points="360,480 540,480" fill="none" stroke="#496a93" stroke-width="3"/>
+<polygon points="540,480 528,473 528,487" fill="#496a93"/>
+<polyline points="775,320 775,380" fill="none" stroke="#496a93" stroke-width="3"/>
+<polygon points="775,380 768,368 782,368" fill="#496a93"/>
+<polyline points="1010,480 1190,480" fill="none" stroke="#496a93" stroke-width="3"/>
+<polygon points="1190,480 1178,473 1178,487" fill="#496a93"/>
+<polyline points="1365,570 1365,725 1010,725" fill="none" stroke="#496a93" stroke-width="3"/>
+<polygon points="1010,725 1022,718 1022,732" fill="#496a93"/>
+<polyline points="640,660 640,585" fill="none" stroke="#496a93" stroke-width="3"/>
+<polygon points="640,585 633,597 647,597" fill="#496a93"/>
+<text x="1060" y="692" fill="#506174" font-size="20" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">工具返回结果</text>
+<text x="658" y="631" fill="#506174" font-size="20" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">反馈修正</text>
+<text x="65" y="854" fill="#506174" font-size="22" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">原创机制示意图 · 非界面截图 / 非真实运行轨迹 · 固定研究提交 5b2c000</text>
+</svg>

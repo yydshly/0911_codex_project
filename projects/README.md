@@ -1,6 +1,6 @@
 # 研究项目
 
-按原库去重，目前已收录 **9 个研究项目**，对应 10 个历史目录；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
+按原库去重，目前已收录 **10 个研究项目**，对应 11 个历史目录；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
 
 | 编号 | 项目 | 原库 | 核心能力 | 状态 | 在线入口 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -10,11 +10,14 @@
 | 004 | [XXG Portrait Rebuild Light](005-xxg-portrait-rebuild-light/README.md) | [xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 研究中（三次布光与商品扩展已运行，完整技能待复现） | [能力展示说明](005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) |
 | 005 | [FreeLLMAPI](008-freellmapi/README.md) | [freellmapi](https://github.com/tashfeenahmed/freellmapi) | 自托管模型网关：对外统一模型接口，对内选择供应商、模型与密钥路线，适配接口差异并管理额度、冷却和失败回退；应用 / Agent 负责组织任务，实际模型负责推理。 | 研究中（能力、架构及同类对比已整理，运行待复现） | [在线模型网关理解](https://yydshly.github.io/0911_codex_project/008-freellmapi/) · [产品对比](008-freellmapi/comparison.md)；已部署并验证 |
 | 006 | [Graphify](009-graphify/README.md) | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 支持将源码、文档、PDF、Word/Excel、图片、音视频及 SQL 结构提取为可查询知识图谱；代码本地解析，语义资料需模型。输出交互网络、层级树、调用流程、SVG/Canvas、报告/Wiki，以及 JSON、GraphML、Cypher，辅助研究、依赖追踪与证据交付。 | FastAPI 核心包 747 节点 / 1,971 关系；原生导出、MCP 与增量已验证 | [完整理解](009-graphify/understanding.md) · [在线能力与原生演示](https://yydshly.github.io/0911_codex_project/009-graphify/)；已部署并验证 |
+| 007 | [Marketing Skills](010-marketingskills/README.md) | [marketingskills](https://github.com/coreyhaines31/marketingskills) | 50 个技能覆盖定位、内容、搜索、转化、推广、客户关系、留存与实验；将资料变成研究、方案、文案与验证计划 | 已完成五技能真实应用；业务效果待验证 | [能力与范围](010-marketingskills/scope.md) · [中文展示](010-marketingskills/app/dist/index.html)；发布中 |
 | 008 | [Drama Skills](006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](006-drama-skills/demos/README.md) |
 | 009 | [XXD Panel 028](007-xxd-panel-028/README.md) | [xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 以微缩审美和交付流程指导图像模型生成二维插画，支持模式、比例、文字与批量验收；无三维输出 | 七场景及六张微缩扩展已实测；价值待验证 | [理解与价值](007-xxd-panel-028/understanding.md) · [微缩效果](007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线微缩展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/miniatures.html)；已部署并验证 |
 | 010 | [Munder Difflin](011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 
 ## 编号与目录
+
+- Marketing Skills 研究索引 007，历史目录 `010-marketingskills`；中文能力手册、完整输入输出图与五技能真实应用，展示正在发布。
 
 - Graphify 研究索引 006，目录 `009-graphify`；完整输入/输出能力图解与 FastAPI 原生演示配套收录，不新增研究条目。
 

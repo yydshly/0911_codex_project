@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marketing Skills 中文能力与原理展示：50 个营销技能、共享产品背景、任务分步讲解与工具执行边界。">
+  <title>Marketing Skills · 能力、流程与原理</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="handbook.css">
+  <script src="inventory.js" defer></script><script src="content.js" defer></script><script src="catalog.js" defer></script><script src="evidence.js" defer></script><script src="more-scenarios.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="topbar"><a class="brand" href="#"><span class="mark">M<span>↗</span></span> Marketing Skills <span class="edition">中文研究 / 007</span></a><nav aria-label="页内导航"><a href="#capabilities">技能详解</a><a href="#workflow">任务流程</a><a href="#principles">原理</a><a href="#getting-started">上手</a><a href="#tools">工具</a><a href="#practice">实践</a></nav></header>
+  <main id="main">
+    <aside class="simulation-note" style="margin-top:24px"><strong>新增真实应用</strong> 用五个原始技能，把你的研究仓库转成产品定位、可导出任务单与反馈推进规则。<a href="real-case.html">打开完整场景与实际体验 →</a></aside>
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow">开源能力研究 · COREY HAINES</p><h1 id="title">把营销经验，<br>变成可执行的工作流程。</h1><p class="lead">让 Agent 从产品与用户出发，协助完成定位、内容、获客、转化和效果分析。</p><p class="intro-note">这里展示上游的能力与机制；中文分类、分步示例和关系图是本地新增的讲解。</p><a class="text-link" href="https://github.com/coreyhaines31/marketingskills/tree/5b2c0007766c6a1cf1d53fd8fc73e979e0821022">阅读固定版本的上游源码 ↗</a></div>
+      <aside class="concept"><p class="eyebrow">一套技能如何工作</p><div class="concept-row"><b>方法</b><span>SKILL.md<br><small>分析步骤 · 产物要求</small></span></div><div class="connector">由宿主 Agent 理解并执行 ↓</div><div class="concept-row"><b>背景</b><span>产品 · 受众 · 证据<br><small>跨任务保持一致</small></span></div><div class="connector">根据任务连接工具 ↓</div><div class="concept-row"><b>行动</b><span>文档 · 页面 · 数据<br><small>核验结果，再决定下一步</small></span></div></aside>
+    </section>
+    <div class="stats" aria-label="固定版本文件统计"><div><strong>50</strong><span>个营销技能</span></div><div><strong>64</strong><span>个工具脚本</span></div><div><strong>95</strong><span>份集成指南</span></div><div><strong>MIT</strong><span>上游许可证</span></div><p>源码快照 <code>5b2c000</code><br>插件版本 2.11.1 · 研究于 2026-09-10</p></div>
+    <section id="capabilities" class="section"><div class="section-heading"><div><p class="eyebrow">01 / 完整能力地图</p><h2>50 个技能，逐一理解输入与产物。</h2></div><p>展开分类后选择技能，在下方查看适用任务、准备资料、方法、产物、验收与协作建议。分类与中文归纳为本地整理。</p></div><div id="skill-groups" class="skill-groups"></div><article id="skill-detail" class="skill-detail" tabindex="-1" aria-label="所选技能详情" aria-live="polite"></article><p class="source-note">无需逐个展开，也可<a href="catalog.md">下载完整中文技能与工具手册</a>。方法归纳不等于已验证的业务效果。</p><noscript><p>技能交互需要启用 JavaScript；也可直接阅读<a href="catalog.md">完整中文手册</a>或<a href="https://github.com/coreyhaines31/marketingskills/tree/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills">上游技能目录</a>。</p></noscript></section>
+    <section id="workflow" class="section workflow"><div class="section-heading"><div><p class="eyebrow">02 / 跟着任务看流程</p><h2>一句需求，怎样成为可检查的产物？</h2></div><p>六个场景、36 个步骤：逐步查看由谁执行、读取什么、产生什么，以及需要哪些真实条件。</p></div><div class="simulation-note"><strong>教学示例</strong> 本页不会调用模型、连接账户、发送内容或修改业务系统；以下文本为预先编写的流程说明。</div><label class="scenario-label" for="scenario">选择一个任务</label><select id="scenario"></select><div class="brief"><h3 id="scenario-brief"></h3><p id="scenario-input"></p></div><div id="step-buttons" class="steps" aria-label="流程步骤"></div><article class="step-panel" id="step-panel" aria-live="polite" aria-atomic="true"></article><div class="step-nav"><span id="step-progress"></span><div><button id="previous" type="button">← 上一步</button><button id="next" type="button">下一步 →</button></div></div></section>
+    <section id="principles" class="section"><div class="section-heading"><div><p class="eyebrow">03 / 技术原理</p><h2>知识、上下文与工具，各有职责。</h2></div><p>核心机制是结构化指令与按需读取；任务判断和实际执行发生在宿主 Agent 中。</p></div><figure class="architecture"><img src="guide.svg" width="1600" height="900" alt="流程图：用户任务由宿主 Agent 选择技能，技能结合共享产品背景和参考资料，宿主调用文件或外部工具，核验结果并反馈。"><figcaption>原创原理图，非上游界面截图或真实运行轨迹。</figcaption></figure><div class="principle-grid">
+      <article><span class="index">A</span><h3>任务触发</h3><p><code>name</code> 和 <code>description</code> 描述技能名称、适用范围与触发词。Agent 可据此选择技能，用户也可在支持的宿主中显式调用。</p><p class="boundary">识别效果依赖宿主；仓库没有自带强制执行的路由服务。</p></article>
+      <article><span class="index">B</span><h3>按需加载</h3><p>先发现技能描述，使用时读取 <code>SKILL.md</code>，遇到细节再加载 <code>references/</code> 中的框架、例子和模板。</p><p class="boundary">减少一次性读取的材料；没有要求先训练模型或建立向量数据库。</p></article>
+      <article><span class="index">C</span><h3>共享产品背景</h3><p><code>.agents/product-marketing.md</code> 保存定位、受众、品牌用语和证据。其他技能优先复用；版本和变更记录说明背景如何演进。</p><p class="boundary">共享文件不会自动保持最新；产品变化需要更新与核对。</p></article>
+      <article><span class="index">D</span><h3>工具执行</h3><p><code>tools/REGISTRY.md</code> 关联接入指南和脚本。以 GA4 为例：读取凭据 → 构造 HTTP 请求 → 返回 JSON → 供 Agent 分析。</p><p class="boundary">工具目录不等于已经连接账户；权限、服务费用和兼容性要逐项确认。</p></article>
+    </div><details class="deep-dive"><summary>更长的流程如何续接？以 marketing-plan 为例</summary><p>上游规定 INIT（调研与信息收集）→ REVIEW（逐节确认）→ FINALIZE（汇总与验证），使用 <code>progress.md</code> 保存状态并支持续接，最终产出 <code>final_plan.md</code>。</p><p>这是由 Agent 遵循文档的工作约定；本仓库没有独立调度服务来强制状态转换、持续监控或自动验收全部营销任务。</p><a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/marketing-plan/SKILL.md">查看计划技能源码 ↗</a></details></section>
+    <!-- HANDBOOK:START -->
+<!-- 本地中文手册；讲解上游固定版本，不执行安装、连接或调度。 -->
+<section id="scope" class="section handbook-section"><div class="section-heading"><div><p class="eyebrow">范围与能力摘要</p><h2>从产品理解到效果验证的营销方法库。</h2></div><p>50 个技能覆盖定位、内容、搜索、转化、推广、客户关系、留存与实验。每个技能说明适用任务、必要输入、处理方法与交付要求。</p></div><div class="reading-routes"><article><h3>需要哪些输入</h3><p>产品与受众说明、真实用户资料、现有页面或内容、指标、资源和约束。证据不足时保留为假设。</p></article><article><h3>能产出什么</h3><p>产品背景、研究与策略、交付方案、营销文案、页面改进、内容及推广计划、事件口径和实验方案。</p></article><article><h3>由谁实际执行</h3><p>宿主 Agent 读取技能、复用背景、调用工具并核验结果。媒体制作、账户连接、投放与调度依赖外部能力；网页没有在线营销执行服务。</p></article></div><p><a href="scope.md">阅读完整范围与能力摘要</a> · <a href="real-case.html">查看五个技能的真实应用</a></p><details class="deep-dive"><summary>一张图：核心能力 → 相关技能 → 每步输入输出 → 最终交付</summary><p><a href="capabilities-flow.png">下载高清 PNG</a> · <a href="capabilities-flow.svg">打开可缩放 SVG</a></p><img src="capabilities-flow.svg" alt="Marketing Skills 核心能力、八类代表技能、五步实际应用与最终交付" width="2200" height="2990" style="max-width:100%;height:auto"><p class="source-note">本地原创说明图，非上游截图。明确区分原库方法、本地产物和待验证的业务效果。</p></details></section>
+<section id="getting-started" class="section handbook-section">
+  <div class="section-heading"><div><p class="eyebrow">04 / 从理解到使用</p><h2>先准备背景，再完成一个小任务。</h2></div><p>以下是阅读与实践路线。本页仅展示命令和方法，没有安装技能或修改宿主配置。</p></div>
+  <div class="reading-routes"><article><h3>第一次了解</h3><p>先看能力地图与一条任务流程，再看技术原理。重点理解：谁负责判断，谁操作工具，结果怎样验证。</p></article><article><h3>准备实际使用</h3><p>先选一个可完成的小任务，准备真实资料，再读相关技能详情与上手方法。缺少数据时先产出有依据的草稿。</p></article><article><h3>准备二次开发</h3><p>重点看文件结构、工具接入、阶段续接和状态去重；先定义产物及评测任务，再考虑自动化。</p></article></div>
+  <ol class="journey-list"><li><strong>选一个目标。</strong> 例如改善一个案例入口，而不是一开始要求“自动做好全部营销”。明确现有页面、目标读者和期望行动。</li><li><strong>准备共享资料。</strong> 产品做什么、为谁服务、有哪些真实证据、哪些尚不清楚。已有资料可以先起草，未知内容保留待确认。</li><li><strong>让宿主发现技能。</strong> 检查安装位置与宿主支持情况。显式指定技能或提出清晰任务后，确认 Agent 实际读取了相关文件。</li><li><strong>从一个产物开始。</strong> 获得可审查的诊断、文案或实验计划；保留输入、版本、来源和重要推断。</li><li><strong>接入必要工具。</strong> 如果任务需要实际改页面、读取报表或生成媒体，再核对对应工具、环境与权限。</li><li><strong>验证后再复用。</strong> 检查事实与完成条件，记录效果及人工修订，逐步扩大到多技能流程。</li></ol>
+  <details class="deep-dive"><summary>安装方式、固定版本与升级注意事项</summary><p>上游 README 提供下列通用安装命令。它安装的是命令运行时取得的版本，不保证等于本页固定研究快照；实际宿主支持情况以其文档和安装结果为准。</p><pre class="code-sample">npx skills add coreyhaines31/marketingskills --list
+npx skills add coreyhaines31/marketingskills --skill product-marketing cro copywriting</pre><p>需要严格复现本研究时，先在独立目录取得固定提交，再按宿主要求配置技能路径：</p><pre class="code-sample">git clone https://github.com/coreyhaines31/marketingskills.git marketingskills-study
+git -C marketingskills-study checkout 5b2c0007766c6a1cf1d53fd8fc73e979e0821022</pre><p>克隆或切换提交只得到源码，不会自动把技能注册到宿主。完整仓库还包含共享的 <code>tools/</code>；只复制部分技能文件时，需另外确认参考资料和工具引用可达。</p><p>上游同时提供插件、复制目录、子模块和 fork 方式。v1 → v2 变更过技能名称，并将 <code>page-cro</code> 与 <code>form-cro</code> 合并为 <code>cro</code>。升级前先核对旧目录和自定义改动，避免重复技能；不要直接覆盖自己的产品背景。<a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/README.md">安装与迁移原文 ↗</a></p></details>
+  <details class="deep-dive"><summary>可以直接改写的任务输入示例</summary><pre class="example-output">请使用 cro 的方法分析这个页面。
+页面：[实际地址或文件]
+目标读者：[具体人群]
+期望行动：[一个主要行动]
+真实资料：[产品说明、反馈、数据及其日期]
+未知信息：[目前不知道的内容]
+请区分观察、推断和建议，每个优先改动附依据与验证方式。
+先交付可审查的诊断与文案备选。</pre><p>这个提示词是本地示例。<code>cro</code> 是否实际加载、工具是否可用，需要查看宿主的真实执行过程；在消息中写出技能名本身不等于已经执行。</p></details>
+</section>
+<section id="engineering" class="section handbook-section">
+  <div class="section-heading"><div><p class="eyebrow">05 / 工程结构与执行约定</p><h2>同一个任务，在几种文件之间流动。</h2></div><p>理解目录可以帮助判断：这是领域知识、项目状态，还是实际操作接口。</p></div>
+  <div class="two-column"><pre class="code-sample">上游仓库
+├─ skills/&lt;name&gt;/SKILL.md   触发、方法与产物要求
+│  └─ references/           深入框架、示例、模板
+├─ tools/REGISTRY.md        工具能力索引
+├─ tools/integrations/      接入与认证说明
+├─ tools/clis/              Node.js 请求脚本
+├─ .claude-plugin/          上游插件元数据
+└─ VERSIONS.md              版本表与变更记录
+
+实际使用项目
+└─ .agents/product-marketing.md
+   产品背景、版本、变更历史</pre><article><h3>一个技能的最小结构</h3><pre class="code-sample">---
+name: example-skill
+description: 何时使用、解决什么问题
+---
+读取背景 → 补齐任务资料
+按步骤分析 → 提供产物
+按需读取参考资料 → 关联下一项工作</pre><p class="source-note">以上为解释结构的示例，不是新增可安装技能。<a href="https://agentskills.io/specification">查看规范 ↗</a></p></article></div>
+  <div class="table-scroll"><table><caption>容易混淆的职责</caption><thead><tr><th scope="col">组成</th><th scope="col">承担什么</th><th scope="col">不应直接推断</th></tr></thead><tbody><tr><td>大模型</td><td>理解任务、分析材料、生成内容与工具请求</td><td>知道所有产品事实，或者输出一定正确</td></tr><tr><td>技能文档</td><td>提供专业方法、步骤、参考和工作边界</td><td>本身具备账户、执行权限或后台进程</td></tr><tr><td>宿主 Agent</td><td>发现与读取技能，管理会话，调用可用工具</td><td>每个宿主对目录、续接与调度支持相同</td></tr><tr><td>外部工具</td><td>读写文件、请求 API、查询数据或制作媒体</td><td>工具注册表上的标记等于已经接通</td></tr><tr><td>状态与证据</td><td>保存输入、版本、已处理事项和结果</td><td>模型自述“完成”可以替代真实产物</td></tr></tbody></table></div>
+  <details class="deep-dive"><summary>持续循环：43 个方法规格如何交给宿主运行？</summary><p><code>marketing-loops</code> 的固定版本说明了 43 个循环，并定义九个组成：检查频率、行动条件、目的、技能、步骤、自检、状态与幂等、停止条件、输出。循环正文可复用，实际定时、唤醒和运行仍由宿主或外部调度器提供。</p><div class="loop-flow"><span>定时检查</span><span>核验信号</span><span>按条件行动或跳过</span><span>保存状态</span><span>停止或等待下一轮</span></div><p><strong>检查频率与行动频率分开。</strong> 某项工作可以每天检查，但只在新信号且冷却期结束时采取行动。状态文件要记住已处理项；失败时有停止与恢复办法，避免重复生成草稿或重复联系。</p><p><strong>范围需要提前定义。</strong> 内部分析、草稿、对外发布与花费预算具有不同执行条件。上游规定明确检查点与停止开关，实际运行遵循用户授权及环境能力。本页面没有创建任何循环或定时任务。<a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/marketing-loops/SKILL.md">循环方法原文 ↗</a></p></details>
+  <details class="deep-dive"><summary>为什么称为“专业方法的工程化”？</summary><p>普通提示词也能提供任务指导；此库把指导组织成可发现的模块，附带版本、参考资料、共同产品背景和工具接入说明。由此更容易复用、更新与检查。但封装不会让经验规则变成确定算法：任务理解、事实质量、工具状态和验收仍影响结果。</p><p>对本地扩展，建议采用“适用任务 → 必要输入 → 分析步骤 → 证据要求 → 产物格式 → 检查方法”的结构，并保存能重复执行的评测任务。这是我们的工程建议。</p></details>
+</section>
+<section id="tools" class="section handbook-section">
+  <div class="section-heading"><div><p class="eyebrow">06 / 外部工具如何接入</p><h2>知道接哪里，也核对实际接通了什么。</h2></div><p>95 份指南和 64 个脚本覆盖不同层次，不能相加为已连接平台数量。下列目录由固定源码提取。</p></div>
+  <div class="reading-routes"><article><h3>API / SDK</h3><p>通过 HTTP 接口或平台开发库执行操作。需要账户、认证、接口版本和请求参数；真实能力由具体服务决定。</p></article><article><h3>MCP</h3><p>把服务操作提供给支持该协议的 Agent。需要另外配置服务器和认证；指南中的 MCP 标记是上游登记。</p></article><article><h3>CLI 脚本</h3><p>本库的一部分工具是独立 Node.js 文件。它们包装请求并输出 JSON；不能替代账户授权或完整平台客户端。</p></article></div>
+  <details class="deep-dive"><summary>实例拆解：GA4 查询请求的生命周期</summary><ol><li>读取 <code>GA4_ACCESS_TOKEN</code>，没有该变量时脚本退出。</li><li>解析 <code>reports run</code>、property、日期、维度与指标等参数。</li><li>构造 Data API 请求；预览分支只返回经过遮盖的请求信息。</li><li>实际执行时使用 <code>fetch</code>，将响应解析为 JSON 或状态与正文。</li><li>Agent 根据数据解释结果；还要核对时间范围、指标口径、样本和错误。</li></ol><p>本次对三个预览路径做了离线检查：报表查询、转化创建和事件发送。使用虚拟凭据并阻断网络，验证没有调用 <code>fetch</code>，虚拟凭据值没有出现在预览结果中。不是实际 GA4 连接测试。</p><p>数据请求失败、认证失效、限流和重复写入的处理要按脚本逐项检查。不能因为一个示例支持预览就认为所有脚本都具备相同可靠性。<a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/tools/clis/ga4.js">GA4 源码 ↗</a></p></details>
+  <details class="deep-dive"><summary>完整工具指南目录 · 95 项</summary><p class="source-note">能力列表示固定版本注册表的声明，不是当前服务连通性结果。“◆”为上游赞助伙伴标记，不表示最佳选择。类别保持上游英文名称，避免改变其含义。</p><div id="tool-guide-table" class="table-scroll"></div></details>
+  <details class="deep-dive"><summary>完整本库脚本目录 · 64 项</summary><p class="source-note">列出真实脚本文件与源码中读取的环境变量名称，不包含任何凭据值。预览列只说明是否检测到对应分支，不代表已经验证全部命令。</p><div id="tool-cli-table" class="table-scroll"></div></details>
+  <p class="source-note">上游包含中立工具、赞助伙伴及作者自有工具的披露规则。选型时应比较实际需求、可用性、成本和证据，不能把展示位置视为优先推荐。<a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/tools/PARTNERS.md">上游披露规则 ↗</a></p>
+</section>
+<section id="selection" class="section handbook-section">
+  <div class="section-heading"><div><p class="eyebrow">07 / 选对任务，也选对衡量方式</p><h2>先找到问题所在的阶段。</h2></div></div>
+  <div class="table-scroll"><table><caption>容易选错的技能分工</caption><thead><tr><th scope="col">问题</th><th scope="col">优先阅读</th><th scope="col">与相邻任务的区别</th></tr></thead><tbody><tr><td>产品为谁服务？</td><td>product-marketing / customer-research</td><td>前者整理共同背景，后者取得或分析用户证据</td></tr><tr><td>一页文案需要重写还是润色？</td><td>copywriting / copy-editing</td><td>前者组织完整表达，后者改进已有稿件</td></tr><tr><td>页面、注册或首次使用卡住？</td><td>cro / signup / onboarding</td><td>分别关注页面行动、账户创建、体验首次价值</td></tr><tr><td>研究竞品还是写比较页？</td><td>competitor-profiling / competitors</td><td>前者形成证据档案，后者组织读者的比较决策</td></tr><tr><td>定广告策略还是产出素材？</td><td>ads / ad-creative</td><td>前者处理投放与优化，后者制作和迭代创意</td></tr><tr><td>数据记录、渠道解释还是因果验证？</td><td>analytics / attribution / ab-testing</td><td>记录正确、解释贡献与设计实验是不同问题</td></tr><tr><td>新策略、总体安排或重复工作？</td><td>marketing-ideas / marketing-plan / marketing-loops</td><td>候选想法、资源路线和持续循环分别处理</td></tr><tr><td>传统搜索还是 AI 引用？</td><td>seo-audit / ai-seo</td><td>页面技术基础与实际回答引用需要分别观察</td></tr></tbody></table></div>
+  <div class="table-scroll"><table><caption>按业务阶段判断有没有进展（本地实践建议）</caption><thead><tr><th scope="col">阶段</th><th scope="col">真正想知道</th><th scope="col">可观察证据</th><th scope="col">常见误读</th></tr></thead><tbody><tr><td>获客</td><td>相关读者是否发现我们</td><td>有效来源、相关查询、目标访问</td><td>曝光量都算有效需求</td></tr><tr><td>激活</td><td>新用户是否完成有价值的任务</td><td>首次成功、完成耗时、失败原因</td><td>注册成功等于体验到价值</td></tr><tr><td>留存</td><td>同一类用户是否持续得到价值</td><td>分组使用、续订及退出原因</td><td>整体活跃增长掩盖老用户流失</td></tr><tr><td>推荐</td><td>推荐是否带来合适的新用户</td><td>有效邀请、后续激活、奖励成本</td><td>分享次数等于新客户</td></tr><tr><td>收入</td><td>产品是否产生可持续的商业结果</td><td>实际收入、退款、服务与渠道成本</td><td>平台报告的广告回报等于增量利润</td></tr></tbody></table></div>
+  <details class="deep-dive"><summary>常见术语，用任务理解</summary><dl class="glossary"><dt>ICP / 理想客户画像</dt><dd>最适合当前产品的目标人群与资格条件。</dd><dt>JTBD / 用户要完成的任务</dt><dd>用户在具体情境下想获得的结果，包含功能、情绪或社会层面。</dd><dt>CRO / 转化优化</dt><dd>减少用户完成主要行动的阻力；行动可以是找到案例，而不一定是购买。</dd><dt>CTA / 行动入口</dt><dd>页面希望读者采取的下一步，例如打开演示或开始试用。</dd><dt>AARRR</dt><dd>获客、激活、留存、推荐、收入，用于组织增长工作的阶段。</dd><dt>归因 / 增量</dt><dd>归因按方法分配贡献；增量关注没有这项投入时结果会如何变化，两者不能混为一谈。</dd><dt>护栏指标</dt><dd>改进主要指标时也不能损害的表现，例如质量、投诉或后续留存。</dd><dt>幂等 / 冷却期</dt><dd>同一件事重复检查时不重复处理；在一段时间内避免重复行动。</dd></dl></details>
+</section>
+<section id="practice" class="section handbook-section">
+  <div class="section-heading"><div><p class="eyebrow">08 / 本地实践与扩展路线</p><h2>先验证一条链路，再扩大范围。</h2></div><p>以下为针对我们研究总仓库的建议，尚未作为上游能力或已完成集成展示。</p></div>
+  <div class="table-scroll"><table><caption>四个里程碑（按验收推进，不按天数承诺）</caption><thead><tr><th scope="col">里程碑</th><th scope="col">具体产物</th><th scope="col">完成条件</th></tr></thead><tbody><tr><td>产品与读者背景</td><td>工程案例手册的受众、任务、事实及未知清单</td><td>主要陈述可以关联真实资料；边界一致</td></tr><tr><td>一个入口的改进</td><td>诊断、文案和可审查页面改动</td><td>链接与内容正确，原有入口保持可用</td></tr><tr><td>真实反馈</td><td>读者查找案例的过程与结果</td><td>记录能否找到、是否相关、失败在哪里</td></tr><tr><td>重复评估</td><td>固定任务、结果记录和版本差异</td><td>可以比较准确性、耗时、修改成本与可执行性</td></tr></tbody></table></div>
+  <div class="reading-routes"><article><h3>中文与行业适配</h3><p>加入本地渠道、中文受众和行业案例，校正英美 SaaS 语境中的假设。先整理真实资料，再调整触发、流程和例子。</p></article><article><h3>证据与评测</h3><p>每条声明记录来源、日期、范围与置信度。用相同任务比较基础提示和技能辅助的结果，记录失败与人工修改。</p></article><article><h3>执行与状态</h3><p>为多项目隔离产品背景与任务状态，定义去重、失败恢复和验收。接入持续执行框架前，先确定可检查的输入与输出。</p></article></div>
+  <details class="deep-dive"><summary>能否替代团队？成本从哪里来？</summary><p>适合用来增强小团队的研究、产出和检查能力。产品事实、客户访问、方向决策、工具配置以及业务责任仍需有人承担。上游的效率宣传不等于在本地得到验证的人员替代结论。</p><p>MIT 许可覆盖这份库，不意味着模型或外部平台免费。实际投入包括模型调用、营销数据服务、媒体生成、投放或发送、部署维护和人工审阅。评估单个流程的完成成本与错误代价，比只看技能数量更有用。</p><p>流量少时可以做任务式用户观察；样本充分时才使用适当的实验分析。不要用没有数据的统计表格制造“已经验证”的感觉。</p></details>
+  <details class="deep-dive"><summary>失败时从哪里排查？</summary><div class="table-scroll"><table><thead><tr><th scope="col">现象</th><th scope="col">优先检查</th></tr></thead><tbody><tr><td>回答仍很泛泛</td><td>是否真正读取技能；产品背景与任务是否具体；缺少哪些证据</td></tr><tr><td>多个技能口径不同</td><td>是否读取同一背景版本；事实是否已过期；自定义目录是否重复</td></tr><tr><td>能写方案但不能执行</td><td>是否缺少文件、浏览器或平台工具；安装是否只带技能而未带工具目录</td></tr><tr><td>接口调用失败</td><td>认证与账户范围、参数、接口版本、限流、网络和服务返回的真实错误</td></tr><tr><td>循环重复行动</td><td>状态是否持久化；去重键与冷却期是否正确；失败后是否错误重试</td></tr><tr><td>结果看起来好却无价值</td><td>指标是否对应读者任务；有无使用真实反馈；是否把草稿数量当成增长</td></tr></tbody></table></div></details>
+</section>
+
+<!-- HANDBOOK:END -->
+    <section id="evidence" class="section"><div class="section-heading"><div><p class="eyebrow">09 / 证据与边界</p><h2>知道方法，也知道它没有证明什么。</h2></div></div><div class="evidence-grid"><article><h3>已经核对</h3><ul><li>固定提交、插件版本、技能及工具目录数量。</li><li>代表性技能的流程、共享背景约定与引用关系。</li><li>GA4 脚本三个请求路径的离线预览与凭据遮盖。</li></ul></article><article><h3>仍待实践验证</h3><ul><li>50 个技能的实际产物质量和不同宿主兼容性。</li><li>64 个脚本与第三方平台当前接口的连通性。</li><li>使用技能后是否改善流量、转化、留存或收入。</li></ul></article></div><p class="source-note">本页的流程输出均为本地教学示例。AI 搜索优化、文案与增长建议属于方法和假设，不代表效果保证。多视角决策技能是观点模拟，不是真实专家评审。</p><div class="source-links"><a href="https://github.com/coreyhaines31/marketingskills/tree/5b2c0007766c6a1cf1d53fd8fc73e979e0821022">固定上游源码 ↗</a><a href="https://agentskills.io/specification">Agent Skills 规范 ↗</a><a href="https://github.com/coreyhaines31/marketingskills/blob/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/tools/REGISTRY.md">工具注册表 ↗</a><a href="LICENSE-upstream.txt">上游 MIT 许可证</a></div></section>
+  </main><footer><span>GitHub 项目研究集 / 研究 007 · 历史目录 010</span><span>本地新增：中文能力地图、教学流程与原理图 · 上游 © 2025 Corey Haines</span></footer>
+</body></html>

@@ -16,6 +16,7 @@ on:
       - 'projects/007-xxd-panel-028/**'
       - 'projects/008-freellmapi/**'
       - 'projects/009-graphify/**'
+      - 'projects/010-marketingskills/**'
       - 'projects/011-munder-difflin/**'
   workflow_dispatch:
 
@@ -73,6 +74,14 @@ jobs:
         run: |
           node projects/009-graphify/app/check.cjs
           node projects/009-graphify/app/check-native.cjs
+      - name: Build and check Marketing Skills
+        run: |
+          node projects/010-marketingskills/app/scripts/build-handbook.cjs
+          node projects/010-marketingskills/app/scripts/build-real-case.cjs
+          node projects/010-marketingskills/app/scripts/check.cjs
+          node projects/010-marketingskills/app/scripts/check-interactions.cjs
+          node projects/010-marketingskills/app/scripts/check-upstream-preview.cjs
+          node projects/010-marketingskills/app/scripts/check-real-case.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact

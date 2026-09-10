@@ -125,3 +125,12 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 
 2026-09-11，[提交 18cdac1 的 Pages 工作流](https://github.com/yydshly/0911_codex_project/actions/runs/34502181725)成功；37 个线上文件与构建一致，覆盖新站、完整输入/输出总览、原生产物与既有子站。[验证记录](../projects/009-graphify/deployment-verification.json)。
+
+
+## Marketing Skills · 营销方法、技能范围与真实应用
+
+研究 007，历史路径 `010-marketingskills/`，静态源目录 `projects/010-marketingskills/app/dist/`。50 个技能覆盖定位、内容、搜索、转化、推广、客户关系、留存与实验；宿主结合产品资料和工具执行。中文网页包含完整范围摘要、输入输出说明图、50 技能手册及五技能真实应用。页面支持任务单和反馈导出，不提供在线模型、广告投放或账户操作。
+
+构建使用 `build-handbook.cjs` 和 `build-real-case.cjs`，并执行子项目四项检查；统一清单合并全部既有子站。当前正在发布，成功后记录线上验证。
+
+[范围与能力摘要](../projects/010-marketingskills/scope.md) · [项目说明](../projects/010-marketingskills/README.md)

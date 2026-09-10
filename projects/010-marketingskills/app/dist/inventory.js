@@ -1,0 +1,311 @@
+window.MARKETING_INVENTORY = {
+  "upstream": "https://github.com/coreyhaines31/marketingskills",
+  "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+  "researchDate": "2026-09-10",
+  "pluginVersion": "2.11.1",
+  "skillCount": 50,
+  "cliCount": 64,
+  "integrationCount": 95,
+  "skills": [
+    {
+      "name": "ab-testing",
+      "version": "2.0.0",
+      "source": "skills/ab-testing/SKILL.md",
+      "sha256": "d60e41696796025443fe00caedff26732a71a3b3a1199d122f1f6ab9da98f514"
+    },
+    {
+      "name": "ad-creative",
+      "version": "2.8.2",
+      "source": "skills/ad-creative/SKILL.md",
+      "sha256": "939e17632bf16a5ea5899148ff3281ddaa99c11f31218b26a8f88d2bdcf180e5"
+    },
+    {
+      "name": "ads",
+      "version": "2.3.2",
+      "source": "skills/ads/SKILL.md",
+      "sha256": "2f9e1b477bc1472f2f9d30610e4f955215d0c042a052eb394a81fb5b0d73f42f"
+    },
+    {
+      "name": "ai-seo",
+      "version": "2.5.0",
+      "source": "skills/ai-seo/SKILL.md",
+      "sha256": "ad9c2bfaa09f9e8b0cf5da812bea912c0fdb18021342ea3d82c6cc58335ee76d"
+    },
+    {
+      "name": "analytics",
+      "version": "2.0.1",
+      "source": "skills/analytics/SKILL.md",
+      "sha256": "990c4bc720d590e217427d0b8b3155f5f1f6b121613a917b15b2b8dc1f7e47d0"
+    },
+    {
+      "name": "aso",
+      "version": "2.0.1",
+      "source": "skills/aso/SKILL.md",
+      "sha256": "3b44560433eeb248a9b7a2e26873db937d0c90600bdaeb2ca611e744eccefa23"
+    },
+    {
+      "name": "attribution",
+      "version": "1.1.0",
+      "source": "skills/attribution/SKILL.md",
+      "sha256": "e83c417f43434fff2a6c15a6af5b4a991339c66cecdfebda1e0c112853b846d9"
+    },
+    {
+      "name": "churn-prevention",
+      "version": "2.0.0",
+      "source": "skills/churn-prevention/SKILL.md",
+      "sha256": "68c9b49e1b3e2c437ae1eb7d960c4594fe7f2895b77f7f093c2a8f14af27eeeb"
+    },
+    {
+      "name": "co-marketing",
+      "version": "2.0.1",
+      "source": "skills/co-marketing/SKILL.md",
+      "sha256": "17323311a1a27ba40cd9d534ffb0e3a1496034d75ffa285bf2917b7a899e322b"
+    },
+    {
+      "name": "cold-email",
+      "version": "2.0.0",
+      "source": "skills/cold-email/SKILL.md",
+      "sha256": "585e65516e05e5fe228e206466cc08480b6d45c701fbdf18be4359582edc7024"
+    },
+    {
+      "name": "community-marketing",
+      "version": "2.0.1",
+      "source": "skills/community-marketing/SKILL.md",
+      "sha256": "47f96d3d1a19950cb61d49947d1be65ff6b90bd6c6b623beaec40c5b2b51ee63"
+    },
+    {
+      "name": "competitor-profiling",
+      "version": "2.0.1",
+      "source": "skills/competitor-profiling/SKILL.md",
+      "sha256": "a3abec2763d04f747bf472679976a18bff72a8c45c046cc22670d50b21d15ef6"
+    },
+    {
+      "name": "competitors",
+      "version": "2.0.1",
+      "source": "skills/competitors/SKILL.md",
+      "sha256": "76939d5a48e64ef872c591b9dde8ca0fcd591eea2e0304a2195265cdedd49a16"
+    },
+    {
+      "name": "content-strategy",
+      "version": "2.1.1",
+      "source": "skills/content-strategy/SKILL.md",
+      "sha256": "9468539bfb21dcfc94a0fc719afdd473f873a7e4ebee7d8dc1260ac382587419"
+    },
+    {
+      "name": "copy-editing",
+      "version": "2.0.0",
+      "source": "skills/copy-editing/SKILL.md",
+      "sha256": "3d64c76f6b23e9b624a724234de78259b5cffdb3e375513a52baf5f3cc502533"
+    },
+    {
+      "name": "copywriting",
+      "version": "2.0.2",
+      "source": "skills/copywriting/SKILL.md",
+      "sha256": "4451b6fe3789484467a37ddb71dd6c7fd531196ad282abd6ada2ca4fb3ee196f"
+    },
+    {
+      "name": "cro",
+      "version": "2.0.0",
+      "source": "skills/cro/SKILL.md",
+      "sha256": "fb4f8601c3c723b3167a21bd2a7ce7d4b6530f39fc28cc9f1e09d56530c9c5ce"
+    },
+    {
+      "name": "customer-research",
+      "version": "2.0.2",
+      "source": "skills/customer-research/SKILL.md",
+      "sha256": "f1cbda92e8537808c96b76186c357af22e4e98568125db607571acd472d85b14"
+    },
+    {
+      "name": "directory-submissions",
+      "version": "2.0.0",
+      "source": "skills/directory-submissions/SKILL.md",
+      "sha256": "c92a79c5ee332f7902e6deda0ca81c7cda5538ff97fb4bb8a470be66e839370a"
+    },
+    {
+      "name": "emails",
+      "version": "2.0.0",
+      "source": "skills/emails/SKILL.md",
+      "sha256": "9b7c554a4d5bc11143172ab0720625737c21ab036ea83b6b4fe5ed44a3d54cd8"
+    },
+    {
+      "name": "events",
+      "version": "1.0.0",
+      "source": "skills/events/SKILL.md",
+      "sha256": "12db5ee8bf232424730a3f3b1645fd6b96539f250a3cdc7b0cb6ada0634c7384"
+    },
+    {
+      "name": "free-tools",
+      "version": "2.0.1",
+      "source": "skills/free-tools/SKILL.md",
+      "sha256": "74c0e980ed15884ee3302789953a0b83537736a8e562ee95adda7a5cabc356d9"
+    },
+    {
+      "name": "image",
+      "version": "2.0.1",
+      "source": "skills/image/SKILL.md",
+      "sha256": "9bd0e962508d134fab19c48d34dfec132e2d1b3e88089352f3581dae9d9c090d"
+    },
+    {
+      "name": "influencer-marketing",
+      "version": "1.1.0",
+      "source": "skills/influencer-marketing/SKILL.md",
+      "sha256": "c2e13698e0aabd3f6b8a9af3f39c1cd36cd6cc564fc03b672bfcffaf7bbb80e2"
+    },
+    {
+      "name": "launch",
+      "version": "2.0.2",
+      "source": "skills/launch/SKILL.md",
+      "sha256": "37a16373dec7864ce12424ce7d187b707a5b065f1fd1c5594f269815a9bec08d"
+    },
+    {
+      "name": "lead-magnets",
+      "version": "2.0.0",
+      "source": "skills/lead-magnets/SKILL.md",
+      "sha256": "23d32e25ab1a3360a9a5c001b846c055b3011f881753e9843b02eefffae80701"
+    },
+    {
+      "name": "marketing-council",
+      "version": "1.0.0",
+      "source": "skills/marketing-council/SKILL.md",
+      "sha256": "2526dd62e5ea6e6bf71ad8992c09747daac3f93657c65db92a03ca0fff7cf9c5"
+    },
+    {
+      "name": "marketing-ideas",
+      "version": "2.0.1",
+      "source": "skills/marketing-ideas/SKILL.md",
+      "sha256": "1b210d02967f0ff627d4f1633f1cf5c77d9730661fa69b31e301835d97f42c06"
+    },
+    {
+      "name": "marketing-loops",
+      "version": "1.2.0",
+      "source": "skills/marketing-loops/SKILL.md",
+      "sha256": "a7497254dad220c2226e652b8a75241880e3804274f40239f2d022d43c13b9a9"
+    },
+    {
+      "name": "marketing-plan",
+      "version": "1.1.1",
+      "source": "skills/marketing-plan/SKILL.md",
+      "sha256": "81f5e49536f85ea4eda40ae723aaf60e33f589cc907d744ae73c0d4f7d11e99c"
+    },
+    {
+      "name": "marketing-psychology",
+      "version": "2.0.0",
+      "source": "skills/marketing-psychology/SKILL.md",
+      "sha256": "f02e4fe8370d629d914032f5f8a3a988e2825e5bdae08215cf08cfb4ff07de73"
+    },
+    {
+      "name": "offers",
+      "version": "1.0.1",
+      "source": "skills/offers/SKILL.md",
+      "sha256": "3bab85885fbe6bb12ba99a8e116b90637d014f3cc78108144dac257f3f27ce9f"
+    },
+    {
+      "name": "onboarding",
+      "version": "2.0.1",
+      "source": "skills/onboarding/SKILL.md",
+      "sha256": "11acb4b1145481e275f19a0e5068e73e2bc632986bc346afd953cc48aa2c6531"
+    },
+    {
+      "name": "paywalls",
+      "version": "2.0.0",
+      "source": "skills/paywalls/SKILL.md",
+      "sha256": "808811e6693cc271e42e0f2da67b9a409b0846b2d36766700e5ccdbf77905d45"
+    },
+    {
+      "name": "popups",
+      "version": "2.0.0",
+      "source": "skills/popups/SKILL.md",
+      "sha256": "9bc16b9e894501061848f10f9ec5924d1d38b9330e0e91a006c2ee2ac5c97f83"
+    },
+    {
+      "name": "pricing",
+      "version": "2.1.1",
+      "source": "skills/pricing/SKILL.md",
+      "sha256": "6346a8351a97ed0375a30412f58907c1fabc599b79c197518a389c5dfa12d2dc"
+    },
+    {
+      "name": "product-marketing",
+      "version": "2.1.0",
+      "source": "skills/product-marketing/SKILL.md",
+      "sha256": "75bbf1e4a8803417ffd51c33c718e6831d2b6e35732c6861cd18c74a8512c4da"
+    },
+    {
+      "name": "programmatic-seo",
+      "version": "2.0.0",
+      "source": "skills/programmatic-seo/SKILL.md",
+      "sha256": "cb1ecdd172e583ed7e7960214c46330cef2e4c5f99e6386487117353fae90e67"
+    },
+    {
+      "name": "prospecting",
+      "version": "1.1.0",
+      "source": "skills/prospecting/SKILL.md",
+      "sha256": "80ef6f90042bacd0df9380bfc229b2276adf9a230c6b1c1c4ec16ce145208d5b"
+    },
+    {
+      "name": "public-relations",
+      "version": "1.1.1",
+      "source": "skills/public-relations/SKILL.md",
+      "sha256": "b5cf08867d047f528307d711b5ede31f10b4e84fd71ca4ba5f91d500034d936b"
+    },
+    {
+      "name": "referrals",
+      "version": "2.0.1",
+      "source": "skills/referrals/SKILL.md",
+      "sha256": "62915959bce26b825c162947ad92a1abd63262d0b0874204bf3bec31e3d542d4"
+    },
+    {
+      "name": "revops",
+      "version": "2.0.0",
+      "source": "skills/revops/SKILL.md",
+      "sha256": "5830d8c38bf54d71c0c0c8c5245af4faf722902528f0574650472a7d67a10dfa"
+    },
+    {
+      "name": "sales-enablement",
+      "version": "2.0.1",
+      "source": "skills/sales-enablement/SKILL.md",
+      "sha256": "7a868080a7911b0203650636794cb09cc81bcf7d59bed8dfc642a30dbb0512de"
+    },
+    {
+      "name": "schema",
+      "version": "2.0.0",
+      "source": "skills/schema/SKILL.md",
+      "sha256": "f60de349e7a96a9f8be0c41d8aa3120bd0b17e1dba40908f140b9bd729b58edd"
+    },
+    {
+      "name": "seo-audit",
+      "version": "2.0.1",
+      "source": "skills/seo-audit/SKILL.md",
+      "sha256": "cc06b656a518e421086ebd33657e46974e0375663a331b161ec9ac56711bb7cd"
+    },
+    {
+      "name": "signup",
+      "version": "2.0.0",
+      "source": "skills/signup/SKILL.md",
+      "sha256": "4fa31542650bf1de2e7fcf2e9a028c7b2af845c96d0316342079537905b2bd54"
+    },
+    {
+      "name": "site-architecture",
+      "version": "2.0.0",
+      "source": "skills/site-architecture/SKILL.md",
+      "sha256": "e04808dc4d2b3cd20640de970ca21e8c337637522620e6a257a5938c8d15b0a4"
+    },
+    {
+      "name": "sms",
+      "version": "1.0.0",
+      "source": "skills/sms/SKILL.md",
+      "sha256": "7092f3767a56d6e1a5e8211d27c693e9e4034a9e98a24ec065d3cbb111fd4d32"
+    },
+    {
+      "name": "social",
+      "version": "2.2.0",
+      "source": "skills/social/SKILL.md",
+      "sha256": "5b4db173f8c1fc6d2b1fd7de361f1372f96be7494701e20fe47f28a6fb0bd9dc"
+    },
+    {
+      "name": "video",
+      "version": "2.1.0",
+      "source": "skills/video/SKILL.md",
+      "sha256": "73b777faa3bf2d5eb8dd218df02681881560e46c5355863cd4b93b752b8ebffb"
+    }
+  ]
+};

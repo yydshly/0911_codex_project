@@ -1,0 +1,4 @@
+# Preserve byte-level provenance for pinned source and recorded run evidence.
+sources/upstream-ga4.js -text
+runs/** -text
+app/dist/real-case/** -text

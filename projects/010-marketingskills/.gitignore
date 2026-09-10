@@ -1,0 +1,3 @@
+!app/dist/
+!app/dist/**
+!runs/product-positioning/.agents/loops/*.log
