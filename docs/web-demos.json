@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/yydshly/0911_codex_project",
+  "projects": [
+    {
+      "id": "002",
+      "slug": "002-engineering-casebook",
+      "name": "工程案例手册",
+      "sourceDirectory": "projects/002-engineering-casebook/app/dist",
+      "readme": "projects/002-engineering-casebook/README.md",
+      "research": "projects/001-awesome-engineering-articles/README.md",
+      "upstream": "https://github.com/ashishps1/awesome-engineering-articles",
+      "upstreamName": "Awesome Engineering Articles",
+      "capability": "按公司、技术主题和年份收集与分类工程实践文章，提供原文导航，帮助快速发现相关案例，为架构调研、技术学习和实验选题提供资料入口。",
+      "extension": "配套手册提供 343 条中文标题导读、6 篇有依据的原文总结，以及关键词搜索、公司与主题筛选、排序、分页和详情。原文全文未导入，337 篇尚未精读。",
+      "image": "projects/002-engineering-casebook/assets/overview-guide.png"
+    },
+    {
+      "id": "003",
+      "slug": "003-longhorizon-harness",
+      "name": "LongHorizon-Harness 研究存档",
+      "sourceDirectory": "projects/003-longhorizon-harness/web/dist",
+      "readme": "projects/003-longhorizon-harness/README.md",
+      "research": "projects/003-longhorizon-harness/research.md",
+      "upstream": "https://github.com/AMAP-ML/LongHorizon-Harness",
+      "upstreamName": "LongHorizon-Harness",
+      "capability": "将复杂目标动态拆解为可执行、可验证的子任务，指导现有 Agent 按计划分轮推进，以独立审查、可信进度记录和失败反馈持续修正计划，支持任务续接。",
+      "extension": "完整中文研究与整体指导图，涵盖技术原理、复杂任务管控、人工边界、Codex / OpenClaw / Hermes / MetaGPT 对比及扩展路线。上游任务尚未在本机复现。",
+      "image": "projects/003-longhorizon-harness/assets/guide.png",
+      "kind": "研究存档",
+      "entryLabel": "打开完整研究存档 →",
+      "imageAlt": "LongHorizon-Harness 整体能力与任务管控指导图",
+      "imageCaption": "原创矢量与栅格指导图，非上游界面截图或真实运行轨迹。用于解释固定版本 v0.1.7 的能力与边界。"
+    }
+  ]
+}

@@ -24,6 +24,7 @@ __pycache__/
 dist/
 build/
 coverage/
+_site/
 *.tsbuildinfo
 *.log
 

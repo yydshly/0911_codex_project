@@ -4,7 +4,7 @@
 
 ## 1. 分配固定编号
 
-查看 [projects](../projects/README.md) 和[总索引](../README.md#项目索引)，取历史最大编号加一。当前没有项目，第一个使用 `001`。
+查看 [projects](../projects/README.md) 和[总索引](../README.md#项目索引)，取历史最大编号加一。没有历史项目时从 `001` 开始。
 
 目录名示例：`projects/001-project-slug/`。编号分配后保持稳定，短名使用小写英文和连字符。
 
@@ -35,7 +35,7 @@ Copy-Item -LiteralPath 'templates/project' -Destination $projectPath -Recurse
 在根 README 的表格中按编号升序添加一行，使用真实目录链接。例如：
 
 ```markdown
-| 001 | [项目名称](projects/001-project-slug/README.md) | 一句话说明用途与研究重点 | 待研究 | 未部署 |
+| 001 | [项目名称](projects/001-project-slug/README.md) | 原库链接 | 原库核心能力、解决的问题及适用场景 | 待研究 | 未部署 |
 ```
 
 首次收录时移除空状态行，更新已收录数量和进度文案。有了真实截图后，在“项目预览”中添加同编号条目，引用 `projects/001-project-slug/assets/` 下的实际文件，并移除预览区的空状态文案。

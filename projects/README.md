@@ -1,6 +1,12 @@
 # 研究项目
 
-这里存放实际收录的项目，目前为空。
+这里存放实际收录的项目，目前已收录 3 个。
+
+| 编号 | 项目 | 原库 | 核心能力 | 状态 |
+| :--- | :--- | :--- | :--- | :--- |
+| 001 | [Awesome Engineering Articles](001-awesome-engineering-articles/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 收集、分类并导航工程实践文章，帮助发现问题相关案例和原始资料 | 研究中 |
+| 002 | [工程案例手册](002-engineering-casebook/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 基于原库提供中文导读、案例搜索筛选和部分原文结构化总结 | 研究中（展示页已实现） |
+| 003 | [LongHorizon-Harness](003-longhorizon-harness/README.md) | [LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导 Agent 分轮执行，以独立验收、可信进度和失败反馈持续推进并支持续接 | 研究中（文档已整理，上游运行待复现） |
 
 ## 编号与目录
 

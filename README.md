@@ -1,37 +1,52 @@
 # GitHub 项目研究集
 
-持续收录值得研究的 GitHub 项目，记录它们解决的问题、核心设计、运行体验与实践成果。
+持续收录值得研究的 GitHub 项目，以**原库的核心能力**为主线，说明它能做什么、如何工作、适用于什么场景，再关联我们的研究笔记和实践演示。
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 仓库已初始化，已收录 **0** 个项目，首个项目编号为 `001`。
+**当前进度：** 已收录 **3** 个项目。原库提供工程案例的收集、分类与导航；配套手册在其基础上提供 343 条中文导读、6 篇原文总结和可搜索的展示页，正在配置 GitHub Pages 发布。新增 LongHorizon-Harness 研究，整理复杂目标拆解、分轮执行、独立验收、可信进度及同类产品对比。
 
 ## 项目索引
 
 按固定编号升序排列；编号表示收录顺序，不代表评分或推荐排名。
 
-| 编号 | 项目 / 研究入口 | 一句话摘要 | 研究状态 | Web 演示 |
-| :--- | :--- | :--- | :--- | :--- |
-| — | 待收录首个项目 | 从一个值得深入研究的仓库开始 | — | — |
-
-<!-- 新增项目时移除空状态行，并按编号升序填写真实条目：
-| 001 | [项目名称](projects/001-project-slug/README.md) | 简述它解决的问题和研究重点 | 待研究 | 未部署 |
-有可访问的演示地址后，再将“未部署”替换为实际链接。
--->
+| 编号 | 项目 / 研究入口 | 原库 | 核心能力摘要 | 研究状态 | 演示 / 关联 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 001 | [Awesome Engineering Articles](projects/001-awesome-engineering-articles/README.md) | [ashishps1/awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 按公司、技术主题和年份汇集 343 篇工程实践文章，帮助快速发现相关案例、定位原始资料，为架构调研、技术学习和实验选题提供入口。 | 初步研究完成，持续精读 | [配套案例手册](projects/002-engineering-casebook/README.md) |
+| 002 | [工程案例手册](projects/002-engineering-casebook/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 将原库案例索引转化为中文阅读入口：支持中英文关键词搜索、公司与主题筛选、排序及详情，提供 343 条标题导读与 6 篇有依据的原文总结。 | 研究中（展示页已实现） | GitHub Pages 发布中；[使用说明](projects/002-engineering-casebook/README.md#运行与演示) |
+| 003 | [LongHorizon-Harness](projects/003-longhorizon-harness/README.md) | [AMAP-ML/LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导现有 Agent 按计划分轮执行，以独立验收、可信进度和失败反馈持续修正计划，支持任务续接及无需持续盯守的推进。 | 文档与源码已整理，上游运行待复现 | [Web 存档](projects/003-longhorizon-harness/web/dist/index.html)（未部署） |
 
 ## 项目预览
 
-收录项目后，这里按相同编号展示代表性截图、简短说明和研究入口。
+### 001 · Awesome Engineering Articles
 
-<!-- 每个项目使用以下结构；图片存在后再取消注释，并删除上面的空状态文案。
-### 001 · 项目名称
+**原库能力：工程案例收集、分类与导航。** 研究版本收录 39 个公司／品牌的 343 个文章条目，标注主题、年份并链接原文，降低寻找工程经验的成本。复杂系统的实现位于原文中，上游本身是轻量的 Markdown 索引。
 
-一句话说明项目用途，以及这张图片展示的功能。
+暂无截图；未部署演示。该项目是文章索引，当前没有可运行应用。
 
-![项目名称：核心功能界面](projects/001-project-slug/assets/cover.png)
+[查看研究](projects/001-awesome-engineering-articles/README.md) · [上游仓库](https://github.com/ashishps1/awesome-engineering-articles)
 
-[查看研究](projects/001-project-slug/README.md) · 上游仓库和在线演示链接按实际情况补充。
--->
+### 002 · 工程案例手册
+
+**配套能力：中文案例检索与结构化阅读。** 基于原库的资料组织能力，补充搜索、组合筛选、排序和详情展示。已接入全部条目，其中 6 篇记录问题、做法、结果、代价和研究启示，其余 337 篇仍为标题导读。
+
+暂无真实截图；展示页已完成数据与逻辑检查，GitHub Pages 正在发布。
+
+![工程案例手册：整体理解引导图](projects/002-engineering-casebook/assets/overview-guide.png)
+
+上图为 AI 生成的整体说明图，非软件截图；记录 2026-09-10 部署前的理解快照。图中部署状态是历史记录，当前状态以索引和项目说明为准。
+
+[查看项目](projects/002-engineering-casebook/README.md) · [阅读中文案例目录](projects/002-engineering-casebook/cases.md) · [网页入口文件](projects/002-engineering-casebook/app/dist/index.html)
+
+### 003 · LongHorizon-Harness
+
+**原库能力：复杂目标拆解、分轮执行与独立验收。** 管理者依据已验证进度安排任务，执行者调用现有 Agent 操作，审计者检查真实结果并反馈下一轮；在条件充分时无需人持续盯守，但不保证任意目标都成功。
+
+![LongHorizon-Harness：整体能力与任务管控指导图](projects/003-longhorizon-harness/assets/guide.png)
+
+原创指导图，非上游界面或运行截图。研究固定 v0.1.7；完整覆盖与 Codex、Claude Code、OpenClaw、Hermes 和 MetaGPT 的比较，区分源码事实、作者报告与待验证事项。
+
+[完整研究](projects/003-longhorizon-harness/research.md) · [Web 存档](projects/003-longhorizon-harness/web/dist/index.html)（未部署） · [可编辑指导图](projects/003-longhorizon-harness/assets/guide.svg)
 
 ## 仓库导航
 

@@ -1,0 +1,2 @@
+Markdown==3.10.2
+Pillow==11.3.0

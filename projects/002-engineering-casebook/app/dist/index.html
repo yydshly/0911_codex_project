@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="343 篇工程案例的中文导读：从真实问题、技术方法到可借鉴的实践。保留公司、主题、年份与原文来源。">
+  <meta name="theme-color" content="#132a39">
+  <title>工程案例手册 · Engineering Casebook</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="core.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#cases">跳至案例目录</a>
+  <header class="masthead">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">研</span><span>工程案例手册<small>ENGINEERING CASEBOOK / 002</small></span></a>
+    <nav class="project-links" aria-label="项目关联">
+      <a class="upstream" href="https://github.com/ashishps1/awesome-engineering-articles" target="_blank" rel="noopener noreferrer">原库 ↗</a>
+      <a class="upstream" href="https://github.com/yydshly/0911_codex_project/blob/main/projects/001-awesome-engineering-articles/README.md" target="_blank" rel="noopener noreferrer">原库能力分析 ↗</a>
+      <a class="upstream" href="https://github.com/yydshly/0911_codex_project/blob/main/projects/002-engineering-casebook/assets/overview-guide.png" target="_blank" rel="noopener noreferrer">整体引导图 ↗</a>
+      <a class="upstream" href="https://github.com/yydshly/0911_codex_project#项目索引" target="_blank" rel="noopener noreferrer">研究总索引 ↗</a>
+    </nav>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="主题导航">
+      <p class="eyebrow">按工程问题探索</p>
+      <nav id="topics" aria-label="主题筛选"></nav>
+      <section class="reading-note"><span class="note-index">READING NOTE / 01</span><h2>先读问题，再看方案。</h2><p>留意业务规模、约束和代价，思考哪些经验适用于自己的项目。</p></section>
+      <p class="snapshot">资料快照 <span>2026.03.01</span></p>
+    </aside>
+    <main id="cases">
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">工程案例收集 · 分类 · 导航</p><h1 id="page-title">读案例，理解技术取舍。</h1><p class="intro-copy">原库汇集一手工程实践；这里补充中文导读、检索与案例总结。</p></div>
+        <dl class="metrics"><div><dt>文章</dt><dd id="total-stat">—</dd></div><div><dt>公司 / 品牌</dt><dd id="company-stat">—</dd></div><div><dt>原文总结</dt><dd id="review-stat">—</dd></div></dl>
+      </section>
+      <section class="toolbar" aria-label="搜索与筛选">
+        <label class="search"><span class="sr-only">搜索案例</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜索问题、技术、公司，例如：缓存、Postgres" autocomplete="off"></label>
+        <div class="selects">
+          <label>公司<select id="company"><option value="">全部公司</option></select></label>
+          <label class="mobile-topic">主题<select id="topic-select"><option value="">全部主题</option></select></label>
+          <label>内容依据<select id="evidence"><option value="">全部内容</option><option value="reviewed">原文总结</option><option value="guide">标题导读</option></select></label>
+          <label>排序<select id="sort"><option value="recommended">原文总结优先</option><option value="newest">年份从新到旧</option><option value="oldest">年份从旧到新</option><option value="source">上游目录顺序</option></select></label>
+        </div>
+      </section>
+      <div class="result-heading"><div><h2 id="topic-title">全部案例</h2><span id="result-count" role="status" aria-live="polite"></span></div><button id="reset" class="text-button" type="button">重置筛选</button></div>
+      <p id="topic-description" class="topic-description">“原文总结”来自已阅读的文章；“标题导读”仅概括上游标题，不推断实现细节。文中指标均为作者当时报告。</p>
+      <div id="case-grid" class="case-grid"></div>
+      <div id="empty" class="empty" hidden><h3>没有找到匹配的案例</h3><p>换个关键词，或清除部分筛选条件。</p><button id="empty-reset" class="primary-button" type="button">查看全部案例</button></div>
+      <nav id="pagination" class="pagination" aria-label="案例分页"></nav>
+      <footer>整理自 Awesome Engineering Articles · 索引采用 MIT 许可证<br>中文内容为研究导读，未复现原文中的生产结果。<a href="LICENSE.txt">查看索引许可证</a></footer>
+    </main>
+  </div>
+  <dialog id="case-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span class="eyebrow">CASE STUDY / <span id="detail-number"></span></span><button id="close-dialog" class="close-button" type="button" aria-label="关闭案例详情">关闭 ×</button></div><div id="detail-body"></div></dialog>
+  <noscript><p class="noscript">此页面需要启用 JavaScript 才能展示案例。也可阅读项目中的 cases.md 中文目录。</p></noscript>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "engineering-casebook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "工程案例中文展示与研究导读，无第三方运行依赖",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "data": "node scripts/build-data.cjs",
+    "check": "node scripts/check.cjs"
+  }
+}

@@ -2,42 +2,59 @@
 
 [返回首页](../README.md)
 
-当前仅预留组织方式，尚未创建演示站点、部署流程或启用 GitHub Pages。
+## 当前发布方式
 
-## 多个演示如何组织
+使用 GitHub Pages，由 [发布工作流](../.github/workflows/pages.yml) 将 [部署清单](web-demos.json) 中的项目统一发布。当前正在首次发布 002 工程案例手册，尚未验证线上地址；验证后补充正式入口。
 
-每个子项目在自己的 README 中维护演示地址，根 README 的索引同步该链接。链接可以指向 GitHub Pages 子路径，也可以指向外部部署地址。
+- 站点根目录：能力与演示总入口，关联原库、能力研究和案例展示。
+- `002-engineering-casebook/`：工程案例手册的独立访问路径。
+- `assets/`：站点展示所需的整体引导图。
+- 本地预览仅用于本机，不作为线上部署结果。
 
-如果以后采用 GitHub Pages，将多个静态演示汇总为同一个站点的不同子路径，例如：
+## 构建与部署流程
 
-```text
-https://yydshly.github.io/0911_codex_project/
-├── 001-project-a/
-└── 002-project-b/
-```
+1. 推送 `main` 分支中与部署相关的文件，或手动运行发布工作流。
+2. 在 002 项目中生成数据，检查原文对应关系、搜索筛选、排序、分页及静态资源，并确认生成文件与提交一致。
+3. 从根目录执行 `node scripts/build-pages.cjs`，根据部署清单汇总每个项目的静态目录。
+4. 输出到根 `_site/`，只上传此目录；不上传整个仓库、研究原始资料或本地配置。
+5. 通过 GitHub Actions 的 Pages artifact 和 deploy-pages 发布。
+6. 部署完成后验证首页、各子路径与资源，核对部署提交，再更新文档入口。
 
-以上仅为规划示例，当前不可作为已部署链接使用。GitHub Pages 每个仓库最多提供一个站点，支持静态 HTML、CSS 和 JavaScript；这里的多个演示通过该站点的不同子路径组织。参见 [GitHub Pages 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)。
+本仓库根目录没有统一应用依赖；打包脚本使用 Node.js 内置模块。项目自身依赖、锁文件和检查命令仍独立维护。
 
-## 部署时补充的内容
+## 增加其他演示
 
-- **静态前端：** 配置每个项目的资源基础路径（例如 `/0911_codex_project/001-project-a/`），避免脚本、图片和样式路径失效。
-- **页面路由：** 验证子路径访问和刷新；如果采用单页应用，选择适合静态托管的路由方案。
-- **依赖后端的项目：** 后端需要独立运行环境，GitHub Pages 只承载静态前端；在项目说明中记录后端地址与配置要求。
-- **构建与发布：** 每个项目独立构建，再由统一发布流程汇总产物，避免后部署的项目覆盖其他演示。
-- **验证：** 实际访问演示，检查首页、资源加载、内部导航和刷新，再更新索引链接。
+在 [web-demos.json](web-demos.json) 中追加项目，保留已有条目。每个条目包括：
 
-具体工具和发布流程在首个需要部署的项目中确定。
-
-## 每个项目的部署记录
-
-| 字段 | 应记录的内容 |
+| 字段 | 用途 |
 | :--- | :--- |
-| 演示地址 | 实际可访问的完整 URL |
-| 部署平台 | GitHub Pages 或实际使用的平台 |
-| 构建目录与命令 | 在哪个目录执行什么命令 |
-| 发布产物 | 实际输出目录 |
-| 资源基础路径 | 根路径或项目子路径 |
-| 对应版本 | 本仓库提交与上游研究版本 |
-| 配置与限制 | 所需配置变量名称、后端依赖、功能限制 |
+| id / slug | 固定项目编号与独立 URL 子路径 |
+| sourceDirectory | 已完成构建的静态目录 |
+| name / capability | 项目名称与原库核心能力摘要 |
+| extension | 本地新增能力，避免与原库能力混淆 |
+| upstream / upstreamName | 真实原库地址与名称 |
+| readme / research | 本地项目介绍与原库能力研究 |
+| image | 项目说明图或真实截图；明确图片性质 |
 
-将这些信息补充到对应子项目 README 的“运行与演示”部分；敏感值通过部署平台配置，示例文件仅保留变量名和占位值。
+同时为新项目补充工作流中的构建检查步骤和路径触发条件，再更新根 README、子项目 README 的演示入口。打包按编号排序，并检查重复路径、引用文件和 JavaScript 语法。
+
+所有子项目一次性汇总发布，避免后部署的项目覆盖先前演示。静态文件使用相对资源路径，确保放在子路径下仍可加载。包含后端的项目需另外配置服务，GitHub Pages 不运行后端。
+
+## 部署记录
+
+| 项目 | 记录 |
+| :--- | :--- |
+| 平台 | GitHub Pages |
+| 仓库 | [yydshly/0911_codex_project](https://github.com/yydshly/0911_codex_project) |
+| 分支与触发 | main 的相关变更，或 workflow_dispatch |
+| 工作流 | [.github/workflows/pages.yml](../.github/workflows/pages.yml) |
+| 打包命令 | 根目录执行 `node scripts/build-pages.cjs` |
+| 上传目录 | `_site/` |
+| 002 静态源目录 | `projects/002-engineering-casebook/app/dist/` |
+| 002 路径 | `002-engineering-casebook/` |
+| 上游研究版本 | `9ef9509126254406440c0e5ee09f609d0876418a` |
+| 首次发布状态 | 发布准备完成，等待线上验证 |
+
+权限由 GitHub Actions 的 `contents: read`、`pages: write` 和 `id-token: write` 控制，无需将访问令牌放入仓库。
+
+参考：[GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
