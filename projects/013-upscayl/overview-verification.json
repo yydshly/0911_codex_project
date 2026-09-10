@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-11",
+  "commit": "c2b2af0baf16c839dcc0c28f98d06e623c0594b9",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34509443865",
+  "checks": [
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/index.html",
+      "status": 200,
+      "bytes": 44812,
+      "sha256": "dd74024677708f9ff8d4f7a285ecb6f1a904f7149eb68f090d7a61caaabf3986",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/assets/capability-overview.png",
+      "status": 200,
+      "bytes": 907621,
+      "sha256": "03f6e03ec50123a7c117cbfe9beed8535bd68bd52cf39b252199c972f51dcf62",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/assets/capability-overview.svg",
+      "status": 200,
+      "bytes": 23717,
+      "sha256": "8125443c4920d13c3395550fbbe76806ab959fc0bc2a290f909b2747fe967fe8",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/assets/013-upscayl.png",
+      "status": 200,
+      "bytes": 907621,
+      "sha256": "03f6e03ec50123a7c117cbfe9beed8535bd68bd52cf39b252199c972f51dcf62",
+      "matchesLocal": true
+    }
+  ],
+  "scope": "总览图与网页逐字节核验；图像排版人工检查；非上游效果实测或浏览器视觉测试"
+}
