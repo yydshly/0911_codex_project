@@ -1,0 +1,51 @@
+# 收录一个研究项目
+
+[返回首页](../README.md)
+
+## 1. 分配固定编号
+
+查看 [projects](../projects/README.md) 和[总索引](../README.md#项目索引)，取历史最大编号加一。当前没有项目，第一个使用 `001`。
+
+目录名示例：`projects/001-project-slug/`。编号分配后保持稳定，短名使用小写英文和连字符。
+
+## 2. 复制模板
+
+将 `templates/project/` 整个复制到新的项目目录。以下命令在仓库根目录执行，目标目录已存在时应停止，避免覆盖。
+
+PowerShell 示例：
+
+```powershell
+$projectPath = 'projects/001-project-slug'
+if (Test-Path -LiteralPath $projectPath) {
+    throw "项目目录已存在：$projectPath"
+}
+Copy-Item -LiteralPath 'templates/project' -Destination $projectPath -Recurse
+```
+
+替换所有 `{{...}}` 占位内容，补充项目名称、上游地址、收录日期、研究目标和版本。尚未确认的字段明确写“待确认”或“待记录”。
+
+## 3. 记录研究与图片
+
+项目 README 保留摘要和入口，详细过程放在 `notes.md`。图片放入 `assets/`，配上展示内容和来源说明。
+
+代码按需放入 `app/`，并在项目 README 中写清安装和运行方式。各项目独立管理依赖与锁文件。
+
+## 4. 更新首页索引
+
+在根 README 的表格中按编号升序添加一行，使用真实目录链接。例如：
+
+```markdown
+| 001 | [项目名称](projects/001-project-slug/README.md) | 一句话说明用途与研究重点 | 待研究 | 未部署 |
+```
+
+首次收录时移除空状态行，更新已收录数量和进度文案。有了真实截图后，在“项目预览”中添加同编号条目，引用 `projects/001-project-slug/assets/` 下的实际文件，并移除预览区的空状态文案。
+
+Web 演示链接仅在部署成功并实际访问验证后添加。归档项目保留索引并修改状态；保留有用的研究结论。
+
+## 5. 提交前检查
+
+- 编号唯一，目录、索引和图片预览的顺序一致。
+- 所有相对链接和图片指向真实文件。
+- 模板占位内容已替换，首页摘要与项目状态一致。
+- 复现步骤与结论包含对应版本和必要证据。
+- 引用代码或素材已记录来源，并保留所需的许可证声明。
