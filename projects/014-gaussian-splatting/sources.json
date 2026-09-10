@@ -1,0 +1,345 @@
+{
+  "checkedAt": "2026-09-11",
+  "note": "来源索引；具体支持结论与事实／推断边界见对应章节，不代表全量产品实测。",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2308.04079v1",
+      "label": "3DGS 论文",
+      "chapters": [
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://colmap.github.io/tutorial.html",
+      "label": "COLMAP",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md",
+        "understanding.md"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/image-generation",
+      "label": "图像生成 API",
+      "chapters": [
+        "chatgpt.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "label": "GPT-6 Astra 官方模型文档",
+      "chapters": [
+        "chatgpt.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://docs.nerf.studio/nerfology/methods/splat.html",
+      "label": "Splatfacto 文档",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/alicevision/Meshroom",
+      "label": "Meshroom／AliceVision",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/Anttwo/SuGaR",
+      "label": "SuGaR",
+      "chapters": [
+        "applications.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/arrival-space/splat.js",
+      "label": "Splat.js",
+      "chapters": [
+        "applications.md",
+        "comparison.md",
+        "implementation.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/ArthurBrussee/brush",
+      "label": "Brush",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/facebookresearch/vggt",
+      "label": "VGGT",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md",
+        "understanding.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/diff-gaussian-rasterization",
+      "label": "光栅器",
+      "chapters": [
+        "implementation.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting",
+      "label": "gaussian-splatting",
+      "chapters": [
+        "comparison.md",
+        "implementation.md",
+        "notes.md",
+        "README.md",
+        "understanding.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting/blob/54c035f7834b564019656c3e3fcc3646292f727d/gaussian_renderer/__init__.py",
+      "label": "渲染接口",
+      "chapters": [
+        "implementation.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting/blob/54c035f7834b564019656c3e3fcc3646292f727d/scene/gaussian_model.py",
+      "label": "场景模型源码",
+      "chapters": [
+        "implementation.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting/blob/54c035f7834b564019656c3e3fcc3646292f727d/train.py",
+      "label": "训练源码",
+      "chapters": [
+        "implementation.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/gaussian-splatting/tree/54c035f7834b564019656c3e3fcc3646292f727d",
+      "label": "固定提交源码",
+      "chapters": [
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/graphdeco-inria/hierarchical-3d-gaussians",
+      "label": "Hierarchical 3D Gaussians",
+      "chapters": [
+        "applications.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/hustvl/4DGaussians",
+      "label": "4DGaussians",
+      "chapters": [
+        "applications.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/microsoft/TRELLIS",
+      "label": "TRELLIS",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://github.com/minghanqin/LangSplat",
+      "label": "LangSplat",
+      "chapters": [
+        "applications.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/MrNeRF/LichtFeld-Studio",
+      "label": "LichtFeld Studio",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/naver/dust3r",
+      "label": "DUSt3R",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://github.com/nerfstudio-project/nerfstudio",
+      "label": "Nerfstudio",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://github.com/playcanvas/supersplat",
+      "label": "SuperSplat",
+      "chapters": [
+        "applications.md",
+        "comparison.md",
+        "notes.md",
+        "understanding.md"
+      ]
+    },
+    {
+      "url": "https://github.com/threestudio-project/threestudio",
+      "label": "threestudio",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://github.com/yydshly/0908_codex_project/tree/main/projects/008-splat-js",
+      "label": "历史研究资料",
+      "chapters": [
+        "notes.md",
+        "understanding.md"
+      ]
+    },
+    {
+      "url": "https://learn.chatgpt.com/zh-Hans/docs/image-generation",
+      "label": "ChatGPT 图像说明",
+      "chapters": [
+        "chatgpt.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://learn.poly.cam/hc/en-us/articles/27425185907348-How-to-Use-Object-Mode",
+      "label": "Polycam",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://lingjie0206.github.io/papers/NeuS/",
+      "label": "NeuS",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://lioryariv.github.io/volsdf/",
+      "label": "VolSDF",
+      "chapters": [
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://www.agisoft.com/features/professional-edition/",
+      "label": "Agisoft Metashape",
+      "chapters": [
+        "comparison.md",
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://www.jawset.com/",
+      "label": "Postshot",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.jawset.com/docs/d/Postshot+User+Guide/Interface/Training+Configuration",
+      "label": "Postshot 当前训练配置",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.kiriengine.app/blog/from-2d-video-to-3d-magic",
+      "label": "KIRI Engine",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.kiriengine.app/features/featureless-object-scan",
+      "label": "KIRI NSR 说明",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.matthewtancik.com/nerf",
+      "label": "NeRF",
+      "chapters": [
+        "notes.md",
+        "principles.md"
+      ]
+    },
+    {
+      "url": "https://www.meshy.ai/features/image-to-3d",
+      "label": "Meshy",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.nianticspatial.com/products/capture",
+      "label": "Scaniverse",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.realityscan.com/",
+      "label": "RealityScan",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://www.tripo3d.ai/",
+      "label": "Tripo",
+      "chapters": [
+        "comparison.md",
+        "notes.md"
+      ]
+    },
+    {
+      "url": "https://yydshly.github.io/0908_codex_project/demos/008-splat-js/video-test.html#result",
+      "label": "已公开鞋子结果",
+      "chapters": [
+        "notes.md",
+        "understanding.md"
+      ]
+    }
+  ]
+}

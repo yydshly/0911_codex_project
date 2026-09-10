@@ -150,6 +150,7 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 2026-09-11，提交 `cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34504589047)成功。142 项线上资源核验及 5 项线上交互检查通过；覆盖新站全部静态文件、总入口、能力图和 9 个既有子站入口。新站文件对照构建，CI 报告排除运行时间，总入口归一换行；既有子站检查可访问性。[资源证据](../projects/012-gstack/deployment-verification.json) · [交互证据](../projects/012-gstack/deployment-browser.json)。
 
+
 ## Upscayl · 超分辨率研究手册
 
 研究索引 013，历史目录和发布子路径 `013-upscayl/`。静态源目录 `projects/013-upscayl/app/dist/`，包含十章中文手册、模型与软件分工图、部署条件、同类产品以及与生成式图像大模型的比较。主文档与网页正文同源，附 30 个来源入口。
@@ -159,3 +160,11 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 构建与检查：安装 `projects/013-upscayl/app/requirements.txt`，执行 `python projects/013-upscayl/app/build.py` 和 `node projects/013-upscayl/app/check.cjs`，再通过原有统一脚本合并全部子站。[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
 
 2026-09-11 首次发布提交 `637b6307feb0f37d3e32206997acbb3b242a3d44` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34508069093)成功。18 项线上核验通过：新站 6 个文件与总入口预览图按原始字节一致，总入口包含新站链接，10 个既有子站入口正常。未进行浏览器视觉测试或模型效果测试。[验证记录](../projects/013-upscayl/deployment-verification.json)。
+
+## Gaussian Splatting 中文研究
+
+研究索引 012，历史路径 `014-gaussian-splatting/`。七章中文网页涵盖多视角重建、六条技术路线、官方 3DGS 实现、21 个产品与框架、ChatGPT 公开证据边界及扩展验证。SVG 为原创关系图；此前 Splat.js 实验通过历史链接关联，官方库未在本机训练。
+
+构建与检查：`node projects/014-gaussian-splatting/app/build.cjs`、`node projects/014-gaussian-splatting/app/check.cjs`。已纳入统一清单与工作流，静态源为 `projects/014-gaussian-splatting/app/dist/`。本地构建、链接检查、统一打包与 HTTP 访问已验证；本轮未推送或部署，不将预留路径作为在线成功记录。
+
+[项目说明](../projects/014-gaussian-splatting/README.md) · [网页运行说明](../projects/014-gaussian-splatting/app/README.md)

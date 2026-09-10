@@ -208,6 +208,26 @@
       "imageCaption": "本地原创技术示意图，非软件截图或增强样张；增加像素不等于找回真实信息。",
       "showPreview": true,
       "previewAnchor": "#overview"
+    },
+    {
+      "id": "014",
+      "researchIndex": "012",
+      "slug": "014-gaussian-splatting",
+      "name": "照片如何成为三维 · Gaussian Splatting",
+      "sourceDirectory": "projects/014-gaussian-splatting/app/dist",
+      "readme": "projects/014-gaussian-splatting/README.md",
+      "research": "projects/014-gaussian-splatting/understanding.md",
+      "upstream": "https://github.com/graphdeco-inria/gaussian-splatting",
+      "upstreamName": "Gaussian Splatting",
+      "capability": "用同一物体或场景的多角度照片生成可交互三维效果，核心采用 3DGS 算法：先求解相机与空间点，再优化三维高斯，实时渲染新视角。原生输出为高斯场景，适合外观展示和空间浏览。",
+      "extension": "输入、输出与原理总览图，七章中文手册和 21 个产品对比；解释摄影测量、NeRF、神经表面、几何预测和生成式三维的区别与组合。关联此前 Splat.js 实测并标注 ChatGPT 的未知实现；官方库训练尚未复现。",
+      "image": "projects/014-gaussian-splatting/assets/core-understanding.png",
+      "kind": "技术原理与同类对比",
+      "entryLabel": "阅读照片到三维研究 →",
+      "imageAlt": "照片如何成为三维：输入、空间求解、高斯优化、输出及相关路线",
+      "imageCaption": "内置 ImageGen 生成的中文技术总览，包含输入、输出、训练反馈和能力边界；鞋子为示意，非历史实测结果或软件截图。",
+      "showPreview": true,
+      "previewAnchor": ""
     }
   ]
 }

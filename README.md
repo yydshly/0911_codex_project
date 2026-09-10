@@ -4,7 +4,7 @@
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 按原库统计，已收录 **12** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
+**当前进度：** 按原库统计，已收录 **13** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
 
 FreeLLMAPI 是一个自托管模型网关，对外统一模型接口，对内负责选路、适配、额度与失败管理。研究索引 005，历史目录 `008-freellmapi/`；已整理共同架构、七个产品对比与开发取舍，网页已部署并验证，上游网关运行待复现。
 
@@ -24,6 +24,8 @@ gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面�
 
 Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强调结构保持与稳定批量处理，但不保证恢复真实细节。研究索引 013，历史目录 `013-upscayl/`；本地新增完整中文手册、底层关系图、同类产品及生成式大模型对比，[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
 
+Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库，核心采用 3DGS 算法：先定位相机与空间点，再优化高斯外观并实时渲染。其他路线还有摄影测量、NeRF 和神经隐式表面；预训练几何预测与生成式三维也可参与流程。本地新增完整总览图、原理和 21 个产品对比，关联 Splat.js 实测；网页准备发布。
+
 ## 项目索引
 
 按原库去重、按研究索引升序排列：001 为工程文章库，002 为 LongHorizon-Harness，003 为 oh-my-pi，004 为 XXG Portrait Rebuild Light。案例手册归属 001，不单独计数。研究索引与历史存储路径分开：保留已发布的 `002-engineering-casebook/` 和 `003-longhorizon-harness/`，旧链接继续有效；003 的资料存于 `004-oh-my-pi/`，004 存于 `005-xxg-portrait-rebuild-light/`。
@@ -41,6 +43,7 @@ Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强
 | 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线效果展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/)；已部署并验证 |
 | 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 | 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
+| 012 | [Gaussian Splatting](projects/014-gaussian-splatting/README.md) | [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) | 多角度照片生成可交互三维效果：先求解相机与空间，再用 3DGS（三维高斯泼溅）优化场景，支持新视角实时浏览；原生输出是高斯资产，不自动等于精确网格。 | 已完成本轮文档与网页；上游训练未实测 | [网页说明](projects/014-gaussian-splatting/app/README.md)；未部署 |
 | 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图像超分辨率：调用预训练模型与 NCNN / Vulkan GPU 推理，在尽量保留原图结构的前提下放大图片并改善细节观感，支持多模型、批量与自定义输出。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
@@ -167,6 +170,18 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 本地新增中文网页覆盖 57 项独立技能定义与原理、九阶段收录检查器实践和实际证据。21 项规则测试、17 项浏览器检查通过，保留一项真实缺陷的失败与修复记录。图为本地原创能力总览，按 12 类逐项说明作用与产物，非上游界面截图；采用方法适配执行，未复现全量上游或生产发布。
 
 [范围与能力摘要](projects/012-gstack/scope.md) · [完整研究](projects/012-gstack/research.md) · [57 项技能手册](projects/012-gstack/skills.md) · [在线网页](https://yydshly.github.io/0911_codex_project/012-gstack/) · [实验记录](projects/012-gstack/notes.md)。网页已部署并验证。
+
+### 012 · Gaussian Splatting
+
+**原库能力：多角度拍照生成可交互三维效果，底层采用 3DGS 算法。** 先通过相机求解建立空间初值，再以可微渲染优化高斯的位置、形状、颜色与不透明度，动态调整高斯数量，实现新视角实时浏览。
+
+其他技术路线包括摄影测量（SfM / MVS → 网格与纹理）、NeRF（密度与颜色场 → 体渲染）、神经隐式表面（SDF → 网格）；DUSt3R / VGGT 等几何预测可辅助空间求解，扩散／流模型等生成式方法可按先验补全三维资产。这些环节可以组合。
+
+![照片到三维的技术路线总览](projects/014-gaussian-splatting/assets/core-understanding.png)
+
+本地新增七章中文阅读网页，覆盖六条技术路线、21 个相关产品与框架、源码原理、使用场景、扩展与验证方案。明确区分 Splat.js 旧实验、官方库能力与 ChatGPT 实现推测。图为 AI 生成的输入、原理与输出总览，非运行截图或实测模型；本轮未训练官方库，网页未部署。
+
+[完整理解](projects/014-gaussian-splatting/understanding.md) · [实现原理](projects/014-gaussian-splatting/implementation.md) · [产品对比](projects/014-gaussian-splatting/comparison.md) · [网页说明](projects/014-gaussian-splatting/app/README.md) · [来源与记录](projects/014-gaussian-splatting/notes.md)
 
 ### 013 · Upscayl
 

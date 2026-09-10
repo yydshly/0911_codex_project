@@ -1,0 +1,7 @@
+{
+  "researchIndex": "012",
+  "storageId": "014",
+  "upstream": "https://github.com/graphdeco-inria/gaussian-splatting",
+  "registeredAt": "2026-09-11",
+  "note": "登记时根索引最大为011；013-upscayl目录已存在但尚无有效研究索引。研究索引与历史目录独立维护。"
+}
