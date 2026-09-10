@@ -111,5 +111,5 @@ for filename in ['understanding.md','README.md','notes.md']:
 shutil.copyfile(PROJECT/'sources'/'LICENSE.browser-use',OUT/'downloads'/'LICENSE.browser-use')
 png = PROJECT/'assets'/'understanding-map.png'
 if png.exists(): shutil.copyfile(png,OUT/'assets'/png.name)
+shutil.copyfile(PROJECT/'deployment-verification.json',OUT/'downloads'/'deployment-verification.json') if (PROJECT/'deployment-verification.json').exists() else None
 print('已生成详细中文网页与 1800×3200 矢量总览图。')
-

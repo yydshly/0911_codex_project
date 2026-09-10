@@ -25,4 +25,3 @@
   }
   root.BrowserUseLesson = Object.freeze({state});
 })(typeof globalThis!=='undefined'?globalThis:this);
-

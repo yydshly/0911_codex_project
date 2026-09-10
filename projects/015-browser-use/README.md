@@ -4,7 +4,7 @@ Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索�
 
 CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。
 
-[返回总索引](../../README.md#项目索引) · [完整中文理解](understanding.md) · [研究与验证记录](notes.md) · [本地网页](app/dist/index.html) · [配图说明](assets/README.md)
+[返回总索引](../../README.md#项目索引) · [完整中文理解](understanding.md) · [研究与验证记录](notes.md) · [在线详细网页](https://yydshly.github.io/0911_codex_project/015-browser-use/) · [离线网页](app/dist/index.html) · [配图说明](assets/README.md)
 
 ## 项目信息
 
@@ -19,7 +19,7 @@ CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定�
 | 上游技术 | Python、模型接口、CDP / cdp-use、真实浏览器 |
 | 上游许可证 | MIT；[固定版本原文](https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/LICENSE) · [保存副本](sources/LICENSE.browser-use) |
 | 研究状态 | 研究中：文档与源码已分析，上游 Agent 未实测 |
-| 网页状态 | 本地静态网页；未部署，已加入统一 Pages 发布清单 |
+| 网页状态 | GitHub Pages 已部署并验证；[在线阅读](https://yydshly.github.io/0911_codex_project/015-browser-use/) |
 
 ## 原库能力与本地新增
 
@@ -58,9 +58,8 @@ node projects/015-browser-use/app/scripts/check.cjs
 
 高清 PNG 由 SVG 渲染，生成方式见 [配图说明](assets/README.md)。修改图内容后需重新渲染 PNG，再构建以同步网页下载。
 
-统一发布准备命令为 `node scripts/build-pages.cjs`。目录已合并到 [部署清单](../../docs/web-demos.json) 与 [工作流](../../.github/workflows/pages.yml)，本次未推送或执行线上发布。公开地址在部署并验证之前不作为可访问入口。
+统一发布准备命令为 `node scripts/build-pages.cjs`。目录已合并到 [部署清单](../../docs/web-demos.json) 与 [工作流](../../.github/workflows/pages.yml)，已通过统一 Pages 发布。首次部署提交 `5a7febbc839a80a558ab4cb8ceb97ceb7aad9fd4` 的[发布工作流](https://github.com/yydshly/0911_codex_project/actions/runs/34510583092)成功；24 项线上核验通过，覆盖新站全部文件、总入口、预览图和既有子站入口。见[首次部署验证记录](deployment-verification.json)。
 
 ## 验证边界
 
 静态检查验证引用、正文覆盖、下载产物、示意状态和编号；不验证上游 Agent 成功率。未安装上游运行环境，未调用模型或托管服务。可借鉴的组合方向仍待后续真实任务实验。
-

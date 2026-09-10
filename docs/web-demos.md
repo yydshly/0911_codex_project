@@ -171,6 +171,8 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 ## Browser-use · 模型理解与 CDP 点击
 
-研究索引 014，历史目录 `015-browser-use`，静态源目录 `projects/015-browser-use/app/dist/`。已合并统一清单与工作流，未部署；[本地页面](../projects/015-browser-use/app/dist/index.html)与[完整文档](../projects/015-browser-use/understanding.md)可阅读。
+研究索引 014，历史目录 `015-browser-use`，静态源目录 `projects/015-browser-use/app/dist/`。已通过统一工作流部署并验证；[正式网页](https://yydshly.github.io/0911_codex_project/015-browser-use/)与[完整文档](../projects/015-browser-use/understanding.md)可阅读。
 
 页面覆盖模型上下文、元素编号与定位、CDP 鼠标移动／按下／松开、浏览器响应、动作范围、同类比较与应用。完整图为原创示意，两个交互分支为本地预设教学，不连接模型或浏览器。构建与检查按子项目 README 执行；上游 Agent 未实测。
+
+2026-09-11，首次发布提交 `5a7febbc839a80a558ab4cb8ceb97ceb7aad9fd4` 的[Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34510583092)成功，24 项线上核验通过。新站全部文件、总入口和预览图与构建一致，12 个既有子站入口可访问。[首次部署验证记录](../projects/015-browser-use/deployment-verification.json)。

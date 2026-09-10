@@ -30,7 +30,7 @@ Upscayl 是开源本地图片超分辨率桌面工具：输入单张图片或文
 
 Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库，核心采用 3DGS 算法：先定位相机与空间点，再优化高斯外观并实时渲染。其他路线还有摄影测量、NeRF 和神经隐式表面；预训练几何预测与生成式三维也可参与流程。本地新增完整总览图、原理和 21 个产品对比，关联 Splat.js 实测；[在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。
 
-Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。 本地新增 12 节中文理解、完整图与两个教学分支；上游未实测，网页发布状态见项目说明。
+Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。 本地新增 12 节中文理解、完整图与两个教学分支；上游未实测，[在线详细网页](https://yydshly.github.io/0911_codex_project/015-browser-use/)已部署并验证。
 
 ## 项目索引
 
@@ -51,7 +51,7 @@ Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索�
 | 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
 | 012 | [Gaussian Splatting](projects/014-gaussian-splatting/README.md) | [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) | 多角度照片生成可交互三维效果：先求解相机与空间，再用 3DGS（三维高斯泼溅）优化场景，支持新视角实时浏览；原生输出是高斯资产，不自动等于精确网格。 | 已完成本轮文档与网页；上游训练未实测 | [在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)；已部署并验证 |
 | 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图片超分辨率与批量放大：预训练模型 + NCNN / Vulkan，支持多模型、输出尺寸与对比；较生成式编辑更侧重结构保持与固定尺寸处理，仍不保证真实细节。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
-| 014 | [Browser-use](projects/015-browser-use/README.md) | [browser-use/browser-use](https://github.com/browser-use/browser-use) | Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 | 12 节中文理解与完整图已整理；上游未实测 | [详细本地网页](projects/015-browser-use/app/dist/index.html) · [完整文档](projects/015-browser-use/understanding.md)；未部署 |
+| 014 | [Browser-use](projects/015-browser-use/README.md) | [browser-use/browser-use](https://github.com/browser-use/browser-use) | Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 | 12 节中文理解与完整图已整理；上游未实测 | [在线详细网页](https://yydshly.github.io/0911_codex_project/015-browser-use/) · [完整文档](projects/015-browser-use/understanding.md)；已部署并验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -206,9 +206,9 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 
 ![Browser-use 从页面理解到 CDP 点击的完整总览](projects/015-browser-use/assets/understanding-map.png)
 
-本地原创研究示意图，非上游运行截图。固定提交 `50f2055`；详细网页包含完整原理、主要动作、gstack / OMP 比较、应用扩展及两个预设教学分支。浏览器内部模拟鼠标事件不一定移动系统指针；上游未实测，网页未部署。
+本地原创研究示意图，非上游运行截图。固定提交 `50f2055`；详细网页包含完整原理、主要动作、gstack / OMP 比较、应用扩展及两个预设教学分支。浏览器内部模拟鼠标事件不一定移动系统指针；上游未实测，网页已部署并验证。
 
-[项目说明](projects/015-browser-use/README.md) · [完整中文文档](projects/015-browser-use/understanding.md) · [详细本地网页](projects/015-browser-use/app/dist/index.html) · [可放大总览图](projects/015-browser-use/assets/understanding-map.svg) · [上游仓库](https://github.com/browser-use/browser-use)
+[项目说明](projects/015-browser-use/README.md) · [完整中文文档](projects/015-browser-use/understanding.md) · [在线详细网页](https://yydshly.github.io/0911_codex_project/015-browser-use/) · [可放大总览图](projects/015-browser-use/assets/understanding-map.svg) · [上游仓库](https://github.com/browser-use/browser-use)
 
 ## 仓库导航
 

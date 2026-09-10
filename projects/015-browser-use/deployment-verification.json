@@ -1,0 +1,166 @@
+{
+  "verifiedAt": "2026-09-10T17:50:50.587Z",
+  "sourceCommit": "5a7febbc839a80a558ab4cb8ceb97ceb7aad9fd4",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34510583092",
+  "site": "https://yydshly.github.io/0911_codex_project/015-browser-use/",
+  "scope": "新站全部文件、总入口和预览图与本地构建逐字节一致；既有子站入口可访问。非上游 Agent 实测或浏览器交互 QA。",
+  "passed": 24,
+  "results": [
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/app.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 1896,
+      "sha256": "8a9f5fcd919b8b83c8510db535aad130886f743b0021afc2c61664e3bea14501"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/assets/understanding-map.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 724723,
+      "sha256": "5b86519c4ea08b6910e952e91ed2050eafaa53186d190da18e8c1c75d43c1ea8"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/assets/understanding-map.svg",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 14369,
+      "sha256": "13fc727c57148e468a6fd4219360cac633ff1944be97b913180b3cd5de2acb3a"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/downloads/LICENSE.browser-use",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 1069,
+      "sha256": "135c57671b0ee957669b05a0ca00cc06f645496d351e2e732832c6e276da9a5e"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/downloads/notes.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 2844,
+      "sha256": "5b9bb631d8f0efad8c6b60ad81cd58f4baa52fd473490dbddbee34cda4e05029"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/downloads/README.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 4400,
+      "sha256": "3716b2aebfe7ed4f84a452b47cf87d314599a1d64f634ce6349718007ca4b2dd"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/downloads/understanding.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 20236,
+      "sha256": "38a09fd895678d90a3297c3fd0a8d7462ee6b97939733662be6e1e288900b476"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/index.html",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 31696,
+      "sha256": "7c36ef12a64a75cb36153e76e48b1866da75725d1c5046f757e26a488e132cc9"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/lesson.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 4751,
+      "sha256": "6ca5cf738fbcac6da5147c6b352091e92a269935fbdee758169b84de3fe31d53"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/015-browser-use/style.css",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 7829,
+      "sha256": "5ac0989755bef78ed4102a5a15d9d6896132a22b8d75ffebdbd29eda855b1515"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 23692,
+      "sha256": "6a7137751b847bb336e692a7957a11abf1623ddf6b4597a6ab3c82db46cf4f11"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/assets/015-browser-use.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "bytes": 724723,
+      "sha256": "5b86519c4ea08b6910e952e91ed2050eafaa53186d190da18e8c1c75d43c1ea8"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/002-engineering-casebook/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 5410
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 33181
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 19537
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/008-freellmapi/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 11332
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/009-graphify/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 20760
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/010-marketingskills/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 30564
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/006-drama-skills/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 8649
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 40886
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/011-munder-difflin/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 16253
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 2857
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 10291
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/",
+      "status": 200,
+      "mode": "availability",
+      "bytes": 50604
+    }
+  ]
+}
