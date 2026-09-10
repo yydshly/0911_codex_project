@@ -46,11 +46,16 @@
       "command": "真实场景 HTTP 检查",
       "result": "passed",
       "scope": "real-case.html、数据、共享背景、哈希清单和循环状态均返回 200；没有浏览器视觉验收"
+    },
+    {
+      "command": "GitHub Pages 线上内容核对",
+      "result": "passed",
+      "scope": "53 个文件 HTTP 200 且与构建一致；见 deployment-verification.json"
     }
   ],
   "browserVisualQA": "未执行",
   "realMarketingExecution": "已读取并应用 product-marketing、offers、copywriting、analytics、marketing-loops 五份原文产出定位与验证方案；未进行外部用户验证、投放或账户操作。主手册六个教学场景仍为预编写说明。",
-  "deployment": "未部署",
+  "deployment": "已部署并验证：https://yydshly.github.io/0911_codex_project/010-marketingskills/",
   "revision": "真实产品定位场景、任务入口与手动推进循环",
   "coverage": {
     "skillDetails": 50,

@@ -18,7 +18,7 @@ Munder Difflin 是多 Agent 工具，以本地文件收发箱实现 Agent 间通
 
 Graphify 支持原始源码、文档、办公资料、图片、音视频和 SQL 结构输入，输出可查询图谱、交互网络、层级树、调用流程、报告/Wiki 及多格式数据。已完成固定版本代码实测与完整能力图解，网页已部署并验证；研究索引 006，目录 `009-graphify/`。
 
-Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定位与决策、内容、搜索、转化、推广、销售与客户关系、留存和衡量实验。宿主读取技能、复用产品背景并调用可用工具，产出研究、方案、文案与验证计划。本地提供中文完整手册、输入输出全图及五技能真实应用；业务效果待验证，网页正在发布。
+Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定位与决策、内容、搜索、转化、推广、销售与客户关系、留存和衡量实验。宿主读取技能、复用产品背景并调用可用工具，产出研究、方案、文案与验证计划。本地提供中文完整手册、输入输出全图及五技能真实应用；业务效果待验证，网页已部署并验证。
 
 ## 项目索引
 
@@ -32,7 +32,7 @@ Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定�
 | 004 | [XXG Portrait Rebuild Light](projects/005-xxg-portrait-rebuild-light/README.md) | [moskoo/xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 三次布光与商品扩展已运行，完整技能与系统评测待复现 | [中文能力展示说明](projects/005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) |
 | 005 | [FreeLLMAPI](projects/008-freellmapi/README.md) | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 自托管模型网关：对外统一模型接口，对内选择供应商、模型与密钥路线，适配接口差异并管理额度、冷却和失败回退；应用 / Agent 负责组织任务，实际模型负责推理。 | 能力、架构与同类对比已整理；上游运行待复现 | [在线模型网关理解](https://yydshly.github.io/0911_codex_project/008-freellmapi/) · [产品对比](projects/008-freellmapi/comparison.md)；已部署并验证 |
 | 006 | [Graphify](projects/009-graphify/README.md) | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 支持将源码、文档、PDF、Word/Excel、图片、音视频及 SQL 结构提取为可查询知识图谱；代码本地解析，语义资料需模型。输出交互网络、层级树、调用流程、SVG/Canvas、报告/Wiki，以及 JSON、GraphML、Cypher，辅助研究、依赖追踪与证据交付。 | FastAPI 核心包 747 节点 / 1,971 关系；原生导出、MCP 与增量已验证 | [在线能力与原生演示](https://yydshly.github.io/0911_codex_project/009-graphify/)；已部署并验证 |
-| 007 | [Marketing Skills](projects/010-marketingskills/README.md) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 50 个营销方法技能覆盖定位、内容、搜索、转化、推广、客户关系、留存及实验；宿主结合产品资料执行，产出研究、文案、方案与验证计划。 | 已应用五个原始技能产出当前研究的产品定位及任务入口；业务价值待验证 | [中文手册](projects/010-marketingskills/app/dist/index.html) · [真实应用场景](projects/010-marketingskills/app/dist/real-case.html)；发布中 |
+| 007 | [Marketing Skills](projects/010-marketingskills/README.md) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 50 个营销方法技能覆盖定位、内容、搜索、转化、推广、客户关系、留存及实验；宿主结合产品资料执行，产出研究、文案、方案与验证计划。 | 已应用五个原始技能产出当前研究的产品定位及任务入口；业务价值待验证 | [在线中文手册](https://yydshly.github.io/0911_codex_project/010-marketingskills/) · [真实应用场景](https://yydshly.github.io/0911_codex_project/010-marketingskills/real-case.html)；已部署并验证 |
 | 008 | [Drama Skills](projects/006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](projects/006-drama-skills/demos/README.md) |
 | 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线效果展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/)；已部署并验证 |
 | 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
@@ -118,9 +118,9 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 
 ![Marketing Skills：核心能力、相关技能、每步输入输出与最终交付](projects/010-marketingskills/assets/capabilities-flow.png)
 
-原创全流程说明图，展示核心能力、八类代表技能，以及当前场景五步输入输出和最终交付，非上游截图。本地新增 50 技能详细卡、六个六步教学场景、完整工具目录与上手手册；另外真实应用五个原始技能，基于当前研究和 Graphify 既有运行证据产出产品定位、交付方案与可导出任务入口，配有反馈推进规则。文档与代码检查已完成，客户需求与业务效果待验证，展示正在发布。
+原创全流程说明图，展示核心能力、八类代表技能，以及当前场景五步输入输出和最终交付，非上游截图。本地新增 50 技能详细卡、六个六步教学场景、完整工具目录与上手手册；另外真实应用五个原始技能，基于当前研究和 Graphify 既有运行证据产出产品定位、交付方案与可导出任务入口，配有反馈推进规则。文档与代码检查已完成，客户需求与业务效果待验证，展示已部署并验证。
 
-[中文展示页](projects/010-marketingskills/app/dist/index.html) · [真实应用与产品定位](projects/010-marketingskills/app/dist/real-case.html) · [完整研究](projects/010-marketingskills/notes.md) · [上游仓库](https://github.com/coreyhaines31/marketingskills) · [范围与能力摘要](projects/010-marketingskills/scope.md) · [矢量全流程图](projects/010-marketingskills/assets/capabilities-flow.svg)
+[在线中文展示](https://yydshly.github.io/0911_codex_project/010-marketingskills/) · [真实应用与产品定位](https://yydshly.github.io/0911_codex_project/010-marketingskills/real-case.html) · [完整研究](projects/010-marketingskills/notes.md) · [上游仓库](https://github.com/coreyhaines31/marketingskills) · [范围与能力摘要](projects/010-marketingskills/scope.md) · [矢量全流程图](projects/010-marketingskills/assets/capabilities-flow.svg)
 
 ### 008 · Drama Skills
 

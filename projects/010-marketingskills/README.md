@@ -2,7 +2,7 @@
 
 > **Marketing Skills 是供 Agent 使用的营销方法库。** 固定版本的 50 个技能覆盖定位与决策、内容创作、搜索发现、页面转化、推广、销售与客户关系、留存增长及衡量实验。它把输入要求、分析步骤、参考框架和交付要求写入技能，由宿主 Agent 结合产品背景、真实资料与可用工具执行，产出研究、方案、文案和验证计划。适合独立开发者、创始人与小团队；账户连接、对外操作和业务效果需要分别配置与验证。
 
-[范围与能力摘要](scope.md) · [完整输入输出说明图](assets/capabilities-flow.png)
+[在线完整展示](https://yydshly.github.io/0911_codex_project/010-marketingskills/) · [真实应用场景](https://yydshly.github.io/0911_codex_project/010-marketingskills/real-case.html) · [范围与能力摘要](scope.md) · [完整输入输出说明图](assets/capabilities-flow.png)
 
 [返回总索引](../../README.md#项目索引) · [打开中文展示页](app/dist/index.html) · [真实技能应用与产品定位](app/dist/real-case.html) · [50 技能与工具中文手册](catalog.md) · [研究笔记](notes.md) · [上游仓库](https://github.com/coreyhaines31/marketingskills) · [源码清单](sources/inventory.json)
 
@@ -20,7 +20,7 @@
 | 技术栈 | 上游：Markdown / YAML 技能、Node.js 工具；本地展示：原生 HTML / CSS / JavaScript |
 | 许可证 | 上游 [MIT 原文副本](sources/LICENSE)，Copyright (c) 2025 Corey Haines |
 | 研究状态 | 研究中：代表性源码与机制已分析；没有接入真实营销账户或复现全部技能 |
-| 展示状态 | 中文静态展示已完成；支持离线打开与本地预览，尚未部署 |
+| 展示状态 | GitHub Pages 已部署并验证；支持在线、离线与本地预览 |
 | 发布方式 | 已合并 GitHub Pages 部署清单，统一打包时保留其他项目产物 |
 
 ## 本地新增展示
@@ -44,7 +44,7 @@
 
 建议产品方向为“开源落地实验室”：面向正在做 AI 应用的中文开发者，将具体工程问题转为有证据、可验收的开源实践包。首个入口聚焦“陌生代码库上手”，已实现三条任务路线、Markdown 任务单导出、实际尝试后的反馈 JSON 导出，以及有状态的手动推进循环。页面不实时调用模型；文档工作由当前 Agent 实际完成，交互和循环脚本为本地新增。
 
-当前定位仍为草案；外部用户、需求与付费意愿尚未验证。没有重新运行 Graphify、发送内容、接入营销账户或创建定时任务。空反馈的基线和重复检查已真实执行，业务结果没有伪造。页面已本地可用，尚未部署或做浏览器视觉验收。
+当前定位仍为草案；外部用户、需求与付费意愿尚未验证。没有重新运行 Graphify、发送内容、接入营销账户或创建定时任务。空反馈的基线和重复检查已真实执行，业务结果没有伪造。页面已部署并通过线上内容核对；尚未做浏览器视觉验收。
 
 ## 整体原理图
 
@@ -92,4 +92,10 @@ node app/scripts/preview.cjs
 
 研究固定于 [上游提交](https://github.com/coreyhaines31/marketingskills/tree/5b2c0007766c6a1cf1d53fd8fc73e979e0821022)。本地保存提取的元数据、源码证据及 MIT 许可证，并原样复制一个 GA4 脚本供离线预览测试；没有安装技能或接入真实业务工具。来源与复制范围见 [sources/README.md](sources/README.md)，研究结论见[研究笔记](notes.md)，检查结果见 [verification.json](verification.json)。
 
-后续工作：校正定位背景、完成维护者真实任务验收与外部需求验证，以及线上发布和浏览器验收。
+后续工作：校正定位背景、完成维护者真实任务验收、外部需求验证与浏览器验收。
+
+## 线上发布记录
+
+2026-09-11，固定部署提交 `c8d284c8079fbc9830e91f07e27c582cb91b67e0` 的 [GitHub Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34503602382)成功。53 个线上文件均返回 200 且与构建一致，覆盖完整新站、输入输出说明图、普通路径下的背景和状态下载、总入口及八个已有子站；文本按 LF 归一、图片按原字节比较。[验证记录](deployment-verification.json)。
+
+公开下载使用 `real-case/context/`；研究原件仍存于场景的 `.agents/`。清单分别保存原始路径与公开路径、两份文件哈希，避免 Pages 隐藏目录限制。验证脚本可从仓库根目录运行：`node projects/010-marketingskills/app/scripts/verify-deployment.cjs <完整部署提交> <Actions链接>`，需先构建统一 `_site/`。

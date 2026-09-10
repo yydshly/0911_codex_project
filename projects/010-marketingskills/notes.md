@@ -151,3 +151,8 @@
 本地提出“开源落地实验室”定位，以陌生代码库上手作为首个任务；复用 Graphify 既有 FastAPI 图记录，没有重新生成该图。Agent 另行读取固定 FastAPI 源码完成一条调用位置的静态核验，见 [内部走查](runs/product-positioning/06-internal-walkthrough.md)。该走查不计入客户反馈。网页能导出任务单与反馈，本地手动执行器保存去重状态；没有外部账户、自动模型请求、日程、付费或客户增长结果。
 
 此处是早期“页面仅含教学展示、营销文档执行待验证”状态的更新。原六个教学场景仍是说明性文本；新增场景的五份文档工作已真实执行，定位有效性与外部需求仍待验证。
+
+
+## 发布状态更新 · 2026-09-11
+
+[中文完整展示](https://yydshly.github.io/0911_codex_project/010-marketingskills/)与[真实应用](https://yydshly.github.io/0911_codex_project/010-marketingskills/real-case.html)已部署，53 个线上文件与构建一致，包括证据下载与已有子站。公开副本将隐藏背景目录映射为 context，保留原文件及其哈希；见[发布核验](deployment-verification.json)。这更新了早期本地研究记录中的“未部署”状态，业务效果仍待验证。

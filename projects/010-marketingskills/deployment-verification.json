@@ -1,0 +1,436 @@
+{
+  "verifiedAt": "2026-09-10T16:43:01.067Z",
+  "commit": "c8d284c8079fbc9830e91f07e27c582cb91b67e0",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34503602382",
+  "site": "https://yydshly.github.io/0911_codex_project/010-marketingskills/",
+  "realCase": "https://yydshly.github.io/0911_codex_project/010-marketingskills/real-case.html",
+  "checks": 53,
+  "passed": 53,
+  "files": [
+    {
+      "file": "002-engineering-casebook/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370",
+      "actualSha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370"
+    },
+    {
+      "file": "003-longhorizon-harness/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4",
+      "actualSha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4"
+    },
+    {
+      "file": "005-xxg-portrait-rebuild-light/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72",
+      "actualSha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72"
+    },
+    {
+      "file": "006-drama-skills/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a",
+      "actualSha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a"
+    },
+    {
+      "file": "007-xxd-panel-028/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216",
+      "actualSha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216"
+    },
+    {
+      "file": "008-freellmapi/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70",
+      "actualSha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70"
+    },
+    {
+      "file": "009-graphify/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "a78c8f3e17570dddf8939ef4659c26eec1f179f9d453f2e1e210bcb6acada51c",
+      "actualSha256": "a78c8f3e17570dddf8939ef4659c26eec1f179f9d453f2e1e210bcb6acada51c"
+    },
+    {
+      "file": "010-marketingskills/app.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "49d9263baeb14f43c591e4856940d9384cc342ff8b7fdc3c2778195ba45a1fee",
+      "actualSha256": "49d9263baeb14f43c591e4856940d9384cc342ff8b7fdc3c2778195ba45a1fee"
+    },
+    {
+      "file": "010-marketingskills/capabilities-flow.png",
+      "status": 200,
+      "matching": true,
+      "comparison": "bytes",
+      "expectedSha256": "995df765ccd91dea531966ef2ca84286e88843d87d67f54b800c2db7d59d238c",
+      "actualSha256": "995df765ccd91dea531966ef2ca84286e88843d87d67f54b800c2db7d59d238c"
+    },
+    {
+      "file": "010-marketingskills/capabilities-flow.svg",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "c12a3fd3215c25f571f6de8d9c8e7f9eacaefb9b258a239d13a893b691dcc15c",
+      "actualSha256": "c12a3fd3215c25f571f6de8d9c8e7f9eacaefb9b258a239d13a893b691dcc15c"
+    },
+    {
+      "file": "010-marketingskills/catalog.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "33f4aead695788e2c568d3fe2fd66b46856a7133885a4088a0b4b893fa4a8731",
+      "actualSha256": "33f4aead695788e2c568d3fe2fd66b46856a7133885a4088a0b4b893fa4a8731"
+    },
+    {
+      "file": "010-marketingskills/catalog.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "9da1884d5a9c016157977a9506744f03be9cccc5dc503a51fb41583f231681b8",
+      "actualSha256": "9da1884d5a9c016157977a9506744f03be9cccc5dc503a51fb41583f231681b8"
+    },
+    {
+      "file": "010-marketingskills/content.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "c7212e066bfb9e14022664a390c4659b66be89dccbc55f5a3307946b331f6f32",
+      "actualSha256": "c7212e066bfb9e14022664a390c4659b66be89dccbc55f5a3307946b331f6f32"
+    },
+    {
+      "file": "010-marketingskills/evidence.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "9c7b819c9699125c572c28b638929745ed3f9c5529ef622fd4be868ae0a06f34",
+      "actualSha256": "9c7b819c9699125c572c28b638929745ed3f9c5529ef622fd4be868ae0a06f34"
+    },
+    {
+      "file": "010-marketingskills/guide.svg",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7ea419af23b86b6e0f2444541eef30367e0e2d893daf36e7e3dc2712fd0ea688",
+      "actualSha256": "7ea419af23b86b6e0f2444541eef30367e0e2d893daf36e7e3dc2712fd0ea688"
+    },
+    {
+      "file": "010-marketingskills/handbook.css",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "126bef4ede08e660ffa032579f46445d9383d8a9c5d65b747355ed6d4204305a",
+      "actualSha256": "126bef4ede08e660ffa032579f46445d9383d8a9c5d65b747355ed6d4204305a"
+    },
+    {
+      "file": "010-marketingskills/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "cc4f52a7610bc0462187cd8544332a6e724747882e003c9a1ea55cec95851066",
+      "actualSha256": "cc4f52a7610bc0462187cd8544332a6e724747882e003c9a1ea55cec95851066"
+    },
+    {
+      "file": "010-marketingskills/inventory.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "51ea1f60869945eebcaf0be6431be1bd82c96f9cb4f9daada47e9f0d63329925",
+      "actualSha256": "51ea1f60869945eebcaf0be6431be1bd82c96f9cb4f9daada47e9f0d63329925"
+    },
+    {
+      "file": "010-marketingskills/LICENSE-upstream.txt",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+      "actualSha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
+      "file": "010-marketingskills/more-scenarios.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "07e418002a20eb91b95b8a47616667192514400277711f362691140f4edcf296",
+      "actualSha256": "07e418002a20eb91b95b8a47616667192514400277711f362691140f4edcf296"
+    },
+    {
+      "file": "010-marketingskills/real-case-data.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "67158bba5d21bf30c8e6df136a9e57396a26680bce570a67fdfeb05b7bc24582",
+      "actualSha256": "67158bba5d21bf30c8e6df136a9e57396a26680bce570a67fdfeb05b7bc24582"
+    },
+    {
+      "file": "010-marketingskills/real-case.css",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "b2da44d7cfe482a77b6d1fe0a89e06789a90cbecc998533d30dd987075bbcfb3",
+      "actualSha256": "b2da44d7cfe482a77b6d1fe0a89e06789a90cbecc998533d30dd987075bbcfb3"
+    },
+    {
+      "file": "010-marketingskills/real-case.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "3753f019534b196d1bb402f4c7231e8feccb9b3030b2380064e27614d9458176",
+      "actualSha256": "3753f019534b196d1bb402f4c7231e8feccb9b3030b2380064e27614d9458176"
+    },
+    {
+      "file": "010-marketingskills/real-case.js",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "b607a1a5fa692176ab5e9d4b0655acd182e0757b32fadacbf4f327dd4578cf47",
+      "actualSha256": "b607a1a5fa692176ab5e9d4b0655acd182e0757b32fadacbf4f327dd4578cf47"
+    },
+    {
+      "file": "010-marketingskills/real-case/02-offer.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "cd075267a965849b7f5e02005d9b79bd4241280e01e0ecc0d7f9d4965ef4d23c",
+      "actualSha256": "cd075267a965849b7f5e02005d9b79bd4241280e01e0ecc0d7f9d4965ef4d23c"
+    },
+    {
+      "file": "010-marketingskills/real-case/03-copy.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "23c9e0f18912911942f90849924ad0844f6030c34c54fae6f7983ee0973e81eb",
+      "actualSha256": "23c9e0f18912911942f90849924ad0844f6030c34c54fae6f7983ee0973e81eb"
+    },
+    {
+      "file": "010-marketingskills/real-case/04-validation.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "f8462053b0a8c61f51a09f3e53e7444e2155315664d8115a038b3f0d8280f9d6",
+      "actualSha256": "f8462053b0a8c61f51a09f3e53e7444e2155315664d8115a038b3f0d8280f9d6"
+    },
+    {
+      "file": "010-marketingskills/real-case/05-loop.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7c749da6dd67ca592fd7f1c11cc78ed8e9851beb0ca327b8f3618dc49fa41b40",
+      "actualSha256": "7c749da6dd67ca592fd7f1c11cc78ed8e9851beb0ca327b8f3618dc49fa41b40"
+    },
+    {
+      "file": "010-marketingskills/real-case/06-internal-walkthrough.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7d2eba0914e409fca829b799028baecf28d2d582df5d19a24da3b501c68d2eb7",
+      "actualSha256": "7d2eba0914e409fca829b799028baecf28d2d582df5d19a24da3b501c68d2eb7"
+    },
+    {
+      "file": "010-marketingskills/real-case/context/loops/product-validation.json",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "f629b9d396e6902d89c189fb10fd321f9047faccca062e1543ff21f9f10ef3ab",
+      "actualSha256": "f629b9d396e6902d89c189fb10fd321f9047faccca062e1543ff21f9f10ef3ab"
+    },
+    {
+      "file": "010-marketingskills/real-case/context/loops/product-validation.log",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "0f10e96d12808c98b3ec09598a65701c0f42628837047a9e5cfde953a77f1ead",
+      "actualSha256": "0f10e96d12808c98b3ec09598a65701c0f42628837047a9e5cfde953a77f1ead"
+    },
+    {
+      "file": "010-marketingskills/real-case/context/product-marketing.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "af8637c18b28f3e00e75a3f251b850b84473c91397c5071b08481dac6fd1c6c5",
+      "actualSha256": "af8637c18b28f3e00e75a3f251b850b84473c91397c5071b08481dac6fd1c6c5"
+    },
+    {
+      "file": "010-marketingskills/real-case/feedback.json",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "94372e4f6e10166f8a9146adc3d59f16898456184d5d9e5026c39e6ffbae4235",
+      "actualSha256": "94372e4f6e10166f8a9146adc3d59f16898456184d5d9e5026c39e6ffbae4235"
+    },
+    {
+      "file": "010-marketingskills/real-case/inputs/fastapi-receipt.json",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7b6fc24d9ba2e14024cd9fcf80c4c27673e7c759f859b110d1492f791b7f3471",
+      "actualSha256": "7b6fc24d9ba2e14024cd9fcf80c4c27673e7c759f859b110d1492f791b7f3471"
+    },
+    {
+      "file": "010-marketingskills/real-case/inputs/graphify-readme.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "b93aff5fdd0a12d6c35335c4fc9a03266529e3be6d3116f98c56ca4dee63849b",
+      "actualSha256": "b93aff5fdd0a12d6c35335c4fc9a03266529e3be6d3116f98c56ca4dee63849b"
+    },
+    {
+      "file": "010-marketingskills/real-case/inputs/research-index.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "d237ceba1e939fe935111b458f4bb30d229d48697d3df7b5d71f84e0ec66311b",
+      "actualSha256": "d237ceba1e939fe935111b458f4bb30d229d48697d3df7b5d71f84e0ec66311b"
+    },
+    {
+      "file": "010-marketingskills/real-case/manifest.json",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "49a1e728f1ad5c8d12de1b42214cbb1cdc076e7a2b36443dd1d7e620a8f71fad",
+      "actualSha256": "49a1e728f1ad5c8d12de1b42214cbb1cdc076e7a2b36443dd1d7e620a8f71fad"
+    },
+    {
+      "file": "010-marketingskills/real-case/next-actions.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "7a2147c28d5b7f5b7ceee5c89ee41229fd373bcf762f3d405293413287819a0f",
+      "actualSha256": "7a2147c28d5b7f5b7ceee5c89ee41229fd373bcf762f3d405293413287819a0f"
+    },
+    {
+      "file": "010-marketingskills/real-case/README.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "61925c1c1682b6db139fae75593d6d30ca11a4da45f9a8de5e8392395eb88de9",
+      "actualSha256": "61925c1c1682b6db139fae75593d6d30ca11a4da45f9a8de5e8392395eb88de9"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/analytics/SKILL.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "3eda97d96b2329daa933b6fdb94bf81aaa1196e3e344e56a8805f972a7438404",
+      "actualSha256": "3eda97d96b2329daa933b6fdb94bf81aaa1196e3e344e56a8805f972a7438404"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/copywriting/SKILL.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8",
+      "actualSha256": "ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/LICENSE",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "3bb73920cd10a04b0ce3f28b84bada69e9286d0c33cf654ff10c279409791aa9",
+      "actualSha256": "3bb73920cd10a04b0ce3f28b84bada69e9286d0c33cf654ff10c279409791aa9"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/marketing-loops/references/loop-state.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "ecb863ecc44944afe7dbb789d4b16a1ea80f045713b8d443bdcb414a4d17547e",
+      "actualSha256": "ecb863ecc44944afe7dbb789d4b16a1ea80f045713b8d443bdcb414a4d17547e"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/marketing-loops/references/loop-template.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "695fde57b9b0735e49b5fc718b0e8eb726808c08b19bea89056f8913cf1bff26",
+      "actualSha256": "695fde57b9b0735e49b5fc718b0e8eb726808c08b19bea89056f8913cf1bff26"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/marketing-loops/SKILL.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "db4ba419ee74c7ef4c6dacffdf92fa4038e720640a4b4b95e8766ad9ff269898",
+      "actualSha256": "db4ba419ee74c7ef4c6dacffdf92fa4038e720640a4b4b95e8766ad9ff269898"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/offers/references/offer-anatomy.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "0810080788bedc9b40dc0aba53109991aa816397f4b45e813289985eb8a64cad",
+      "actualSha256": "0810080788bedc9b40dc0aba53109991aa816397f4b45e813289985eb8a64cad"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/offers/SKILL.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "f27239be82e5d4ad42daa944fad7d0a640b80ca82697ba7399843437a001e5aa",
+      "actualSha256": "f27239be82e5d4ad42daa944fad7d0a640b80ca82697ba7399843437a001e5aa"
+    },
+    {
+      "file": "010-marketingskills/real-case/upstream/product-marketing/SKILL.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "6dfd6bd485f62448385844cb9eceefcee0977c843d7a1c9e6077590d4e19d1ec",
+      "actualSha256": "6dfd6bd485f62448385844cb9eceefcee0977c843d7a1c9e6077590d4e19d1ec"
+    },
+    {
+      "file": "010-marketingskills/scope.md",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "12c1fd6755ddd10b1d9fbdd3598a0f7da92d8d06d4803d81d725252f3d8fc3bf",
+      "actualSha256": "12c1fd6755ddd10b1d9fbdd3598a0f7da92d8d06d4803d81d725252f3d8fc3bf"
+    },
+    {
+      "file": "010-marketingskills/styles.css",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "664a58f2b9f6fc2d98135f946c652c130647fd710a7fc25c4a7466741739306b",
+      "actualSha256": "664a58f2b9f6fc2d98135f946c652c130647fd710a7fc25c4a7466741739306b"
+    },
+    {
+      "file": "011-munder-difflin/index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206",
+      "actualSha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206"
+    },
+    {
+      "file": "assets/010-marketingskills.png",
+      "status": 200,
+      "matching": true,
+      "comparison": "bytes",
+      "expectedSha256": "995df765ccd91dea531966ef2ca84286e88843d87d67f54b800c2db7d59d238c",
+      "actualSha256": "995df765ccd91dea531966ef2ca84286e88843d87d67f54b800c2db7d59d238c"
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "matching": true,
+      "comparison": "LF-normalized text",
+      "expectedSha256": "be7f25c1dff2ddd37f8b828c01885dd8b0ca17bd02ac814699e2ee07fc320f2e",
+      "actualSha256": "be7f25c1dff2ddd37f8b828c01885dd8b0ca17bd02ac814699e2ee07fc320f2e"
+    }
+  ],
+  "browserVisualQA": "未执行；HTTP 内容核对与离线交互检查"
+}
