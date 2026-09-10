@@ -73,6 +73,25 @@
       "previewAnchor": "#guide"
     },
     {
+      "id": "009",
+      "researchIndex": "006",
+      "slug": "009-graphify",
+      "name": "Graphify 真实能力与原生演示",
+      "sourceDirectory": "projects/009-graphify/app/dist",
+      "readme": "projects/009-graphify/README.md",
+      "research": "projects/009-graphify/notes.md",
+      "upstream": "https://github.com/Graphify-Labs/graphify",
+      "upstreamName": "Graphify",
+      "capability": "支持将源码、文档、PDF、Word/Excel、图片、音视频及 SQL 结构提取为可查询知识图谱；代码本地解析，语义资料需模型。输出交互网络、层级树、调用流程、SVG/Canvas、报告/Wiki，以及 JSON、GraphML、Cypher，辅助研究、依赖追踪与证据交付。",
+      "extension": "新增入口、输入、处理、输出及应用扩展的完整图解，澄清原始资料、搜索与建表边界；保留 FastAPI 核心包 747 节点、1,971 关系的六种原生结果、本地 CLI、MCP 和隔离增量实测。多模态及外部连接未实测。",
+      "image": "projects/009-graphify/assets/understanding-map.png",
+      "kind": "上游原生实测展示",
+      "entryLabel": "打开真实能力与原生演示 →",
+      "imageAlt": "Graphify 入口、输入方式、处理、输出与使用扩展完整总览",
+      "imageCaption": "本地原创能力关系图，非上游截图；固定版本 v0.9.57，明确本次实测、需条件和建议扩展。网页同时保留真实原生图谱及生成凭证。",
+      "imageLabel": "查看完整能力总览"
+    },
+    {
       "id": "006",
       "researchIndex": "008",
       "slug": "006-drama-skills",

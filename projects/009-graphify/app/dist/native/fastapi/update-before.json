@@ -1,0 +1,598 @@
+{
+  "nodes": [
+    {
+      "id": "api",
+      "label": "api.py",
+      "file_type": "code",
+      "source_file": "api.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "api_checkout",
+      "label": "checkout()",
+      "file_type": "code",
+      "source_file": "api.py",
+      "source_location": "L7",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "api_preview_price",
+      "label": "preview_price()",
+      "file_type": "code",
+      "source_file": "api.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "api_rationale_1",
+      "label": "教学接口函数：未启动服务器，不处理真实请求。",
+      "file_type": "rationale",
+      "source_file": "api.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "auth",
+      "label": "auth.py",
+      "file_type": "code",
+      "source_file": "auth.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "auth_resolve_user",
+      "label": "resolve_user()",
+      "file_type": "code",
+      "source_file": "auth.py",
+      "source_location": "L4",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "auth_require_member",
+      "label": "require_member()",
+      "file_type": "code",
+      "source_file": "auth.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "catalog",
+      "label": "catalog.py",
+      "file_type": "code",
+      "source_file": "catalog.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "catalog_get_product",
+      "label": "get_product()",
+      "file_type": "code",
+      "source_file": "catalog.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "catalog_check_stock",
+      "label": "check_stock()",
+      "file_type": "code",
+      "source_file": "catalog.py",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "catalog_reserve_stock",
+      "label": "reserve_stock()",
+      "file_type": "code",
+      "source_file": "catalog.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "catalog_rationale_1",
+      "label": "库存示例：使用内存数据，方便观察依赖关系。",
+      "file_type": "rationale",
+      "source_file": "catalog.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "orders",
+      "label": "orders.py",
+      "file_type": "code",
+      "source_file": "orders.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "orders_save_order",
+      "label": "save_order()",
+      "file_type": "code",
+      "source_file": "orders.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "orders_create_order",
+      "label": "create_order()",
+      "file_type": "code",
+      "source_file": "orders.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "pricing",
+      "label": "pricing.py",
+      "file_type": "code",
+      "source_file": "pricing.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "pricing_member_discount",
+      "label": "member_discount()",
+      "file_type": "code",
+      "source_file": "pricing.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "pricing_calculate_total",
+      "label": "calculate_total()",
+      "file_type": "code",
+      "source_file": "pricing.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "api",
+      "target": "auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "orders",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "pricing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "api_checkout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "api_preview_price",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api_rationale_1",
+      "target": "api",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "auth",
+      "target": "auth_resolve_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "auth.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "auth",
+      "target": "auth_require_member",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "auth.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "auth_require_member",
+      "target": "auth_resolve_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "auth.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog",
+      "target": "catalog_get_product",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog",
+      "target": "catalog_check_stock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog",
+      "target": "catalog_reserve_stock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog_check_stock",
+      "target": "catalog_get_product",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog_reserve_stock",
+      "target": "catalog_check_stock",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog_reserve_stock",
+      "target": "catalog_get_product",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "catalog_rationale_1",
+      "target": "catalog",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "catalog.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "catalog",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "pricing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "orders_save_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "orders_create_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders_create_order",
+      "target": "orders_save_order",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing",
+      "target": "catalog",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing",
+      "target": "pricing_member_discount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing",
+      "target": "pricing_calculate_total",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing_calculate_total",
+      "target": "pricing_member_discount",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "auth_require_member",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "orders_create_order",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api",
+      "target": "pricing_calculate_total",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "auth_require_member",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "catalog_reserve_stock",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders",
+      "target": "pricing_calculate_total",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing",
+      "target": "catalog_get_product",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api_checkout",
+      "target": "orders_create_order",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api_preview_price",
+      "target": "auth_require_member",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "api_preview_price",
+      "target": "pricing_calculate_total",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders_create_order",
+      "target": "auth_require_member",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders_create_order",
+      "target": "pricing_calculate_total",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "orders_create_order",
+      "target": "catalog_reserve_stock",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "orders.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "pricing_calculate_total",
+      "target": "catalog_get_product",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "pricing.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "extracted_sources": [
+    "C:\\Users\\yun68\\AppData\\Local\\Temp\\graphify-update-ylf7giok\\input\\api.py",
+    "C:\\Users\\yun68\\AppData\\Local\\Temp\\graphify-update-ylf7giok\\input\\auth.py",
+    "C:\\Users\\yun68\\AppData\\Local\\Temp\\graphify-update-ylf7giok\\input\\catalog.py",
+    "C:\\Users\\yun68\\AppData\\Local\\Temp\\graphify-update-ylf7giok\\input\\orders.py",
+    "C:\\Users\\yun68\\AppData\\Local\\Temp\\graphify-update-ylf7giok\\input\\pricing.py"
+  ]
+}

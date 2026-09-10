@@ -1,0 +1,243 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Graphify 原生分析报告</title><style>body{max-width:1080px;margin:35px auto;padding:0 25px;font:15px/1.85 system-ui;color:#dce4ef;background:#111520}a{color:#9fc7ff}h1,h2,h3{color:white}table{border-collapse:collapse;display:block;overflow:auto}td,th{padding:9px;border:1px solid #394252}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1d2331;padding:18px}code{font-family:Consolas,monospace}</style><body><p>Graphify 原生 Markdown 报告的 HTML 排版；正文未改写。<a href="GRAPH_REPORT.md">下载原文</a></p><h1>Graph Report - fastapi  (2026-09-10)</h1>
+<h2>Corpus Check</h2>
+<ul>
+<li>48 files · ~67,676 words</li>
+<li>Verdict: corpus is large enough that graph structure adds value.</li>
+</ul>
+<h2>Summary</h2>
+<ul>
+<li>747 nodes · 1971 edges · 46 communities</li>
+<li>Extraction: 88% EXTRACTED · 12% INFERRED · 0% AMBIGUOUS · INFERRED: 237 edges (avg confidence: 0.9)</li>
+<li>Token cost: 0 input · 0 output</li>
+</ul>
+<h2>Graph Freshness</h2>
+<ul>
+<li>Built from commit: <code>50113da1</code></li>
+<li>Run <code>git rev-parse HEAD</code> and compare to check if the graph is stale.</li>
+<li>Run <code>graphify update .</code> after code changes (no API cost).</li>
+</ul>
+<h2>Community Hubs (Navigation)</h2>
+<ul>
+<li>Any</li>
+<li>dependencies/utils.py</li>
+<li>_compat/<strong>init</strong>.py</li>
+<li><strong>init</strong>.py</li>
+<li>exceptions.py</li>
+<li>openapi/models.py</li>
+<li>Example</li>
+<li>HTTPBase</li>
+<li>security/<strong>init</strong>.py</li>
+<li>routing.py</li>
+<li>APIKeyBase</li>
+<li>_FrontendRouteGroup</li>
+<li>Scope</li>
+<li>HTTPException</li>
+<li>get_openapi_path</li>
+<li>sse.py</li>
+<li>_DefaultLifespan</li>
+<li>responses.py</li>
+<li>get_openapi</li>
+<li>OpenIdConnect</li>
+<li>v2.py</li>
+<li>Any</li>
+<li>ModelField</li>
+<li>get_swagger_ui_html</li>
+<li>_EffectiveRouteContext</li>
+<li>.frontend</li>
+<li>Doc</li>
+<li>_RouterIncludeContext</li>
+<li>get_definitions</li>
+<li>EmailStr</li>
+<li>utils.py</li>
+<li>.<strong>call</strong></li>
+</ul>
+<h2>God Nodes (most connected - your core abstractions)</h2>
+<ol>
+<li><code>ModelField</code> - 43 edges</li>
+<li><code>APIRouter</code> - 39 edges</li>
+<li><code>Response</code> - 38 edges</li>
+<li><code>Depends</code> - 38 edges</li>
+<li><code>APIRoute</code> - 35 edges</li>
+<li><code>FastAPI</code> - 33 edges</li>
+<li><code>Dependant</code> - 27 edges</li>
+<li><code>Example</code> - 25 edges</li>
+<li><code>lenient_issubclass()</code> - 24 edges</li>
+<li><code>BaseModelWithConfig</code> - 24 edges</li>
+<li><code>solve_dependencies()</code> - 23 edges</li>
+<li><code>HTTPException</code> - 22 edges</li>
+<li><code>_populate_api_route_state()</code> - 22 edges</li>
+<li><code>DefaultPlaceholder</code> - 20 edges</li>
+<li><code>get_request_handler()</code> - 18 edges</li>
+<li><code>get_openapi_path()</code> - 17 edges</li>
+<li><code>get_dependant()</code> - 15 edges</li>
+<li><code>analyze_param()</code> - 15 edges</li>
+<li><code>jsonable_encoder()</code> - 15 edges</li>
+<li><code>_FrontendRouteGroup</code> - 15 edges</li>
+</ol>
+<h2>Surprising Connections (you probably didn't know these)</h2>
+<ul>
+<li><code>get_dependant()</code> --calls--&gt; <code>get_path_param_names()</code>  [INFERRED]
+  dependencies/utils.py → utils.py</li>
+<li><code>FastAPI</code> --uses--&gt; <code>HTTPException</code>  [INFERRED]
+  applications.py → exceptions.py</li>
+<li><code>FastAPI</code> --uses--&gt; <code>RequestValidationError</code>  [INFERRED]
+  applications.py → exceptions.py</li>
+<li><code>FastAPI</code> --uses--&gt; <code>WebSocketRequestValidationError</code>  [INFERRED]
+  applications.py → exceptions.py</li>
+<li><code>FastAPI</code> --uses--&gt; <code>AsyncExitStackMiddleware</code>  [INFERRED]
+  applications.py → middleware/asyncexitstack.py</li>
+<li><code>_is_security_scheme()</code> --uses--&gt; <code>SecurityBase</code>  [INFERRED]
+  dependencies/models.py → security/base.py</li>
+<li><code>_get_security_scheme()</code> --uses--&gt; <code>SecurityBase</code>  [INFERRED]
+  dependencies/models.py → security/base.py</li>
+<li><code>_get_flat_fields_from_params()</code> --calls--&gt; <code>lenient_issubclass()</code>  [INFERRED]
+  dependencies/utils.py → _compat/shared.py</li>
+<li><code>_get_flat_fields_from_params()</code> --calls--&gt; <code>get_cached_model_fields()</code>  [INFERRED]
+  dependencies/utils.py → _compat/v2.py</li>
+<li><code>get_typed_annotation()</code> --calls--&gt; <code>evaluate_forwardref()</code>  [INFERRED]
+  dependencies/utils.py → _compat/v2.py</li>
+<li><code>get_dependant()</code> --uses--&gt; <code>DependencyScopeError</code>  [INFERRED]
+  dependencies/utils.py → exceptions.py</li>
+<li><code>add_non_field_param_to_dependency()</code> --uses--&gt; <code>BackgroundTasks</code>  [INFERRED]
+  dependencies/utils.py → background.py</li>
+<li><code>add_non_field_param_to_dependency()</code> --calls--&gt; <code>lenient_issubclass()</code>  [INFERRED]
+  dependencies/utils.py → _compat/shared.py</li>
+<li><code>add_non_field_param_to_dependency()</code> --uses--&gt; <code>SecurityScopes</code>  [INFERRED]
+  dependencies/utils.py → security/oauth2.py</li>
+<li><code>analyze_param()</code> --uses--&gt; <code>BackgroundTasks</code>  [INFERRED]
+  dependencies/utils.py → background.py</li>
+<li><code>analyze_param()</code> --uses--&gt; <code>SecurityScopes</code>  [INFERRED]
+  dependencies/utils.py → security/oauth2.py</li>
+<li><code>SolvedDependency</code> --uses--&gt; <code>BackgroundTasks</code>  [INFERRED]
+  dependencies/utils.py → background.py</li>
+<li><code>solve_dependencies()</code> --uses--&gt; <code>BackgroundTasks</code>  [INFERRED]
+  dependencies/utils.py → background.py</li>
+<li><code>solve_dependencies()</code> --uses--&gt; <code>SecurityScopes</code>  [INFERRED]
+  dependencies/utils.py → security/oauth2.py</li>
+<li><code>_get_multidict_value()</code> --calls--&gt; <code>field_annotation_is_sequence()</code>  [INFERRED]
+  dependencies/utils.py → _compat/shared.py</li>
+</ul>
+<h2>Import Cycles</h2>
+<ul>
+<li>None detected.</li>
+</ul>
+<h2>Communities (46 total, 0 thin omitted)</h2>
+<h3>Community 0 - "Any"</h3>
+<p>Cohesion: 0.07
+Nodes (53): AbstractAsyncContextManager, FastAPI, Any, ASGIApp, BaseRoute, DecoratedCallable, deprecated, Doc (+45 more)</p>
+<h3>Community 1 - "dependencies/utils.py"</h3>
+<p>Cohesion: 0.07
+Nodes (61): AsyncExitStack, get_missing_field_error(), contextmanager_in_threadpool(), AbstractContextManager, _T, _CallIdentity, Dependant, _get_cache_key() (+53 more)</p>
+<h3>Community 2 - "_compat/<strong>init</strong>.py"</h3>
+<p>Cohesion: 0.07
+Nodes (46): _annotation_is_complex(), annotation_is_pydantic_v1(), _annotation_is_sequence(), field_annotation_is_complex(), field_annotation_is_scalar(), field_annotation_is_scalar_sequence(), field_annotation_is_sequence(), is_bytes_or_nonable_bytes_annotation() (+38 more)</p>
+<h3>Community 3 - "<strong>init</strong>.py"</h3>
+<p>Cohesion: 0.13
+Nodes (29): args, BackgroundTasks, Any, Doc, A collection of background tasks that will be called after a response has been…, Add a function to be called in the background after the response is sent. Read…, Default(), DefaultType (+21 more)</p>
+<h3>Community 4 - "exceptions.py"</h3>
+<p>Cohesion: 0.09
+Nodes (25): http_exception_handler(), JSONResponse, Request, WebSocket, request_validation_exception_handler(), websocket_request_validation_exception_handler(), DependencyScopeError, EndpointContext (+17 more)</p>
+<h3>Community 5 - "openapi/models.py"</h3>
+<p>Cohesion: 0.12
+Nodes (32): BaseModelWithConfig, Components, Contact, Discriminator, Encoding, ExternalDocumentation, Header, Info (+24 more)</p>
+<h3>Community 6 - "Example"</h3>
+<p>Cohesion: 0.18
+Nodes (21): FastAPIDeprecationWarning, A custom deprecation warning as DeprecationWarning is ignored Ref:…, Example, TypedDict, Body, Cookie, File, Form (+13 more)</p>
+<h3>Community 7 - "HTTPBase"</h3>
+<p>Cohesion: 0.12
+Nodes (17): HTTPBase, HTTPBearer, HTTPAuthorizationCredentials, HTTPBase, HTTPBasic, HTTPBasicCredentials, HTTPBearer, HTTPDigest (+9 more)</p>
+<h3>Community 8 - "security/<strong>init</strong>.py"</h3>
+<p>Cohesion: 0.17
+Nodes (15): OAuthFlows, OAuth2, OAuth2AuthorizationCodeBearer, OAuth2PasswordBearer, OAuth2PasswordRequestForm, OAuth2PasswordRequestFormStrict, Any, Request (+7 more)</p>
+<h3>Community 9 - "routing.py"</h3>
+<p>Cohesion: 0.12
+Nodes (20): APIWebSocketRoute, _build_response_args(), get_websocket_app(), _is_frontend_navigation_request(), _iter_accept_media_types(), _iter_included_route_candidates(), iter_route_contexts(), _iter_routes_with_context() (+12 more)</p>
+<h3>Community 10 - "APIKeyBase"</h3>
+<p>Cohesion: 0.18
+Nodes (11): APIKeyIn, APIKeyBase, APIKeyCookie, APIKeyHeader, APIKeyQuery, Doc, Request, API key authentication using a header. This defines the name of the header that… (+3 more)</p>
+<h3>Community 11 - "_FrontendRouteGroup"</h3>
+<p>Cohesion: 0.17
+Nodes (6): SolvedDependency, Match, _frontend_path_specificity(), _FrontendRoute, _FrontendRouteGroup, URLPath</p>
+<h3>Community 12 - "Scope"</h3>
+<p>Cohesion: 0.28
+Nodes (9): _frontend_scope_specificity(), _get_fastapi_scope(), _get_scope_effective_route_context(), _get_scope_included_router(), Receive, Scope, Send, _restore_fastapi_scope_key() (+1 more)</p>
+<h3>Community 13 - "HTTPException"</h3>
+<p>Cohesion: 0.19
+Nodes (8): main(), ensure_multipart_is_installed(), HTTPException, An HTTP exception you can raise in your own code to show errors to the client.…, _FrontendStaticFiles, StaticFiles, RuntimeError, stat_result</p>
+<h3>Community 14 - "get_openapi_path"</h3>
+<p>Cohesion: 0.22
+Nodes (18): _get_flat_fields_from_params(), jsonable_encoder(), Doc, IncEx, Convert any object to something that can be encoded in JSON. This is used…, generate_operation_summary(), _get_openapi_dependency_data(), get_openapi_operation_metadata() (+10 more)</p>
+<h3>Community 15 - "sse.py"</h3>
+<p>Cohesion: 0.15
+Nodes (14): model_validator, _check_event_single_line(), _check_id_valid(), _check_single_line(), EventSourceResponse, format_sse_event(), BaseModel, Doc (+6 more)</p>
+<h3>Community 16 - "_DefaultLifespan"</h3>
+<p>Cohesion: 0.14
+Nodes (8): BaseException, _AsyncLiftContextManager, _DefaultLifespan, AbstractContextManager, _T, Wraps a synchronous context manager to make it async. This is vendored from…, Default lifespan context manager that runs on_startup and on_shutdown handlers.…, TracebackType</p>
+<h3>Community 17 - "responses.py"</h3>
+<p>Cohesion: 0.19
+Nodes (10): _OrjsonModule, ORJSONResponse, Any, deprecated, JSONResponse, Protocol, JSON response using the ujson library to serialize data to JSON.…, JSON response using the orjson library to serialize data to JSON.… (+2 more)</p>
+<h3>Community 18 - "get_openapi"</h3>
+<p>Cohesion: 0.19
+Nodes (6): get_flat_params(), _get_api_route_for_openapi(), get_fields_from_routes(), get_openapi(), BaseRoute, RouteContext</p>
+<h3>Community 19 - "OpenIdConnect"</h3>
+<p>Cohesion: 0.16
+Nodes (9): APIKey, OAuth2, OpenIdConnect, SecurityBase, SecurityBase, OpenIdConnect, Doc, Request (+1 more)</p>
+<h3>Community 20 - "v2.py"</h3>
+<p>Cohesion: 0.32
+Nodes (11): get_flat_models_from_annotation(), get_flat_models_from_field(), get_flat_models_from_fields(), get_flat_models_from_model(), get_model_name_map(), normalize_name(), # TODO: remove after setting the min Pydantic to v2.12.3, # TODO: remove when this is merged (or equivalent):… (+3 more)</p>
+<h3>Community 21 - "Any"</h3>
+<p>Cohesion: 0.21
+Nodes (6): asdict(), evaluate_forwardref(), Any, FieldInfo, IncEx, _regenerate_error_with_loc()</p>
+<h3>Community 22 - "ModelField"</h3>
+<p>Cohesion: 0.24
+Nodes (8): create_body_model(), get_cached_model_fields(), get_model_fields(), ModelField, BaseModel, _get_body_field(), get_validation_alias(), Get a ModelField representing the request body for a path operation, combining…</p>
+<h3>Community 23 - "get_swagger_ui_html"</h3>
+<p>Cohesion: 0.24
+Nodes (11): HTMLResponse, get_redoc_html(), get_swagger_ui_html(), get_swagger_ui_oauth2_redirect_html(), _html_safe_json(), Any, Doc, Serialize a value to JSON with HTML special characters escaped. This prevents… (+3 more)</p>
+<h3>Community 24 - "_EffectiveRouteContext"</h3>
+<p>Cohesion: 0.30
+Nodes (3): _EffectiveRouteContext, _frontend_dependency_endpoint(), _IncludedRouter</p>
+<h3>Community 25 - ".frontend"</h3>
+<p>Cohesion: 0.27
+Nodes (7): PathLike, _get_resolved_absolute_path(), _join_frontend_paths(), _normalize_frontend_path(), PathLike, Serve a static frontend build as low-priority routes. Use this for frontend…, _resolve_frontend_check_dir()</p>
+<h3>Community 26 - "Doc"</h3>
+<p>Cohesion: 0.36
+Nodes (4): json_schema_extra, OAuthFlowsModel, pattern, Doc</p>
+<h3>Community 27 - "_RouterIncludeContext"</h3>
+<p>Cohesion: 0.28
+Nodes (6): Protocol, _RouterIncludeContext, _RouteWithPath, get_value_or_default(), DefaultType, Pass items or <code>DefaultPlaceholder</code>s by descending priority. The first one to…</p>
+<h3>Community 28 - "get_definitions"</h3>
+<p>Cohesion: 0.36
+Nodes (7): GenerateJsonSchema, get_definitions(), get_schema_from_model_field(), _has_computed_fields(), ModelNameMap, CoreSchema, JsonSchemaValue</p>
+<h3>Community 29 - "EmailStr"</h3>
+<p>Cohesion: 0.36
+Nodes (4): EmailStr, Any, GetJsonSchemaHandler, str</p>
+<h3>Community 30 - "utils.py"</h3>
+<p>Cohesion: 0.25
+Nodes (6): generate_operation_id(), deep_dict_update(), generate_operation_id_for_path(), get_path_param_names(), is_body_allowed_for_status_code(), Any</p>
+<h3>Community 31 - ".<strong>call</strong>"</h3>
+<p>Cohesion: 0.50
+Nodes (3): Receive, Scope, Send</p>
+<h2>Knowledge Gaps</h2>
+<ul>
+<li><strong>2 isolated node(s):</strong> <code>Color</code>, <code>PyExtraColor</code>
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 178 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)</li>
+</ul>
+<h2>Suggested Questions</h2>
+<p><em>Questions this graph is uniquely positioned to answer:</em></p>
+<ul>
+<li><strong>Why does <code>APIRoute</code> connect <code>Any</code> to <code>dependencies/utils.py</code>, <code>_FrontendRouteGroup</code>, <code>Scope</code>, <code>HTTPException</code>?</strong>
+  <em>High betweenness centrality (0.015) - this node is a cross-community bridge.</em></li>
+<li><strong>Why does <code>_EffectiveRouteContext</code> connect <code>_EffectiveRouteContext</code> to <code>Any</code>, <code>dependencies/utils.py</code>, <code>_RouterIncludeContext</code>, <code>_FrontendRouteGroup</code>?</strong>
+  <em>High betweenness centrality (0.010) - this node is a cross-community bridge.</em></li>
+<li><strong>Why does <code>_populate_api_route_state()</code> connect <code>Any</code> to <code>dependencies/utils.py</code>, <code>_compat/__init__.py</code>, <code>get_openapi_path</code>, <code>sse.py</code>, <code>ModelField</code>, <code>utils.py</code>?</strong>
+  <em>High betweenness centrality (0.010) - this node is a cross-community bridge.</em></li>
+<li><strong>Are the 2 inferred relationships involving <code>APIRouter</code> (e.g. with <code>DefaultPlaceholder</code> and <code>FastAPIError</code>) actually correct?</strong>
+  <em><code>APIRouter</code> has 2 INFERRED edges - model-reasoned connections that need verification.</em></li>
+<li><strong>What connects <code>Color</code>, <code>PyExtraColor</code> to the rest of the system?</strong>
+  <em>2 weakly-connected nodes found - possible documentation gaps or missing edges.</em></li>
+<li><strong>Should <code>Any</code> be split into smaller, more focused modules?</strong>
+  <em>Cohesion score 0.0706959706959707 - nodes in this community are weakly interconnected.</em></li>
+<li><strong>Should <code>dependencies/utils.py</code> be split into smaller, more focused modules?</strong>
+  <em>Cohesion score 0.06583850931677018 - nodes in this community are weakly interconnected.</em></li>
+</ul></body></html>

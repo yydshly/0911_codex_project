@@ -1,0 +1,23 @@
+{
+  "version": "0.9.57",
+  "commit": "3f82bf7f837a07fb0f7668fbdbd5662801906942",
+  "python": "3.12.13",
+  "input": "本仓库原创五文件 Python 教学示例",
+  "mode": "AST-only",
+  "communityAlgorithm": "Louvain (NetworkX fallback)",
+  "inputTokens": 0,
+  "outputTokens": 0,
+  "sourceHashes": {
+    "api.py": "90d0e0b3e21a8b56643db8f03664f6b7aeeae8afecc837d480a5e65993e5064e",
+    "auth.py": "65dce615d15d8b9807a65d0829055f269d904562f0eef863850c531cfbaeed8e",
+    "catalog.py": "54204c44b4db6491b205de5482e7fa60ba67a29391d825eb5ed949e3b66cdc5f",
+    "orders.py": "0a820ff19284cc41afc8b357124cc8db9486dd8cd91ccce7783c7299ab44ea70",
+    "pricing.py": "be397df9961987850bc793ecbba7b61a27a53272773ac5fe68c4aecc44b793ef"
+  },
+  "nodes": 18,
+  "edges": 40,
+  "communities": 4,
+  "confidence": {
+    "EXTRACTED": 40
+  }
+}

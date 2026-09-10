@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FastAPI — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FastAPI — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="../vendor/d3.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"FastAPI","total_count":572,"children":[{"name":"__init__.py","total_count":1,"children":[{"name":"FastAPI framework, high performance, easy to learn, fast to code, ready for\u2026","total_count":1,"children":[]}]},{"name":"_compat","total_count":52,"children":[{"name":"shared.py","total_count":16,"children":[{"name":"# TODO: remove this function once the required version of Pydantic fully","total_count":1,"children":[]},{"name":"_annotation_is_complex()","total_count":1,"children":[]},{"name":"_annotation_is_sequence()","total_count":1,"children":[]},{"name":"annotation_is_pydantic_v1()","total_count":1,"children":[]},{"name":"field_annotation_is_complex()","total_count":1,"children":[]},{"name":"field_annotation_is_scalar()","total_count":1,"children":[]},{"name":"field_annotation_is_scalar_sequence()","total_count":1,"children":[]},{"name":"field_annotation_is_sequence()","total_count":1,"children":[]},{"name":"is_bytes_or_nonable_bytes_annotation()","total_count":1,"children":[]},{"name":"is_bytes_sequence_annotation()","total_count":1,"children":[]},{"name":"is_pydantic_v1_model_class()","total_count":1,"children":[]},{"name":"is_pydantic_v1_model_instance()","total_count":1,"children":[]},{"name":"is_uploadfile_or_nonable_uploadfile_annotation()","total_count":1,"children":[]},{"name":"is_uploadfile_sequence_annotation()","total_count":1,"children":[]},{"name":"lenient_issubclass()","total_count":1,"children":[]},{"name":"value_is_sequence()","total_count":1,"children":[]}]},{"name":"v2.py","total_count":35,"children":[{"name":"# TODO: remove after setting the min Pydantic to v2.12.3","total_count":1,"children":[]},{"name":"# TODO: remove when dropping support for Pydantic < v2.12.3","total_count":1,"children":[]},{"name":"# TODO: remove when this is merged (or equivalent):\u2026","total_count":1,"children":[]},{"name":".__hash__()","total_count":1,"children":[]},{"name":".__post_init__()","total_count":1,"children":[]},{"name":".alias()","total_count":1,"children":[]},{"name":".bytes_schema()","total_count":1,"children":[]},{"name":".default()","total_count":1,"children":[]},{"name":".get_default()","total_count":1,"children":[]},{"name":".serialization_alias()","total_count":1,"children":[]},{"name":".serialize()","total_count":1,"children":[]},{"name":".serialize_json()","total_count":1,"children":[]},{"name":".validate()","total_count":1,"children":[]},{"name":".validation_alias()","total_count":1,"children":[]},{"name":"_has_computed_fields()","total_count":1,"children":[]},{"name":"_regenerate_error_with_loc()","total_count":1,"children":[]},{"name":"asdict()","total_count":1,"children":[]},{"name":"copy_field_info()","total_count":1,"children":[]},{"name":"create_body_model()","total_count":1,"children":[]},{"name":"evaluate_forwardref()","total_count":1,"children":[]},{"name":"GenerateJsonSchema","total_count":1,"children":[]},{"name":"get_cached_model_fields()","total_count":1,"children":[]},{"name":"get_definitions()","total_count":1,"children":[]},{"name":"get_flat_models_from_annotation()","total_count":1,"children":[]},{"name":"get_flat_models_from_field()","total_count":1,"children":[]},{"name":"get_flat_models_from_fields()","total_count":1,"children":[]},{"name":"get_flat_models_from_model()","total_count":1,"children":[]},{"name":"get_missing_field_error()","total_count":1,"children":[]},{"name":"get_model_fields()","total_count":1,"children":[]},{"name":"get_model_name_map()","total_count":1,"children":[]},{"name":"get_schema_from_model_field()","total_count":1,"children":[]},{"name":"is_scalar_field()","total_count":1,"children":[]},{"name":"ModelField","total_count":1,"children":[]},{"name":"normalize_name()","total_count":1,"children":[]},{"name":"serialize_sequence_value()","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]}]},{"name":"applications.py","total_count":31,"children":[{"name":"# TODO: remove when discarding the openapi_prefix parameter","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".add_api_route()","total_count":1,"children":[]},{"name":".add_api_websocket_route()","total_count":1,"children":[]},{"name":".api_route()","total_count":1,"children":[]},{"name":".build_middleware_stack()","total_count":1,"children":[]},{"name":".delete()","total_count":1,"children":[]},{"name":".exception_handler()","total_count":1,"children":[]},{"name":".frontend()","total_count":1,"children":[]},{"name":".get()","total_count":1,"children":[]},{"name":".head()","total_count":1,"children":[]},{"name":".include_router()","total_count":1,"children":[]},{"name":".middleware()","total_count":1,"children":[]},{"name":".on_event()","total_count":1,"children":[]},{"name":".openapi()","total_count":1,"children":[]},{"name":".options()","total_count":1,"children":[]},{"name":".patch()","total_count":1,"children":[]},{"name":".post()","total_count":1,"children":[]},{"name":".put()","total_count":1,"children":[]},{"name":".setup()","total_count":1,"children":[]},{"name":".trace()","total_count":1,"children":[]},{"name":".websocket()","total_count":1,"children":[]},{"name":".websocket_route()","total_count":1,"children":[]},{"name":"`FastAPI` app class, the main entrypoint to use FastAPI. Read more in the\u2026","total_count":1,"children":[]},{"name":"Add a middleware to the application. Read more about it in the [FastAPI docs\u2026","total_count":1,"children":[]},{"name":"Add an event handler for the application. `on_event` is deprecated, use\u2026","total_count":1,"children":[]},{"name":"Add an exception handler to the app. Read more about it in the [FastAPI docs\u2026","total_count":1,"children":[]},{"name":"FastAPI","total_count":1,"children":[]},{"name":"Generate the OpenAPI schema of the application. This is called by FastAPI\u2026","total_count":1,"children":[]},{"name":"Include an `APIRouter` in the same app. Read more about it in the [FastAPI docs\u2026","total_count":1,"children":[]}]},{"name":"background.py","total_count":4,"children":[{"name":".add_task()","total_count":1,"children":[]},{"name":"A collection of background tasks that will be called after a response has been\u2026","total_count":1,"children":[]},{"name":"Add a function to be called in the background after the response is sent. Read\u2026","total_count":1,"children":[]},{"name":"BackgroundTasks","total_count":1,"children":[]}]},{"name":"cli.py","total_count":1,"children":[{"name":"main()","total_count":1,"children":[]}]},{"name":"concurrency.py","total_count":1,"children":[{"name":"contextmanager_in_threadpool()","total_count":1,"children":[]}]},{"name":"datastructures.py","total_count":20,"children":[{"name":".__bool__()","total_count":1,"children":[]},{"name":".__eq__()","total_count":1,"children":[]},{"name":".__get_pydantic_core_schema__()","total_count":1,"children":[]},{"name":".__get_pydantic_json_schema__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":"._validate()","total_count":1,"children":[]},{"name":".close()","total_count":1,"children":[]},{"name":".read()","total_count":1,"children":[]},{"name":".seek()","total_count":1,"children":[]},{"name":".write()","total_count":1,"children":[]},{"name":"A file uploaded in a request. Define it as a *path operation function* (or\u2026","total_count":1,"children":[]},{"name":"Close the file. To be awaitable, compatible with async, this is run in\u2026","total_count":1,"children":[]},{"name":"Default()","total_count":1,"children":[]},{"name":"DefaultPlaceholder","total_count":1,"children":[]},{"name":"Move to a position in the file. Any next read or write will be done from that\u2026","total_count":1,"children":[]},{"name":"Read some bytes from the file. To be awaitable, compatible with async, this is\u2026","total_count":1,"children":[]},{"name":"UploadFile","total_count":1,"children":[]},{"name":"Write some bytes to the file. You normally wouldn't use this from a file you\u2026","total_count":1,"children":[]},{"name":"You shouldn't use this class directly. It's used internally to recognize when a\u2026","total_count":1,"children":[]},{"name":"You shouldn't use this function directly. It's used internally to recognize\u2026","total_count":1,"children":[]}]},{"name":"dependencies","total_count":51,"children":[{"name":"models.py","total_count":19,"children":[{"name":".__eq__()","total_count":1,"children":[]},{"name":".__hash__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":"_CallIdentity","total_count":1,"children":[]},{"name":"_get_cache_key()","total_count":1,"children":[]},{"name":"_get_computed_scope()","total_count":1,"children":[]},{"name":"_get_oauth_scopes()","total_count":1,"children":[]},{"name":"_get_security_scheme()","total_count":1,"children":[]},{"name":"_impartial()","total_count":1,"children":[]},{"name":"_is_async_gen_callable()","total_count":1,"children":[]},{"name":"_is_async_gen_callable_cached()","total_count":1,"children":[]},{"name":"_is_coroutine_callable()","total_count":1,"children":[]},{"name":"_is_coroutine_callable_cached()","total_count":1,"children":[]},{"name":"_is_gen_callable()","total_count":1,"children":[]},{"name":"_is_gen_callable_cached()","total_count":1,"children":[]},{"name":"_is_security_scheme()","total_count":1,"children":[]},{"name":"_unwrapped_call()","total_count":1,"children":[]},{"name":"_uses_scopes()","total_count":1,"children":[]},{"name":"Dependant","total_count":1,"children":[]}]},{"name":"utils.py","total_count":31,"children":[{"name":"# TODO: remove this parameter later, no longer used, not removing it yet as some","total_count":1,"children":[]},{"name":"_extract_form_body()","total_count":1,"children":[]},{"name":"_get_body_field()","total_count":1,"children":[]},{"name":"_get_flat_body_params()","total_count":1,"children":[]},{"name":"_get_flat_fields_from_params()","total_count":1,"children":[]},{"name":"_get_multidict_value()","total_count":1,"children":[]},{"name":"_get_signature()","total_count":1,"children":[]},{"name":"_is_json_field()","total_count":1,"children":[]},{"name":"_should_embed_body_fields()","total_count":1,"children":[]},{"name":"_solve_generator()","total_count":1,"children":[]},{"name":"_validate_value_with_model_field()","total_count":1,"children":[]},{"name":"add_non_field_param_to_dependency()","total_count":1,"children":[]},{"name":"add_param_to_fields()","total_count":1,"children":[]},{"name":"analyze_param()","total_count":1,"children":[]},{"name":"Check if field type is a Union where all members are BaseModel subclasses.","total_count":1,"children":[]},{"name":"ensure_multipart_is_installed()","total_count":1,"children":[]},{"name":"Get a ModelField representing the request body for a path operation, combining\u2026","total_count":1,"children":[]},{"name":"get_dependant()","total_count":1,"children":[]},{"name":"get_flat_params()","total_count":1,"children":[]},{"name":"get_parameterless_sub_dependant()","total_count":1,"children":[]},{"name":"get_stream_item_type()","total_count":1,"children":[]},{"name":"get_typed_annotation()","total_count":1,"children":[]},{"name":"get_typed_return_annotation()","total_count":1,"children":[]},{"name":"get_typed_signature()","total_count":1,"children":[]},{"name":"get_validation_alias()","total_count":1,"children":[]},{"name":"is_union_of_base_models()","total_count":1,"children":[]},{"name":"ParamDetails","total_count":1,"children":[]},{"name":"request_body_to_args()","total_count":1,"children":[]},{"name":"request_params_to_args()","total_count":1,"children":[]},{"name":"solve_dependencies()","total_count":1,"children":[]},{"name":"SolvedDependency","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]}]},{"name":"encoders.py","total_count":9,"children":[{"name":"# TODO: pv2 should this return strings instead?","total_count":1,"children":[]},{"name":"Color","total_count":1,"children":[]},{"name":"Convert any object to something that can be encoded in JSON. This is used\u2026","total_count":1,"children":[]},{"name":"decimal_encoder()","total_count":1,"children":[]},{"name":"Encodes a Decimal as int if there's no exponent, otherwise float This is useful\u2026","total_count":1,"children":[]},{"name":"generate_encoders_by_class_tuples()","total_count":1,"children":[]},{"name":"isoformat()","total_count":1,"children":[]},{"name":"jsonable_encoder()","total_count":1,"children":[]},{"name":"PyExtraColor","total_count":1,"children":[]}]},{"name":"exception_handlers.py","total_count":3,"children":[{"name":"http_exception_handler()","total_count":1,"children":[]},{"name":"request_validation_exception_handler()","total_count":1,"children":[]},{"name":"websocket_request_validation_exception_handler()","total_count":1,"children":[]}]},{"name":"exceptions.py","total_count":26,"children":[{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__str__()","total_count":1,"children":[]},{"name":"._format_endpoint_context()","total_count":1,"children":[]},{"name":".errors()","total_count":1,"children":[]},{"name":"A custom deprecation warning as DeprecationWarning is ignored Ref:\u2026","total_count":1,"children":[]},{"name":"A dependency declared that it depends on another dependency with an invalid\u2026","total_count":1,"children":[]},{"name":"A generic, FastAPI-specific error.","total_count":1,"children":[]},{"name":"A pydantic.v1 model is used, which is no longer supported.","total_count":1,"children":[]},{"name":"A WebSocket exception you can raise in your own code to show errors to the\u2026","total_count":1,"children":[]},{"name":"An HTTP exception you can raise in your own code to show errors to the client.\u2026","total_count":1,"children":[]},{"name":"DependencyScopeError","total_count":1,"children":[]},{"name":"EndpointContext","total_count":1,"children":[]},{"name":"FastAPIDeprecationWarning","total_count":1,"children":[]},{"name":"FastAPIError","total_count":1,"children":[]},{"name":"HTTPException","total_count":1,"children":[]},{"name":"PydanticV1NotSupportedError","total_count":1,"children":[]},{"name":"RequestValidationError","total_count":1,"children":[]},{"name":"ResponseValidationError","total_count":1,"children":[]},{"name":"ValidationException","total_count":1,"children":[]},{"name":"WebSocketException","total_count":1,"children":[]},{"name":"WebSocketRequestValidationError","total_count":1,"children":[]}]},{"name":"middleware","total_count":9,"children":[{"name":"asyncexitstack.py","total_count":3,"children":[{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":"AsyncExitStackMiddleware","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]},{"name":"cors.py","total_count":1,"children":[]},{"name":"gzip.py","total_count":1,"children":[]},{"name":"httpsredirect.py","total_count":1,"children":[]},{"name":"trustedhost.py","total_count":1,"children":[]},{"name":"wsgi.py","total_count":1,"children":[]}]},{"name":"openapi","total_count":68,"children":[{"name":"docs.py","total_count":8,"children":[{"name":"_html_safe_json()","total_count":1,"children":[]},{"name":"Generate and return the HTML response that loads ReDoc for the alternative API\u2026","total_count":1,"children":[]},{"name":"Generate and return the HTML that loads Swagger UI for the interactive API docs\u2026","total_count":1,"children":[]},{"name":"Generate the HTML response with the OAuth2 redirection for Swagger UI. You\u2026","total_count":1,"children":[]},{"name":"get_redoc_html()","total_count":1,"children":[]},{"name":"get_swagger_ui_html()","total_count":1,"children":[]},{"name":"get_swagger_ui_oauth2_redirect_html()","total_count":1,"children":[]},{"name":"Serialize a value to JSON with HTML special characters escaped. This prevents\u2026","total_count":1,"children":[]}]},{"name":"models.py","total_count":45,"children":[{"name":".__get_pydantic_core_schema__()","total_count":1,"children":[]},{"name":".__get_pydantic_json_schema__()","total_count":1,"children":[]},{"name":".__get_validators__()","total_count":1,"children":[]},{"name":".validate()","total_count":1,"children":[]},{"name":"APIKey","total_count":1,"children":[]},{"name":"APIKeyIn","total_count":1,"children":[]},{"name":"BaseModelWithConfig","total_count":1,"children":[]},{"name":"Components","total_count":1,"children":[]},{"name":"Contact","total_count":1,"children":[]},{"name":"Discriminator","total_count":1,"children":[]},{"name":"EmailStr","total_count":1,"children":[]},{"name":"Encoding","total_count":1,"children":[]},{"name":"Example","total_count":1,"children":[]},{"name":"ExternalDocumentation","total_count":1,"children":[]},{"name":"Header","total_count":1,"children":[]},{"name":"HTTPBase","total_count":1,"children":[]},{"name":"HTTPBearer","total_count":1,"children":[]},{"name":"Info","total_count":1,"children":[]},{"name":"License","total_count":1,"children":[]},{"name":"Link","total_count":1,"children":[]},{"name":"MediaType","total_count":1,"children":[]},{"name":"OAuth2","total_count":1,"children":[]},{"name":"OAuthFlow","total_count":1,"children":[]},{"name":"OAuthFlowAuthorizationCode","total_count":1,"children":[]},{"name":"OAuthFlowClientCredentials","total_count":1,"children":[]},{"name":"OAuthFlowImplicit","total_count":1,"children":[]},{"name":"OAuthFlowPassword","total_count":1,"children":[]},{"name":"OAuthFlows","total_count":1,"children":[]},{"name":"OpenAPI","total_count":1,"children":[]},{"name":"OpenIdConnect","total_count":1,"children":[]},{"name":"Operation","total_count":1,"children":[]},{"name":"Parameter","total_count":1,"children":[]},{"name":"ParameterBase","total_count":1,"children":[]},{"name":"ParameterInType","total_count":1,"children":[]},{"name":"PathItem","total_count":1,"children":[]},{"name":"Reference","total_count":1,"children":[]},{"name":"RequestBody","total_count":1,"children":[]},{"name":"Response","total_count":1,"children":[]},{"name":"Schema","total_count":1,"children":[]},{"name":"SecurityBase","total_count":1,"children":[]},{"name":"SecuritySchemeType","total_count":1,"children":[]},{"name":"Server","total_count":1,"children":[]},{"name":"ServerVariable","total_count":1,"children":[]},{"name":"Tag","total_count":1,"children":[]},{"name":"XML","total_count":1,"children":[]}]},{"name":"utils.py","total_count":13,"children":[{"name":"# TODO: probably make status_code a default class attribute for all","total_count":1,"children":[]},{"name":"_get_api_route_for_openapi()","total_count":1,"children":[]},{"name":"_get_openapi_dependency_data()","total_count":1,"children":[]},{"name":"_get_openapi_operation_parameters()","total_count":1,"children":[]},{"name":"_get_openapi_security_definitions()","total_count":1,"children":[]},{"name":"_OpenAPIDependencyData","total_count":1,"children":[]},{"name":"generate_operation_id()","total_count":1,"children":[]},{"name":"generate_operation_summary()","total_count":1,"children":[]},{"name":"get_fields_from_routes()","total_count":1,"children":[]},{"name":"get_openapi()","total_count":1,"children":[]},{"name":"get_openapi_operation_metadata()","total_count":1,"children":[]},{"name":"get_openapi_operation_request_body()","total_count":1,"children":[]},{"name":"get_openapi_path()","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]},{"name":"constants.py","total_count":1,"children":[]}]},{"name":"param_functions.py","total_count":12,"children":[{"name":"Body()","total_count":1,"children":[]},{"name":"Cookie()","total_count":1,"children":[]},{"name":"Declare a FastAPI dependency. It takes a single \"dependable\" callable (like a\u2026","total_count":1,"children":[]},{"name":"Declare a FastAPI Security dependency. The only difference with a regular\u2026","total_count":1,"children":[]},{"name":"Declare a path parameter for a *path operation*. Read more about it in the\u2026","total_count":1,"children":[]},{"name":"Depends()","total_count":1,"children":[]},{"name":"File()","total_count":1,"children":[]},{"name":"Form()","total_count":1,"children":[]},{"name":"Header()","total_count":1,"children":[]},{"name":"Path()","total_count":1,"children":[]},{"name":"Query()","total_count":1,"children":[]},{"name":"Security()","total_count":1,"children":[]}]},{"name":"params.py","total_count":21,"children":[{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__repr__()","total_count":1,"children":[]},{"name":".__repr__()","total_count":1,"children":[]},{"name":"Body","total_count":1,"children":[]},{"name":"Cookie","total_count":1,"children":[]},{"name":"Depends","total_count":1,"children":[]},{"name":"File","total_count":1,"children":[]},{"name":"Form","total_count":1,"children":[]},{"name":"Header","total_count":1,"children":[]},{"name":"Param","total_count":1,"children":[]},{"name":"ParamTypes","total_count":1,"children":[]},{"name":"Path","total_count":1,"children":[]},{"name":"Query","total_count":1,"children":[]},{"name":"Security","total_count":1,"children":[]}]},{"name":"responses.py","total_count":10,"children":[{"name":".dumps()","total_count":1,"children":[]},{"name":".dumps()","total_count":1,"children":[]},{"name":".render()","total_count":1,"children":[]},{"name":".render()","total_count":1,"children":[]},{"name":"_OrjsonModule","total_count":1,"children":[]},{"name":"_UjsonModule","total_count":1,"children":[]},{"name":"JSON response using the orjson library to serialize data to JSON.\u2026","total_count":1,"children":[]},{"name":"JSON response using the ujson library to serialize data to JSON.\u2026","total_count":1,"children":[]},{"name":"ORJSONResponse","total_count":1,"children":[]},{"name":"UJSONResponse","total_count":1,"children":[]}]},{"name":"routing.py","total_count":157,"children":[{"name":"# TODO: deprecate this once the lifespan (or alternative) interface is improved","total_count":1,"children":[]},{"name":"# TODO: probably move this out of the Route / Route Group, same in APIRoute","total_count":1,"children":[]},{"name":"# TODO: remove this once the lifespan (or alternative) interface is improved","total_count":1,"children":[]},{"name":"# TODO: Replace or deprecate this no-scope hook so included-route","total_count":1,"children":[]},{"name":".__aenter__()","total_count":1,"children":[]},{"name":".__aenter__()","total_count":1,"children":[]},{"name":".__aexit__()","total_count":1,"children":[]},{"name":".__aexit__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__getattr__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":"._build_effective_context()","total_count":1,"children":[]},{"name":"._check_fallback_file()","total_count":1,"children":[]},{"name":"._contains_router()","total_count":1,"children":[]},{"name":"._effective_route()","total_count":1,"children":[]},{"name":"._fallback_file_exists()","total_count":1,"children":[]},{"name":"._fallback_response()","total_count":1,"children":[]},{"name":"._frontend_match_is_more_specific()","total_count":1,"children":[]},{"name":"._get_frontend_path()","total_count":1,"children":[]},{"name":"._get_resolved_directory()","total_count":1,"children":[]},{"name":"._get_routes_version()","total_count":1,"children":[]},{"name":"._handle_selected()","total_count":1,"children":[]},{"name":"._iter_low_priority_routes()","total_count":1,"children":[]},{"name":"._lookup_path()","total_count":1,"children":[]},{"name":"._lookup_static_resource()","total_count":1,"children":[]},{"name":"._mark_routes_changed()","total_count":1,"children":[]},{"name":"._match()","total_count":1,"children":[]},{"name":"._match()","total_count":1,"children":[]},{"name":"._match_low_priority()","total_count":1,"children":[]},{"name":"._shutdown()","total_count":1,"children":[]},{"name":"._solve_dependencies()","total_count":1,"children":[]},{"name":"._startup()","total_count":1,"children":[]},{"name":".add_api_route()","total_count":1,"children":[]},{"name":".add_api_websocket_route()","total_count":1,"children":[]},{"name":".add_event_handler()","total_count":1,"children":[]},{"name":".add_frontend_route()","total_count":1,"children":[]},{"name":".add_route()","total_count":1,"children":[]},{"name":".add_websocket_route()","total_count":1,"children":[]},{"name":".api_route()","total_count":1,"children":[]},{"name":".app()","total_count":1,"children":[]},{"name":".combine()","total_count":1,"children":[]},{"name":".delete()","total_count":1,"children":[]},{"name":".effective_candidates()","total_count":1,"children":[]},{"name":".effective_low_priority_routes()","total_count":1,"children":[]},{"name":".effective_route_contexts()","total_count":1,"children":[]},{"name":".endpoint()","total_count":1,"children":[]},{"name":".for_include()","total_count":1,"children":[]},{"name":".from_api_route()","total_count":1,"children":[]},{"name":".from_frontend_route_group()","total_count":1,"children":[]},{"name":".frontend()","total_count":1,"children":[]},{"name":".get()","total_count":1,"children":[]},{"name":".get_path()","total_count":1,"children":[]},{"name":".get_response()","total_count":1,"children":[]},{"name":".get_response_for_scope()","total_count":1,"children":[]},{"name":".get_route_handler()","total_count":1,"children":[]},{"name":".handle()","total_count":1,"children":[]},{"name":".handle()","total_count":1,"children":[]},{"name":".handle()","total_count":1,"children":[]},{"name":".handle()","total_count":1,"children":[]},{"name":".handle()","total_count":1,"children":[]},{"name":".head()","total_count":1,"children":[]},{"name":".include_router()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches()","total_count":1,"children":[]},{"name":".matches_with_path()","total_count":1,"children":[]},{"name":".matches_with_prefix()","total_count":1,"children":[]},{"name":".methods()","total_count":1,"children":[]},{"name":".name()","total_count":1,"children":[]},{"name":".on_event()","total_count":1,"children":[]},{"name":".options()","total_count":1,"children":[]},{"name":".original_route()","total_count":1,"children":[]},{"name":".patch()","total_count":1,"children":[]},{"name":".path()","total_count":1,"children":[]},{"name":".path_for()","total_count":1,"children":[]},{"name":".path_format()","total_count":1,"children":[]},{"name":".post()","total_count":1,"children":[]},{"name":".put()","total_count":1,"children":[]},{"name":".route()","total_count":1,"children":[]},{"name":".trace()","total_count":1,"children":[]},{"name":".url_path_for()","total_count":1,"children":[]},{"name":".url_path_for()","total_count":1,"children":[]},{"name":".url_path_for()","total_count":1,"children":[]},{"name":".url_path_for()","total_count":1,"children":[]},{"name":".websocket()","total_count":1,"children":[]},{"name":".websocket_route()","total_count":1,"children":[]},{"name":"_APIRouteLike","total_count":1,"children":[]},{"name":"_AsyncLiftContextManager","total_count":1,"children":[]},{"name":"_build_dependant_with_parameterless_dependencies()","total_count":1,"children":[]},{"name":"_build_response_args()","total_count":1,"children":[]},{"name":"_DefaultLifespan","total_count":1,"children":[]},{"name":"_EffectiveRouteContext","total_count":1,"children":[]},{"name":"_extract_endpoint_context()","total_count":1,"children":[]},{"name":"_frontend_dependency_endpoint()","total_count":1,"children":[]},{"name":"_frontend_path_specificity()","total_count":1,"children":[]},{"name":"_frontend_scope_specificity()","total_count":1,"children":[]},{"name":"_FrontendRoute","total_count":1,"children":[]},{"name":"_FrontendRouteGroup","total_count":1,"children":[]},{"name":"_FrontendStaticFiles","total_count":1,"children":[]},{"name":"_get_fastapi_scope()","total_count":1,"children":[]},{"name":"_get_resolved_absolute_path()","total_count":1,"children":[]},{"name":"_get_scope_effective_route_context()","total_count":1,"children":[]},{"name":"_get_scope_included_router()","total_count":1,"children":[]},{"name":"_IncludedRouter","total_count":1,"children":[]},{"name":"_is_frontend_navigation_request()","total_count":1,"children":[]},{"name":"_iter_accept_media_types()","total_count":1,"children":[]},{"name":"_iter_included_route_candidates()","total_count":1,"children":[]},{"name":"_iter_routes_with_context()","total_count":1,"children":[]},{"name":"_join_frontend_paths()","total_count":1,"children":[]},{"name":"_merge_lifespan_context()","total_count":1,"children":[]},{"name":"_normalize_frontend_path()","total_count":1,"children":[]},{"name":"_populate_api_route_state()","total_count":1,"children":[]},{"name":"_resolve_frontend_check_dir()","total_count":1,"children":[]},{"name":"_restore_fastapi_scope_key()","total_count":1,"children":[]},{"name":"_RouterIncludeContext","total_count":1,"children":[]},{"name":"_RouteWithPath","total_count":1,"children":[]},{"name":"_update_scope()","total_count":1,"children":[]},{"name":"_wrap_gen_lifespan_context()","total_count":1,"children":[]},{"name":"`APIRouter` class, used to group *path operations*, for example to structure an\u2026","total_count":1,"children":[]},{"name":"Add a *path operation* using an HTTP GET operation. ## Example ```python from\u2026","total_count":1,"children":[]},{"name":"Add a *path operation* using an HTTP PUT operation. ## Example ```python from\u2026","total_count":1,"children":[]},{"name":"Add a *path operation* using an HTTP TRACE operation. ## Example ```python from\u2026","total_count":1,"children":[]},{"name":"Add an event handler for the router. `on_event` is deprecated, use `lifespan`\u2026","total_count":1,"children":[]},{"name":"Add an event handler function for startup or shutdown. This method is kept for\u2026","total_count":1,"children":[]},{"name":"APIRoute","total_count":1,"children":[]},{"name":"APIRouter","total_count":1,"children":[]},{"name":"APIWebSocketRoute","total_count":1,"children":[]},{"name":"Decorate a WebSocket function. Read more about it in the [FastAPI docs for\u2026","total_count":1,"children":[]},{"name":"Default lifespan context manager that runs on_startup and on_shutdown handlers.\u2026","total_count":1,"children":[]},{"name":"Extract endpoint context with caching to avoid repeated file I/O.","total_count":1,"children":[]},{"name":"get_request_handler()","total_count":1,"children":[]},{"name":"get_websocket_app()","total_count":1,"children":[]},{"name":"Include another `APIRouter` in the same current `APIRouter`. Read more about it\u2026","total_count":1,"children":[]},{"name":"iter_route_contexts()","total_count":1,"children":[]},{"name":"request_response()","total_count":1,"children":[]},{"name":"RouteContext","total_count":1,"children":[]},{"name":"Run any `.on_shutdown` event handlers. This method is kept for backward\u2026","total_count":1,"children":[]},{"name":"Run any `.on_startup` event handlers. This method is kept for backward\u2026","total_count":1,"children":[]},{"name":"run_endpoint_function()","total_count":1,"children":[]},{"name":"serialize_response()","total_count":1,"children":[]},{"name":"Serve a static frontend build as low-priority routes. Use this for frontend\u2026","total_count":1,"children":[]},{"name":"Takes a coroutine `func(session)`, and returns an ASGI application.","total_count":1,"children":[]},{"name":"Takes a function or coroutine `func(request) -> response`, and returns an ASGI\u2026","total_count":1,"children":[]},{"name":"websocket_session()","total_count":1,"children":[]},{"name":"Wrap a generator-based lifespan context into an async context manager. This is\u2026","total_count":1,"children":[]},{"name":"Wraps a synchronous context manager to make it async. This is vendored from\u2026","total_count":1,"children":[]}]},{"name":"security","total_count":69,"children":[{"name":"api_key.py","total_count":17,"children":[{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".check_api_key()","total_count":1,"children":[]},{"name":".make_not_authenticated_error()","total_count":1,"children":[]},{"name":"API key authentication using a cookie. This defines the name of the cookie that\u2026","total_count":1,"children":[]},{"name":"API key authentication using a header. This defines the name of the header that\u2026","total_count":1,"children":[]},{"name":"API key authentication using a query parameter. This defines the name of the\u2026","total_count":1,"children":[]},{"name":"APIKeyBase","total_count":1,"children":[]},{"name":"APIKeyCookie","total_count":1,"children":[]},{"name":"APIKeyHeader","total_count":1,"children":[]},{"name":"APIKeyQuery","total_count":1,"children":[]},{"name":"The WWW-Authenticate header is not standardized for API Key authentication but\u2026","total_count":1,"children":[]}]},{"name":"base.py","total_count":1,"children":[{"name":"SecurityBase","total_count":1,"children":[]}]},{"name":"http.py","total_count":22,"children":[{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".make_authenticate_headers()","total_count":1,"children":[]},{"name":".make_authenticate_headers()","total_count":1,"children":[]},{"name":".make_not_authenticated_error()","total_count":1,"children":[]},{"name":"HTTP Basic authentication. Ref: https://datatracker.ietf.org/doc/html/rfc7617\u2026","total_count":1,"children":[]},{"name":"HTTP Bearer token authentication. ## Usage Create an instance object and use\u2026","total_count":1,"children":[]},{"name":"HTTP Digest authentication. **Warning**: this is only a stub to connect the\u2026","total_count":1,"children":[]},{"name":"HTTPAuthorizationCredentials","total_count":1,"children":[]},{"name":"HTTPBase","total_count":1,"children":[]},{"name":"HTTPBasic","total_count":1,"children":[]},{"name":"HTTPBasicCredentials","total_count":1,"children":[]},{"name":"HTTPBearer","total_count":1,"children":[]},{"name":"HTTPDigest","total_count":1,"children":[]},{"name":"The HTTP authorization credentials in the result of using `HTTPBearer` or\u2026","total_count":1,"children":[]},{"name":"The HTTP Basic credentials given as the result of using `HTTPBasic` in a\u2026","total_count":1,"children":[]}]},{"name":"oauth2.py","total_count":22,"children":[{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".make_not_authenticated_error()","total_count":1,"children":[]},{"name":"OAuth2","total_count":1,"children":[]},{"name":"OAuth2 flow for authentication using a bearer token obtained with a password.\u2026","total_count":1,"children":[]},{"name":"OAuth2 flow for authentication using a bearer token obtained with an OAuth2\u2026","total_count":1,"children":[]},{"name":"OAuth2AuthorizationCodeBearer","total_count":1,"children":[]},{"name":"OAuth2PasswordBearer","total_count":1,"children":[]},{"name":"OAuth2PasswordRequestForm","total_count":1,"children":[]},{"name":"OAuth2PasswordRequestFormStrict","total_count":1,"children":[]},{"name":"SecurityScopes","total_count":1,"children":[]},{"name":"The OAuth 2 specification doesn't define the challenge that should be used,\u2026","total_count":1,"children":[]},{"name":"This is a dependency class to collect the `username` and `password` as form\u2026","total_count":1,"children":[]},{"name":"This is a special class that you can define in a parameter in a dependency to\u2026","total_count":1,"children":[]},{"name":"This is the base class for OAuth2 authentication, an instance of it would be\u2026","total_count":1,"children":[]}]},{"name":"open_id_connect_url.py","total_count":5,"children":[{"name":".__call__()","total_count":1,"children":[]},{"name":".__init__()","total_count":1,"children":[]},{"name":".make_not_authenticated_error()","total_count":1,"children":[]},{"name":"OpenID Connect authentication class. An instance of it would be used as a\u2026","total_count":1,"children":[]},{"name":"OpenIdConnect","total_count":1,"children":[]}]},{"name":"utils.py","total_count":1,"children":[{"name":"get_authorization_scheme_param()","total_count":1,"children":[]}]},{"name":"__init__.py","total_count":1,"children":[]}]},{"name":"sse.py","total_count":11,"children":[{"name":"._check_data_exclusive()","total_count":1,"children":[]},{"name":"_check_event_single_line()","total_count":1,"children":[]},{"name":"_check_id_valid()","total_count":1,"children":[]},{"name":"_check_single_line()","total_count":1,"children":[]},{"name":"_split_sse_lines()","total_count":1,"children":[]},{"name":"Build SSE wire-format bytes from **pre-serialized** data. The result always\u2026","total_count":1,"children":[]},{"name":"EventSourceResponse","total_count":1,"children":[]},{"name":"format_sse_event()","total_count":1,"children":[]},{"name":"Represents a single Server-Sent Event. When `yield`ed from a *path operation\u2026","total_count":1,"children":[]},{"name":"ServerSentEvent","total_count":1,"children":[]},{"name":"Streaming response with `text/event-stream` media type. Use as\u2026","total_count":1,"children":[]}]},{"name":"utils.py","total_count":8,"children":[{"name":"create_model_field()","total_count":1,"children":[]},{"name":"deep_dict_update()","total_count":1,"children":[]},{"name":"generate_operation_id_for_path()","total_count":1,"children":[]},{"name":"generate_unique_id()","total_count":1,"children":[]},{"name":"get_path_param_names()","total_count":1,"children":[]},{"name":"get_value_or_default()","total_count":1,"children":[]},{"name":"is_body_allowed_for_status_code()","total_count":1,"children":[]},{"name":"Pass items or `DefaultPlaceholder`s by descending priority. The first one to\u2026","total_count":1,"children":[]}]},{"name":"__main__.py","total_count":1,"children":[]},{"name":"logger.py","total_count":1,"children":[]},{"name":"requests.py","total_count":1,"children":[]},{"name":"staticfiles.py","total_count":1,"children":[]},{"name":"templating.py","total_count":1,"children":[]},{"name":"testclient.py","total_count":1,"children":[]},{"name":"types.py","total_count":1,"children":[]},{"name":"websockets.py","total_count":1,"children":[]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+!app/dist/
+!app/dist/**
+.graphify-cache/
+
+# Query timestamps and temporary runtime data are not published.
+app/dist/native/**/cache/

@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HTTPBase</title><style>body{max-width:1080px;margin:35px auto;padding:0 25px;font:15px/1.85 system-ui;color:#dce4ef;background:#111520}a{color:#9fc7ff}h1,h2,h3{color:white}table{border-collapse:collapse;display:block;overflow:auto}td,th{padding:9px;border:1px solid #394252}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1d2331;padding:18px}code{font-family:Consolas,monospace}</style><body><h1>HTTPBase</h1>
+<blockquote>
+<p>30 nodes · cohesion 0.12</p>
+</blockquote>
+<h2>Key Concepts</h2>
+<ul>
+<li><strong>HTTPBase</strong> (11 connections) — <code>security/http.py</code></li>
+<li><strong>HTTPBasic</strong> (8 connections) — <code>security/http.py</code></li>
+<li><strong>http.py</strong> (7 connections) — <code>security/http.py</code></li>
+<li><strong>HTTPAuthorizationCredentials</strong> (7 connections) — <code>security/http.py</code></li>
+<li><strong>.make_not_authenticated_error()</strong> (7 connections) — <code>security/http.py</code></li>
+<li><strong>HTTPBearer</strong> (7 connections) — <code>security/http.py</code></li>
+<li><strong>HTTPDigest</strong> (7 connections) — <code>security/http.py</code></li>
+<li><strong>get_authorization_scheme_param()</strong> (7 connections) — <code>security/utils.py</code></li>
+<li><strong>HTTPBase</strong> (6 connections) — <code>openapi/models.py</code></li>
+<li><strong>.<strong>call</strong>()</strong> (5 connections) — <code>security/http.py</code></li>
+<li><strong>.<strong>call</strong>()</strong> (5 connections) — <code>security/http.py</code></li>
+<li><strong>HTTPBasicCredentials</strong> (5 connections) — <code>security/http.py</code></li>
+<li><strong>.<strong>call</strong>()</strong> (5 connections) — <code>security/http.py</code></li>
+<li><strong>.<strong>call</strong>()</strong> (5 connections) — <code>security/http.py</code></li>
+<li><strong>Request</strong> (4 connections)</li>
+<li><strong>HTTPBearer</strong> (3 connections) — <code>openapi/models.py</code></li>
+<li><strong>Doc</strong> (3 connections)</li>
+<li><strong>.<strong>init</strong>()</strong> (2 connections) — <code>security/http.py</code></li>
+<li><strong>.make_authenticate_headers()</strong> (2 connections) — <code>security/http.py</code></li>
+<li><strong>.<strong>init</strong>()</strong> (2 connections) — <code>security/http.py</code></li>
+<li><strong>.<strong>init</strong>()</strong> (2 connections) — <code>security/http.py</code></li>
+<li><strong>BaseModel</strong> (2 connections)</li>
+<li><strong>.<strong>init</strong>()</strong> (1 connections) — <code>security/http.py</code></li>
+<li><strong>.make_authenticate_headers()</strong> (1 connections) — <code>security/http.py</code></li>
+<li><strong>HTTP Basic authentication. Ref: https://datatracker.ietf.org/doc/html/rfc7617…</strong> (1 connections) — <code>security/http.py</code></li>
+<li><em>... and 5 more nodes in this community</em></li>
+</ul>
+<h2>Relationships</h2>
+<ul>
+<li><a href="OpenIdConnect.html">OpenIdConnect</a> (2 shared connections)</li>
+<li><a href="HTTPException.html">HTTPException</a> (2 shared connections)</li>
+</ul>
+<h2>Source Files</h2>
+<ul>
+<li><code>openapi/models.py</code></li>
+<li><code>security/http.py</code></li>
+<li><code>security/utils.py</code></li>
+</ul>
+<h2>Audit Trail</h2>
+<ul>
+<li>EXTRACTED: 48 (84%)</li>
+<li>INFERRED: 9 (16%)</li>
+<li>AMBIGUOUS: 0 (0%)</li>
+</ul>
+<hr />
+<p><em>Part of the graphify knowledge wiki. See <a href="index.html">index</a> to navigate.</em></p></body></html>

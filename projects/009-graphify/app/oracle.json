@@ -1,0 +1,386 @@
+{
+  "all": {
+    "distances": {
+      "api": {
+        "api": 0,
+        "api_checkout": 1,
+        "api_preview_price": 1,
+        "auth": 1,
+        "auth_require_member": 1,
+        "orders": 1,
+        "orders_create_order": 1,
+        "pricing": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog": 2,
+        "catalog_reserve_stock": 2,
+        "orders_save_order": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2,
+        "catalog_check_stock": 3
+      },
+      "api_checkout": {
+        "api_checkout": 0,
+        "orders_create_order": 1,
+        "auth_require_member": 2,
+        "catalog_reserve_stock": 2,
+        "orders_save_order": 2,
+        "pricing_calculate_total": 2,
+        "auth_resolve_user": 3,
+        "catalog_check_stock": 3,
+        "catalog_get_product": 3,
+        "pricing_member_discount": 3
+      },
+      "api_preview_price": {
+        "api_preview_price": 0,
+        "auth_require_member": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2
+      },
+      "api_rationale_1": {
+        "api_rationale_1": 0,
+        "api": 1,
+        "api_checkout": 2,
+        "api_preview_price": 2,
+        "auth": 2,
+        "auth_require_member": 2,
+        "orders": 2,
+        "orders_create_order": 2,
+        "pricing": 2,
+        "pricing_calculate_total": 2,
+        "auth_resolve_user": 3,
+        "catalog": 3,
+        "catalog_reserve_stock": 3,
+        "orders_save_order": 3,
+        "catalog_get_product": 3,
+        "pricing_member_discount": 3,
+        "catalog_check_stock": 4
+      },
+      "auth": {
+        "auth": 0,
+        "auth_require_member": 1,
+        "auth_resolve_user": 1
+      },
+      "auth_resolve_user": {
+        "auth_resolve_user": 0
+      },
+      "auth_require_member": {
+        "auth_require_member": 0,
+        "auth_resolve_user": 1
+      },
+      "catalog": {
+        "catalog": 0,
+        "catalog_check_stock": 1,
+        "catalog_get_product": 1,
+        "catalog_reserve_stock": 1
+      },
+      "catalog_get_product": {
+        "catalog_get_product": 0
+      },
+      "catalog_check_stock": {
+        "catalog_check_stock": 0,
+        "catalog_get_product": 1
+      },
+      "catalog_reserve_stock": {
+        "catalog_reserve_stock": 0,
+        "catalog_check_stock": 1,
+        "catalog_get_product": 1
+      },
+      "catalog_rationale_1": {
+        "catalog_rationale_1": 0,
+        "catalog": 1,
+        "catalog_check_stock": 2,
+        "catalog_get_product": 2,
+        "catalog_reserve_stock": 2
+      },
+      "orders": {
+        "orders": 0,
+        "auth": 1,
+        "auth_require_member": 1,
+        "catalog": 1,
+        "catalog_reserve_stock": 1,
+        "orders_create_order": 1,
+        "orders_save_order": 1,
+        "pricing": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog_check_stock": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2
+      },
+      "orders_save_order": {
+        "orders_save_order": 0
+      },
+      "orders_create_order": {
+        "orders_create_order": 0,
+        "auth_require_member": 1,
+        "catalog_reserve_stock": 1,
+        "orders_save_order": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog_check_stock": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2
+      },
+      "pricing": {
+        "pricing": 0,
+        "catalog": 1,
+        "catalog_get_product": 1,
+        "pricing_calculate_total": 1,
+        "pricing_member_discount": 1,
+        "catalog_check_stock": 2,
+        "catalog_reserve_stock": 2
+      },
+      "pricing_member_discount": {
+        "pricing_member_discount": 0
+      },
+      "pricing_calculate_total": {
+        "pricing_calculate_total": 0,
+        "catalog_get_product": 1,
+        "pricing_member_discount": 1
+      }
+    },
+    "affected": {
+      "api": [],
+      "api_checkout": [],
+      "api_preview_price": [],
+      "api_rationale_1": [],
+      "auth": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order"
+      ],
+      "auth_resolve_user": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "auth_require_member",
+        "orders",
+        "orders_create_order"
+      ],
+      "auth_require_member": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order"
+      ],
+      "catalog": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order",
+        "pricing",
+        "pricing_calculate_total"
+      ],
+      "catalog_get_product": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "catalog_check_stock",
+        "catalog_reserve_stock",
+        "orders",
+        "orders_create_order",
+        "pricing",
+        "pricing_calculate_total"
+      ],
+      "catalog_check_stock": [
+        "api",
+        "api_checkout",
+        "catalog_reserve_stock",
+        "orders",
+        "orders_create_order"
+      ],
+      "catalog_reserve_stock": [
+        "api",
+        "api_checkout",
+        "orders",
+        "orders_create_order"
+      ],
+      "catalog_rationale_1": [],
+      "orders": [
+        "api",
+        "api_checkout"
+      ],
+      "orders_save_order": [
+        "api",
+        "api_checkout",
+        "orders_create_order"
+      ],
+      "orders_create_order": [
+        "api",
+        "api_checkout"
+      ],
+      "pricing": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order"
+      ],
+      "pricing_member_discount": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order",
+        "pricing_calculate_total"
+      ],
+      "pricing_calculate_total": [
+        "api",
+        "api_checkout",
+        "api_preview_price",
+        "orders",
+        "orders_create_order"
+      ]
+    }
+  },
+  "calls": {
+    "distances": {
+      "api": {
+        "api": 0
+      },
+      "api_checkout": {
+        "api_checkout": 0,
+        "orders_create_order": 1,
+        "auth_require_member": 2,
+        "catalog_reserve_stock": 2,
+        "orders_save_order": 2,
+        "pricing_calculate_total": 2,
+        "auth_resolve_user": 3,
+        "catalog_check_stock": 3,
+        "catalog_get_product": 3,
+        "pricing_member_discount": 3
+      },
+      "api_preview_price": {
+        "api_preview_price": 0,
+        "auth_require_member": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2
+      },
+      "api_rationale_1": {
+        "api_rationale_1": 0
+      },
+      "auth": {
+        "auth": 0
+      },
+      "auth_resolve_user": {
+        "auth_resolve_user": 0
+      },
+      "auth_require_member": {
+        "auth_require_member": 0,
+        "auth_resolve_user": 1
+      },
+      "catalog": {
+        "catalog": 0
+      },
+      "catalog_get_product": {
+        "catalog_get_product": 0
+      },
+      "catalog_check_stock": {
+        "catalog_check_stock": 0,
+        "catalog_get_product": 1
+      },
+      "catalog_reserve_stock": {
+        "catalog_reserve_stock": 0,
+        "catalog_check_stock": 1,
+        "catalog_get_product": 1
+      },
+      "catalog_rationale_1": {
+        "catalog_rationale_1": 0
+      },
+      "orders": {
+        "orders": 0
+      },
+      "orders_save_order": {
+        "orders_save_order": 0
+      },
+      "orders_create_order": {
+        "orders_create_order": 0,
+        "auth_require_member": 1,
+        "catalog_reserve_stock": 1,
+        "orders_save_order": 1,
+        "pricing_calculate_total": 1,
+        "auth_resolve_user": 2,
+        "catalog_check_stock": 2,
+        "catalog_get_product": 2,
+        "pricing_member_discount": 2
+      },
+      "pricing": {
+        "pricing": 0
+      },
+      "pricing_member_discount": {
+        "pricing_member_discount": 0
+      },
+      "pricing_calculate_total": {
+        "pricing_calculate_total": 0,
+        "catalog_get_product": 1,
+        "pricing_member_discount": 1
+      }
+    },
+    "affected": {
+      "api": [],
+      "api_checkout": [],
+      "api_preview_price": [],
+      "api_rationale_1": [],
+      "auth": [],
+      "auth_resolve_user": [
+        "api_checkout",
+        "api_preview_price",
+        "auth_require_member",
+        "orders_create_order"
+      ],
+      "auth_require_member": [
+        "api_checkout",
+        "api_preview_price",
+        "orders_create_order"
+      ],
+      "catalog": [],
+      "catalog_get_product": [
+        "api_checkout",
+        "api_preview_price",
+        "catalog_check_stock",
+        "catalog_reserve_stock",
+        "orders_create_order",
+        "pricing_calculate_total"
+      ],
+      "catalog_check_stock": [
+        "api_checkout",
+        "catalog_reserve_stock",
+        "orders_create_order"
+      ],
+      "catalog_reserve_stock": [
+        "api_checkout",
+        "orders_create_order"
+      ],
+      "catalog_rationale_1": [],
+      "orders": [],
+      "orders_save_order": [
+        "api_checkout",
+        "orders_create_order"
+      ],
+      "orders_create_order": [
+        "api_checkout"
+      ],
+      "pricing": [],
+      "pricing_member_discount": [
+        "api_checkout",
+        "api_preview_price",
+        "orders_create_order",
+        "pricing_calculate_total"
+      ],
+      "pricing_calculate_total": [
+        "api_checkout",
+        "api_preview_price",
+        "orders_create_order"
+      ]
+    }
+  }
+}

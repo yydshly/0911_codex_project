@@ -15,6 +15,7 @@ on:
       - 'projects/006-drama-skills/**'
       - 'projects/007-xxd-panel-028/**'
       - 'projects/008-freellmapi/**'
+      - 'projects/009-graphify/**'
       - 'projects/011-munder-difflin/**'
   workflow_dispatch:
 
@@ -68,6 +69,10 @@ jobs:
           python -m pip install -r projects/011-munder-difflin/app/requirements.txt
           python projects/011-munder-difflin/app/build.py
           node projects/011-munder-difflin/app/check.cjs
+      - name: Check Graphify showcase
+        run: |
+          node projects/009-graphify/app/check.cjs
+          node projects/009-graphify/app/check-native.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact
