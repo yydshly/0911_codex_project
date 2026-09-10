@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-10",
+  "timezone": "Asia/Shanghai",
+  "defaultRun": "golden",
+  "method": "1 次基线生成 + 3 次编辑。三次编辑均 referenced_image_paths 指向完全相同的 baseline 文件。无重试、无挑选、无链式编辑、无后处理、无裁切或缩放。",
+  "model": "unknown",
+  "cost": "unknown",
+  "evidenceNote": "完整提示词逐字保留；工具本地文件路径在本发布记录中归一为相对文件名，以 SHA-256 对照实际文件。日期显示使用 Asia/Shanghai，调用时间保留 UTC。",
+  "source": {
+    "file": "source.png",
+    "width": 1254,
+    "height": 1254,
+    "sha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+    "bytes": 1805169,
+    "prompt": "Create one square photorealistic baseline portrait for an image-edit research comparison. The person is explicitly a synthetic, fictional adult East Asian man, approximately 35 years old, with short wavy black hair and subtle stubble. He wears a navy overshirt over a plain white shirt and sits on a wooden chair in a simple gray-walled studio. Show him waist-up, facing the camera with a neutral expression, with his face large enough to inspect clearly. A large window is on camera left. Lighting is flat indirect neutral daylight. Use a natural photographic rendering with a clearly resolved face and a gently defocused background. Keep the composition simple and suitable for subsequent lighting-only edits with unchanged framing. No text, logos, or watermark.",
+    "actualTool": "tools.image_gen__imagegen",
+    "model": "unknown",
+    "startUtc": "2026-09-10T13:35:44.143Z",
+    "endUtc": "2026-09-10T13:39:36.620Z",
+    "durationSeconds": 232.477,
+    "toolEvidence": {
+      "returnedKeys": [
+        "image_url",
+        "output_hint"
+      ],
+      "artifactName": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+      "responseId": "not exposed"
+    },
+    "nature": "AI 生成的虚构成年人像，并非真人实拍",
+    "observations": {
+      "achieved": [
+        "生成了明确要求为虚构合成的成年东亚男性半身人像。",
+        "方形画面、深蓝外衫、白色内搭、木椅、左侧窗户与灰墙均可见。",
+        "表情中性、正面朝向，脸部细节清晰，背景略虚化。"
+      ],
+      "deviations": [
+        "画面右后方额外出现木桌与植物，并非提示词要求的物体。",
+        "日光虽平缓，仍有可见左侧方向性；不是完全均匀的照明。"
+      ],
+      "identity_pose_drift": "不适用：这是共同输入基线。"
+    }
+  },
+  "runs": [
+    {
+      "file": "window.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "5b9d12923c2103b60d80adb613c5a2eb40949a7641690315b7ecb77b3aa60230",
+      "bytes": 1771146,
+      "prompt": "EDIT: relight-and-skin; preserve source identity, geometry, expression, pose, viewpoint, framing, focal plane, and depth of field.\nLIGHT: A broad upper-left window creates neutral soft light and gradual falloff across the person and wall. Retain highlight headroom, readable midtones, directional shadows, and a stable black point; allow faint room bounce and one continuous soft window shadow.\nSKIN: Use luminous source complexion, broad bounded highlights, and faint focus-aware regional detail.\nAVOID: pasted shadows and plastic gloss.",
+      "actualTool": "tools.image_gen__imagegen",
+      "model": "unknown",
+      "startUtc": "2026-09-10T13:40:04.499Z",
+      "endUtc": "2026-09-10T13:40:51.149Z",
+      "durationSeconds": 46.65,
+      "toolEvidence": {
+        "returnedKeys": [
+          "image_url",
+          "output_hint"
+        ],
+        "artifactName": "exec-531a6777-67fd-44b0-91a9-ed770eff5b59.png",
+        "responseId": "not exposed"
+      },
+      "id": "window",
+      "label": "柔和窗光",
+      "title": "柔和窗光：变化细微，窗影不明确",
+      "verdict": "部分达成 · 窗影不明确",
+      "goal": "让左前上方的宽大窗光照亮人物与墙面，保留柔和明暗过渡，并产生一条连续窗影。",
+      "observation": "左侧柔光与自然肤色保留，脸部和墙面较基线略明亮。 肤质未见明显塑料光泽，主体衣物的暗部仍可辨。",
+      "limitations": "变化幅度较小，光线仍较平；一条连续柔和窗影未能清楚辨认。 灰墙照明较均匀，提示词要求的渐进衰减不十分突出。 肉眼未见明显身份、表情或坐姿变化。头发轮廓、衣褶及脸部纹理存在轻微重绘差异；不构成像素级几何保持证明。",
+      "inputFile": "source.png",
+      "inputSha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+      "originalInputArtifact": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+      "attemptCount": 1,
+      "postProcessing": "none"
+    },
+    {
+      "file": "golden.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "99fef081d6cbe53dffcaa7453fdd872a7fd85e9f13e24a6ebc16db6e7c7aa15d",
+      "bytes": 1807902,
+      "prompt": "EDIT: relight-and-skin; preserve source identity, geometry, expression, pose, viewpoint, framing, focal plane, and depth of field.\nLIGHT: Warm side-rear sunset light outlines hair and shoulders. Protect sunset highlights, let unlit facial midtones fall naturally, retain directional shadows and a clean black point, and add one faint source-aligned flare with no frontal fill.\nRENDER: Use restrained editorial color and smooth digital highlight roll-off.\nSKIN: Keep continuous complexion and faint detail only on resolved illuminated planes.\nAVOID: frontal fill and orange skin wash.",
+      "actualTool": "tools.image_gen__imagegen",
+      "model": "unknown",
+      "startUtc": "2026-09-10T13:41:01.841Z",
+      "endUtc": "2026-09-10T13:42:06.329Z",
+      "durationSeconds": 64.488,
+      "toolEvidence": {
+        "returnedKeys": [
+          "image_url",
+          "output_hint"
+        ],
+        "artifactName": "exec-53f08755-b34d-4680-b65f-c4de50609a6a.png",
+        "responseId": "not exposed"
+      },
+      "id": "golden",
+      "label": "夕阳逆光",
+      "title": "夕阳逆光：轮廓光出现了，暗侧够暗吗？",
+      "verdict": "轮廓光明显 · 曝光约束未确认",
+      "goal": "让暖色侧后光勾勒头发与肩膀，优先保留夕阳高光，不添加正面补光，并让未受光的面部自然变暗。",
+      "observation": "头发及肩部出现显著金色侧后轮廓光，窗边呈现暖色日落气氛。 左侧背景可见柔和圆形耀斑；大部分面部肤色仍接近自然，未被全面橙染。",
+      "limitations": "脸部正面中间调依然明亮，不能确认满足 no frontal fill。 窗外和光源附近出现接近白色的高亮区域，不能声称高光余量完全保留。 肩部轮廓光较强且两肩均显著受光，克制程度有限。 整体身份、表情、朝向和坐姿肉眼接近基线；细节有重绘，无像素配准或身份相似度量化验证。",
+      "inputFile": "source.png",
+      "inputSha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+      "originalInputArtifact": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+      "attemptCount": 1,
+      "postProcessing": "none"
+    },
+    {
+      "file": "neon.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f13dfe7cb8aa23ea57b8c87859e0e58c6e5d3014cc7788c9a378270a01c70fdf",
+      "bytes": 1875206,
+      "prompt": "EDIT: relight-and-skin; preserve source identity, geometry, expression, pose, viewpoint, framing, focal plane, and depth of field.\nLIGHT: Separate a magenta key from a cyan rim; preserve a natural skin zone. Hold shaped highlights, selected facial midtones, directional deep shadows, and a clean black point. Restrict subtle bokeh to the already defocused background.\nRENDER: Keep controlled cool ambience and smooth digital highlights without a global tint.\nSKIN: Use continuous source complexion with restrained available-light reflections and focus-limited detail.\nAVOID: colored skin wash and foreground bokeh.",
+      "actualTool": "tools.image_gen__imagegen",
+      "model": "unknown",
+      "startUtc": "2026-09-10T13:42:25.962Z",
+      "endUtc": "2026-09-10T13:43:11.270Z",
+      "durationSeconds": 45.308,
+      "toolEvidence": {
+        "returnedKeys": [
+          "image_url",
+          "output_hint"
+        ],
+        "artifactName": "exec-83debe72-6b0c-45c9-8ad1-eaa96d24b9fd.png",
+        "responseId": "not exposed"
+      },
+      "id": "neon",
+      "label": "双色霓虹",
+      "title": "双色霓虹：轮廓分色成功，主光没有跟上",
+      "verdict": "双色轮廓形成 · 主光未充分实现",
+      "goal": "使用品红主光和青色轮廓光，保留部分自然肤色，形成方向明确的深阴影与低调曝光。",
+      "observation": "画面左侧洋红光与右侧青色轮廓光明显分离，灰墙转为冷色氛围。 脸部中心保留自然肤色，衣物仍有深色区域；未见前景散景点。",
+      "limitations": "洋红光主要落在头发、面部边缘与肩部，脸部中央仍像中性主光，magenta key 未充分实现。 面部深阴影较弱，整体正面仍明亮。 背景未见明确新增散景亮斑；其虚化程度只可作肉眼判断。 肉眼未见明显身份或姿态漂移，裁切与头部位置基本一致；细部重绘存在，未进行几何量化。",
+      "inputFile": "source.png",
+      "inputSha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+      "originalInputArtifact": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+      "attemptCount": 1,
+      "postProcessing": "none"
+    }
+  ]
+}

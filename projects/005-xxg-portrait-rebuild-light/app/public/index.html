@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XXG 人像光影研究室 · 开源能力展示</title>
+  <meta name="description" content="查看人像布光与照片产品扩展的实际输入、完整提示词、输出和局限，理解上游能力与本地探索。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="experiments.css">
+  <link rel="stylesheet" href="extensions.css">
+  <script src="data.js" defer></script><script src="app.js" defer></script>
+  <script src="experiments-data.js" defer></script><script src="experiments.js" defer></script>
+  <script src="extensions-data.js" defer></script><script src="extensions.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要内容</a>
+<header class="topbar"><a class="brand" href="#main"><span class="brand-mark">◒</span> 人像光影研究室 <span class="index">研究 004</span></a><nav aria-label="页面导航"><a href="#extensions">照片产品扩展</a><a href="#experiments">人像布光实测</a><a href="#examples">上游示例</a><a href="#recipes">配方解析</a><a href="#method">工作原理</a><a href="https://github.com/moskoo/xxg-portrait-rebuild-light">原库 ↗</a></nav></header>
+<main id="main">
+  <section id="extensions" aria-labelledby="extension-heading">
+    <div class="intro"><div><p class="eyebrow">OUR EXPLORATION / 本地产品扩展</p><h1 id="extension-heading">从光影配方，走向照片产品。</h1><p class="lead">商品布光的新样例、职业头像的既有实验参考，以及婚纱照和老照片尚未完成的验证。</p></div></div>
+    <p class="experiment-disclosure"><strong>先理解原理：</strong>原库把光源方向、软硬、颜色与投射阴影整理为提示词，连同原图交给图像大模型生成编辑结果；人物与构图保持也是生成要求，需要对照检查。<a href="#experiments">先看三次实际布光效果 →</a></p>
+    <p class="experiment-disclosure">以下是我们借鉴原库思路提出的产品扩展，不是上游已有功能。商品为本次新增实验；职业头像方向复用既有人像布光结果，未新增调用。保留实际返回的编辑结果与偏差；连接失败的重试单独记录，不按效果筛选。输入由 AI 合成，模拟照片中的问题，并非真人婚纱照、真实历史照片或实拍商品；没有干净原片作为修复真值。</p>
+    <div id="extension-controls" class="gallery-controls" aria-label="选择产品扩展样例"></div>
+    <div class="run-heading"><h2 id="extension-title">照片产品扩展样例</h2><span id="extension-verdict" class="run-verdict"></span></div>
+    <p id="extension-story" class="extension-story"></p>
+    <div class="actual-comparison">
+      <figure><figcaption><strong>测试输入</strong><span>AI 合成的问题照片</span></figcaption><a id="extension-source-link" target="_blank" rel="noopener"><img id="extension-source" loading="lazy" width="1024" height="1024" alt="本次照片产品扩展的 AI 合成输入"></a></figure>
+      <figure><figcaption><strong>实际编辑输出</strong><span id="extension-meta"></span></figcaption><a id="extension-output-link" target="_blank" rel="noopener"><img id="extension-output" loading="lazy" width="1024" height="1024" alt="本次照片产品扩展的真实工具输出"></a></figure>
+    </div>
+    <p class="evidence-note">点击查看完整文件。没有为展示效果而裁切、调色、修饰或筛选输出。以下为 Agent 视觉观察，未经人工复核或专业质量认证。</p>
+    <div class="run-report" aria-live="polite"><article><p class="eyebrow">PROBLEM → CONSTRAINTS → RESULT</p><h3>这个样例说明什么？</h3><dl><dt>原图的问题与处理目标</dt><dd id="extension-goal"></dd><dt>必须保留什么</dt><dd id="extension-preserve"></dd><dt>实际看到的改善</dt><dd id="extension-observation"></dd><dt>偏差与不能证明的事情</dt><dd id="extension-limitations"></dd><dt>如果做成产品</dt><dd id="extension-product"></dd></dl></article><article class="actual-prompt"><div class="prompt-heading"><h3>实际发送的完整编辑提示词</h3><button id="copy-extension" type="button" class="copy">复制</button></div><pre id="extension-prompt" tabindex="0"></pre><p id="extension-copy-status" role="status"></p><p id="extension-call-meta" class="evidence-note"></p><details class="source-record"><summary>输入图的生成提示词</summary><pre id="extension-source-prompt" tabindex="0"></pre><a href="assets/extensions/runs.json">完整调用与失败记录（JSON）</a></details></article></div>
+    <details class="source-record"><summary>未完成的实验：婚纱照曝光与偏色修正</summary><p>合成输入已返回，但首次编辑与一次同提示词技术重试均因网络连接失败，没有输出。原计划提亮脸部、校正偏黄，并保留象牙色婚纱、蕾丝和双人人物特征；目前不能展示修复效果，也不能据此判断编辑能力。</p><p><a href="assets/extensions/wedding-source.png" target="_blank" rel="noopener">查看已生成的婚纱测试输入</a></p><h3>两次实际发送的相同编辑提示词</h3><pre id="wedding-failed-prompt" tabindex="0"></pre></details>
+    <details class="source-record"><summary>未完成的实验：家庭老照片修复</summary><p>计划用合成的黑白受损照片测试划痕和小块背景修复。输入生成首次调用及一次同提示词技术重试均因网络连接失败，没有返回图片，因此没有执行修复编辑，也没有可展示的修复效果。失败不用于判断模型的修复能力。</p><p>原始提示词、两次失败时间和错误信息保存在<a href="assets/extensions/runs.json">完整记录</a>中。尚不能声称已验证老照片修复。</p></details>
+    <div class="section-heading extension-roadmap-heading"><div><p class="eyebrow">PRODUCT OPPORTUNITIES</p><h2>还能扩展到哪些照片产品？</h2></div><p>本次新增商品样例，另复用窗光人像作有限参考；婚纱和老照片因连接失败未完成。<a href="extensions.md">完整扩展研究</a></p></div>
+    <div class="extension-table-wrap"><table class="extension-table"><thead><tr><th scope="col">方向</th><th scope="col">可提供的服务</th><th scope="col">关键保留要求</th><th scope="col">当前证据</th></tr></thead><tbody>
+      <tr><th scope="row">婚纱照精修</th><td>曝光、偏色、自然肤质与整组色调优化</td><td>双人人物特征、妆容、头纱、蕾丝、手部与戒指</td><td>输入已生成；两次编辑连接失败，未出结果</td></tr>
+      <tr><th scope="row">家庭老照片修复</th><td>去划痕、补破损、影调恢复；上色需另行选择</td><td>家人相貌、年龄、原有颗粒和年代特征</td><td>输入生成两次连接失败；修复编辑未执行</td></tr>
+      <tr><th scope="row">商品摄影</th><td>改善灯光、接触阴影、背景与材质表现</td><td>商品形状、颜色、标识、文字和材料真实性</td><td>本页单件商品布光样例</td></tr>
+      <tr><th scope="row">职业头像</th><td>调整背景、光照、构图和合适的衣着</td><td>本人特征与自然表情，避免过度理想化</td><td>复用本页窗光人像；未做职业照专项实验</td></tr>
+      <tr><th scope="row">旅拍照片</th><td>处理逆光、杂物和色彩，探索天气氛围</td><td>人物、地标形状和真实场景关系</td><td>产品设想，未实测</td></tr>
+      <tr><th scope="row">室内与房产摄影</th><td>调整混合色温、窗内外曝光与整体观感</td><td>房间结构、材料和实际设施</td><td>产品设想，未实测</td></tr>
+      <tr><th scope="row">整组照片统一</th><td>统一相册或商品图风格，保留逐图调整</td><td>跨图人物一致性与每张照片的光照差异</td><td>产品设想，未验证批量一致性</td></tr>
+    </tbody></table></div>
+    <div class="research-value"><div><p class="eyebrow">PRODUCT WORKFLOW / 建议流程</p><h3>专业规则之外，还要补齐控制与验收。</h3><p>先诊断问题、限定范围，再选择处理方式。常规曝光和白平衡可优先采用传统图像处理；需要补内容或重新布光时再调用生成式编辑，最后逐项比较并由用户接受或撤销。</p></div><div><h4>下一步需要实现</h4><ol><li>可撤销的局部编辑与原片保护。</li><li>经验证的蒙版、区域外像素保持。</li><li>人物、文字、服装和商品细节检查。</li><li>真实用户照片与多次重复的对照评测。</li></ol><p class="evidence-note">这些流程和检查尚未集成。当前网页用于展示已保存的实验，不是可上传照片的修图产品。</p></div></div>
+    <noscript><p>启用 JavaScript 浏览输入／输出对照，或阅读<a href="assets/extensions/runs.json">扩展实验记录</a>。</p></noscript>
+  </section>
+  <section id="experiments" aria-labelledby="experiment-heading">
+    <div class="intro"><div><p class="eyebrow">ACTUAL IMAGE-EDIT RUNS / 同图独立编辑</p><h2 id="experiment-heading">回到原库：同一张人像的三次布光实验。</h2><p class="lead">同一张输入，分别尝试窗光、夕阳与霓虹。对照真实输出，也检查它没有遵守的要求。</p></div></div>
+    <p class="experiment-disclosure">这是实际调用图像工具的实验记录。输入人像本身由 AI 生成，并非真人实拍；三次编辑都从这张输入开始，输出未经过本地滤镜、裁切或修饰。采用上游 V2.1 配方思路与本地整理的提示词，不代表完整技能流程或成功率评测。</p>
+    <div id="experiment-controls" class="gallery-controls" aria-label="选择实际编辑实验"></div>
+    <div class="run-heading"><h2 id="run-title">实际编辑对照</h2><span id="run-verdict" class="run-verdict"></span></div>
+    <div class="actual-comparison">
+      <figure><figcaption><strong>输入原图</strong><span>三次调用共用 · AI 生成人像</span></figcaption><a id="run-source-link" target="_blank" rel="noopener"><img id="run-source" alt="用于三个独立编辑实验的同一张 AI 合成人像" width="1024" height="1024"></a></figure>
+      <figure><figcaption><strong id="run-output-label">本次输出</strong><span id="run-output-meta"></span></figcaption><a id="run-output-link" target="_blank" rel="noopener"><img id="run-output" alt="实际图像编辑输出" width="1024" height="1024"></a></figure>
+    </div>
+    <p class="evidence-note">点击任一图片查看原文件。图片按各自原始比例完整显示，没有为对齐而修改文件。下方为 Agent 的视觉观察，未经人工复核，不是身份认证或物理光照测量。</p>
+    <div class="run-report" aria-live="polite"><article><p class="eyebrow">INTENT → OBSERVATION</p><h3>我们要求什么，实际发生了什么？</h3><dl><dt>编辑目标</dt><dd id="run-goal"></dd><dt>观察到的变化</dt><dd id="run-observation"></dd><dt>未达标或仍不确定</dt><dd id="run-limitations"></dd></dl></article><article class="actual-prompt"><div class="prompt-heading"><h3>本次实际发送的完整提示词</h3><button id="copy-run" class="copy" type="button">复制</button></div><pre id="run-prompt" tabindex="0"></pre><p id="run-copy-status" role="status"></p><p id="run-meta" class="evidence-note"></p></article></div>
+    <details class="source-record"><summary>查看测试人像的生成提示词与原始记录</summary><p>这张原图也由图像模型生成，目的是固定实验输入；它不代表真人照片上的效果。</p><pre id="source-prompt" tabindex="0"></pre><a href="assets/experiments/runs.json">完整调用与观察记录（JSON）</a></details>
+    <noscript><p>启用 JavaScript 查看逐次对照与提示词，或直接阅读<a href="assets/experiments/runs.json">完整实验记录</a>。</p></noscript>
+  </section>
+  <section id="examples" class="examples" aria-labelledby="page-title">
+    <div class="intro"><div><p class="eyebrow">XXG PORTRAIT REBUILD LIGHT / V2.1</p><h2 id="page-title">再看作者提供的四组效果示例。</h2><p class="lead">这些图片由上游提供，与上面的本地实验分开记录。</p></div><p class="edition">上游示例图集<br><span>4 组场景 · 6 种配方解析</span></p></div>
+    <div class="gallery-controls" id="gallery-controls" aria-label="选择上游示例"></div>
+    <figure class="gallery">
+      <a id="full-image" href="assets/skill-demo1.jpg" target="_blank" rel="noopener" aria-label="在新标签页查看当前完整对比图"><img id="example-image" src="assets/skill-demo1.jpg" width="2392" height="1022" alt="上游近景人像对比图：原图、柔光效果与彩色光影效果"></a>
+      <figcaption><div><span class="counter" id="example-count">01 / 04</span><strong id="example-title">近景人像 · 肤质与光色</strong><p id="example-description">观察面部反光、阴影与光源颜色的变化，并对照五官与饰品是否保持。</p></div><a id="source-image" href="https://github.com/moskoo/xxg-portrait-rebuild-light/blob/60348ce17f322458be1ff5eafa2277f84c7aed2e/assets/skill-demo1.jpg" target="_blank" rel="noopener">查看上游出处 ↗</a></figcaption>
+    </figure>
+    <p class="evidence-note">图像来自上游仓库，左侧标为 ORIGINAL，其余为作者展示效果。图内为较早配方标注，保留原样；不代表本地实测，也不构成 V2.1 的效果基准。点击图片可查看完整尺寸。</p>
+    <noscript><p>当前显示第一组示例。其余图像：<a href="assets/skill-demo2.jpg">逆光近景</a>、<a href="assets/skill-demo3.jpg">全身棚拍</a>、<a href="assets/skill-demo4.jpg">户外人像</a>。启用 JavaScript 可使用配方切换。</p></noscript>
+  </section>
+
+  <section id="recipes" class="section" aria-labelledby="recipe-heading">
+    <div class="section-heading"><div><p class="eyebrow">01 / CAPABILITIES</p><h2 id="recipe-heading">选择目标，理解它改什么。</h2></div><p>下面切换的是配方讲解，不会生成或修改上面的照片。</p></div>
+    <div class="recipe-layout"><div id="recipe-controls" class="recipe-controls" aria-label="选择能力配方"></div>
+      <article class="recipe-panel" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="recipe-scope"></p><h3 id="recipe-title"></h3><p id="recipe-intent" class="recipe-intent"></p><div class="recipe-details"><div><h4>预期改变</h4><p id="recipe-change"></p></div><div><h4>需要保留</h4><p id="recipe-preserve"></p></div><div><h4>适合场景</h4><p id="recipe-use"></p></div><div><h4>验收重点</h4><p id="recipe-audit"></p></div></div><div class="formula"><span>当前版本配方</span><code id="recipe-code"></code></div><details><summary>展开可复制的示例提示词</summary><p class="hint">本地整理，需与原始人像一起交给支持图像编辑的 Agent；结果仍需验收。</p><pre id="recipe-prompt" tabindex="0"></pre><button id="copy-prompt" type="button" class="copy">复制提示词</button><span id="copy-status" role="status"></span></details></article>
+    </div>
+    <div class="axes"><p><b>L</b> 主光</p><p><b>E</b> 曝光</p><p><b>S / P</b> 肤质与反光</p><p><b>T</b> 光色</p><p><b>G</b> 调色</p><p><b>D</b> 成像响应</p><p><b>A</b> 氛围</p></div>
+  </section>
+
+  <section id="method" class="section" aria-labelledby="method-heading"><div class="section-heading"><div><p class="eyebrow">02 / HOW IT WORKS</p><h2 id="method-heading">描述光如何照，再由大模型生成。</h2></div><p>描述光源方向、大小、软硬、颜色与阴影投射，将原图和提示词交给图像大模型生成编辑结果，再检查是否满足要求。</p></div>
+    <ol class="pipeline"><li><span>01</span><h3>看图定范围</h3><p>识别人物、光线与用户意图，确定允许改变的部分。</p></li><li><span>02</span><h3>选择摄影配方</h3><p>分别定义主光、曝光、肤质、色彩与成像响应。</p></li><li><span>03</span><h3>组织简短提示词</h3><p>将可观察的效果压缩为四至五行英文指令。</p></li><li><span>04</span><h3>调用图像模型</h3><p>把原片与提示词交给宿主已有的图像编辑能力。</p></li><li><span>05</span><h3>检查真实结果</h3><p>对照人物、光影、肤质和构图；失败时说明并修订提示。</p></li></ol>
+    <div class="principles"><article><h3>先确定“允许改什么”</h3><p>只修肤质时保留光照；调整设备风格时保留原机位和景深。把编辑范围和人物结构分开约束。</p></article><article><h3>皮肤真实感有三个层次</h3><p>连续的整体肤色、符合光源的有限反光，以及随面部区域、距离和焦点变化的细微纹理。</p></article><article><h3>检查记录不等于检查画面</h3><p>脚本能检查比例、像素差异和验收记录。人物是否还是同一个人、光线是否合理，仍需看图判断。</p></article></div>
+  </section>
+
+  <section id="boundaries" class="section" aria-labelledby="boundary-heading"><div class="section-heading"><div><p class="eyebrow">03 / EVIDENCE & LIMITS</p><h2 id="boundary-heading">知道它的目标，也知道保证到哪里。</h2></div></div>
+    <div class="boundary-grid"><article><span class="tag">上游已有</span><h3>规则、配方与检查工具</h3><p>支持肤质、布光、曝光和成像风格等编辑意图；包含宽高比、编辑计划、保护区域像素与验收记录检查。</p></article><article><span class="tag">依赖模型</span><h3>人物保持与光影一致性</h3><p>默认后端采用整图生成式编辑，无法保证未编辑区域像素原样不动。小脸、多人、文字与复杂饰品尤其需要复核。</p></article><article><span class="tag">尚待验证</span><h3>稳定性、成本与真实提升</h3><p>已完成人像布光与照片产品扩展样例，但没有系统性成功率与成本数据。新增纹理是合理细节的生成，无法证明找回原片丢失的信息。</p></article></div>
+    <div class="research-value"><div><p class="eyebrow">对我们的意义</p><h3>研究专业经验如何进入 Agent。</h3><p>它为研究总仓库补充了一个具体的图像任务样本：明确输入、控制修改范围、执行并验收。可与 LongHorizon 的持续任务调度研究互相参照。</p></div><div><h4>可扩展方向 / 本地建议</h4><ol><li>先做普通提示词与完整技能流程的对照实验。</li><li>增加人物、文字与构图的独立检查。</li><li>接入可保护局部像素的编辑后端。</li><li>验证后再扩展批量处理与风格一致性。</li></ol></div></div>
+  </section>
+  <footer><div><strong>XXG Portrait Rebuild Light</strong><p>研究 004 · 历史目录 005 · v2.1.0 / 60348ce<br>本地新增：实际编辑对照、逐字提示词与偏差观察。页面不提供在线修图。</p></div><nav aria-label="研究资料"><a href="research.md">完整研究笔记</a><a href="project.md">子项目说明</a><a href="https://github.com/moskoo/xxg-portrait-rebuild-light/tree/60348ce17f322458be1ff5eafa2277f84c7aed2e">固定版本源码 ↗</a><a href="assets/LICENSE.upstream">上游 MIT 许可证</a><a href="https://github.com/yydshly/0911_codex_project">研究总仓库 ↗</a></nav></footer>
+</main></body></html>

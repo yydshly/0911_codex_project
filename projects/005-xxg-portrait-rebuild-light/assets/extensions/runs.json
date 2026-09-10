@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-10",
+  "status": "finished_with_network_failures",
+  "sourceDisclosure": "所有输入均为 AI 合成，不是真人照片、历史原片或实拍商品。",
+  "method": "本次新增商品成功编辑一组；婚纱编辑两次失败、老照片输入两次失败。网页另复用既有人像窗光实验作职业头像布光参考，不计入新增调用。借鉴 XXG 专业规则、范围约束和验收思路，未执行上游完整技能。无后期处理、不按效果筛选。",
+  "actualTool": "tools.image_gen__imagegen",
+  "model": "unknown",
+  "cost": "unknown",
+  "observationMethod": "Agent 视觉观察，未经人工复核，无无损真值、身份认证或物理测量。",
+  "cases": [
+    {
+      "id": "product",
+      "label": "商品图 · 柔光布光",
+      "title": "商品图：灯光更清楚，颜色仍需校验",
+      "verdict": "布光改善，颜色保持未证实",
+      "story": "把一张平光下的虚构商品图，改为有主光方向和接触阴影的展示图。这个实验检验的是布光是否按要求改变，以及商品本身是否被一起改写。",
+      "goal": "输入是灰底上的钴蓝色哑光陶瓷杯，光线较平、阴影较弱。目标是添加左上大柔光箱与向右延伸的柔和接触阴影。生成输入时要求边缘发闷，但实际输入的轮廓已经清楚，因此不能把边缘清晰全部算作编辑的改善。",
+      "preserve": "杯体比例、右侧 C 形杯把、杯口、机位与位置、哑光材质、钴蓝色，以及正面的白色 NOMA 字样。",
+      "observation": "输出左上受光更亮，杯身有更宽的亮度过渡，向右的接触阴影更明显。杯体、把手和 NOMA 字样在视觉上基本保持，未见增加道具或明显悬浮；材质仍以哑光观感为主。",
+      "limitations": "蓝色看起来更鲜亮，不能声称严格保色；没有色卡、像素级几何对照或实物作为真值。单件、简单文字的结果不能推广到复杂包装、小字或镜面材料，也没有证明提升销售效果。",
+      "product": "可做电商拍摄后的布光预览，提供修改前后对照。正式交付还需商品颜色校验、文字检查、几何检查与用户确认；这些自动检查尚未接入。",
+      "attemptNote": "两次调用均返回图片，没有重试。",
+      "source": {
+        "file": "product-source.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "bb8d58a70a92f608ba943e63206d17cd49958bdc83b8be939f064a75be36e084",
+        "bytes": 1600695,
+        "originalArtifact": "exec-a3ced5cb-6246-4c78-8151-b781bab1a696.png",
+        "prompt": "Generate one square photorealistic ecommerce test photo of a simple matte cobalt-blue cylindrical ceramic mug with a rounded C-shaped handle on image right and the exact small white uppercase word \"NOMA\" centered on the front. One mug only, unobstructed, on a neutral light-gray tabletop against a plain gray seamless background, camera at slightly elevated three-quarter angle showing rim opening. Deliberately weak flat room lighting, low contrast muddy product edges and soft indistinct contact shadow, but product outline and exact label remain readable. No other text or objects, no watermark. Fictional product, synthetic input for relighting test.",
+        "actualTool": "tools.image_gen__imagegen",
+        "startUtc": "2026-09-10T13:56:50.413Z",
+        "endUtc": "2026-09-10T14:03:24.556Z",
+        "attemptCount": 1
+      },
+      "output": {
+        "file": "product-output.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "f982e04ec5b27e080bec8c53ece4b9b61c45905a6de3e8bff6074c4caf6a3f7e",
+        "bytes": 1612124,
+        "originalArtifact": "exec-20dcd14d-2449-4271-ab9b-e0f9ff0bf6da.png",
+        "prompt": "EDIT: relight this product photograph only; preserve the mug's exact shape, handle geometry, rim, scale, viewpoint, position, matte cobalt-blue color, and the exact white label NOMA.\nLIGHT: Use one large softbox from upper camera-left. Create a broad restrained highlight matching matte ceramic, readable shape separation, and one soft contact shadow extending right on the same gray tabletop; retain a neutral gray background and unclipped highlights.\nMATERIAL: Keep ceramic matte with subtle surface detail and stable product color.\nAVOID: altered lettering, glossy glaze, extra objects, and floating contact.",
+        "actualTool": "tools.image_gen__imagegen",
+        "startUtc": "2026-09-10T14:04:09.491Z",
+        "endUtc": "2026-09-10T14:09:53.108Z",
+        "attemptCount": 1,
+        "inputSha256": "bb8d58a70a92f608ba943e63206d17cd49958bdc83b8be939f064a75be36e084"
+      },
+      "sourceObservations": {
+        "achieved": [
+          "单个蓝色哑光陶瓷杯、右侧 C 形把手、略俯视的杯口、灰色台面和背景均可见。",
+          "白色 NOMA 四字母清楚可读，整体光照较平、阴影偏弱。"
+        ],
+        "deviations": [
+          "输入轮廓已经较清楚，低对比与边缘浑浊的问题不很严重，因此改善余地有限。"
+        ]
+      },
+      "outputObservations": {
+        "achieved": [
+          "杯身左侧出现更宽、更明亮的柔和高光，形体明暗分离增强。",
+          "右侧接触阴影更清楚，杯底仍与台面接触，未见漂浮。",
+          "肉眼可读文字仍为 NOMA，杯口、杯把、主体位置和取景基本一致。",
+          "材质仍表现为细腻哑光，未变成明显镜面釉。"
+        ],
+        "deviations": [
+          "杯身蓝色更鲜亮，不能声称严格保留每个像素的颜色或准确商品色。",
+          "左上杯口高光增强，材质粗糙度与微纹理存在重绘，不能据此证明产品材料参数完全保持。",
+          "文字外观肉眼近似，但未做 OCR、字体轮廓或几何像素配准验证。"
+        ]
+      }
+    },
+    {
+      "id": "headshot-reference",
+      "label": "职业头像 · 既有布光参考",
+      "title": "职业头像方向：先验证布光这一小步",
+      "verdict": "复用既有实验 · 非专项验证",
+      "story": "这里复用前面已经完成的窗光人像实验，展示职业头像产品可能采用的布光步骤。它不是新增生成，也未测试职业着装、标准构图或背景替换。",
+      "goal": "在保持人物与构图的条件下，让光线更柔和、肤色自然。输入本来就有较柔和的日光，属于温和调整，不能当作严重曝光问题的修复测试。",
+      "preserve": "本人五官、表情、姿势、头发轮廓、衣着、机位、焦点和景深。",
+      "observation": "左侧柔光与自然肤色保留，脸部和墙面较基线略明亮。 肤质未见明显塑料光泽，主体衣物的暗部仍可辨。",
+      "limitations": "变化幅度较小，光线仍较平；一条连续柔和窗影未能清楚辨认。 灰墙照明较均匀，提示词要求的渐进衰减不十分突出。 肉眼未见明显身份、表情或坐姿变化。头发轮廓、衣褶及脸部纹理存在轻微重绘差异；不构成像素级几何保持证明。 本例是休闲衣着的半身人像，没有证明职业头像成片质量、真实身份保持或批量一致性。",
+      "product": "可作为头像产品中的“自然布光”选项参考。若要发展为职业头像服务，还需专门测试服装、背景、裁切及真实用户身份保持，不能直接以本例宣称整套产品已验证。",
+      "attemptNote": "复用既有窗光实验，本次没有额外生成。",
+      "reusedFrom": "../experiments/runs.json#window",
+      "source": {
+        "file": "../experiments/source.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+        "bytes": 1805169,
+        "prompt": "Create one square photorealistic baseline portrait for an image-edit research comparison. The person is explicitly a synthetic, fictional adult East Asian man, approximately 35 years old, with short wavy black hair and subtle stubble. He wears a navy overshirt over a plain white shirt and sits on a wooden chair in a simple gray-walled studio. Show him waist-up, facing the camera with a neutral expression, with his face large enough to inspect clearly. A large window is on camera left. Lighting is flat indirect neutral daylight. Use a natural photographic rendering with a clearly resolved face and a gently defocused background. Keep the composition simple and suitable for subsequent lighting-only edits with unchanged framing. No text, logos, or watermark.",
+        "actualTool": "tools.image_gen__imagegen",
+        "model": "unknown",
+        "startUtc": "2026-09-10T13:35:44.143Z",
+        "endUtc": "2026-09-10T13:39:36.620Z",
+        "durationSeconds": 232.477,
+        "toolEvidence": {
+          "returnedKeys": [
+            "image_url",
+            "output_hint"
+          ],
+          "artifactName": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+          "responseId": "not exposed"
+        },
+        "nature": "AI 生成的虚构成年人像，并非真人实拍",
+        "observations": {
+          "achieved": [
+            "生成了明确要求为虚构合成的成年东亚男性半身人像。",
+            "方形画面、深蓝外衫、白色内搭、木椅、左侧窗户与灰墙均可见。",
+            "表情中性、正面朝向，脸部细节清晰，背景略虚化。"
+          ],
+          "deviations": [
+            "画面右后方额外出现木桌与植物，并非提示词要求的物体。",
+            "日光虽平缓，仍有可见左侧方向性；不是完全均匀的照明。"
+          ],
+          "identity_pose_drift": "不适用：这是共同输入基线。"
+        },
+        "attemptCount": 1
+      },
+      "output": {
+        "file": "../experiments/window.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "5b9d12923c2103b60d80adb613c5a2eb40949a7641690315b7ecb77b3aa60230",
+        "bytes": 1771146,
+        "prompt": "EDIT: relight-and-skin; preserve source identity, geometry, expression, pose, viewpoint, framing, focal plane, and depth of field.\nLIGHT: A broad upper-left window creates neutral soft light and gradual falloff across the person and wall. Retain highlight headroom, readable midtones, directional shadows, and a stable black point; allow faint room bounce and one continuous soft window shadow.\nSKIN: Use luminous source complexion, broad bounded highlights, and faint focus-aware regional detail.\nAVOID: pasted shadows and plastic gloss.",
+        "actualTool": "tools.image_gen__imagegen",
+        "model": "unknown",
+        "startUtc": "2026-09-10T13:40:04.499Z",
+        "endUtc": "2026-09-10T13:40:51.149Z",
+        "durationSeconds": 46.65,
+        "toolEvidence": {
+          "returnedKeys": [
+            "image_url",
+            "output_hint"
+          ],
+          "artifactName": "exec-531a6777-67fd-44b0-91a9-ed770eff5b59.png",
+          "responseId": "not exposed"
+        },
+        "id": "window",
+        "label": "柔和窗光",
+        "title": "柔和窗光：变化细微，窗影不明确",
+        "verdict": "部分达成 · 窗影不明确",
+        "goal": "让左前上方的宽大窗光照亮人物与墙面，保留柔和明暗过渡，并产生一条连续窗影。",
+        "observation": "左侧柔光与自然肤色保留，脸部和墙面较基线略明亮。 肤质未见明显塑料光泽，主体衣物的暗部仍可辨。",
+        "limitations": "变化幅度较小，光线仍较平；一条连续柔和窗影未能清楚辨认。 灰墙照明较均匀，提示词要求的渐进衰减不十分突出。 肉眼未见明显身份、表情或坐姿变化。头发轮廓、衣褶及脸部纹理存在轻微重绘差异；不构成像素级几何保持证明。",
+        "inputFile": "source.png",
+        "inputSha256": "c643d3abeebce7aa0f86e56306bc449d1c1c8b0454ce34b45ba1d3db85aa2557",
+        "originalInputArtifact": "exec-dfd340d4-8c55-47fb-b08f-d77ff8ff95bf.png",
+        "attemptCount": 1,
+        "postProcessing": "none"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "id": "weddingInputRun",
+      "scenario": "wedding",
+      "stage": "input",
+      "executed": true,
+      "status": "succeeded",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T13:56:50.413Z",
+      "endUtc": "2026-09-10T13:57:53.490Z",
+      "arguments": {
+        "prompt": "Generate one square photorealistic wedding portrait of a fictional adult East Asian couple around 30. Bride wears ivory wedding dress with visible floral lace sleeves and a translucent veil; groom charcoal suit, plain white shirt and dark tie. Both face camera, neutral warm expressions, gently hold hands at waist, seated/standing together in a simple stone-walled indoor venue with a window at camera left. Three-quarter framing with faces clear and sufficient fabric detail. Intentionally plausible indoor-photo problems: moderate underexposure and noticeable yellow-orange mixed-light cast on faces and white clothing, while details remain recoverable and no severe clipped highlights or crushed faces. No text, brand, or watermark. Synthetic test photograph for color/exposure correction, not a historical or real client image."
+      },
+      "output": {
+        "file": "wedding-source.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "a599e3b6ae11049a6983e7e48a360d72373fa066611265b6510e7fc75e8012b1",
+        "bytes": 2027832,
+        "originalArtifact": "exec-0db402ac-250a-414a-97dc-c47fc7e4e332.png"
+      },
+      "durationSeconds": 63.077
+    },
+    {
+      "id": "restorationInputFailure",
+      "scenario": "restoration",
+      "stage": "input",
+      "executed": true,
+      "status": "failed",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T13:56:50.413Z",
+      "endUtc": "2026-09-10T14:02:57.843Z",
+      "arguments": {
+        "prompt": "Generate one square image showing an aged black-and-white family portrait print, full photograph occupying frame. Fictional adult married couple about 45 in modest 1960s-style clothes, seated side by side, simple curtain backdrop, clear recognizable faces and natural expression. Monochrome silver-gelatin photograph with faded contrast, scattered dust, a few fine pale scratches across the background and jackets, one thin scratch crossing cheek (not obscuring eyes/mouth), a small missing emulsion patch in a lower background corner. Keep facial shapes legible. Simulate a damaged scanned print, no frame border, no captions, no text, no watermark. This is explicitly a newly generated synthetic test image and not a real historical photograph."
+      },
+      "error": "image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)",
+      "durationSeconds": 367.43
+    },
+    {
+      "id": "productInputRun",
+      "scenario": "product",
+      "stage": "input",
+      "executed": true,
+      "status": "succeeded",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T13:56:50.413Z",
+      "endUtc": "2026-09-10T14:03:24.556Z",
+      "arguments": {
+        "prompt": "Generate one square photorealistic ecommerce test photo of a simple matte cobalt-blue cylindrical ceramic mug with a rounded C-shaped handle on image right and the exact small white uppercase word \"NOMA\" centered on the front. One mug only, unobstructed, on a neutral light-gray tabletop against a plain gray seamless background, camera at slightly elevated three-quarter angle showing rim opening. Deliberately weak flat room lighting, low contrast muddy product edges and soft indistinct contact shadow, but product outline and exact label remain readable. No other text or objects, no watermark. Fictional product, synthetic input for relighting test."
+      },
+      "output": {
+        "file": "product-source.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "bb8d58a70a92f608ba943e63206d17cd49958bdc83b8be939f064a75be36e084",
+        "bytes": 1600695,
+        "originalArtifact": "exec-a3ced5cb-6246-4c78-8151-b781bab1a696.png"
+      },
+      "durationSeconds": 394.143
+    },
+    {
+      "id": "weddingEditRun",
+      "scenario": "wedding",
+      "stage": "edit",
+      "executed": true,
+      "status": "failed",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T14:04:09.491Z",
+      "endUtc": "2026-09-10T14:09:14.686Z",
+      "arguments": {
+        "prompt": "EDIT: tone-and-exposure correction of this wedding photograph; preserve both identities, facial geometry, expressions, pose, hands, wedding rings, veil, lace pattern, clothing, framing, focus, and background structure.\nLIGHT: Preserve source direction. Lift underexposed facial midtones gently, retain directional shadows and a stable black point, and protect textured highlights. Neutralize the yellow-orange cast using the groom's white shirt as reference; keep the bride's fabric ivory rather than bleaching it white.\nSKIN: Keep each person's original complexion, natural reflection, age, and fine detail without beauty reshaping.\nAVOID: redesigned lace, changed hands, and plastic skin.",
+        "referenced_image_paths": [
+          "wedding-source.png"
+        ]
+      },
+      "error": "image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/edits)",
+      "durationSeconds": 305.195
+    },
+    {
+      "id": "productEditRun",
+      "scenario": "product",
+      "stage": "edit",
+      "executed": true,
+      "status": "succeeded",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T14:04:09.491Z",
+      "endUtc": "2026-09-10T14:09:53.108Z",
+      "arguments": {
+        "prompt": "EDIT: relight this product photograph only; preserve the mug's exact shape, handle geometry, rim, scale, viewpoint, position, matte cobalt-blue color, and the exact white label NOMA.\nLIGHT: Use one large softbox from upper camera-left. Create a broad restrained highlight matching matte ceramic, readable shape separation, and one soft contact shadow extending right on the same gray tabletop; retain a neutral gray background and unclipped highlights.\nMATERIAL: Keep ceramic matte with subtle surface detail and stable product color.\nAVOID: altered lettering, glossy glaze, extra objects, and floating contact.",
+        "referenced_image_paths": [
+          "product-source.png"
+        ]
+      },
+      "output": {
+        "file": "product-output.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "f982e04ec5b27e080bec8c53ece4b9b61c45905a6de3e8bff6074c4caf6a3f7e",
+        "bytes": 1612124,
+        "originalArtifact": "exec-20dcd14d-2449-4271-ab9b-e0f9ff0bf6da.png"
+      },
+      "durationSeconds": 343.617
+    },
+    {
+      "id": "restorationInputRun",
+      "scenario": "restoration",
+      "stage": "input_retry",
+      "executed": true,
+      "status": "failed",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T14:04:09.491Z",
+      "endUtc": "2026-09-10T14:14:57.558Z",
+      "arguments": {
+        "prompt": "Generate one square image showing an aged black-and-white family portrait print, full photograph occupying frame. Fictional adult married couple about 45 in modest 1960s-style clothes, seated side by side, simple curtain backdrop, clear recognizable faces and natural expression. Monochrome silver-gelatin photograph with faded contrast, scattered dust, a few fine pale scratches across the background and jackets, one thin scratch crossing cheek (not obscuring eyes/mouth), a small missing emulsion patch in a lower background corner. Keep facial shapes legible. Simulate a damaged scanned print, no frame border, no captions, no text, no watermark. This is explicitly a newly generated synthetic test image and not a real historical photograph."
+      },
+      "error": "image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)",
+      "durationSeconds": 648.067
+    },
+    {
+      "id": "weddingEditRetryRun",
+      "scenario": "wedding",
+      "stage": "edit_retry",
+      "executed": true,
+      "status": "failed",
+      "actualTool": "tools.image_gen__imagegen",
+      "startUtc": "2026-09-10T14:13:17.716Z",
+      "endUtc": "2026-09-10T14:18:21.923Z",
+      "durationSeconds": 304.207,
+      "arguments": {
+        "prompt": "EDIT: tone-and-exposure correction of this wedding photograph; preserve both identities, facial geometry, expressions, pose, hands, wedding rings, veil, lace pattern, clothing, framing, focus, and background structure.\nLIGHT: Preserve source direction. Lift underexposed facial midtones gently, retain directional shadows and a stable black point, and protect textured highlights. Neutralize the yellow-orange cast using the groom's white shirt as reference; keep the bride's fabric ivory rather than bleaching it white.\nSKIN: Keep each person's original complexion, natural reflection, age, and fine detail without beauty reshaping.\nAVOID: redesigned lace, changed hands, and plastic skin.",
+        "referenced_image_paths": [
+          "wedding-source.png"
+        ]
+      },
+      "error": "image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/edits)"
+    }
+  ],
+  "uncompleted": [
+    {
+      "id": "restoration",
+      "status": "input_failed_twice",
+      "editExecuted": false,
+      "reason": "输入生成两次网络连接失败，未返回图片，未执行修复编辑；不能用于判断修复能力。",
+      "plannedEdit": {
+        "executed": false,
+        "reason": "input generation failed twice",
+        "prompt": "EDIT: conservative restoration of this damaged monochrome portrait; preserve both faces, apparent age, expressions, hairstyles, clothing shapes, pose, crop, and photographic era.\nREPAIR: Remove dust and thin scratches, repair the small missing background patch using nearby texture, and recover gentle tonal separation. Preserve the source monochrome palette, soft focus, and photographic grain; reconstruct only visibly damaged areas without inventing facial features.\nSKIN: Retain existing facial lines and natural tonal variation; no smoothing or age reduction.\nAVOID: colorization, modern beauty retouching, and new clothing details."
+      }
+    },
+    {
+      "id": "wedding",
+      "status": "input_only_edit_failed_twice",
+      "editExecuted": true,
+      "reason": "两次编辑尝试都明确网络失败，未返回图像。无法评估双人身份、手部、戒指或蕾丝的编辑保持情况。",
+      "inputObservations": {
+        "achieved": [
+          "合成东亚成年新人、象牙色蕾丝婚纱与透明头纱、深色西装、左侧窗与石墙均可见。",
+          "面部与白色衣物呈明显黄橙偏色，整体适度偏暗，脸部与蕾丝细节仍可辨。"
+        ],
+        "deviations": [
+          "额外生成了花束、胸花、烛台与花艺装饰。",
+          "输入本身只是合成测试样片，并非真实婚礼或真实客户照片。"
+        ]
+      }
+    }
+  ],
+  "newCallsSummary": {
+    "completed_pairs": 1,
+    "input_only_scenarios": 1,
+    "no_image_scenarios": 1,
+    "successful_image_outputs": 3,
+    "failed_tool_calls": 4,
+    "total_executed_tool_calls": 7
+  }
+}

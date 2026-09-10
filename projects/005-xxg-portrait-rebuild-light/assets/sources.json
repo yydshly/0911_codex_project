@@ -1,0 +1,38 @@
+[
+  {
+    "file": "skill-demo1.jpg",
+    "source": "https://github.com/moskoo/xxg-portrait-rebuild-light/blob/60348ce17f322458be1ff5eafa2277f84c7aed2e/assets/skill-demo1.jpg",
+    "sha256": "5fc6929b5c000ab37e7e62743357cfd27f137db03b26c0957489dd9e82474a93",
+    "width": 2392,
+    "height": 1022,
+    "nature": "上游作者效果示例，原样复制，非本地实测",
+    "license": "MIT; Copyright (c) 2026 moskoo"
+  },
+  {
+    "file": "skill-demo2.jpg",
+    "source": "https://github.com/moskoo/xxg-portrait-rebuild-light/blob/60348ce17f322458be1ff5eafa2277f84c7aed2e/assets/skill-demo2.jpg",
+    "sha256": "fe30deadaa79c926433bb0781491d5d520d5f5c5b19aa2695a91a4ec16a7ccf2",
+    "width": 2392,
+    "height": 1022,
+    "nature": "上游作者效果示例，原样复制，非本地实测",
+    "license": "MIT; Copyright (c) 2026 moskoo"
+  },
+  {
+    "file": "skill-demo3.jpg",
+    "source": "https://github.com/moskoo/xxg-portrait-rebuild-light/blob/60348ce17f322458be1ff5eafa2277f84c7aed2e/assets/skill-demo3.jpg",
+    "sha256": "54a6faec7ab8f2efaf408b15a54fe2651ef2afa2673dbbbc2a4d962c6fd21083",
+    "width": 2392,
+    "height": 1022,
+    "nature": "上游作者效果示例，原样复制，非本地实测",
+    "license": "MIT; Copyright (c) 2026 moskoo"
+  },
+  {
+    "file": "skill-demo4.jpg",
+    "source": "https://github.com/moskoo/xxg-portrait-rebuild-light/blob/60348ce17f322458be1ff5eafa2277f84c7aed2e/assets/skill-demo4.jpg",
+    "sha256": "7bed3b8acd9547a719704b8c2b1e160f41192ba3f9efff06392238236087be93",
+    "width": 2392,
+    "height": 1022,
+    "nature": "上游作者效果示例，原样复制，非本地实测",
+    "license": "MIT; Copyright (c) 2026 moskoo"
+  }
+]

@@ -32,6 +32,25 @@
       "imageAlt": "LongHorizon-Harness 整体能力与任务管控指导图",
       "imageCaption": "原创矢量与栅格指导图，非上游界面截图或真实运行轨迹。用于解释固定版本 v0.1.7 的能力与边界。",
       "researchIndex": "002"
+    },
+    {
+      "id": "005",
+      "researchIndex": "004",
+      "slug": "005-xxg-portrait-rebuild-light",
+      "name": "XXG 人像光影能力展示",
+      "sourceDirectory": "projects/005-xxg-portrait-rebuild-light/app/dist",
+      "readme": "projects/005-xxg-portrait-rebuild-light/README.md",
+      "research": "projects/005-xxg-portrait-rebuild-light/notes.md",
+      "upstream": "https://github.com/moskoo/xxg-portrait-rebuild-light",
+      "upstreamName": "XXG Portrait Rebuild Light",
+      "capability": "将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。",
+      "extension": "展示三次人像布光、新增商品布光与既有窗光参考、完整提示词和偏差观察，并梳理七个产品方向；婚纱编辑和老照片输入因连接失败未完成。保留四组上游示例及六种配方解析。页面不提供在线修图，尚未执行上游完整技能或系统性效果评测。",
+      "image": "projects/005-xxg-portrait-rebuild-light/assets/experiments/golden.png",
+      "kind": "能力展示",
+      "entryLabel": "打开人像光影能力展示 →",
+      "imageAlt": "本次实际图像编辑的夕阳逆光输出",
+      "imageCaption": "实际 ImageGen 夕阳布光输出，输入为 AI 合成人像；非软件截图或原库自行渲染。暖色轮廓光明显，但正面仍亮，部分约束未达标。",
+      "showPreview": true
     }
   ]
 }
