@@ -2,7 +2,7 @@
 
 gstack 是面向软件研发的 Agent 技能与配套工具库。本次固定版本有 57 项独立定义、12 类能力：需求与计划、设计与页面、质量与排障、浏览器与网页数据、交付、文档、记忆、操作保护、iOS 真机、跨模型协作、任务路由及安装适配。宿主结合项目上下文、模型判断和可用工具执行技能，产出方案、页面与代码修改、测试证据、交付记录和可复用经验。
 
-[返回总索引](../../README.md#项目索引) · [范围与能力摘要](scope.md) · [核心研究](research.md) · [57 个技能完整解读](skills.md) · [实验记录](notes.md) · [网页入口](app/dist/index.html)
+[返回总索引](../../README.md#项目索引) · [范围与能力摘要](scope.md) · [核心研究](research.md) · [57 个技能完整解读](skills.md) · [实验记录](notes.md) · [在线网页](https://yydshly.github.io/0911_codex_project/012-gstack/)
 
 ## 项目信息
 
@@ -16,7 +16,7 @@ gstack 是面向软件研发的 Agent 技能与配套工具库。本次固定版
 | 上游许可证 | MIT，Copyright © 2026 Garry Tan；[保留的许可原文](UPSTREAM-LICENSE.txt) |
 | 本地实现 | 中文静态网页、JavaScript 校验函数、Node 测试；无第三方前端依赖 |
 | 研究状态 | 源码与方法研究完成，实际方法实践及本地工具已验证；全量原生上游运行未复现 |
-| 发布状态 | 本地可运行，未公开部署；已接入现有 Pages 清单 |
+| 发布状态 | [已部署并验证](https://yydshly.github.io/0911_codex_project/012-gstack/)；GitHub Pages 统一发布 |
 
 ## 原库能力与本地新增
 
@@ -74,3 +74,11 @@ node scripts/check.cjs
 - [上游固定架构](https://github.com/garrytan/gstack/blob/71f6048e8ada25180e61438abc1d98cb151fe9a7/ARCHITECTURE.md)
 
 复制的上游模板与章节保持原文，用于阅读与研究，保留 MIT 许可。本地网页、检查器、中文解读和方法实践记录单独编写，没有执行这些保存的模板文件。
+
+## Web 发布与验证
+
+2026-09-11 已发布：[在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/) · [在线高清能力图](https://yydshly.github.io/0911_codex_project/012-gstack/assets/skills-capability-map.png)。
+
+首次发布提交 `cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34504589047)成功。142 项线上资源核验通过：新站全部 131 个静态文件、总入口与总览图对照本地构建，9 个既有子站入口正常。CI 检查报告仅排除实际运行时间差异，总入口按换行归一比较，其余新站文件按原始字节比较。
+
+另用真实浏览器验证线上范围摘要、57 项目录与详情、阶段文档、检查器去重和测试证据，共 5 项通过，无页面运行错误。[资源核验记录](deployment-verification.json) · [线上交互记录](deployment-browser.json)。这是本地新增研究网页的发布，未把上游 `/ship` 记作完整原生执行。

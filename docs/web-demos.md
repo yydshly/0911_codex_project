@@ -137,9 +137,9 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 [范围与能力摘要](../projects/010-marketingskills/scope.md) · [项目说明](../projects/010-marketingskills/README.md)
 
-## gstack 工程方法实验室（发布中）
+## gstack 工程方法实验室
 
-研究索引 011，历史路径 `012-gstack/`。静态源目录 `projects/012-gstack/app/dist/`；已追加统一清单与校验步骤，当前正在发布。
+研究索引 011，历史路径 `012-gstack/`。静态源目录 `projects/012-gstack/app/dist/`；已追加统一清单与校验步骤，[在线网页](https://yydshly.github.io/0911_codex_project/012-gstack/)已部署并验证。
 
 包含 57 项技能原理、九阶段收录检查器方法实践、21 项规则测试与 17 项实际浏览器检查、真实截图和修复前后报告。当前 Agent 采用固定方法并替换工具，非上游全量原生运行。原文来源与 MIT 许可随页面保存。
 
@@ -147,3 +147,5 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 
 [范围与能力摘要](../projects/012-gstack/scope.md)：57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。
+
+2026-09-11，提交 `cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34504589047)成功。142 项线上资源核验及 5 项线上交互检查通过；覆盖新站全部静态文件、总入口、能力图和 9 个既有子站入口。新站文件对照构建，CI 报告排除运行时间，总入口归一换行；既有子站检查可访问性。[资源证据](../projects/012-gstack/deployment-verification.json) · [交互证据](../projects/012-gstack/deployment-browser.json)。

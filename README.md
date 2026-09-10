@@ -20,7 +20,7 @@ Graphify 支持原始源码、文档、办公资料、图片、音视频和 SQL 
 
 Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定位与决策、内容、搜索、转化、推广、销售与客户关系、留存和衡量实验。宿主读取技能、复用产品背景并调用可用工具，产出研究、方案、文案与验证计划。本地提供中文完整手册、输入输出全图及五技能真实应用；业务效果待验证，网页已部署并验证。
 
-gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。研究索引 011，历史目录 `012-gstack/`；附能力全图、逐项原理与九阶段真实案例，网页正在发布。
+gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。研究索引 011，历史目录 `012-gstack/`；附能力全图、逐项原理与九阶段真实案例，网页已部署并验证。
 
 ## 项目索引
 
@@ -38,7 +38,7 @@ gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面�
 | 008 | [Drama Skills](projects/006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](projects/006-drama-skills/demos/README.md) |
 | 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线效果展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/)；已部署并验证 |
 | 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
-| 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [中文工程方法实验室](projects/012-gstack/app/dist/index.html)；发布中 |
+| 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -163,7 +163,7 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 
 本地新增中文网页覆盖 57 项独立技能定义与原理、九阶段收录检查器实践和实际证据。21 项规则测试、17 项浏览器检查通过，保留一项真实缺陷的失败与修复记录。图为本地原创能力总览，按 12 类逐项说明作用与产物，非上游界面截图；采用方法适配执行，未复现全量上游或生产发布。
 
-[范围与能力摘要](projects/012-gstack/scope.md) · [完整研究](projects/012-gstack/research.md) · [57 项技能手册](projects/012-gstack/skills.md) · [本地网页](projects/012-gstack/app/dist/index.html) · [实验记录](projects/012-gstack/notes.md)。网页正在发布。
+[范围与能力摘要](projects/012-gstack/scope.md) · [完整研究](projects/012-gstack/research.md) · [57 项技能手册](projects/012-gstack/skills.md) · [在线网页](https://yydshly.github.io/0911_codex_project/012-gstack/) · [实验记录](projects/012-gstack/notes.md)。网页已部署并验证。
 
 ## 仓库导航
 

@@ -1,0 +1,15 @@
+{
+  "kind": "actual-online-browser-smoke",
+  "recordedAt": "2026-09-10T16:53:05.646Z",
+  "url": "https://yydshly.github.io/0911_codex_project/012-gstack/",
+  "commit": "cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5",
+  "passed": 5,
+  "tests": [
+    "线上范围摘要可读",
+    "57 项技能目录与 review 详情可用",
+    "子路径下实际阶段文档可读取",
+    "线上检查器正确去重",
+    "线上测试证据报告可读取"
+  ],
+  "consoleErrors": []
+}

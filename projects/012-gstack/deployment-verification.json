@@ -1,0 +1,1282 @@
+{
+  "kind": "actual-github-pages-verification",
+  "recordedAt": "2026-09-10T16:52:29.087Z",
+  "commit": "cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5",
+  "workflowRun": "https://github.com/yydshly/0911_codex_project/actions/runs/34504589047",
+  "site": "https://yydshly.github.io/0911_codex_project/012-gstack/",
+  "total": 142,
+  "passed": 142,
+  "failed": 0,
+  "scope": "All gstack static resources and root preview compared; CI report timestamp excluded; nine existing subsite entries checked for availability.",
+  "results": [
+    {
+      "resource": "002-engineering-casebook/",
+      "url": "https://yydshly.github.io/0911_codex_project/002-engineering-casebook/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370",
+      "passed": true
+    },
+    {
+      "resource": "003-longhorizon-harness/",
+      "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4",
+      "passed": true
+    },
+    {
+      "resource": "005-xxg-portrait-rebuild-light/",
+      "url": "https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72",
+      "passed": true
+    },
+    {
+      "resource": "006-drama-skills/",
+      "url": "https://yydshly.github.io/0911_codex_project/006-drama-skills/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a",
+      "passed": true
+    },
+    {
+      "resource": "007-xxd-panel-028/",
+      "url": "https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216",
+      "passed": true
+    },
+    {
+      "resource": "008-freellmapi/",
+      "url": "https://yydshly.github.io/0911_codex_project/008-freellmapi/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70",
+      "passed": true
+    },
+    {
+      "resource": "009-graphify/",
+      "url": "https://yydshly.github.io/0911_codex_project/009-graphify/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "a78c8f3e17570dddf8939ef4659c26eec1f179f9d453f2e1e210bcb6acada51c",
+      "passed": true
+    },
+    {
+      "resource": "010-marketingskills/",
+      "url": "https://yydshly.github.io/0911_codex_project/010-marketingskills/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "cc4f52a7610bc0462187cd8544332a6e724747882e003c9a1ea55cec95851066",
+      "passed": true
+    },
+    {
+      "resource": "011-munder-difflin/",
+      "url": "https://yydshly.github.io/0911_codex_project/011-munder-difflin/",
+      "status": 200,
+      "mode": "availability",
+      "remoteSha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/app.js",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/app.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7620f932530d63067dc8976e28f806daa5d92a87acc798c5de69124b26ac0745",
+      "localSha256": "7620f932530d63067dc8976e28f806daa5d92a87acc798c5de69124b26ac0745",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/assets/skills-capability-map.png",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/assets/skills-capability-map.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e5dad615823f274ec2c97bc5ae4bc070a98bdb2f88d668e8f18d59f35b9b7fb5",
+      "localSha256": "e5dad615823f274ec2c97bc5ae4bc070a98bdb2f88d668e8f18d59f35b9b7fb5",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/assets/skills-capability-map.svg",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/assets/skills-capability-map.svg",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "3897a5f69ff5adf4724a417661bb2da4733f686f6e83b795a8bccb73dfb1f1a3",
+      "localSha256": "3897a5f69ff5adf4724a417661bb2da4733f686f6e83b795a8bccb73dfb1f1a3",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/catalog.js",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/catalog.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "94c51ae2492fd8ab2f104770213b57388ce3bf538bd29b1f0a7d304251d5292c",
+      "localSha256": "94c51ae2492fd8ab2f104770213b57388ce3bf538bd29b1f0a7d304251d5292c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/docs/scope.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/docs/scope.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f8605beeeb3388eb9b2d661c7edcccbeecded50ccd98cebbdf8d51992840c8da",
+      "localSha256": "f8605beeeb3388eb9b2d661c7edcccbeecded50ccd98cebbdf8d51992840c8da",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/01-design.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/01-design.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "02ef207a3d822fd83ecd46dfb6145c5bada4c1683da63bd60b505a3b9e69f7e8",
+      "localSha256": "02ef207a3d822fd83ecd46dfb6145c5bada4c1683da63bd60b505a3b9e69f7e8",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/02-scope.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/02-scope.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7d329de9131042f70c9149b8c6ec892debc5e749d0b4e39fafabdd8229980074",
+      "localSha256": "7d329de9131042f70c9149b8c6ec892debc5e749d0b4e39fafabdd8229980074",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/03-engineering.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/03-engineering.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9c366f67fb51295749faa3ec5c144d7b263854c5ab6e67728a688c4330cef4d8",
+      "localSha256": "9c366f67fb51295749faa3ec5c144d7b263854c5ab6e67728a688c4330cef4d8",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/04-design-review.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/04-design-review.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "fe4606cbdda735061d105489b2925b2a0bb06a378272687b63556fe73b2b5221",
+      "localSha256": "fe4606cbdda735061d105489b2925b2a0bb06a378272687b63556fe73b2b5221",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/05-review.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/05-review.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "94ed4879de1995f609b1bbc2c8a04631f60be0ffdbc01db21438c068d1461951",
+      "localSha256": "94ed4879de1995f609b1bbc2c8a04631f60be0ffdbc01db21438c068d1461951",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/06-qa.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/06-qa.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "90af89171cbb7550de5913cd29ec600986ee7f0f337bfdd179eff4c54ae75544",
+      "localSha256": "90af89171cbb7550de5913cd29ec600986ee7f0f337bfdd179eff4c54ae75544",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/07-documentation.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/07-documentation.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1bfdbc49da2338d42639fd3c4dfadf6875706e0306bb0d6167437e8f70770b0b",
+      "localSha256": "1bfdbc49da2338d42639fd3c4dfadf6875706e0306bb0d6167437e8f70770b0b",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/08-delivery.md",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/08-delivery.md",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "ec1b870840156394561e93227bd3e750aa3e97c0e97c265bebbfbd8440b5b30f",
+      "localSha256": "ec1b870840156394561e93227bd3e750aa3e97c0e97c265bebbfbd8440b5b30f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/browser.json",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/browser.json",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "cc7649ca09b7643bc51450d14f3df864cbfee975fa0d48e7e9f33b7504e7e30f",
+      "localSha256": "cc7649ca09b7643bc51450d14f3df864cbfee975fa0d48e7e9f33b7504e7e30f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/screenshots/lab-desktop.png",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/screenshots/lab-desktop.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "35c981ba4348e3f1449cf4a4244fc9f26e62f07a1b88936f7895f20a708ba4c0",
+      "localSha256": "35c981ba4348e3f1449cf4a4244fc9f26e62f07a1b88936f7895f20a708ba4c0",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/screenshots/lab-mobile.png",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/screenshots/lab-mobile.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f6987bb2b3deec3c977c1bc7881322c69480c9836fb345efea8ab4c1836974fc",
+      "localSha256": "f6987bb2b3deec3c977c1bc7881322c69480c9836fb345efea8ab4c1836974fc",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/screenshots/overview.png",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/screenshots/overview.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "dde15aa4822e0cabf21ed4fdd137fc715191adf939a2c68f750ce8efec3401a8",
+      "localSha256": "dde15aa4822e0cabf21ed4fdd137fc715191adf939a2c68f750ce8efec3401a8",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/screenshots/skill-review.png",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/screenshots/skill-review.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1141a8d3d16c18ee836d6528baf7089b137b4b94e77ee3f3fd1230892baafa3a",
+      "localSha256": "1141a8d3d16c18ee836d6528baf7089b137b4b94e77ee3f3fd1230892baafa3a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/site-check.json",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/site-check.json",
+      "status": 200,
+      "mode": "same-report-except-ci-timestamp",
+      "remoteSha256": "a8943d9bc236bdbff94279a4f673d607938ed83b65f80fdfd6f7828d6d7d6218",
+      "localSha256": "57b331d13b674b20974c9be8dd5c39402815e0338c08860d0008cb0d8c75c026",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/source-manifest.json",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/source-manifest.json",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "ea2c90bf71c14e80c2f92d8eaeaa80257d725462e56ec9a10dd3addb7c9d4e4d",
+      "localSha256": "ea2c90bf71c14e80c2f92d8eaeaa80257d725462e56ec9a10dd3addb7c9d4e4d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/tests-before.json",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/tests-before.json",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "d02d05a61661b5b4f4aa9c38fad1b51be1f06e40d21ec3762feacf1bcf47db2b",
+      "localSha256": "d02d05a61661b5b4f4aa9c38fad1b51be1f06e40d21ec3762feacf1bcf47db2b",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/tests.json",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/tests.json",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "98e32faed1b3f5cd2694be4d528badfd56a8710471dc78e2b891ea46a044a1af",
+      "localSha256": "98e32faed1b3f5cd2694be4d528badfd56a8710471dc78e2b891ea46a044a1af",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/evidence/validator-before.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/evidence/validator-before.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "da0f77a5538cfc0e21cae0c88dd142c75fc800013e623d1cfd0a0fd1787c4fd2",
+      "localSha256": "da0f77a5538cfc0e21cae0c88dd142c75fc800013e623d1cfd0a0fd1787c4fd2",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/fixtures.js",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/fixtures.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9da8859f4475accbd68110adfca2b2c285af89dde57b72b5bea82629f186d4be",
+      "localSha256": "9da8859f4475accbd68110adfca2b2c285af89dde57b72b5bea82629f186d4be",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/index.html",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/index.html",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "ad5deef64f062ac0fd481c3ecb62e7b1283c2d177bf2ba0877d11c83bd63c86b",
+      "localSha256": "ad5deef64f062ac0fd481c3ecb62e7b1283c2d177bf2ba0877d11c83bd63c86b",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/add-host.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/add-host.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1954bd77bde6d6ce5522f33673987e34d5eadfbac99edef57fca5dcbba941e14",
+      "localSha256": "1954bd77bde6d6ce5522f33673987e34d5eadfbac99edef57fca5dcbba941e14",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan--ceo-phase.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan--ceo-phase.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "a464889cfb46cf75fc6f89368f01b523286355e1b85c3fe73e75fcdf8d920fdf",
+      "localSha256": "a464889cfb46cf75fc6f89368f01b523286355e1b85c3fe73e75fcdf8d920fdf",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan--design-phase.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan--design-phase.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "49b203bad044da60e75b38ae62995f1e4f8b5584d0f05d9a3b4b8378563e08ad",
+      "localSha256": "49b203bad044da60e75b38ae62995f1e4f8b5584d0f05d9a3b4b8378563e08ad",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan--dx-phase.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan--dx-phase.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "5a986f1b8cbafbba89a6398950e544063c51c8abc08f17c5bffb74ec2a936459",
+      "localSha256": "5a986f1b8cbafbba89a6398950e544063c51c8abc08f17c5bffb74ec2a936459",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan--eng-phase.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan--eng-phase.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "31e5e8693dec486d90c7332a937ef981d71d3913a63ef8273fb568da4d75d042",
+      "localSha256": "31e5e8693dec486d90c7332a937ef981d71d3913a63ef8273fb568da4d75d042",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan--tasks-aggregator.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan--tasks-aggregator.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "dfa11ca034c30fea176cfda9bbe2e657a3ac070897ac745c79784cba5ea0ab68",
+      "localSha256": "dfa11ca034c30fea176cfda9bbe2e657a3ac070897ac745c79784cba5ea0ab68",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/autoplan.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/autoplan.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "104cb968de3b3cd5aa35cdbc4e84e7db9ac05b799d3c105d23d2b016f5b11ce7",
+      "localSha256": "104cb968de3b3cd5aa35cdbc4e84e7db9ac05b799d3c105d23d2b016f5b11ce7",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/benchmark-models.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/benchmark-models.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "eac159f56b39cd6c6c78e6eb0115d1a6cb1a2d0e3b22807c2915107e4af7983d",
+      "localSha256": "eac159f56b39cd6c6c78e6eb0115d1a6cb1a2d0e3b22807c2915107e4af7983d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/benchmark.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/benchmark.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "39cbeebaba02824c3abf0943421e57b17184135d5156138d723f6a07a1c1c7cb",
+      "localSha256": "39cbeebaba02824c3abf0943421e57b17184135d5156138d723f6a07a1c1c7cb",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/browse--command-list.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/browse--command-list.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "8880b4f96ee720561552b1476e6c63c8550f1132960e30fab779ac23447bbe6a",
+      "localSha256": "8880b4f96ee720561552b1476e6c63c8550f1132960e30fab779ac23447bbe6a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/browse.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/browse.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7f3ab4e5f2cd3df4b7c9ee49d2605e1d538f823d812d611b5a296d8cd5dfc116",
+      "localSha256": "7f3ab4e5f2cd3df4b7c9ee49d2605e1d538f823d812d611b5a296d8cd5dfc116",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/canary.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/canary.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b155c2bba7244ce1a50f096f64a1075a63f27afb8d162121ba10954d0582f328",
+      "localSha256": "b155c2bba7244ce1a50f096f64a1075a63f27afb8d162121ba10954d0582f328",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/careful.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/careful.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "054c86edb5bdefc943a75b6e240b1e746c9870c2a889ffa92035862f8deb6082",
+      "localSha256": "054c86edb5bdefc943a75b6e240b1e746c9870c2a889ffa92035862f8deb6082",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/claude.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/claude.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "3f56c22533eaab33bba59f3b6c9486c1b39d5db09ca1e9f1efe035ea88a437d1",
+      "localSha256": "3f56c22533eaab33bba59f3b6c9486c1b39d5db09ca1e9f1efe035ea88a437d1",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/codex--challenge-mode.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/codex--challenge-mode.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "78d5ff7eaf05aece07220c278b16662ff4475847552194860d6d774d21d7a6ce",
+      "localSha256": "78d5ff7eaf05aece07220c278b16662ff4475847552194860d6d774d21d7a6ce",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/codex--consult-mode.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/codex--consult-mode.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "99bb590e84a799c8622831c3a6f40127139157a6b146cfb27065ef5418c38e5f",
+      "localSha256": "99bb590e84a799c8622831c3a6f40127139157a6b146cfb27065ef5418c38e5f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/codex--review-mode.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/codex--review-mode.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "318b1514c430a631307c91aad377ed154591eb7854312c2336bc940a4e295734",
+      "localSha256": "318b1514c430a631307c91aad377ed154591eb7854312c2336bc940a4e295734",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/codex.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/codex.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "5842162c3925f5d66606738a8633fc98266b10974430a29a20da726260d80a4a",
+      "localSha256": "5842162c3925f5d66606738a8633fc98266b10974430a29a20da726260d80a4a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/context-restore.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/context-restore.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "4690844edb40ad39c29220f06dab2306e5999eae989733612787fe40d40342da",
+      "localSha256": "4690844edb40ad39c29220f06dab2306e5999eae989733612787fe40d40342da",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/context-save.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/context-save.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7410fcc1a4c7abcd50e3ab716b630eab221f640f25b15be62eb0067cf0c365b4",
+      "localSha256": "7410fcc1a4c7abcd50e3ab716b630eab221f640f25b15be62eb0067cf0c365b4",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/cso--audit-phases.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/cso--audit-phases.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c5b7b246a69613e527a65d13543a526f9e322323dc9f67851f7e465f4c409cdf",
+      "localSha256": "c5b7b246a69613e527a65d13543a526f9e322323dc9f67851f7e465f4c409cdf",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/cso.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/cso.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e18dd4fcc52a79c317fca2067646236d9260ccc777d676f114fb7d3e57a3bb47",
+      "localSha256": "e18dd4fcc52a79c317fca2067646236d9260ccc777d676f114fb7d3e57a3bb47",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-consultation--proposal-and-preview.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-consultation--proposal-and-preview.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "cdd901e4eada62638f7f58231cbfe55f23abf34a560fbc9fc3cadb7a4a4097f9",
+      "localSha256": "cdd901e4eada62638f7f58231cbfe55f23abf34a560fbc9fc3cadb7a4a4097f9",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-consultation.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-consultation.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "fcdf3d8322ff6f10890501e66e98cba8d1ad867cfceb29df0f8ef116bfdd8981",
+      "localSha256": "fcdf3d8322ff6f10890501e66e98cba8d1ad867cfceb29df0f8ef116bfdd8981",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-html--detector-install-offer.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-html--detector-install-offer.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "5cab78a89c6ed9d150e194308c9149487a99561ff7e2a9569c7c2881f0573090",
+      "localSha256": "5cab78a89c6ed9d150e194308c9149487a99561ff7e2a9569c7c2881f0573090",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-html--doctrine.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-html--doctrine.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "476b80f37edb2ef0210fbc74c67e3aec22e3d08b51e7e1e93df7dd22caa307d3",
+      "localSha256": "476b80f37edb2ef0210fbc74c67e3aec22e3d08b51e7e1e93df7dd22caa307d3",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-html--pretext-patterns.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-html--pretext-patterns.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7a50627fdf6e19c3e411f0d7699de99063992fed16d6647a797f8dc1078dd4f2",
+      "localSha256": "7a50627fdf6e19c3e411f0d7699de99063992fed16d6647a797f8dc1078dd4f2",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-html.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-html.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "a48095c9ccb1fd637ff720562595109979db41f41b76962d1c02a6596145ad00",
+      "localSha256": "a48095c9ccb1fd637ff720562595109979db41f41b76962d1c02a6596145ad00",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "75043d2c39a50cb535faa2b2574ffab2ee0c625866e27b155d39e70c56fc5c7f",
+      "localSha256": "75043d2c39a50cb535faa2b2574ffab2ee0c625866e27b155d39e70c56fc5c7f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-shotgun--doctrine.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-shotgun--doctrine.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "476b80f37edb2ef0210fbc74c67e3aec22e3d08b51e7e1e93df7dd22caa307d3",
+      "localSha256": "476b80f37edb2ef0210fbc74c67e3aec22e3d08b51e7e1e93df7dd22caa307d3",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/design-shotgun.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/design-shotgun.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c373ed5752268b991a03952bb3eccdea652652166ecd51d337e1a104cd79d7b5",
+      "localSha256": "c373ed5752268b991a03952bb3eccdea652652166ecd51d337e1a104cd79d7b5",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/devex-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/devex-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "a11a0df8280f97f7b79e1118885e58b2ea9c15ee5f5433086afd8cad2bf48713",
+      "localSha256": "a11a0df8280f97f7b79e1118885e58b2ea9c15ee5f5433086afd8cad2bf48713",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/diagram.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/diagram.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "03bbc0395c7dacb0bc22df86d40d88b980b1b9f2e083bee5d647385edff3a820",
+      "localSha256": "03bbc0395c7dacb0bc22df86d40d88b980b1b9f2e083bee5d647385edff3a820",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/document-generate.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/document-generate.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "83ce891719d1932ae026ef52bd20c6e11020aac1c29e3adccf76fd98a100c1af",
+      "localSha256": "83ce891719d1932ae026ef52bd20c6e11020aac1c29e3adccf76fd98a100c1af",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/document-release--release-body.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/document-release--release-body.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "6b9b9947fba4a8b49fdb323c6c85a2bbde792c36d44f0fa62e256a1ccf9e4f77",
+      "localSha256": "6b9b9947fba4a8b49fdb323c6c85a2bbde792c36d44f0fa62e256a1ccf9e4f77",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/document-release.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/document-release.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "49358f01bf78fe96915385955913e08405ae4c9a3ae1cef8c1aef4c8eba71305",
+      "localSha256": "49358f01bf78fe96915385955913e08405ae4c9a3ae1cef8c1aef4c8eba71305",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/freeze.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/freeze.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "882819d31dde871bc845a31bd6eb63fd345f297fa8387cbf7e5884f779c8e853",
+      "localSha256": "882819d31dde871bc845a31bd6eb63fd345f297fa8387cbf7e5884f779c8e853",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/gstack-upgrade.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/gstack-upgrade.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "acdad3a942aa3c9c354730938264fa0322eb0e79b28ae74fb5c2cb5d0b16deea",
+      "localSha256": "acdad3a942aa3c9c354730938264fa0322eb0e79b28ae74fb5c2cb5d0b16deea",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/gstack.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/gstack.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b426780e3148f663056122034c80be809c9a65af5b3c1c2203a9b63c1605494d",
+      "localSha256": "b426780e3148f663056122034c80be809c9a65af5b3c1c2203a9b63c1605494d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/guard.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/guard.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "291c337777d3d8086e0a7343de4db98174cf85ef54c69b12f9f04ab018380c9f",
+      "localSha256": "291c337777d3d8086e0a7343de4db98174cf85ef54c69b12f9f04ab018380c9f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/hackernews-frontpage.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/hackernews-frontpage.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1a4e91d00ffdbdd38d2dc2986cf764b6d7d4d9348fdce19f2c60e92fa4a564da",
+      "localSha256": "1a4e91d00ffdbdd38d2dc2986cf764b6d7d4d9348fdce19f2c60e92fa4a564da",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/health.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/health.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "faf103f39b2a3e42192b476ec09778ab9300942ed12ae1f832a9018c4ec19b9d",
+      "localSha256": "faf103f39b2a3e42192b476ec09778ab9300942ed12ae1f832a9018c4ec19b9d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/investigate.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/investigate.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "10b2abd3dcb3b46d3d7fb9fb328bc45a5874102b763d244d81a0b693c7416bb4",
+      "localSha256": "10b2abd3dcb3b46d3d7fb9fb328bc45a5874102b763d244d81a0b693c7416bb4",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ios-clean.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ios-clean.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "91465d957c280922a07e47e2150e4673e9b47b121731f4655b9364226104d354",
+      "localSha256": "91465d957c280922a07e47e2150e4673e9b47b121731f4655b9364226104d354",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ios-design-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ios-design-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f9c10b13b7fb65d06a92be8a947616443b2742020ffb970539a525f087efab31",
+      "localSha256": "f9c10b13b7fb65d06a92be8a947616443b2742020ffb970539a525f087efab31",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ios-fix.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ios-fix.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b5621a9b51d17be8f1ff42063d201abeafb2e00586a623f566118912539225bd",
+      "localSha256": "b5621a9b51d17be8f1ff42063d201abeafb2e00586a623f566118912539225bd",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ios-qa.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ios-qa.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c71e967b18d558788105896525f6a2ec2acce60cefea7e64405c9697ec660e4d",
+      "localSha256": "c71e967b18d558788105896525f6a2ec2acce60cefea7e64405c9697ec660e4d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ios-sync.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ios-sync.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "ba7591b9343a458575da4da7f335b7a854a12e27f7caaed3cc821c734a87af9c",
+      "localSha256": "ba7591b9343a458575da4da7f335b7a854a12e27f7caaed3cc821c734a87af9c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/land-and-deploy--first-run-validation.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/land-and-deploy--first-run-validation.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9c6b2f8bc85fc562f4c345364b6d660ccd94ea0aa58cc528e842ac5af73fab93",
+      "localSha256": "9c6b2f8bc85fc562f4c345364b6d660ccd94ea0aa58cc528e842ac5af73fab93",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/land-and-deploy--merge-and-deploy.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/land-and-deploy--merge-and-deploy.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "7120115b34320f50d7b9d2620ab5b86a2cef8fa8b098c136933ff14f133ddea4",
+      "localSha256": "7120115b34320f50d7b9d2620ab5b86a2cef8fa8b098c136933ff14f133ddea4",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/land-and-deploy--readiness-gate.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/land-and-deploy--readiness-gate.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "47e3bdb5b7d0ea181c5d792c87d72ccc52f911d745e751c751f301359d893389",
+      "localSha256": "47e3bdb5b7d0ea181c5d792c87d72ccc52f911d745e751c751f301359d893389",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/land-and-deploy.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/land-and-deploy.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "085c39d5e63138671a242282ac13cf2b3c4fb419c5329d046a49899673260eb8",
+      "localSha256": "085c39d5e63138671a242282ac13cf2b3c4fb419c5329d046a49899673260eb8",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/landing-report.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/landing-report.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "d6b78974c2ab3222d5eb6ab76cfc6123a27033bb00e14af8ada63c9f58514107",
+      "localSha256": "d6b78974c2ab3222d5eb6ab76cfc6123a27033bb00e14af8ada63c9f58514107",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/learn.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/learn.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "d7fb8321c1bb903d93e3d47d8db4fadab3c806b909c6252e0ef2f02d01866132",
+      "localSha256": "d7fb8321c1bb903d93e3d47d8db4fadab3c806b909c6252e0ef2f02d01866132",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/LICENSE.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/LICENSE.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "a8667eed21984ffef9ea46bc0ce30d1ffbdf2c945c9a38f99898b454cd7dd5ce",
+      "localSha256": "a8667eed21984ffef9ea46bc0ce30d1ffbdf2c945c9a38f99898b454cd7dd5ce",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/make-pdf.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/make-pdf.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "930896b7bb450ddc6a77e2ad99fbe4622285bea099b6eff9d6a977fdf3db1f9a",
+      "localSha256": "930896b7bb450ddc6a77e2ad99fbe4622285bea099b6eff9d6a977fdf3db1f9a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/office-hours--design-and-handoff.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/office-hours--design-and-handoff.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "df7400224f4b2a716af304cceeab97b61f8e3294242647fed57bd401dcaedd0b",
+      "localSha256": "df7400224f4b2a716af304cceeab97b61f8e3294242647fed57bd401dcaedd0b",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/office-hours--phase-2a-startup-diagnostic.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/office-hours--phase-2a-startup-diagnostic.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b21f9dffbeec8898e0bec66ee771d0507540dced6ea2a46be1a0cd81c422ea7d",
+      "localSha256": "b21f9dffbeec8898e0bec66ee771d0507540dced6ea2a46be1a0cd81c422ea7d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/office-hours--phase-2b-builder-brainstorm.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/office-hours--phase-2b-builder-brainstorm.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9e9266711261079644aa56acc1d08c4be9f18badc559247cdff9f35e48816719",
+      "localSha256": "9e9266711261079644aa56acc1d08c4be9f18badc559247cdff9f35e48816719",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/office-hours.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/office-hours.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c811d2c4145d11b41be9d6577d0d76f227778a1d156acafbd40255bec15100aa",
+      "localSha256": "c811d2c4145d11b41be9d6577d0d76f227778a1d156acafbd40255bec15100aa",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/open-gstack-browser.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/open-gstack-browser.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "86cb7b07cca74cfc24e947ea2713b80129b1f9b19f3cafda403f1a4e372cc75a",
+      "localSha256": "86cb7b07cca74cfc24e947ea2713b80129b1f9b19f3cafda403f1a4e372cc75a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/pair-agent.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/pair-agent.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9e03a95540c149e25f00cee74267912dda55dd58833d1bef9b5eb0d3faaaf358",
+      "localSha256": "9e03a95540c149e25f00cee74267912dda55dd58833d1bef9b5eb0d3faaaf358",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-ceo-review--review-sections.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-ceo-review--review-sections.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f0536d6e706b241b9e3d1733dfafb082b27c34213120fbd01672ddea5189bfd6",
+      "localSha256": "f0536d6e706b241b9e3d1733dfafb082b27c34213120fbd01672ddea5189bfd6",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-ceo-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-ceo-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "76478742617dadf9f5a5c2c0454abc6c2e7ec228416c846197d9cd1737bc08a5",
+      "localSha256": "76478742617dadf9f5a5c2c0454abc6c2e7ec228416c846197d9cd1737bc08a5",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-design-review--review-sections.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-design-review--review-sections.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1deb0f1b290f4ec6b85f20a0c4e34ad2f22394abed04c8acebf97cd5bbf225bc",
+      "localSha256": "1deb0f1b290f4ec6b85f20a0c4e34ad2f22394abed04c8acebf97cd5bbf225bc",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-design-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-design-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1e2531cdaed108bac3a7962e9f926b312c3981f44128a1891ac9a2228447dd96",
+      "localSha256": "1e2531cdaed108bac3a7962e9f926b312c3981f44128a1891ac9a2228447dd96",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-devex-review--review-sections.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-devex-review--review-sections.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c145872bcc5b5ef085faa25d99b3fdbc33900fff11e465f06e47aaf4aa2c1cfe",
+      "localSha256": "c145872bcc5b5ef085faa25d99b3fdbc33900fff11e465f06e47aaf4aa2c1cfe",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-devex-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-devex-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "390b7d2b64cb2d4511101219524d2dc738b389a55b006e68a71d18f378eb1637",
+      "localSha256": "390b7d2b64cb2d4511101219524d2dc738b389a55b006e68a71d18f378eb1637",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-eng-review--review-sections.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-eng-review--review-sections.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "392eaa9eb62003acb3e0a50819ed9a6f660b6f39d897a14ffa11536a7b985272",
+      "localSha256": "392eaa9eb62003acb3e0a50819ed9a6f660b6f39d897a14ffa11536a7b985272",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-eng-review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-eng-review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "9970809c97a6f8ff6ccad3baeb7979de1dce4510fe4596a4088ce18f7726e510",
+      "localSha256": "9970809c97a6f8ff6ccad3baeb7979de1dce4510fe4596a4088ce18f7726e510",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/plan-tune.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/plan-tune.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "54551fbd340c25db44a3eead7f93a865a714f94da9e944198224aef941a3b588",
+      "localSha256": "54551fbd340c25db44a3eead7f93a865a714f94da9e944198224aef941a3b588",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/qa--qa-patterns.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/qa--qa-patterns.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "989d5adb8b713e89b8088bed530b8417c8a81ed771ee16d012203f2bb8cd5724",
+      "localSha256": "989d5adb8b713e89b8088bed530b8417c8a81ed771ee16d012203f2bb8cd5724",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/qa--test-bootstrap.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/qa--test-bootstrap.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "96f3c95ada2d717380b04d2a7f3ae7b1cc97b5d6f5bdad3a164d34a54e03120c",
+      "localSha256": "96f3c95ada2d717380b04d2a7f3ae7b1cc97b5d6f5bdad3a164d34a54e03120c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/qa-only.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/qa-only.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "41e1833ac95badf4bceae440bf88036cfeb43e24c730874e5d07ad4a5471c104",
+      "localSha256": "41e1833ac95badf4bceae440bf88036cfeb43e24c730874e5d07ad4a5471c104",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/qa.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/qa.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "1e36d22b188f58d98181a63ba312c317fc8f8bcd15565e3d39824ea4a483d498",
+      "localSha256": "1e36d22b188f58d98181a63ba312c317fc8f8bcd15565e3d39824ea4a483d498",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/retro--report-format.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/retro--report-format.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e25fa3db492ebf2c036dbf3eecc97bd71df7158d81537ca298b4c63fb02cbdcb",
+      "localSha256": "e25fa3db492ebf2c036dbf3eecc97bd71df7158d81537ca298b4c63fb02cbdcb",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/retro.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/retro.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "49db266231e4cfa223eba441c1fbbd9d8e62030c158a0d0e6e468441dbebb55d",
+      "localSha256": "49db266231e4cfa223eba441c1fbbd9d8e62030c158a0d0e6e468441dbebb55d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/review--adversarial.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/review--adversarial.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "2d533fdd26a914ff847a40ea79a2b60784721c91024313d943ce5741b78e6a22",
+      "localSha256": "2d533fdd26a914ff847a40ea79a2b60784721c91024313d943ce5741b78e6a22",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/review--plan-completion.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/review--plan-completion.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "40ffb5c2b6808d398b325d20e08e82ed8268e4d267610d07e683734b2cba52ce",
+      "localSha256": "40ffb5c2b6808d398b325d20e08e82ed8268e4d267610d07e683734b2cba52ce",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/review--review-army.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/review--review-army.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c732b138d7bf4280203bc128ee83e295bc449a48a2d0a1dde0b4fa6b7ea18917",
+      "localSha256": "c732b138d7bf4280203bc128ee83e295bc449a48a2d0a1dde0b4fa6b7ea18917",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/review.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/review.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "67fb94516557707ae370303aa283dd380451b86fcb3f955fe44326d995cc57e1",
+      "localSha256": "67fb94516557707ae370303aa283dd380451b86fcb3f955fe44326d995cc57e1",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/scrape.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/scrape.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b56865d2a2f79c1c95a86d5cd0662fedf030a1a468e32fec8270e0e269e8920b",
+      "localSha256": "b56865d2a2f79c1c95a86d5cd0662fedf030a1a468e32fec8270e0e269e8920b",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-browser-cookies.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-browser-cookies.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e0516bb08c8a469c4fddfbc0b156d3fcbe1aef4e0939536430582a96f95c7e97",
+      "localSha256": "e0516bb08c8a469c4fddfbc0b156d3fcbe1aef4e0939536430582a96f95c7e97",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-deploy.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-deploy.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b2c72a7d9427b156cd5538c151b3d9e64cf6183838645644811a794aa76ebeb9",
+      "localSha256": "b2c72a7d9427b156cd5538c151b3d9e64cf6183838645644811a794aa76ebeb9",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-gbrain--brain-init.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-gbrain--brain-init.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "6b410f5a6b030b4ec3f7244a220c77fd808ab0f26de0add5289f38098aff94a4",
+      "localSha256": "6b410f5a6b030b4ec3f7244a220c77fd808ab0f26de0add5289f38098aff94a4",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-gbrain--claude-md-persist.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-gbrain--claude-md-persist.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e3adb28d90f4f8592bfce913d8d96978803371072816404648cc1f604b2ab194",
+      "localSha256": "e3adb28d90f4f8592bfce913d8d96978803371072816404648cc1f604b2ab194",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-gbrain--engine-remediation.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-gbrain--engine-remediation.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c971204b86b2404f5672874abcf41aaeae5283613ad60b928faa80063645077e",
+      "localSha256": "c971204b86b2404f5672874abcf41aaeae5283613ad60b928faa80063645077e",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-gbrain--transcript-gate.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-gbrain--transcript-gate.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "b3c0de20f4418477f18863859ba783990cb2f6fcca10ebf630811b328d9a4b6c",
+      "localSha256": "b3c0de20f4418477f18863859ba783990cb2f6fcca10ebf630811b328d9a4b6c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/setup-gbrain.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/setup-gbrain.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "811b8d6c3cb31ffdfd3c24bf012fa183b15334d2007b84b7e896493cf6bcbefe",
+      "localSha256": "811b8d6c3cb31ffdfd3c24bf012fa183b15334d2007b84b7e896493cf6bcbefe",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--adversarial.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--adversarial.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "2a9316db42a915ecca9914efec6eed2c41b369ede737b24eebd6e435dfaf294a",
+      "localSha256": "2a9316db42a915ecca9914efec6eed2c41b369ede737b24eebd6e435dfaf294a",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--apple-release.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--apple-release.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "a86ff8a92a730469bd965caca8127d267842486f507fc8be47a73ddcce6fe4fa",
+      "localSha256": "a86ff8a92a730469bd965caca8127d267842486f507fc8be47a73ddcce6fe4fa",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--changelog.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--changelog.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "3384256c68938f68c34aa5f5f12e0e7dfec712552456cd2561fd2dd8d4a98952",
+      "localSha256": "3384256c68938f68c34aa5f5f12e0e7dfec712552456cd2561fd2dd8d4a98952",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--greptile.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--greptile.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "47085993f7691ad65ca36751beace86df735fe1cee47f58392fda7bd803dc991",
+      "localSha256": "47085993f7691ad65ca36751beace86df735fe1cee47f58392fda7bd803dc991",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--plan-completion.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--plan-completion.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "bede2b9ddec6a5c6043824ab5a478da5da003fb3606657b00b636ce2c212bebb",
+      "localSha256": "bede2b9ddec6a5c6043824ab5a478da5da003fb3606657b00b636ce2c212bebb",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--pr-body.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--pr-body.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "c0979e1e58a5cf6d5c7d6e7043ea3e3c64c24f394c451b1caf8822a6d28ec985",
+      "localSha256": "c0979e1e58a5cf6d5c7d6e7043ea3e3c64c24f394c451b1caf8822a6d28ec985",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--review-army.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--review-army.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "00b584945e4a0c348d53ca9dea2ea039d4453e2caecdf76b6a843eb3ec9d4a48",
+      "localSha256": "00b584945e4a0c348d53ca9dea2ea039d4453e2caecdf76b6a843eb3ec9d4a48",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--test-coverage.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--test-coverage.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "46eb223a23e57d1911067d9d56ecc908048c3f4db58ad125aa22e0d2227fb059",
+      "localSha256": "46eb223a23e57d1911067d9d56ecc908048c3f4db58ad125aa22e0d2227fb059",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship--tests.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship--tests.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f2808b2cad6ef846df1f2e6bb9b442165224f7e4652ea49a70aff5fb798d0fed",
+      "localSha256": "f2808b2cad6ef846df1f2e6bb9b442165224f7e4652ea49a70aff5fb798d0fed",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/ship.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/ship.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "5cc3b0c07ad314cae7e58590f228c7e8a2d1d9da233e2f3ea9de8c515efec60c",
+      "localSha256": "5cc3b0c07ad314cae7e58590f228c7e8a2d1d9da233e2f3ea9de8c515efec60c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/skillify.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/skillify.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e564becd0937081929c60fabeb34ba79a12207cf659ec4ec8b44067315d7713f",
+      "localSha256": "e564becd0937081929c60fabeb34ba79a12207cf659ec4ec8b44067315d7713f",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/spec--gate-and-file.md.tmpl.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/spec--gate-and-file.md.tmpl.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "335e29a6468e0d5e75f66466d0884dcab80e7697152b31ec8725742a7a2e351d",
+      "localSha256": "335e29a6468e0d5e75f66466d0884dcab80e7697152b31ec8725742a7a2e351d",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/spec.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/spec.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "191a6fb72be25e4851951b0437d73e8a6408cad65ab6594e2487fb79edbb0436",
+      "localSha256": "191a6fb72be25e4851951b0437d73e8a6408cad65ab6594e2487fb79edbb0436",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/sync-gbrain.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/sync-gbrain.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "2d422bec70f19aeba6cc803568e8cb80b33f377ce7855c298fb4157b4e775988",
+      "localSha256": "2d422bec70f19aeba6cc803568e8cb80b33f377ce7855c298fb4157b4e775988",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/sources/unfreeze.txt",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/sources/unfreeze.txt",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "079d600dcb90cc73074724c776f8482f01783dcfa9a72154a2b699cd7e4a01fe",
+      "localSha256": "079d600dcb90cc73074724c776f8482f01783dcfa9a72154a2b699cd7e4a01fe",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/styles.css",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/styles.css",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "f5a9a1b7de7b57b6a37748eee06975967e59461d0da8bc4e8dc6730d39df4b7c",
+      "localSha256": "f5a9a1b7de7b57b6a37748eee06975967e59461d0da8bc4e8dc6730d39df4b7c",
+      "passed": true
+    },
+    {
+      "resource": "012-gstack/validator.js",
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/validator.js",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "3ee3e8bfcdf56bc701d5467f3226610218dfba31da0cb62d95d9a62618a9d60b",
+      "localSha256": "3ee3e8bfcdf56bc701d5467f3226610218dfba31da0cb62d95d9a62618a9d60b",
+      "passed": true
+    },
+    {
+      "resource": "assets/012-gstack.png",
+      "url": "https://yydshly.github.io/0911_codex_project/assets/012-gstack.png",
+      "status": 200,
+      "mode": "exact-bytes",
+      "remoteSha256": "e5dad615823f274ec2c97bc5ae4bc070a98bdb2f88d668e8f18d59f35b9b7fb5",
+      "localSha256": "e5dad615823f274ec2c97bc5ae4bc070a98bdb2f88d668e8f18d59f35b9b7fb5",
+      "passed": true
+    },
+    {
+      "resource": "index.html",
+      "url": "https://yydshly.github.io/0911_codex_project/index.html",
+      "status": 200,
+      "mode": "normalized-text",
+      "remoteSha256": "31243a80763d68a14fe3dd1459d3c0637e9172015c8e1e337b24f55d9fcf7c7e",
+      "localSha256": "31243a80763d68a14fe3dd1459d3c0637e9172015c8e1e337b24f55d9fcf7c7e",
+      "passed": true
+    }
+  ]
+}
