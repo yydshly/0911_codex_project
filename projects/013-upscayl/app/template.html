@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="完整理解 Upscayl：超分辨率能力、模型与推理原理、部署条件、同类工具，以及与生成式大模型在保真度和成本上的取舍。">
+<meta name="theme-color" content="#101c35"><title>Upscayl 研究手册 · 超分辨率、模型与保真</title>
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body><a class="skip" href="#content">跳到正文</a>
+<header class="topbar"><a class="collection" href="https://yydshly.github.io/0911_codex_project/">开源项目研究集 <span>/ 013</span></a><nav aria-label="资料入口"><a href="https://github.com/upscayl/upscayl">上游仓库 ↗</a><a href="downloads/upscayl-research.md" download>下载完整文档</a><button type="button" id="print">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside class="sidebar"><div class="sidebar-title">UPSCAYL <span>研究手册</span></div><details open class="contents"><summary>阅读目录 · 10 个章节</summary><nav aria-label="章节导航"><a href="#overview">总览 · 一张图理解</a><!--TOC--></nav></details><p class="scope-note">依据官方资料与源码<br>核对：2026-09-11<br>上游效果与性能未实测</p></aside>
+<main id="content"><section id="overview" class="overview"><p class="eyebrow">图像超分辨率 / 原理与应用研究</p><h1>让小图更可用。<br><span>也看清“变清晰”的边界。</span></h1><p class="lead">Upscayl 把预训练模型、本地 GPU 推理和批量图片处理整合成桌面工具。核心价值是尽量保留原图内容地放大，而不是保证恢复全部真实细节。</p>
+<div class="facts"><div><strong>500 → 2000</strong><span>宽高 4 倍，像素数量 16 倍</span></div><div><strong>模型预测细节</strong><span>新增像素 ≠ 新增真实信息</span></div><div><strong>结构保真优先</strong><span>相对优势，不是绝对保证</span></div></div>
+<figure class="architecture"><img src="assets/architecture.svg" width="1200" height="700" alt="Upscayl 调用链：图片与设置交给桌面应用，启动 NCNN 后端加载模型，在 Vulkan GPU 上推理并输出大图。比较生成式修复时需关注保真和观感。"><figcaption>本地原创技术图解，非软件截图或增强样张。<a href="assets/architecture.svg">打开完整图</a> · <a href="#principle">阅读底层原理</a></figcaption></figure></section>
+<div class="research-intro"><!--INTRO--></div><!--CONTENT-->
+<footer><p>本地新增：中文手册与只读研究网页。网页不上传图片、不调用增强模型；图解不是效果证据。</p><a href="#overview">回到总览 ↑</a> · <a href="research-manifest.json">版本与来源记录</a> · <a href="downloads/upscayl-research.md" download>下载 Markdown 文档</a></footer></main></div></body></html>

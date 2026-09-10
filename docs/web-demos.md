@@ -149,3 +149,11 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 [范围与能力摘要](../projects/012-gstack/scope.md)：57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。
 
 2026-09-11，提交 `cdccd382c43e0e16e9a7bd9cbaf3ca84909186c5` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34504589047)成功。142 项线上资源核验及 5 项线上交互检查通过；覆盖新站全部静态文件、总入口、能力图和 9 个既有子站入口。新站文件对照构建，CI 报告排除运行时间，总入口归一换行；既有子站检查可访问性。[资源证据](../projects/012-gstack/deployment-verification.json) · [交互证据](../projects/012-gstack/deployment-browser.json)。
+
+## Upscayl · 超分辨率研究手册
+
+研究索引 013，历史目录和发布子路径 `013-upscayl/`。静态源目录 `projects/013-upscayl/app/dist/`，包含十章中文手册、模型与软件分工图、部署条件、同类产品以及与生成式图像大模型的比较。主文档与网页正文同源，附 30 个来源入口。
+
+新增的是只读研究网页，不提供图片上传或 GPU 推理。技术图是本地原创示意，非软件截图或增强样张；上游运行与竞品性能未实测。
+
+构建与检查：安装 `projects/013-upscayl/app/requirements.txt`，执行 `python projects/013-upscayl/app/build.py` 和 `node projects/013-upscayl/app/check.cjs`，再通过原有统一脚本合并全部子站。网页已构建，发布待验证。

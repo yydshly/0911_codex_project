@@ -1,0 +1,1 @@
+{"name":"upscayl-research-handbook","version":"1.0.0","private":true,"scripts":{"build":"python build.py","check":"node check.cjs","start":"node serve.cjs"}}

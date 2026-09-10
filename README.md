@@ -4,7 +4,7 @@
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 按原库统计，已收录 **11** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
+**当前进度：** 按原库统计，已收录 **12** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
 
 FreeLLMAPI 是一个自托管模型网关，对外统一模型接口，对内负责选路、适配、额度与失败管理。研究索引 005，历史目录 `008-freellmapi/`；已整理共同架构、七个产品对比与开发取舍，网页已部署并验证，上游网关运行待复现。
 
@@ -21,6 +21,8 @@ Graphify 支持原始源码、文档、办公资料、图片、音视频和 SQL 
 Marketing Skills 是供 Agent 使用的营销方法库：50 个技能覆盖定位与决策、内容、搜索、转化、推广、销售与客户关系、留存和衡量实验。宿主读取技能、复用产品背景并调用可用工具，产出研究、方案、文案与验证计划。本地提供中文完整手册、输入输出全图及五技能真实应用；业务效果待验证，网页已部署并验证。
 
 gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。研究索引 011，历史目录 `012-gstack/`；附能力全图、逐项原理与九阶段真实案例，网页已部署并验证。
+
+Upscayl 使用预训练超分辨率模型改善低清图片的放大观感，强调结构保持与稳定批量处理，但不保证恢复真实细节。研究索引 013，历史目录 `013-upscayl/`；本地新增完整中文手册、底层关系图、同类产品及生成式大模型对比，网页已构建，发布待验证。
 
 ## 项目索引
 
@@ -39,6 +41,7 @@ gstack 面向软件研发，57 项独立技能覆盖需求规划、设计页面�
 | 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线效果展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/)；已部署并验证 |
 | 010 | [Munder Difflin](projects/011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](projects/011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 | 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
+| 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图像超分辨率：调用预训练模型与 NCNN / Vulkan GPU 推理，在尽量保留原图结构的前提下放大图片并改善细节观感，支持多模型、批量与自定义输出。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；网页已构建，发布待验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -164,6 +167,16 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 本地新增中文网页覆盖 57 项独立技能定义与原理、九阶段收录检查器实践和实际证据。21 项规则测试、17 项浏览器检查通过，保留一项真实缺陷的失败与修复记录。图为本地原创能力总览，按 12 类逐项说明作用与产物，非上游界面截图；采用方法适配执行，未复现全量上游或生产发布。
 
 [范围与能力摘要](projects/012-gstack/scope.md) · [完整研究](projects/012-gstack/research.md) · [57 项技能手册](projects/012-gstack/skills.md) · [在线网页](https://yydshly.github.io/0911_codex_project/012-gstack/) · [实验记录](projects/012-gstack/notes.md)。网页已部署并验证。
+
+### 013 · Upscayl
+
+**原库能力：本地 AI 图片放大与细节观感增强。** 预训练模型负责预测细节，NCNN / Vulkan 执行 GPU 推理，桌面应用组织文件、批量任务、输出与对比。内容保真、真实细节、重复稳定与视频连续性需分别判断。
+
+![Upscayl 应用、模型、推理与生成式修复区别](projects/013-upscayl/assets/architecture.svg)
+
+本地原创技术图解，非软件截图或增强样张；暂无真实软件截图。本地手册完整覆盖十章、同类产品、模型路线、大模型取舍及部署条件，并给出验证与扩展建议。上游运行与竞品效果未实测；网页已构建，发布待验证。
+
+[项目介绍](projects/013-upscayl/README.md) · [完整手册](projects/013-upscayl/notes.md) · [原库](https://github.com/upscayl/upscayl) · [矢量图](projects/013-upscayl/assets/architecture.svg)
 
 ## 仓库导航
 

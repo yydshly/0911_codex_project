@@ -188,6 +188,26 @@
       "imageCaption": "基于固定版本整理的原创能力图，按 12 类逐项说明作用与产物，非上游截图；本地实测结果与上游能力分开说明。",
       "showPreview": true,
       "previewAnchor": "#overview"
+    },
+    {
+      "id": "013",
+      "researchIndex": "013",
+      "slug": "013-upscayl",
+      "name": "Upscayl · 超分辨率研究手册",
+      "sourceDirectory": "projects/013-upscayl/app/dist",
+      "readme": "projects/013-upscayl/README.md",
+      "research": "projects/013-upscayl/notes.md",
+      "upstream": "https://github.com/upscayl/upscayl",
+      "upstreamName": "Upscayl",
+      "capability": "本地图像超分辨率：通过预训练模型和 NCNN / Vulkan GPU 推理，在尽量保留原图内容的前提下放大图片、改善细节观感；支持多模型、批量与自定义输出。",
+      "extension": "十章中文手册、模型与软件分工图、部署条件、同类产品与生成式大模型对比，区分结构保真、真实细节、重复稳定和视频连续性；包含30个来源入口。上游与竞品效果未实测，网页仅提供研究阅读。",
+      "image": "projects/013-upscayl/assets/architecture.svg",
+      "kind": "能力、原理与模型对比",
+      "entryLabel": "打开完整超分辨率研究手册 →",
+      "imageAlt": "Upscayl 应用、模型、GPU 推理与生成式修复区别",
+      "imageCaption": "本地原创技术示意图，非软件截图或增强样张；增加像素不等于找回真实信息。",
+      "showPreview": true,
+      "previewAnchor": "#overview"
     }
   ]
 }

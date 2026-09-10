@@ -1,6 +1,6 @@
 # 研究项目
 
-按原库去重，目前已收录 **11 个研究项目**，对应 12 个历史目录；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
+按原库去重，目前已收录 **12 个研究项目**，对应 13 个历史目录；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
 
 | 编号 | 项目 | 原库 | 核心能力 | 状态 | 在线入口 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -15,8 +15,11 @@
 | 009 | [XXD Panel 028](007-xxd-panel-028/README.md) | [xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 以微缩审美和交付流程指导图像模型生成二维插画，支持模式、比例、文字与批量验收；无三维输出 | 七场景及六张微缩扩展已实测；价值待验证 | [理解与价值](007-xxd-panel-028/understanding.md) · [微缩效果](007-xxd-panel-028/extensions/miniature-scenes/README.md) · [在线微缩展示](https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/miniatures.html)；已部署并验证 |
 | 010 | [Munder Difflin](011-munder-difflin/README.md) | [chaitanyagiri/munder-difflin](https://github.com/chaitanyagiri/munder-difflin) | 多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。 | 研究中（能力、文件通信与对比已整理；上游未实测） | [能力总览图](011-munder-difflin/assets/overview.png)；[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/) |
 | 011 | [gstack](012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
+| 013 | [Upscayl](013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图像超分辨率：调用预训练模型与 NCNN / Vulkan GPU 推理，在尽量保留原图结构的前提下放大图片并改善细节观感，支持多模型、批量与自定义输出。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](013-upscayl/notes.md)；网页已构建，发布待验证 |
 
 ## 编号与目录
+
+- Upscayl 研究索引 013，目录 `013-upscayl`；文档与网页研究已完成，上游未实测，发布待验证。
 
 - gstack 研究索引 011，历史目录 `012-gstack`；57 项、12 类软件研发技能的范围与原理、能力全图、九阶段案例已整理，网页已部署并验证。
 

@@ -19,6 +19,7 @@ on:
       - 'projects/010-marketingskills/**'
       - 'projects/011-munder-difflin/**'
       - 'projects/012-gstack/**'
+      - 'projects/013-upscayl/**'
   workflow_dispatch:
 
 permissions:
@@ -85,6 +86,11 @@ jobs:
           node projects/010-marketingskills/app/scripts/check-real-case.cjs
       - name: Check gstack engineering lab
         run: node projects/012-gstack/app/scripts/check.cjs
+      - name: Build and check Upscayl research handbook
+        run: |
+          python -m pip install -r projects/013-upscayl/app/requirements.txt
+          python projects/013-upscayl/app/build.py
+          node projects/013-upscayl/app/check.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact

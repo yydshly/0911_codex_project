@@ -1,0 +1,4 @@
+!app/dist/
+!app/dist/**
+.sites-runtime/
+__pycache__/
