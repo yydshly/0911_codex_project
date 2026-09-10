@@ -1,0 +1,16 @@
+{
+  "theme": "neutral",
+  "htmlLabels": false,
+  "fontFamily": "Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif",
+  "themeVariables": { "fontSize": "18px" },
+  "themeCSS": ".edgeLabel text { paint-order: stroke; stroke: white; stroke-width: 5px; stroke-linejoin: round; }",
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear",
+    "nodeSpacing": 36,
+    "rankSpacing": 52,
+    "padding": 18,
+    "wrappingWidth": 400,
+    "useMaxWidth": false
+  }
+}

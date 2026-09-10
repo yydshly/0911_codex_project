@@ -1,0 +1,28 @@
+flowchart TB
+    PI["Pi 开源项目<br/>提供代理运行、工具调用和会话基础"]
+    MODEL["大模型｜负责思考<br/>理解需求、分析问题、生成代码"]
+
+    OMP["oh-my-pi｜负责组织与执行<br/>基于 Pi 二次开发<br/>定位类似 Codex CLI 的 AI 编程软件"]
+
+    PI -->|"继承并完善"| OMP
+    MODEL -->|"提供分析与操作方案"| OMP
+    OMP -->|"提供任务、代码和执行反馈"| MODEL
+
+    subgraph MODULES["OMP 完善的内部能力"]
+        direction LR
+        TOOLS["开发工具<br/>搜索与编辑代码<br/>语言服务与调试器<br/>Shell、脚本和测试"]
+        TASK["任务管理<br/>多代理协作与隔离<br/>会话压缩与项目记忆<br/>过程审查"]
+        EXT["接入与扩展<br/>多模型配置<br/>MCP 与自定义工具<br/>浏览器、SDK / RPC"]
+    end
+
+    OMP --> TOOLS
+    OMP --> TASK
+    OMP --> EXT
+
+    TOOLS --> WORK
+    TASK --> WORK
+    EXT --> WORK
+
+    WORK["在实际项目中完成工作<br/>读代码 → 修改文件 → 运行检查"]
+    WORK --> RESULT["获得真实结果<br/>代码变化、报错、测试结果"]
+    RESULT -->|"反馈给 OMP 和模型，必要时继续修改"| OMP
