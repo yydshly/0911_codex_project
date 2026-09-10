@@ -1,0 +1,52 @@
+{
+  "id": "venue",
+  "title": "人物＋真实场地",
+  "direction": "多图内容组合",
+  "refs": [
+    "wedding.jpg",
+    "venue.jpg"
+  ],
+  "roles": [
+    "人物、礼服、姿态",
+    "草坪、座椅、花拱门与环境"
+  ],
+  "request": "Image 1 supplies only the couple, their facial features, hairstyle, relative height, wedding clothing, bouquet and mutual gaze. Image 2 supplies the actual outdoor wedding venue, seating, aisle, arch and vegetation. Create ONE unified isometric paper miniature of this couple standing at this ceremony venue. Preserve the recognizable arrangement and distinctive structures from Image 2; use the actual venue rather than inventing a generic wedding backdrop. No additional people. This is a fictional combination of independently sourced photographs, not evidence these people visited this venue.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/real-inputs/wedding.jpg",
+      "role": "人物、礼服、姿态",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    },
+    {
+      "file": "assets/real-inputs/venue.jpg",
+      "role": "草坪、座椅、花拱门与环境",
+      "sha256": "9d43e773cbdee4825b6bf8d1b6155bf352149e7c23435b6d19c954379216078b"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/venue.txt",
+  "promptSha256": "682c56ce5a14e416402688bd72b965a2adaabbde58cf0b8e1d1e18aacc1b8117",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/venue-1536x1024.png",
+  "outputSha256": "2dabb812b7b874a6f4c58e745d77fd347439031cc8572e76d71c53cd4e92827a",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "两名人物的礼服、对望关系与场地照片的木质矩形拱门、白色座椅、草坪和绿植组合在同一微缩场景中。",
+    "limit": "通道花瓣、两侧地面花饰和场地尺度存在创作补全；人数为两人，但未逐张计数核对座椅或验证人脸身份。人物与场地并非原本同一事件。",
+    "mode": true,
+    "textFree": true,
+    "status": "多图组合效果成立；含布景补全"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

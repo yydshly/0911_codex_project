@@ -86,3 +86,7 @@ node projects/006-drama-skills/app/check.cjs
 发布清单合并 `projects/006-drama-skills/app/dist`，保留既有案例手册、LongHorizon 和 XXG 等站点。仅导出明确列出的文档和图片，原库本地创作台与运行令牌不公开。目标子路径为 `006-drama-skills/`，远端已部署并验证。
 
 首次部署验证：2026-09-10，[Drama Skills 在线展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/)。提交 `22328ccddf11edd8c4a64c9d4658187f4065a0e5` 的 [GitHub Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34494114594) 构建与部署成功；远端 HTML、样式、脚本、24 份阅读数据、完整流程图 PNG/SVG、真实六格图与创作台截图共 8 个文件返回 200，内容与标准化本地构建一致。在线总入口已收录本页。
+
+## XXD Panel 028 待发布展示
+
+研究 009 的中文样张与交付预览位于 `projects/007-xxd-panel-028/app/`，构建目录为 `app/dist/`，拟用独立子路径 `007-xxd-panel-028/`。已合并发布清单与构建检查，保留现有站点产物；目前仅本地预览，未发布或验证线上地址。现已补充七场景、十二次实际生成及原图与提示词记录，含婚纱、亲子做饭和伴侣沙滩散步；上游样张和本次输出分别标注，模式及尺寸偏差原样保留。新增同目录 extensions.html，包含五任务六次真实生成的风格扩展、保留程度与系列参考，以及三种可交互成品版式；随同一站点构建发布，不新增研究条目或站点。同目录 miniatures.html 进一步展示五类微缩场景扩展、六张实际 PNG 和花艺修改前后切换；视频与可旋转三维未制作。主预览统一采用淡蓝花艺定制最终图；首页与微缩页同步补全原库能力、本地扩展、二维／三维区别和产品价值假设，完整结论见[理解文档](../projects/007-xxd-panel-028/understanding.md)。

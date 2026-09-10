@@ -1,0 +1,98 @@
+{
+  "id": "wedding",
+  "order": "005",
+  "source": "wedding.jpg",
+  "mode": "top-bottom",
+  "contract": "TOP_BOTTOM",
+  "ratio": "2:3",
+  "size": "1024x1536",
+  "title": "婚纱双人照 · 婚礼纪念",
+  "purpose": "观察双人对望、婚纱与礼服能否形成可辨识的纪念插画",
+  "creator": "ömer çelik / Pexels",
+  "photoId": "17542182",
+  "creditSlug": "omer",
+  "page": "bride-and-groom-standing-close-together-and-looking-at-each-other-17542182",
+  "license": "Pexels License（非 CC0）；来源页与许可链接见运行记录",
+  "inputUrl": "https://images.pexels.com/photos/17542182/pexels-photo-17542182.jpeg?cs=srgb&dl=pexels-omer-17542182.jpg&fm=jpg",
+  "inputDocumentation": "https://www.pexels.com/photo/bride-and-groom-standing-close-together-and-looking-at-each-other-17542182/",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "run": "20260910-people-scenes-02",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:01:57.711Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "227fc049dbdb81d5fd96abfdd2dbd77b7addf6dd7b3c2c926109373025ddc2b7",
+  "input": "assets/real-inputs/wedding.jpg",
+  "inputSha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e",
+  "prompt": "runs/20260910-people-scenes-02/prompts/wedding.txt",
+  "plannedOutput": "assets/generated/20260910-people-scenes-02/source-005-wedding-top-bottom-2x3-1024x1536.png",
+  "invocation": "/xxd-panel-028 wedding.jpg --mode top-bottom --size 1024x1536 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "主要交付要求通过；场景有艺术补全",
+    "observations": [
+      "输出为 1024×1536 PNG，上摄影、下微缩设计的结构明确，目视未见文字或伪文字。",
+      "两人对望、身高关系、深色双排扣礼服、浅色蕾丝婚纱、发饰和手捧花得到概括保留。",
+      "下方通过纸面基座、轻微投影与留白形成婚礼纪念插画。"
+    ],
+    "limitations": [
+      "原照片没有完整拱门与两侧花柱；这些背景及下半身细节由模型补全，不能当作婚礼现场复原。",
+      "上方摄影区域也经过生成，构图与花卉布置有变化，非原片像素保留。",
+      "面部被简化，仅做目视场景辨识检查；未验证人脸身份保真，不是可旋转的三维模型。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T14:03:35.600Z",
+      "output": "assets/generated/20260910-people-scenes-02/source-005-wedding-top-bottom-2x3-1024x1536-attempt-1.png",
+      "actualSize": [
+        1024,
+        1536
+      ],
+      "outputSha256": "2f0490d7bea6685b5edf155c1e26699de032e27a316c73ba664d113ff7563937",
+      "prompt": "runs/20260910-people-scenes-02/prompts/wedding.txt",
+      "promptSha256": "227fc049dbdb81d5fd96abfdd2dbd77b7addf6dd7b3c2c926109373025ddc2b7",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-61429de5-a0d2-42af-9ae8-eb1662f3fa47.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "主要交付要求通过；场景有艺术补全",
+        "observations": [
+          "输出为 1024×1536 PNG，上摄影、下微缩设计的结构明确，目视未见文字或伪文字。",
+          "两人对望、身高关系、深色双排扣礼服、浅色蕾丝婚纱、发饰和手捧花得到概括保留。",
+          "下方通过纸面基座、轻微投影与留白形成婚礼纪念插画。"
+        ],
+        "limitations": [
+          "原照片没有完整拱门与两侧花柱；这些背景及下半身细节由模型补全，不能当作婚礼现场复原。",
+          "上方摄影区域也经过生成，构图与花卉布置有变化，非原片像素保留。",
+          "面部被简化，仅做目视场景辨识检查；未验证人脸身份保真，不是可旋转的三维模型。"
+        ]
+      }
+    }
+  ],
+  "attempts": 1,
+  "selectedAttempt": 1,
+  "output": "assets/generated/20260910-people-scenes-02/source-005-wedding-top-bottom-2x3-1024x1536-attempt-1.png",
+  "actualSize": [
+    1024,
+    1536
+  ],
+  "outputSha256": "2f0490d7bea6685b5edf155c1e26699de032e27a316c73ba664d113ff7563937",
+  "initialPrompt": "runs/20260910-people-scenes-02/prompts/wedding.txt",
+  "initialPromptSha256": "227fc049dbdb81d5fd96abfdd2dbd77b7addf6dd7b3c2c926109373025ddc2b7",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": true,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T14:04:29.777Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "coffee-story",
+  "title": "故事一幕：一起喝咖啡",
+  "direction": "人物跨场景",
+  "refs": [
+    "wedding.jpg",
+    "coffee.png"
+  ],
+  "roles": [
+    "同一对成年人物的身份参考",
+    "杯碟、咖啡与桌面参考"
+  ],
+  "request": "Create ONE miniature story vignette: the same adult couple from Image 1 sit opposite each other at a small cafe table, looking at one another over coffee. Use the cup, saucer and wood table cues from Image 2, with two place settings. The man's dark hair and beard and the woman's facial features and brown hairstyle should remain recognizable. Change wedding clothing to simple casual everyday clothing appropriate to the cafe; do not add other people. This cafe episode is an expressly fictional illustrative scenario, not a biographical claim. Keep only a small table, two chairs and a restrained fragment of cafe setting on one paper base.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/real-inputs/wedding.jpg",
+      "role": "同一对成年人物的身份参考",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    },
+    {
+      "file": "assets/real-inputs/coffee.png",
+      "role": "杯碟、咖啡与桌面参考",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/coffee-story.txt",
+  "promptSha256": "f804eb1400d6dda7cbc04e3d43737c3d53d8ab89d2e5fd03e3e877e2e8e47061",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/coffee-story-1536x1024.png",
+  "outputSha256": "1b5a387b805b5120574cde2979791bb73a3c3241e52239aab9a11694f994398e",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "同一人物参考被用于咖啡桌边的两人互动，婚礼礼服换成日常服装；深发、胡须、发饰与对望线索仍可辨。",
+    "limit": "咖啡馆窗口、灯具、盆栽与人物动作是新创作；照片并未记录这段经历。人物相似性仅作目视判断，没有身份一致性评测。",
+    "mode": true,
+    "textFree": true,
+    "status": "故事场景效果成立；虚构情节"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

@@ -1,0 +1,124 @@
+{
+  "id": "beach",
+  "order": "007",
+  "source": "beach.jpg",
+  "mode": "design-only",
+  "contract": "DESIGN_ONLY",
+  "ratio": "1:1",
+  "size": "1024x1024",
+  "title": "伴侣海边散步 · 旅行记忆",
+  "purpose": "观察牵手关系、步态与海岸环境的纯设计转译",
+  "creator": "Kampus Production / Pexels",
+  "photoId": "6180470",
+  "creditSlug": "kampus",
+  "page": "a-couple-walking-on-the-beach-6180470",
+  "license": "Pexels License（非 CC0）；来源页与许可链接见运行记录",
+  "inputUrl": "https://images.pexels.com/photos/6180470/pexels-photo-6180470.jpeg?cs=srgb&dl=pexels-kampus-6180470.jpg&fm=jpg",
+  "inputDocumentation": "https://www.pexels.com/photo/a-couple-walking-on-the-beach-6180470/",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "run": "20260910-people-scenes-02",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:01:57.808Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+  "input": "assets/real-inputs/beach.jpg",
+  "inputSha256": "816049476ce9dde35cc2335ad6c4ecbfd6debde24cd6cbd4a3b135f5392eded0",
+  "prompt": "runs/20260910-people-scenes-02/prompts/beach.txt",
+  "plannedOutput": "assets/generated/20260910-people-scenes-02/source-007-beach-design-only-1x1-1024x1024.png",
+  "invocation": "/xxd-panel-028 beach.jpg --mode design-only --size 1024x1024 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "纯设计模式通过／尺寸未达标",
+    "observations": [
+      "完整画布为纸面沙滩微缩插画，没有独立的原始摄影区域；目视未见文字。",
+      "保留两人牵手、女方回头、男方背影、服装主色，以及远处黄色球网和浅色建筑的线索。",
+      "实际文件为 1254×1254 PNG，方形比例正确；选此轮是因为背景比重试更接近源图。"
+    ],
+    "limitations": [
+      "要求 1024×1024，实际为 1254×1254；未通过后期缩放掩盖尺寸偏差。",
+      "输入照片看不到海浪和海鸥，输出中的水面、海鸥、足印及空间连接含模型补全。",
+      "保留的是姿态和旅行场景线索，未验证人脸身份保真；不是三维重建。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T14:05:01.334Z",
+      "output": "assets/generated/20260910-people-scenes-02/source-007-beach-design-only-1x1-1254x1254-attempt-1.png",
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "outputSha256": "d28578a954e2c380ebb939ba32c66db8bce211e9f8398308e74864883884b62c",
+      "prompt": "runs/20260910-people-scenes-02/prompts/beach.txt",
+      "promptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-c784bcff-7e8e-4483-900b-3e341da2fc27.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "纯设计模式通过／尺寸未达标",
+        "observations": [
+          "完整画布为纸面沙滩微缩插画，没有独立的原始摄影区域；目视未见文字。",
+          "保留两人牵手、女方回头、男方背影、服装主色，以及远处黄色球网和浅色建筑的线索。",
+          "实际文件为 1254×1254 PNG，方形比例正确；选此轮是因为背景比重试更接近源图。"
+        ],
+        "limitations": [
+          "要求 1024×1024，实际为 1254×1254；未通过后期缩放掩盖尺寸偏差。",
+          "输入照片看不到海浪和海鸥，输出中的水面、海鸥、足印及空间连接含模型补全。",
+          "保留的是姿态和旅行场景线索，未验证人脸身份保真；不是三维重建。"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "recordedAt": "2026-09-10T14:06:35.455Z",
+      "output": "assets/generated/20260910-people-scenes-02/source-007-beach-design-only-1x1-1254x1254-attempt-2.png",
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "outputSha256": "0c3ec34e8e79ec122e4d4e7fb6de8aeb0e5a84d32a1a52d08980fd5767bb48a1",
+      "prompt": "runs/20260910-people-scenes-02/prompts/beach-retry.txt",
+      "promptSha256": "d740f581ee579533b732b9843b11948cd056906dd2ae9faed1bbf5d0e0551b2d",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-9cc503df-07d0-443c-bb39-c42ad095d86c.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "重试仍未满足尺寸；背景线索减少",
+        "observations": [
+          "纯设计模式和双人牵手关系仍成立，无明显文字。",
+          "结果仍为 1254×1254 PNG，尺寸重试没有生效。"
+        ],
+        "limitations": [
+          "仍未达到 1024×1024，按库的一次重试上限停止。",
+          "原照片可见的球网、建筑在此轮消失，增加了侧方水面和草丛；只重申尺寸仍会改变构图。"
+        ]
+      }
+    }
+  ],
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "output": "assets/generated/20260910-people-scenes-02/source-007-beach-design-only-1x1-1254x1254-attempt-1.png",
+  "actualSize": [
+    1254,
+    1254
+  ],
+  "outputSha256": "d28578a954e2c380ebb939ba32c66db8bce211e9f8398308e74864883884b62c",
+  "initialPrompt": "runs/20260910-people-scenes-02/prompts/beach.txt",
+  "initialPromptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": false,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T14:06:36.065Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

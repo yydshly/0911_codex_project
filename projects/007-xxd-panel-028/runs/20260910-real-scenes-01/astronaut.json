@@ -1,0 +1,122 @@
+{
+  "id": "astronaut",
+  "order": "002",
+  "source": "astronaut.png",
+  "mode": "design-only",
+  "contract": "DESIGN_ONLY",
+  "ratio": "3:4",
+  "size": "1536x2048",
+  "title": "航天员肖像 · 纪念插画",
+  "purpose": "人物特征与职业语境的艺术概括",
+  "creator": "NASA，Eileen Collins 肖像",
+  "license": "公有领域，依据 scikit-image 数据说明",
+  "run": "20260910-real-scenes-01",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T13:35:23.156Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "477c3bc1d523b7c91d9abac6cc8b56d431ae79aba532bfe8de7722ffe58f4d4f",
+  "input": "assets/real-inputs/astronaut.png",
+  "inputSha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "inputUrl": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.24.0/skimage/data/astronaut.png",
+  "inputDocumentation": "https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.astronaut",
+  "prompt": "runs/20260910-real-scenes-01/prompts/astronaut-retry.txt",
+  "plannedOutput": "assets/generated/20260910-real-scenes-01/source-002-astronaut-design-only-3x4-1536x2048.png",
+  "invocation": "/xxd-panel-028 astronaut.png --mode design-only --size 1536x2048 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "模式已修正／尺寸未达标",
+    "observations": [
+      "重试已变为一张连续的纸面微缩设计，没有原片展示区。",
+      "人物发型、橙色航天服、头盔、旗帜与航天器保留了来源的主要语境。",
+      "服装上的文字与徽章已清除，未见可读文字。",
+      "3:4 比例正确。"
+    ],
+    "limitations": [
+      "实际 PNG 为 1086×1448，未达到请求的 1536×2048；没有通过放大冒充原生尺寸。",
+      "从半身摄影补全了全身、底座和栏杆；这些属于模型推演，不能作为真实场景记录。",
+      "人物面部经过艺术转译，未进行身份识别精度评测。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T13:41:31.507Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-002-astronaut-design-only-3x4-1086x1448-attempt-1.png",
+      "actualSize": [
+        1086,
+        1448
+      ],
+      "outputSha256": "4fb2d7d5cfeb9be607141a3b8275e30827750bf39282b6d0f14c1285ab38ca4a",
+      "prompt": "runs/20260910-real-scenes-01/prompts/astronaut.txt",
+      "promptSha256": "65e82b39e359a845c140d62c37b7ead895b250027493627fd2529ce1b3cdabe3",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-b50b682a-05ed-4fc9-a48e-bbd141b38c7d.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "首轮未通过：模式、无文字与尺寸偏差",
+        "observations": [
+          "橙色航天服、头盔、人物与背景航天器可辨识。"
+        ],
+        "limitations": [
+          "要求纯设计图，却出现上方摄影肖像和下方设计双联。",
+          "服装徽章仍有文字或伪文字。",
+          "返回 1086×1448，不是要求的 1536×2048。"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "recordedAt": "2026-09-10T13:44:52.789Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-002-astronaut-design-only-3x4-1086x1448-attempt-2.png",
+      "actualSize": [
+        1086,
+        1448
+      ],
+      "outputSha256": "ba04658f321133daf58d47fab38aeacf1a577adfd398dd250bb82300c90f4d5c",
+      "prompt": "runs/20260910-real-scenes-01/prompts/astronaut-retry.txt",
+      "promptSha256": "477c3bc1d523b7c91d9abac6cc8b56d431ae79aba532bfe8de7722ffe58f4d4f",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-8fb24afc-c359-468e-a2ee-a58a890122dd.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "模式已修正／尺寸未达标",
+        "observations": [
+          "重试已变为一张连续的纸面微缩设计，没有原片展示区。",
+          "人物发型、橙色航天服、头盔、旗帜与航天器保留了来源的主要语境。",
+          "服装上的文字与徽章已清除，未见可读文字。",
+          "3:4 比例正确。"
+        ],
+        "limitations": [
+          "实际 PNG 为 1086×1448，未达到请求的 1536×2048；没有通过放大冒充原生尺寸。",
+          "从半身摄影补全了全身、底座和栏杆；这些属于模型推演，不能作为真实场景记录。",
+          "人物面部经过艺术转译，未进行身份识别精度评测。"
+        ]
+      }
+    }
+  ],
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "output": "assets/generated/20260910-real-scenes-01/source-002-astronaut-design-only-3x4-1086x1448-attempt-2.png",
+  "actualSize": [
+    1086,
+    1448
+  ],
+  "outputSha256": "ba04658f321133daf58d47fab38aeacf1a577adfd398dd250bb82300c90f4d5c",
+  "initialPrompt": "runs/20260910-real-scenes-01/prompts/astronaut.txt",
+  "initialPromptSha256": "65e82b39e359a845c140d62c37b7ead895b250027493627fd2529ce1b3cdabe3",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": false,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T13:44:53.551Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "rocket",
+  "order": "003",
+  "source": "rocket.jpg",
+  "mode": "top-bottom",
+  "contract": "TOP_BOTTOM",
+  "ratio": "3:4",
+  "size": "1536x2048",
+  "title": "发射设施 · 科普视觉转译",
+  "purpose": "工程设施与环境关系的微缩概括",
+  "creator": "SpaceX",
+  "license": "公有领域，依据 scikit-image 数据说明",
+  "run": "20260910-real-scenes-01",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T13:35:24.686Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "cce0ab2bf95714627e2e9f4f6c5c7833655e8d40818c66edc3ab4459a1b9889f",
+  "input": "assets/real-inputs/rocket.jpg",
+  "inputSha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c",
+  "inputUrl": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.24.0/skimage/data/rocket.jpg",
+  "inputDocumentation": "https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.rocket",
+  "prompt": "runs/20260910-real-scenes-01/prompts/rocket-retry.txt",
+  "plannedOutput": "assets/generated/20260910-real-scenes-01/source-003-rocket-top-bottom-3x4-1536x2048.png",
+  "invocation": "/xxd-panel-028 rocket.jpg --mode top-bottom --size 1536x2048 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "布局与无文字通过／尺寸未达标",
+    "observations": [
+      "上方摄影表达、下方纸面微缩布局成立。",
+      "火箭、四座塔架和暖色照明形成可辨识的结构关系。",
+      "火箭标志已清除，未见可读文字；3:4 比例正确。"
+    ],
+    "limitations": [
+      "实际为 1086×1448，未达到请求的 1536×2048，原样保留且没有强行放大。",
+      "模型补充并重排了地面设施；结果是科普风格概括，不能当作工程设施的准确模型。",
+      "摄影区域同样经过生成，视角与构图发生变化。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T13:41:33.178Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-003-rocket-top-bottom-3x4-1086x1448-attempt-1.png",
+      "actualSize": [
+        1086,
+        1448
+      ],
+      "outputSha256": "a4dd92944145121794b9c5749062609d964e993de193fb80576b365f84972271",
+      "prompt": "runs/20260910-real-scenes-01/prompts/rocket.txt",
+      "promptSha256": "da10d46fe34dfe067cd48fc9a882d4fd46ddb1aac683ea0d8560d8419c19b2db",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-752b1679-27a3-4eb2-9255-f678942603ae.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "首轮未通过：标志与尺寸偏差",
+        "observations": [
+          "上下双联关系成立，火箭与四座塔架、夜色和灯光得到转译。"
+        ],
+        "limitations": [
+          "火箭上的标志仍可见，违反本次无文字／无标志规则。",
+          "返回 1086×1448，不是要求的 1536×2048。"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "recordedAt": "2026-09-10T13:46:08.142Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-003-rocket-top-bottom-3x4-1086x1448-attempt-2.png",
+      "actualSize": [
+        1086,
+        1448
+      ],
+      "outputSha256": "2b1eb958131dfc424bedd8a67e99d1dc1a79f9cb6db4527669a370dce676cb09",
+      "prompt": "runs/20260910-real-scenes-01/prompts/rocket-retry.txt",
+      "promptSha256": "cce0ab2bf95714627e2e9f4f6c5c7833655e8d40818c66edc3ab4459a1b9889f",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-0d930089-99ac-47fd-9d34-1024187ea934.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "布局与无文字通过／尺寸未达标",
+        "observations": [
+          "上方摄影表达、下方纸面微缩布局成立。",
+          "火箭、四座塔架和暖色照明形成可辨识的结构关系。",
+          "火箭标志已清除，未见可读文字；3:4 比例正确。"
+        ],
+        "limitations": [
+          "实际为 1086×1448，未达到请求的 1536×2048，原样保留且没有强行放大。",
+          "模型补充并重排了地面设施；结果是科普风格概括，不能当作工程设施的准确模型。",
+          "摄影区域同样经过生成，视角与构图发生变化。"
+        ]
+      }
+    }
+  ],
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "output": "assets/generated/20260910-real-scenes-01/source-003-rocket-top-bottom-3x4-1086x1448-attempt-2.png",
+  "actualSize": [
+    1086,
+    1448
+  ],
+  "outputSha256": "2b1eb958131dfc424bedd8a67e99d1dc1a79f9cb6db4527669a370dce676cb09",
+  "initialPrompt": "runs/20260910-real-scenes-01/prompts/rocket.txt",
+  "initialPromptSha256": "da10d46fe34dfe067cd48fc9a882d4fd46ddb1aac683ea0d8560d8419c19b2db",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": false,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T13:46:08.759Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

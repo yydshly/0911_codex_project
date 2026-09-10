@@ -1,0 +1,43 @@
+{
+  "id": "venue-edit",
+  "title": "局部定制：只改花艺颜色",
+  "direction": "已有微缩图的局部编辑",
+  "fromJob": "venue",
+  "roles": [
+    "本轮场地微缩图，编辑目标"
+  ],
+  "request": "The attached image is an existing finished miniature artwork to EDIT, not a source photograph to transform again. Preserve its canvas, framing, camera angle, paper base, people, facial features, clothing, poses, chairs, arch geometry, paths, lighting and all other elements. Change ONLY the flower petals in the ceremony arch and ground floral arrangements to a soft pale-blue color. Preserve green foliage and the bride's bouquet exactly as before. Do not add or remove objects. No text. This is a local customization demonstration. The pale-blue replacement is the current explicit color change; do not apply a whole-image tint or restyle the scene.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/generated/20260910-miniature-scenes-04/venue-1536x1024.png",
+      "role": "本轮场地微缩图，编辑目标",
+      "sha256": "2dabb812b7b874a6f4c58e745d77fd347439031cc8572e76d71c53cd4e92827a"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/venue-edit.txt",
+  "promptSha256": "90f7d41b932a627c97fa531ffee82031573748bb991716c29ab0e4cf5b1bc77e",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/venue-edit-1536x1024.png",
+  "outputSha256": "324b101218b36b0f9e6d931ce895237a6de56b2246e27942a3fc14ecb5ef7886",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "拱门与两侧花饰花瓣变成淡蓝色，叶片保持绿色、捧花仍白；人物姿态、白椅排列、木拱门与基座目视上基本维持。",
+    "limit": "这是一次完整图像编辑，未使用像素掩膜锁定区域，不能保证其余区域逐像素不变；只有一次样本，不代表局部修改总能稳定成功。",
+    "mode": true,
+    "textFree": true,
+    "status": "花艺修改效果成立；整体目视基本保留"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

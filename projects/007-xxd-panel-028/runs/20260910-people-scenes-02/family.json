@@ -1,0 +1,98 @@
+{
+  "id": "family",
+  "order": "006",
+  "source": "family.jpg",
+  "mode": "left-right",
+  "contract": "LEFT_RIGHT",
+  "ratio": "3:2",
+  "size": "1536x1024",
+  "title": "亲子一起做饭 · 家庭生活",
+  "purpose": "观察多人互动、操作台和日常动作如何被概括",
+  "creator": "Vanessa Loring / Pexels",
+  "photoId": "5082212",
+  "creditSlug": "vanessa-loring",
+  "page": "a-family-preparing-food-together-in-the-kitchen-5082212",
+  "license": "Pexels License（非 CC0）；来源页与许可链接见运行记录",
+  "inputUrl": "https://images.pexels.com/photos/5082212/pexels-photo-5082212.jpeg?cs=srgb&dl=pexels-vanessa-loring-5082212.jpg&fm=jpg",
+  "inputDocumentation": "https://www.pexels.com/photo/a-family-preparing-food-together-in-the-kitchen-5082212/",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "run": "20260910-people-scenes-02",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:01:57.758Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "d70ca48e18783afa18589c80fbe33c5d28ad2aef09793fb2d97e884ba41f2278",
+  "input": "assets/real-inputs/family.jpg",
+  "inputSha256": "c513fb601ec719b402dc683c91b42773ecfabe17de2dc34743f3d76c0e28f761",
+  "prompt": "runs/20260910-people-scenes-02/prompts/family.txt",
+  "plannedOutput": "assets/generated/20260910-people-scenes-02/source-006-family-left-right-3x2-1536x1024.png",
+  "invocation": "/xxd-panel-028 family.jpg --mode left-right --size 1536x1024 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "主要交付要求通过；生活关系可辨",
+    "observations": [
+      "输出为 1536×1024 PNG，左摄影、右微缩设计，无独立第三区域；目视未见文字。",
+      "四个人均保留：后方备餐的人、前方切水果的人，以及两侧观看的孩子，衣服主色和发型可辨。",
+      "台面、水果、奶瓶、吊灯与抽油烟机被组织为纸面厨房场景，日常互动比面部细节更突出。"
+    ],
+    "limitations": [
+      "新增盆栽、吧凳、地毯和原图不可见的空间；柜体尺度与摆放不是住宅测绘结果。",
+      "人物面部与手部被概括，照片区域也重新生成，不能据此保证用户本人的面貌一致。",
+      "这是家庭相册插画的视觉演示；没有验证打印成品、肖像一致性或商业交付流程。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T14:05:00.606Z",
+      "output": "assets/generated/20260910-people-scenes-02/source-006-family-left-right-3x2-1536x1024-attempt-1.png",
+      "actualSize": [
+        1536,
+        1024
+      ],
+      "outputSha256": "efa61657f0b33939ab4a6a09c08f9f35ee37822e6f53b66bb6dcd9537d7e7ece",
+      "prompt": "runs/20260910-people-scenes-02/prompts/family.txt",
+      "promptSha256": "d70ca48e18783afa18589c80fbe33c5d28ad2aef09793fb2d97e884ba41f2278",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-bee13ce5-c720-4c98-88b7-5262d436a278.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "主要交付要求通过；生活关系可辨",
+        "observations": [
+          "输出为 1536×1024 PNG，左摄影、右微缩设计，无独立第三区域；目视未见文字。",
+          "四个人均保留：后方备餐的人、前方切水果的人，以及两侧观看的孩子，衣服主色和发型可辨。",
+          "台面、水果、奶瓶、吊灯与抽油烟机被组织为纸面厨房场景，日常互动比面部细节更突出。"
+        ],
+        "limitations": [
+          "新增盆栽、吧凳、地毯和原图不可见的空间；柜体尺度与摆放不是住宅测绘结果。",
+          "人物面部与手部被概括，照片区域也重新生成，不能据此保证用户本人的面貌一致。",
+          "这是家庭相册插画的视觉演示；没有验证打印成品、肖像一致性或商业交付流程。"
+        ]
+      }
+    }
+  ],
+  "attempts": 1,
+  "selectedAttempt": 1,
+  "output": "assets/generated/20260910-people-scenes-02/source-006-family-left-right-3x2-1536x1024-attempt-1.png",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "outputSha256": "efa61657f0b33939ab4a6a09c08f9f35ee37822e6f53b66bb6dcd9537d7e7ece",
+  "initialPrompt": "runs/20260910-people-scenes-02/prompts/family.txt",
+  "initialPromptSha256": "d70ca48e18783afa18589c80fbe33c5d28ad2aef09793fb2d97e884ba41f2278",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": true,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T14:06:36.017Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

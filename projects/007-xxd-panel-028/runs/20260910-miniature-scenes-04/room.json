@@ -1,0 +1,45 @@
+{
+  "id": "room",
+  "title": "把真实厨房做成空间纪念",
+  "direction": "真实空间微缩记录",
+  "refs": [
+    "family.jpg"
+  ],
+  "roles": [
+    "四个人、厨房构件及相对位置"
+  ],
+  "request": "Create ONE restrained isometric cutaway paper miniature of the visible kitchen in Image 1. Preserve exactly the four people, their clothing colors and meal-preparation relationships. Ground the geometry in the visible island, cabinetry, black-and-gold hood, pendant lamps and countertop. Keep the counter objects related to the photo. Do not add decorative plants, stools, carpets, extra rooms or additional people. Where rear or lower surfaces cannot be seen, keep them simple rather than inventing a detailed house. This is a visual interpretation from a single photo, not measured architectural reconstruction.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/real-inputs/family.jpg",
+      "role": "四个人、厨房构件及相对位置",
+      "sha256": "c513fb601ec719b402dc683c91b42773ecfabe17de2dc34743f3d76c0e28f761"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/room.txt",
+  "promptSha256": "393b779a4669f01ed278224a01d7818f691f361f162e76e83ed92927c6b28f7d",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/room-1536x1024.png",
+  "outputSha256": "82e5ee87a6618f6367ce7a5c298b65dc69ef9cee2a49731a564e98ee0e9e2f2a",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "四个人、操作台、橱柜、黑金抽油烟机与两盏吊灯形成可辨的厨房切面，未见新增盆栽、吧凳或地毯。",
+    "limit": "背面、下部和柜体尺度由单张照片推断，台面与手部细节有概括；不能用于测量、装修施工或三维资产交付。",
+    "mode": true,
+    "textFree": true,
+    "status": "空间纪念效果成立；非测量复原"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

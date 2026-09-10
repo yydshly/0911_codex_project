@@ -1,0 +1,78 @@
+{
+  "id": "miniature",
+  "profile": "upstream-original",
+  "source": "wedding.jpg",
+  "preservation": "upstream",
+  "size": "1024x1536",
+  "ratio": "2:3",
+  "label": "原库微缩 · 纯设计图",
+  "run": "20260910-style-extensions-03",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "origin": "upstream-baseline",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "briefSha256": "c78f66447a406638b482a2f563f5d91931b9209e07e082caa9efba1d9d0767ad",
+  "references": [
+    {
+      "role": "content",
+      "file": "assets/real-inputs/wedding.jpg",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    }
+  ],
+  "prompt": "runs/20260910-style-extensions-03/prompts/miniature-retry.txt",
+  "promptSha256": "977eeac2ad4f188e7561deac92a1147281a88db496c43827406f0f73ae2154f0",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:22:21.811Z",
+  "actualSize": [
+    1024,
+    1536
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-style-extensions-03/miniature-retry-1024x1536.png",
+  "outputSha256": "2bee7ec02459727e955349137e4b53f7c5ada87ce17387d6a9344d212db0feda",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "attemptRecords": [
+    {
+      "output": "assets/generated/20260910-style-extensions-03/miniature-1024x1536.png",
+      "outputSha256": "a43e29f12f6e59074afe4af0aba9acd2fbd05ae614bad483050e7609be0aaf76",
+      "actualSize": [
+        1024,
+        1536
+      ],
+      "prompt": "runs/20260910-style-extensions-03/prompts/miniature.txt",
+      "promptSha256": "7b2c4688606ecbae3a1444da7b3fa63d07839022cee1784f2d67bbcaa292fcc3",
+      "review": {
+        "mode": false,
+        "observation": "首轮错误地生成上方人像和下方微缩两个区域，未满足 DESIGN_ONLY。"
+      }
+    },
+    {
+      "output": "assets/generated/20260910-style-extensions-03/miniature-retry-1024x1536.png",
+      "outputSha256": "2bee7ec02459727e955349137e4b53f7c5ada87ce17387d6a9344d212db0feda",
+      "actualSize": [
+        1024,
+        1536
+      ],
+      "prompt": "runs/20260910-style-extensions-03/prompts/miniature-retry.txt",
+      "promptSha256": "977eeac2ad4f188e7561deac92a1147281a88db496c43827406f0f73ae2154f0",
+      "review": {
+        "observation": "重试后只出现一个纸面人物场景，取消了首轮上下双联；礼服、对望与等距基座可辨。",
+        "limit": "原片不可见的下半身、拱门、花柱与场景结构由模型补全。首轮纯设计模式失败；重试结果已保留，面貌更为概括。",
+        "mode": true,
+        "textFree": true,
+        "preservation": "upstream-artistic"
+      }
+    }
+  ],
+  "initialPrompt": "runs/20260910-style-extensions-03/prompts/miniature.txt",
+  "initialPromptSha256": "7b2c4688606ecbae3a1444da7b3fa63d07839022cee1784f2d67bbcaa292fcc3",
+  "review": {
+    "observation": "重试后只出现一个纸面人物场景，取消了首轮上下双联；礼服、对望与等距基座可辨。",
+    "limit": "原片不可见的下半身、拱门、花柱与场景结构由模型补全。首轮纯设计模式失败；重试结果已保留，面貌更为概括。",
+    "mode": true,
+    "textFree": true,
+    "preservation": "upstream-artistic"
+  },
+  "reviewMethod": "Agent 查看原图与各次实际输出；目视判断内容与风格，PNG 文件头读取尺寸。未做 OCR、自动人脸评分或打印校准。"
+}

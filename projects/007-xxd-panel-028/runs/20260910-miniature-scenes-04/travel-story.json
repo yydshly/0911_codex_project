@@ -1,0 +1,52 @@
+{
+  "id": "travel-story",
+  "title": "故事另一幕：一起去海边",
+  "direction": "人物跨场景",
+  "refs": [
+    "wedding.jpg",
+    "beach.jpg"
+  ],
+  "roles": [
+    "同一对成年人物的身份参考",
+    "沙滩、球网和岸边建筑；不采用该照片人物"
+  ],
+  "request": "Create ONE miniature story vignette: the same adult couple from Image 1 walk hand in hand on a small beach scene derived from Image 2. All identities, facial features and hairstyles come from Image 1; do not import the blond woman or the other man from Image 2. Dress the pair in simple casual clothes for a beach walk. Use sand, the yellow beach net and low pale shoreline building as scene cues; keep the paper island compact and restrained. This is a fictional travel episode, not a record that these people took this trip. Show the pair in a three-quarter view so their faces remain visible enough to compare with the cafe vignette.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/real-inputs/wedding.jpg",
+      "role": "同一对成年人物的身份参考",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    },
+    {
+      "file": "assets/real-inputs/beach.jpg",
+      "role": "沙滩、球网和岸边建筑；不采用该照片人物",
+      "sha256": "816049476ce9dde35cc2335ad6c4ecbfd6debde24cd6cbd4a3b135f5392eded0"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/travel-story.txt",
+  "promptSha256": "056043408925ba307e428cecdec4888b3d5764c63abe4769782c80814e5922c8",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/travel-story-1536x1024.png",
+  "outputSha256": "bf5d7aa9ea7159b7072a547406e4c0b2e6c944f098744614ec5bd2e48ceac15c",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "婚纱照片中的人物线索延续到牵手海边场景，保留深色发型与胡须，没有采用海边原片中的金发人物；黄色球网与浅色建筑可辨。",
+    "limit": "海浪、帽子、包袋、日常衣服与步态是创作补全。没有真实旅行照片支持该情节，也未证明跨场景身份稳定。",
+    "mode": true,
+    "textFree": true,
+    "status": "跨场景效果成立；人物保真未量化"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

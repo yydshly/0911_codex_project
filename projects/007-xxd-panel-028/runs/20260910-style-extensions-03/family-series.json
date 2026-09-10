@@ -1,0 +1,68 @@
+{
+  "id": "family-series",
+  "profile": "watercolor",
+  "source": "family.jpg",
+  "preservation": "strict",
+  "size": "1536x1024",
+  "ratio": "3:2",
+  "anchor": "watercolor",
+  "label": "家庭水彩 · 沿用系列风格",
+  "run": "20260910-style-extensions-03",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "origin": "local-extension",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "briefSha256": "a0ea9b7822093592e81078a0f0d730129d0f565939e13eef95a3f4697e7233a0",
+  "references": [
+    {
+      "role": "content",
+      "file": "assets/real-inputs/family.jpg",
+      "sha256": "c513fb601ec719b402dc683c91b42773ecfabe17de2dc34743f3d76c0e28f761"
+    },
+    {
+      "role": "style-only",
+      "file": "assets/generated/20260910-style-extensions-03/watercolor-1024x1536.png",
+      "sha256": "dff1386745f4c7e311849628a7b780a435c9aa8543ba7c4e426b00f71b70e5ce"
+    }
+  ],
+  "prompt": "runs/20260910-style-extensions-03/prompts/family-series.txt",
+  "promptSha256": "64eb09dba38008867b1e1d142824e7a8a435d6b62c817b42dd208aab6d70461c",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:26:05.164Z",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-style-extensions-03/family-series-1536x1024.png",
+  "outputSha256": "ea3dfc9a889b0846c8b0445ff505afb4761cd50c6a5357a024e2a17e8f7bd16e",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "attemptRecords": [
+    {
+      "output": "assets/generated/20260910-style-extensions-03/family-series-1536x1024.png",
+      "outputSha256": "ea3dfc9a889b0846c8b0445ff505afb4761cd50c6a5357a024e2a17e8f7bd16e",
+      "actualSize": [
+        1536,
+        1024
+      ],
+      "prompt": "runs/20260910-style-extensions-03/prompts/family-series.txt",
+      "promptSha256": "64eb09dba38008867b1e1d142824e7a8a435d6b62c817b42dd208aab6d70461c",
+      "review": {
+        "observation": "保留四个人、备餐动作、衣服颜色与厨房，使用与婚礼水彩相近的纸纹、晕染和细节处理；未见婚礼礼服或婚礼人物串入。",
+        "limit": "人物面部、手部与台面细节被重新绘制。只有一次跨场景参考，没有无参考版本作对照，不能断言风格参考提升了稳定性。",
+        "mode": true,
+        "textFree": true,
+        "preservation": "partial"
+      }
+    }
+  ],
+  "review": {
+    "observation": "保留四个人、备餐动作、衣服颜色与厨房，使用与婚礼水彩相近的纸纹、晕染和细节处理；未见婚礼礼服或婚礼人物串入。",
+    "limit": "人物面部、手部与台面细节被重新绘制。只有一次跨场景参考，没有无参考版本作对照，不能断言风格参考提升了稳定性。",
+    "mode": true,
+    "textFree": true,
+    "preservation": "partial"
+  },
+  "reviewMethod": "Agent 查看原图与各次实际输出；目视判断内容与风格，PNG 文件头读取尺寸。未做 OCR、自动人脸评分或打印校准。"
+}

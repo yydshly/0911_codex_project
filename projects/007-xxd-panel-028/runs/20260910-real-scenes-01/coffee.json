@@ -1,0 +1,121 @@
+{
+  "id": "coffee",
+  "order": "001",
+  "source": "coffee.png",
+  "mode": "left-right",
+  "contract": "LEFT_RIGHT",
+  "ratio": "3:2",
+  "size": "1536x1024",
+  "title": "咖啡桌面 · 摄影与纸面转译",
+  "purpose": "摄影内容的编辑设计演示",
+  "creator": "Rachel Michetti / Pikolo Espresso Bar",
+  "license": "CC0，依据 scikit-image 数据说明",
+  "run": "20260910-real-scenes-01",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T13:35:21.496Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "4c73cdd4c38dce523f6458ddb1d9b595d79e88181497838469df2b14f7434162",
+  "input": "assets/real-inputs/coffee.png",
+  "inputSha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+  "inputUrl": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.24.0/skimage/data/coffee.png",
+  "inputDocumentation": "https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.coffee",
+  "prompt": "runs/20260910-real-scenes-01/prompts/coffee-retry.txt",
+  "plannedOutput": "assets/generated/20260910-real-scenes-01/source-001-coffee-left-right-3x2-1536x1024.png",
+  "invocation": "/xxd-panel-028 coffee.png --mode left-right --size 1536x1024 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "主要交付要求通过",
+    "observations": [
+      "完整画布为左右双联，照片在左、微缩转译在右。",
+      "红褐杯碟、白色杯沿、咖啡与勺子形成可辨识的关系。",
+      "原先的伪文字立牌已消失，未见可读文字或标志。",
+      "PNG 为要求的 1536×1024。"
+    ],
+    "limitations": [
+      "设计区域仍添加一只小花瓶，属于模型补充，不是原始摄影事实。",
+      "左侧摄影区域也由模型生成，背景与裁切有变化，不能视为原片逐像素保留。",
+      "审美与无文字由视觉检查判断，未做 OCR 自动评分。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T13:41:30.123Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-001-coffee-left-right-3x2-1536x1024-attempt-1.png",
+      "actualSize": [
+        1536,
+        1024
+      ],
+      "outputSha256": "599cc041c04a36f173fef44f8474a636f7e385393d1ed14b8407624c400d9cdd",
+      "prompt": "runs/20260910-real-scenes-01/prompts/coffee.txt",
+      "promptSha256": "d70ca48e18783afa18589c80fbe33c5d28ad2aef09793fb2d97e884ba41f2278",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-91c3a850-5240-4b15-85af-d43f4fb5de62.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "首轮未通过：出现伪文字",
+        "observations": [
+          "左右关系成立，红褐杯碟、咖啡与金属勺均可辨识。"
+        ],
+        "limitations": [
+          "设计区域新加的立牌出现类似文字的线条，违反无文字要求。",
+          "加入了源图没有的花瓶与立牌。"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "recordedAt": "2026-09-10T13:44:16.316Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-001-coffee-left-right-3x2-1536x1024-attempt-2.png",
+      "actualSize": [
+        1536,
+        1024
+      ],
+      "outputSha256": "82dcb7143f7236bc08c3317ff1a36a23c97886b4a5acff4a9b29463c6ced45cd",
+      "prompt": "runs/20260910-real-scenes-01/prompts/coffee-retry.txt",
+      "promptSha256": "4c73cdd4c38dce523f6458ddb1d9b595d79e88181497838469df2b14f7434162",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-d086e463-5a45-4cc4-9d7e-b6e3a0828a62.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "主要交付要求通过",
+        "observations": [
+          "完整画布为左右双联，照片在左、微缩转译在右。",
+          "红褐杯碟、白色杯沿、咖啡与勺子形成可辨识的关系。",
+          "原先的伪文字立牌已消失，未见可读文字或标志。",
+          "PNG 为要求的 1536×1024。"
+        ],
+        "limitations": [
+          "设计区域仍添加一只小花瓶，属于模型补充，不是原始摄影事实。",
+          "左侧摄影区域也由模型生成，背景与裁切有变化，不能视为原片逐像素保留。",
+          "审美与无文字由视觉检查判断，未做 OCR 自动评分。"
+        ]
+      }
+    }
+  ],
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "output": "assets/generated/20260910-real-scenes-01/source-001-coffee-left-right-3x2-1536x1024-attempt-2.png",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "outputSha256": "82dcb7143f7236bc08c3317ff1a36a23c97886b4a5acff4a9b29463c6ced45cd",
+  "initialPrompt": "runs/20260910-real-scenes-01/prompts/coffee.txt",
+  "initialPromptSha256": "d70ca48e18783afa18589c80fbe33c5d28ad2aef09793fb2d97e884ba41f2278",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": true,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T13:44:16.872Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

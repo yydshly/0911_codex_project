@@ -1,0 +1,7 @@
+[
+  { "id": "photo", "profile": "photographic", "source": "wedding.jpg", "preservation": "strict", "size": "1024x1536", "ratio": "2:3", "label": "摄影表达 · 保留现场" },
+  { "id": "watercolor", "profile": "watercolor", "source": "wedding.jpg", "preservation": "strict", "size": "1024x1536", "ratio": "2:3", "label": "水彩插画 · 保留原构图" },
+  { "id": "miniature", "profile": "upstream-original", "source": "wedding.jpg", "preservation": "upstream", "size": "1024x1536", "ratio": "2:3", "label": "原库微缩 · 纯设计图" },
+  { "id": "watercolor-free", "profile": "watercolor", "source": "wedding.jpg", "preservation": "relaxed", "size": "1024x1536", "ratio": "2:3", "label": "水彩插画 · 允许重新构图" },
+  { "id": "family-series", "profile": "watercolor", "source": "family.jpg", "preservation": "strict", "size": "1536x1024", "ratio": "3:2", "anchor": "watercolor", "label": "家庭水彩 · 沿用系列风格" }
+]

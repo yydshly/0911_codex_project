@@ -1,0 +1,7 @@
+{
+  "photo": { "observation": "仍为自然摄影表达，保留双人对望、发型、深浅礼服与捧花；没有模型底座或绘画材质。", "limit": "原图头顶留白、人物位置与框景发生变化，捧花和衣物细节被重新生成。摄影风格实现，但严格保留构图未完全实现，也未验证人脸身份一致性。", "mode": true, "textFree": true, "preservation": "partial" },
+  "watercolor": { "observation": "平面水彩笔触、纸纹和透明叠色明确；两人对望、礼服和原墙面仍可辨，没有三维底座。", "limit": "原图留白比例、捧花花型、手部与脸部细节有变化。保留规则只部分达成；不能把这张结果称为保真人像。", "mode": true, "textFree": true, "preservation": "partial" },
+  "miniature": { "observation": "重试后只出现一个纸面人物场景，取消了首轮上下双联；礼服、对望与等距基座可辨。", "limit": "原片不可见的下半身、拱门、花柱与场景结构由模型补全。首轮纯设计模式失败；重试结果已保留，面貌更为概括。", "mode": true, "textFree": true, "preservation": "upstream-artistic" },
+  "watercolor-free": { "observation": "对望关系、礼服与捧花保留，墙面淡化为纸面留白与边缘花叶，构图比保留版更自由。", "limit": "面貌、手部、花束和服装细节仍有变化，花叶位置经过重新安排；这是一次效果探索，不证明可以稳定控制自由度。", "mode": true, "textFree": true, "preservation": "relaxed" },
+  "family-series": { "observation": "保留四个人、备餐动作、衣服颜色与厨房，使用与婚礼水彩相近的纸纹、晕染和细节处理；未见婚礼礼服或婚礼人物串入。", "limit": "人物面部、手部与台面细节被重新绘制。只有一次跨场景参考，没有无参考版本作对照，不能断言风格参考提升了稳定性。", "mode": true, "textFree": true, "preservation": "partial" }
+}

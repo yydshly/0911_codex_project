@@ -13,6 +13,7 @@ on:
       - 'projects/003-longhorizon-harness/**'
       - 'projects/005-xxg-portrait-rebuild-light/**'
       - 'projects/006-drama-skills/**'
+      - 'projects/007-xxd-panel-028/**'
   workflow_dispatch:
 
 permissions:
@@ -42,6 +43,11 @@ jobs:
           git diff --exit-code -- dist/data.js ../cases.md
       - name: Build and check portrait showcase
         run: node projects/005-xxg-portrait-rebuild-light/app/scripts/build.cjs
+      - name: Build and check XXD Panel
+        run: |
+          node projects/007-xxd-panel-028/app/scripts/check-real-demos.cjs
+          node projects/007-xxd-panel-028/app/scripts/build.cjs
+          node projects/007-xxd-panel-028/app/scripts/check.cjs
       - name: Build and check Drama Skills showcase
         run: |
           node projects/006-drama-skills/app/build.cjs

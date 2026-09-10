@@ -1,0 +1,62 @@
+{
+  "id": "watercolor",
+  "profile": "watercolor",
+  "source": "wedding.jpg",
+  "preservation": "strict",
+  "size": "1024x1536",
+  "ratio": "2:3",
+  "label": "水彩插画 · 保留原构图",
+  "run": "20260910-style-extensions-03",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "origin": "local-extension",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "briefSha256": "a0ea9b7822093592e81078a0f0d730129d0f565939e13eef95a3f4697e7233a0",
+  "references": [
+    {
+      "role": "content",
+      "file": "assets/real-inputs/wedding.jpg",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    }
+  ],
+  "prompt": "runs/20260910-style-extensions-03/prompts/watercolor.txt",
+  "promptSha256": "f18d6e205c27e99943d3e49e157c01bd405f414fb37f595123ab63d0460a661b",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:22:21.762Z",
+  "actualSize": [
+    1024,
+    1536
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-style-extensions-03/watercolor-1024x1536.png",
+  "outputSha256": "dff1386745f4c7e311849628a7b780a435c9aa8543ba7c4e426b00f71b70e5ce",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "attemptRecords": [
+    {
+      "output": "assets/generated/20260910-style-extensions-03/watercolor-1024x1536.png",
+      "outputSha256": "dff1386745f4c7e311849628a7b780a435c9aa8543ba7c4e426b00f71b70e5ce",
+      "actualSize": [
+        1024,
+        1536
+      ],
+      "prompt": "runs/20260910-style-extensions-03/prompts/watercolor.txt",
+      "promptSha256": "f18d6e205c27e99943d3e49e157c01bd405f414fb37f595123ab63d0460a661b",
+      "review": {
+        "observation": "平面水彩笔触、纸纹和透明叠色明确；两人对望、礼服和原墙面仍可辨，没有三维底座。",
+        "limit": "原图留白比例、捧花花型、手部与脸部细节有变化。保留规则只部分达成；不能把这张结果称为保真人像。",
+        "mode": true,
+        "textFree": true,
+        "preservation": "partial"
+      }
+    }
+  ],
+  "review": {
+    "observation": "平面水彩笔触、纸纹和透明叠色明确；两人对望、礼服和原墙面仍可辨，没有三维底座。",
+    "limit": "原图留白比例、捧花花型、手部与脸部细节有变化。保留规则只部分达成；不能把这张结果称为保真人像。",
+    "mode": true,
+    "textFree": true,
+    "preservation": "partial"
+  },
+  "reviewMethod": "Agent 查看原图与各次实际输出；目视判断内容与风格，PNG 文件头读取尺寸。未做 OCR、自动人脸评分或打印校准。"
+}

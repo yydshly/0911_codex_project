@@ -4,7 +4,9 @@
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 按原库统计，已收录 **5** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
+**当前进度：** 按原库统计，已收录 **6** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
+
+XXD Panel 028 以审美提示词和交付流程指导图像模型，将照片转译为二维微缩插画；本地以六张微缩扩展效果展示多图组合与定制，并整理能力边界和待验证产品价值，发布待验证。
 
 [打开在线总入口](https://yydshly.github.io/0911_codex_project/) · [工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [LongHorizon-Harness 存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)
 
@@ -21,6 +23,7 @@ Drama Skills 支持从小说或一句话点子生成短剧：开发故事、编�
 | 003 | [oh-my-pi（OMP）](projects/004-oh-my-pi/README.md) | [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi) | 基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具；依靠接入的大模型，完善代码编辑、语言服务、调试和多代理协作，执行代码分析、修改、检查与反馈流程。 | 理解与模块研究已整理，上游运行待复现 | [研究笔记](projects/004-oh-my-pi/notes.md)；演示未部署 |
 | 004 | [XXG Portrait Rebuild Light](projects/005-xxg-portrait-rebuild-light/README.md) | [moskoo/xxg-portrait-rebuild-light](https://github.com/moskoo/xxg-portrait-rebuild-light) | 将光源方向、大小、软硬、颜色与投射阴影写成提示词，连同原图和人物／构图保留要求交给宿主图像大模型，生成重新布光、曝光与肤质编辑结果，再对照验收。原库提供摄影规则和流程，成像能力来自模型。 | 三次布光与商品扩展已运行，完整技能与系统评测待复现 | [中文能力展示说明](projects/005-xxg-portrait-rebuild-light/README.md#我们新增的展示)；[在线效果展示](https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/) |
 | 008 | [Drama Skills](projects/006-drama-skills/README.md) | [zenstory-ai/drama-skills](https://github.com/zenstory-ai/drama-skills) | 支持从小说或一句话点子生成短剧：开发故事、编写分集剧本、确定视觉设定、设计分镜与生成提示词；接入外部模型后生产图片、视频、配音和音乐，再剪辑成片，并支持任意阶段审查。 | 两种入口已有实际文档，点子案例获得六格图；视频未执行，网页已部署并验证 | [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [案例与证据](projects/006-drama-skills/demos/README.md) |
+| 009 | [XXD Panel 028](projects/007-xxd-panel-028/README.md) | [nevertoday/xxd-panel-028](https://github.com/nevertoday/xxd-panel-028) | 用微缩审美与交付规范指导图像模型，将照片转译为二维微缩插画；支持四模式、比例、文字与批量验收，不输出三维模型。 | 七场景已实测；六张微缩扩展与能力、价值边界已整理 | [理解与价值](projects/007-xxd-panel-028/understanding.md) · [扩展效果](projects/007-xxd-panel-028/extensions/miniature-scenes/README.md)；发布待验证 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -85,6 +88,16 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 沿用本次讨论的完整流程图；中文原创整理，非上游界面或成片证据。固定研究提交 `dc9b0fa`，上游 MIT；所选离线测试 142 项通过、3 项跳过。我们的新增网页逐步对应原始技能与两种案例：《水浒传》选段已有创作材料与创作台截图；一句话点子《空房签收》已有三集规划、完整首集和 1 张真实六格图。图片偏差与失败记录保留，视频尚未生成；网页已部署并验证。
 
 [在线流程与案例展示](https://yydshly.github.io/0911_codex_project/006-drama-skills/) · [两种入口演示](projects/006-drama-skills/demos/README.md) · [高清流程图](projects/006-drama-skills/assets/capability-workflow.png) · [技术研究](projects/006-drama-skills/notes.md) · [上游仓库](https://github.com/zenstory-ai/drama-skills)
+
+### 009 · XXD Panel 028
+
+**原库能力：用微缩审美与交付规范指导图像模型，把照片转译为二维微缩插画。** 以主体、姿态、关系和源图配色为依据，组织上下／左右对照、纯设计图、壁纸及比例、文字、批量和验收。原库不自带图像模型，不输出可编辑三维场景。
+
+![XXD 本地扩展代表效果：人物与场地组合后的淡蓝花艺定制](projects/007-xxd-panel-028/assets/generated/20260910-miniature-scenes-04/venue-edit-1536x1024.png)
+
+上图为本地扩展实际生成的 1536×1024 PNG：组合婚纱人物与另一张场地照片，再定制花艺；不是人物真实婚礼记录或三维模型。主预览选取本轮构图完整、修改可对照的成品，保留原文件。本地已有六张微缩扩展、七场景十二次原库流程实测及风格实验；输入、完整提示词和偏差均保留。网页补充元素创作、二维交互与三维区别，以及纪念、导览和方案表达的价值假设；产品价值尚待验证，发布待验证。
+
+[项目与运行说明](projects/007-xxd-panel-028/README.md) · [我们的理解与价值边界](projects/007-xxd-panel-028/understanding.md) · [六张扩展效果与证据](projects/007-xxd-panel-028/runs/20260910-miniature-scenes-04/README.md) · [技术研究](projects/007-xxd-panel-028/notes.md) · [原库](https://github.com/nevertoday/xxd-panel-028)
 
 ## 仓库导航
 

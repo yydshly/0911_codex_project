@@ -1,0 +1,17 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const { renderUnderstanding } = require('./render-understanding.cjs');
+const { renderRealDemos } = require('./render-real-demos.cjs');
+const { renderStyleLab } = require('./render-style-lab.cjs');
+const { renderMiniatureScenes } = require('./render-miniature-scenes.cjs');
+const app = path.resolve(__dirname, '..');
+const dist = path.join(app, 'dist');
+fs.mkdirSync(path.join(dist, 'assets'), { recursive: true });
+for (const file of ['style.css', 'app.js']) fs.copyFileSync(path.join(app, file), path.join(dist, file));
+const html = fs.readFileSync(path.join(app, 'index.html'), 'utf8').replace('<!-- UNDERSTANDING -->', renderUnderstanding()).replace('<!-- REAL_DEMOS -->', renderRealDemos(path.resolve(app, '..'), dist));
+fs.writeFileSync(path.join(dist, 'index.html'), html);
+for (const file of ['sample-01.jpg', 'sample-05.png', 'sample-06.png', 'sample-07.png', 'sample-08.png', 'sample-09.png']) fs.copyFileSync(path.join(app, '../assets/examples', file), path.join(dist, 'assets', file));
+fs.copyFileSync(path.join(app, '../UPSTREAM-LICENSE.txt'), path.join(dist, 'UPSTREAM-LICENSE.txt'));
+renderStyleLab(path.resolve(app, '..'), dist);
+renderMiniatureScenes(path.resolve(app, '..'), dist);
+console.log('XXD Panel 028 静态展示已构建');

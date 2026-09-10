@@ -1,0 +1,66 @@
+{
+  "id": "life-map",
+  "title": "把几个生活地点放到一张地图",
+  "direction": "多个场景组织",
+  "refs": [
+    "coffee.png",
+    "family.jpg",
+    "beach.jpg",
+    "venue.jpg"
+  ],
+  "roles": [
+    "咖啡桌面主题",
+    "厨房主题；不采用人物",
+    "海边主题；不采用人物",
+    "婚礼场地主题"
+  ],
+  "request": "Create ONE coherent isometric paper miniature memory map with four small recognizable zones connected by a restrained winding paper path on a single contiguous base: a cafe table using Image 1; a home kitchen using Image 2; a beach using Image 3; and a wedding ceremony lawn using Image 4. Depict no people in this overview. Keep zones small, balanced and readable with whitespace; this local scene-organization extension explicitly permits four focal zones rather than a single isolated subject. Do not create separate panels, a photo collage, text or labels. This is a conceptual arrangement of life themes, not a geographically accurate map and not the documented life of any real person.",
+  "run": "20260910-miniature-scenes-04",
+  "origin": "local-scenario-extension",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "references": [
+    {
+      "file": "assets/real-inputs/coffee.png",
+      "role": "咖啡桌面主题",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+    },
+    {
+      "file": "assets/real-inputs/family.jpg",
+      "role": "厨房主题；不采用人物",
+      "sha256": "c513fb601ec719b402dc683c91b42773ecfabe17de2dc34743f3d76c0e28f761"
+    },
+    {
+      "file": "assets/real-inputs/beach.jpg",
+      "role": "海边主题；不采用人物",
+      "sha256": "816049476ce9dde35cc2335ad6c4ecbfd6debde24cd6cbd4a3b135f5392eded0"
+    },
+    {
+      "file": "assets/real-inputs/venue.jpg",
+      "role": "婚礼场地主题",
+      "sha256": "9d43e773cbdee4825b6bf8d1b6155bf352149e7c23435b6d19c954379216078b"
+    }
+  ],
+  "prompt": "runs/20260910-miniature-scenes-04/prompts/life-map.txt",
+  "promptSha256": "10d63d719ef03b1457a9162865a1c9693b7308c78abf73337c2406571c1ba3e8",
+  "size": "1536x1024",
+  "state": "reviewed",
+  "actualSize": [
+    1536,
+    1024
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-miniature-scenes-04/life-map-1536x1024.png",
+  "outputSha256": "48296aca02f43ecbfd2e09901e540009f30d28f763aadec7c3718e2dcdea2edf",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "review": {
+    "observation": "咖啡、厨房、海边与婚礼四个主题以道路联系起来，没有人物或文字，能直观看到生活地点的组织方式。",
+    "limit": "杯子相对椅子的比例夸张，海边新增躺椅与遮阳伞、遗漏球网；四个分块底座通过道路连接，未完全达到要求的单块连续基座。不是地理地图。",
+    "mode": true,
+    "textFree": true,
+    "status": "主题地图可辨；尺度与布局部分偏离"
+  },
+  "reviewMethod": "逐张目视原图与本轮实际 PNG，文件头检查尺寸；未做 OCR、人脸身份评分或局部区域像素锁定评测。"
+}

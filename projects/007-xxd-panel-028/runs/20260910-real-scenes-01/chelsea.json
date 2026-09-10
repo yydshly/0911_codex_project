@@ -1,0 +1,120 @@
+{
+  "id": "chelsea",
+  "order": "004",
+  "source": "chelsea.png",
+  "mode": "design-only",
+  "contract": "DESIGN_ONLY",
+  "ratio": "1:1",
+  "size": "1024x1024",
+  "title": "宠物特写 · 收藏插画",
+  "purpose": "毛色、目光与面部特征的保留实验",
+  "creator": "Stefan van der Walt",
+  "license": "CC0，依据 scikit-image 数据说明",
+  "run": "20260910-real-scenes-01",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T13:35:25.732Z",
+  "upstream": "https://github.com/nevertoday/xxd-panel-028",
+  "commit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "promptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+  "input": "assets/real-inputs/chelsea.png",
+  "inputSha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+  "inputUrl": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.24.0/skimage/data/chelsea.png",
+  "inputDocumentation": "https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.chelsea",
+  "prompt": "runs/20260910-real-scenes-01/prompts/chelsea.txt",
+  "plannedOutput": "assets/generated/20260910-real-scenes-01/source-004-chelsea-design-only-1x1-1024x1024.png",
+  "invocation": "/xxd-panel-028 chelsea.png --mode design-only --size 1024x1024 --text none --prefs off",
+  "execution": "宿主 Agent 按固定版本 SKILL.md 执行；通过内置 imagegen 通道生成；不是独立 Python 生图引擎。",
+  "promptComposition": "原始正文（仅去首行标题） + 上游 common preamble（代入画布） + 上游所选 mode block + 上游 text-free block；无新增审美段落。",
+  "generated": true,
+  "visualReview": {
+    "verdict": "部分符合：尺寸与内容补全偏差",
+    "observations": [
+      "首轮为连续纯设计画布，没有摄影区域，1:1 比例成立。",
+      "棕色斑纹、绿眼睛、粉色鼻尖与目光方向可辨识。",
+      "未见文字；纸面基座、轻影与猫的主体关系清楚。"
+    ],
+    "limitations": [
+      "实际为 1254×1254，未达到指定的 1024×1024。",
+      "从面部特写补出了身体、爪子、毯子、书、花瓶与毛线球，不能把这些当作真实输入内容。",
+      "重试虽然减少了附加物，却错误变成上下双联；因此保留更符合纯设计模式的首轮作为主展示，同时提供重试失败文件。"
+    ]
+  },
+  "attemptRecords": [
+    {
+      "attempt": 1,
+      "recordedAt": "2026-09-10T13:41:34.649Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-004-chelsea-design-only-1x1-1254x1254-attempt-1.png",
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "outputSha256": "7e2604a75aac4fe63657408a70fad2f2dc5adb0bc31e419b607797810f122630",
+      "prompt": "runs/20260910-real-scenes-01/prompts/chelsea.txt",
+      "promptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-2b56a30c-60db-46af-9279-2359ed32e40f.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "部分符合：尺寸与内容补全偏差",
+        "observations": [
+          "首轮为连续纯设计画布，没有摄影区域，1:1 比例成立。",
+          "棕色斑纹、绿眼睛、粉色鼻尖与目光方向可辨识。",
+          "未见文字；纸面基座、轻影与猫的主体关系清楚。"
+        ],
+        "limitations": [
+          "实际为 1254×1254，未达到指定的 1024×1024。",
+          "从面部特写补出了身体、爪子、毯子、书、花瓶与毛线球，不能把这些当作真实输入内容。",
+          "重试虽然减少了附加物，却错误变成上下双联；因此保留更符合纯设计模式的首轮作为主展示，同时提供重试失败文件。"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "recordedAt": "2026-09-10T13:46:08.189Z",
+      "output": "assets/generated/20260910-real-scenes-01/source-004-chelsea-design-only-1x1-1254x1254-attempt-2.png",
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "outputSha256": "20e3eeb90edaec1008f86e52aeebb50f290a6bb21f00f8bcfe83bbb3be3d6a08",
+      "prompt": "runs/20260910-real-scenes-01/prompts/chelsea-retry.txt",
+      "promptSha256": "620dce0c9392b54be66cbf7de94b950b31151b0e2cd2dfe506c94b4cc78b7171",
+      "tool": "built-in imagegen",
+      "originalToolFilename": "exec-eefd02ef-cbb3-454b-9f16-cf15d5a27b06.png",
+      "postprocessing": "none",
+      "visualReview": {
+        "verdict": "重试未通过：模式退化为上下双联",
+        "observations": [
+          "额外书本、花瓶和毛线球已去除，主体表达更克制。"
+        ],
+        "limitations": [
+          "原本指定纯设计模式，结果出现上方摄影区域和下方设计区域。",
+          "实际仍为 1254×1254，尺寸要求未达成。",
+          "依库规则只做一次针对性重试，记录失败而不无限重试。"
+        ]
+      }
+    }
+  ],
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "output": "assets/generated/20260910-real-scenes-01/source-004-chelsea-design-only-1x1-1254x1254-attempt-1.png",
+  "actualSize": [
+    1254,
+    1254
+  ],
+  "outputSha256": "7e2604a75aac4fe63657408a70fad2f2dc5adb0bc31e419b607797810f122630",
+  "initialPrompt": "runs/20260910-real-scenes-01/prompts/chelsea.txt",
+  "initialPromptSha256": "ae7319990ef4d09c873a1a81dc8044354210bb98df67dcb74bf95c84437ac64e",
+  "deliveryCheck": {
+    "mode": true,
+    "textFree": true,
+    "exactPixels": false,
+    "aspectRatio": true
+  },
+  "reviewedAt": "2026-09-10T13:46:08.804Z",
+  "reviewMethod": "Agent 对原始输入与每轮实际 PNG 逐张视觉检查；像素和格式由文件头检查。未做 OCR 或人脸识别准确率评测。",
+  "cost": null,
+  "costNote": "内置图像工具未提供可核实的逐张费用，本研究不估算账单。"
+}

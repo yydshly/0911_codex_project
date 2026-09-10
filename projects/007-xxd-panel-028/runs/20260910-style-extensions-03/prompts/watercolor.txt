@@ -1,0 +1,35 @@
+将参考照片转译为具有收藏感的人物生活水彩插画。使用平面的纸上绘画语言、透明叠色、自然晕染、干湿笔触和可见纸纹；人物脸部与关键互动保持较清楚的手绘刻画，次要背景以浅淡水彩概括。色彩与冷暖关系来自当前内容照片。保持成年人与孩子的真实比例和自然姿态，不做夸张卡通。避免等距模型、微缩底座、玩偶、塑料三维渲染和摄影贴图。整幅画应统一为真实水彩绘画的视觉语言。
+MODE-SPECIFIC DELIVERY OVERRIDE — CURRENT ASSET
+
+This block is the final authority only for the current presentation mode,
+reality-source visibility, final canvas and device delivery. It completely
+replaces the source brief's legacy statements about 3:4, upper/lower placement,
+equal sections and the old top-bottom container.
+
+Every source-brief instruction about the transformation's visual language,
+subject identity, colour, material, texture, internal composition, whitespace,
+text character and typography remains authoritative.
+
+REALITY VIEW means the faithful photograph or factual scene defined by the source brief.
+TRANSFORMED DESIGN means the source brief's designed reinterpretation of that reality view.
+
+FINAL CANVAS: 2:3 / 1024x1536
+COMPOSITION METHOD: ONE COHERENT COMPLETE-CANVAS GENERATION
+EXACT PANEL GEOMETRY: ONLY WHEN THE USER EXPLICITLY REQUESTS IT
+
+Colour follows the original brief's existing colour instructions exactly.
+Unless the user explicitly requests a colour change, do not add, replace,
+summarize, or re-plan any palette.
+
+OUTPUT MODE: DESIGN_ONLY
+
+Create one full-canvas artwork entirely in the TRANSFORMED DESIGN language.
+Use the REALITY VIEW only as the non-visible source of identity, structure,
+relationships, colour logic and facts. Every visible visual element must be
+part of the source brief's designed reinterpretation rather than an
+untransformed presentation of the source photograph.
+
+TEXT MODE: NONE
+Render no letters, characters, numbers, logos, captions, labels, or pseudo-text anywhere.
+
+LOCAL EXTENSION — CONTENT PRESERVATION: Image 1 is the only content source. Preserve the number of people, their individual facial features, apparent ages, hairstyle, clothing, pose, gaze, hand relationships, relative positions, original camera viewpoint and framing. Keep the original visible setting and props; do not add people, architecture, flowers, furniture or invented accessories. Render through the selected medium without changing the scene. These are requested constraints, not a guarantee.

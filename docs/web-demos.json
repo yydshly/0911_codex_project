@@ -69,6 +69,27 @@
       "entryLabel": "打开完整流程与两种入口实演 →",
       "imageAlt": "Drama Skills 从多种入口、全部技能与阶段产物到最终交付的完整流程图",
       "imageCaption": "中文原创流程图，非运行截图或成片证据；依据固定提交 dc9b0fa。网页另外展示真实六格图与创作台截图。"
+    },
+    {
+      "id": "007",
+      "slug": "007-xxd-panel-028",
+      "researchIndex": "009",
+      "name": "XXD Panel 028 · 微缩创作与能力边界",
+      "sourceDirectory": "projects/007-xxd-panel-028/app/dist",
+      "readme": "projects/007-xxd-panel-028/README.md",
+      "research": "projects/007-xxd-panel-028/notes.md",
+      "upstream": "https://github.com/nevertoday/xxd-panel-028",
+      "upstreamName": "XXD Panel 028",
+      "capability": "以等距视角、纸面材质、源图配色和留白规则指导图像模型，将照片转译为二维微缩插画；Agent Skill 组织模式、比例、文字、批量与验收，不输出三维模型。",
+      "extension": "七场景十二次原库流程实测；另有六张微缩扩展效果，展示多图组合、人物故事、生活地图、花艺修改与厨房切面。以淡蓝花艺成品作主预览，附原图、提示词与偏差；说明元素创作、二维交互与三维的区别，以及尚待验证的纪念、导览和方案表达价值。风格实验另存，网页无实时生图。",
+      "image": "projects/007-xxd-panel-028/assets/generated/20260910-miniature-scenes-04/venue-edit-1536x1024.png",
+      "kind": "微缩扩展实测与能力研究",
+      "entryLabel": "查看微缩效果与能力说明 →",
+      "imageLabel": "查看本次实际生成结果",
+      "imageAlt": "本地微缩扩展：婚纱人物与真实场地组合后的淡蓝花艺定制",
+      "imageCaption": "本地实际生成 PNG，沿用原库审美并增加多图参考与局部修改；非真实婚礼记录、截图或三维模型。",
+      "showPreview": true,
+      "previewAnchor": "miniatures.html#customize"
     }
   ]
 }

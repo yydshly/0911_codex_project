@@ -1,0 +1,62 @@
+{
+  "id": "photo",
+  "profile": "photographic",
+  "source": "wedding.jpg",
+  "preservation": "strict",
+  "size": "1024x1536",
+  "ratio": "2:3",
+  "label": "摄影表达 · 保留现场",
+  "run": "20260910-style-extensions-03",
+  "upstreamCommit": "3194d43ba95edbad0082b3604959e45067f72b7e",
+  "origin": "local-extension",
+  "originalSha256": "1c135d040d39ee39a004a0ef27e60bccae995de8e50f2cdf84d4a03b6f05a493",
+  "skillSha256": "7d2bf3a1c7b335908dc85225f2bf6ec14295127949baf8e51080f94915a895c8",
+  "briefSha256": "4903102fb96998525831848393636baaf8f6a2be8977cb43608b7c3f336ecf6e",
+  "references": [
+    {
+      "role": "content",
+      "file": "assets/real-inputs/wedding.jpg",
+      "sha256": "f9731eb0308b9d4acc43733abe889ebc99f4b8939d23ddecf67760d21d80b05e"
+    }
+  ],
+  "prompt": "runs/20260910-style-extensions-03/prompts/photo.txt",
+  "promptSha256": "c7754fafa7deea5bad182faa9ee84ba0a97e4389c8d9c1525727a00d3eb72180",
+  "state": "reviewed",
+  "preparedAt": "2026-09-10T14:22:21.707Z",
+  "actualSize": [
+    1024,
+    1536
+  ],
+  "exactPixels": true,
+  "output": "assets/generated/20260910-style-extensions-03/photo-1024x1536.png",
+  "outputSha256": "390305538061a936faa3d8ee48ed14d06af446032035e0c0a8de3cac1a13fcc4",
+  "tool": "built-in imagegen",
+  "postprocessing": "none",
+  "attemptRecords": [
+    {
+      "output": "assets/generated/20260910-style-extensions-03/photo-1024x1536.png",
+      "outputSha256": "390305538061a936faa3d8ee48ed14d06af446032035e0c0a8de3cac1a13fcc4",
+      "actualSize": [
+        1024,
+        1536
+      ],
+      "prompt": "runs/20260910-style-extensions-03/prompts/photo.txt",
+      "promptSha256": "c7754fafa7deea5bad182faa9ee84ba0a97e4389c8d9c1525727a00d3eb72180",
+      "review": {
+        "observation": "仍为自然摄影表达，保留双人对望、发型、深浅礼服与捧花；没有模型底座或绘画材质。",
+        "limit": "原图头顶留白、人物位置与框景发生变化，捧花和衣物细节被重新生成。摄影风格实现，但严格保留构图未完全实现，也未验证人脸身份一致性。",
+        "mode": true,
+        "textFree": true,
+        "preservation": "partial"
+      }
+    }
+  ],
+  "review": {
+    "observation": "仍为自然摄影表达，保留双人对望、发型、深浅礼服与捧花；没有模型底座或绘画材质。",
+    "limit": "原图头顶留白、人物位置与框景发生变化，捧花和衣物细节被重新生成。摄影风格实现，但严格保留构图未完全实现，也未验证人脸身份一致性。",
+    "mode": true,
+    "textFree": true,
+    "preservation": "partial"
+  },
+  "reviewMethod": "Agent 查看原图与各次实际输出；目视判断内容与风格，PNG 文件头读取尺寸。未做 OCR、自动人脸评分或打印校准。"
+}
