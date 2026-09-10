@@ -28,6 +28,14 @@ def verify(base_url=None,online_url=None,online_commit=None):
     md=(ROOT/'research.md').read_bytes();page=(OUT/'index.html').read_text(encoding='utf-8')
     assert md==(OUT/'research.md').read_bytes(),'Markdown download is stale'
     sha=hashlib.sha256(md).hexdigest();assert sha in page,'HTML is stale'
+    manifest_path=ROOT.parent.parent/'docs'/'web-demos.json'
+    if manifest_path.exists():
+        entries=json.loads(manifest_path.read_text(encoding='utf-8'))['projects']
+        entry=next(x for x in entries if x['slug']==ROOT.name)
+        index=entry['researchIndex']
+        assert f'# {index} · LongHorizon-Harness' in (ROOT/'README.md').read_text(encoding='utf-8'),'README index differs from manifest'
+        assert f'GITHUB 项目研究集 / {index}</span>' in page,'web index differs from manifest'
+        assert f'研究指导图  /  {index}</text>' in (ROOT/'assets'/'guide.svg').read_text(encoding='utf-8'),'guide index differs from manifest'
     p=Page();p.feed(page)
     assert p.h2==13,(p.h2,'chapter count')
     assert len(p.ids)==len(set(p.ids)),'duplicate ids'

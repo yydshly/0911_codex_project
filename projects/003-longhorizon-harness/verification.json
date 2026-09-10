@@ -2,8 +2,8 @@
   "status": "passed",
   "date": "2026-09-10",
   "chapters": 13,
-  "source_sha256": "2e867270a638ce4ec6136a9ec19d77c153cf2f5f0d018421afc3237b691d8a76",
-  "local_references_checked": 46,
+  "source_sha256": "6c6d1cca58849ae0473f0cb9f1761169c824b089f8c607b1b0e524293035e5f7",
+  "local_references_checked": 48,
   "document_web_parity": true,
   "svg_valid": true,
   "png_dimensions": [
@@ -14,7 +14,7 @@
   "browser_automation_tested": false,
   "upstream_agent_run_tested": false,
   "online_deployed": true,
-  "online_checked_this_run": true,
+  "online_checked_this_run": false,
   "last_verified_deployment": {
     "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
     "commit": "3704da4c1392e45a9863668546128551deb9028a",
@@ -52,5 +52,5 @@
       }
     ]
   },
-  "current_local_assets_match_verified_deployment": true
+  "current_local_assets_match_verified_deployment": false
 }

@@ -6,7 +6,7 @@
 
 使用 GitHub Pages，由 [发布工作流](../.github/workflows/pages.yml) 将 [部署清单](web-demos.json) 中的项目统一发布。首次发布已于 2026-09-10 完成并验证。
 
-[站点总入口](https://yydshly.github.io/0911_codex_project/) · [002 工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [003 LongHorizon-Harness 存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)
+[站点总入口](https://yydshly.github.io/0911_codex_project/) · [001 的配套工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [002 LongHorizon-Harness 存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)
 
 - 站点根目录：能力与演示总入口，关联原库、能力研究和案例展示。
 - `002-engineering-casebook/`：工程案例手册的独立访问路径。
@@ -31,7 +31,8 @@
 
 | 字段 | 用途 |
 | :--- | :--- |
-| id / slug | 固定项目编号与独立 URL 子路径 |
+| researchIndex | 所属原库的研究索引，用于展示和排序；同一原库的配套演示使用相同索引 |
+| id / slug | 历史存储编号与独立 URL 子路径，保持已发布链接稳定；不代表研究索引 |
 | sourceDirectory | 已完成构建的静态目录 |
 | name / capability | 项目名称与原库核心能力摘要 |
 | extension | 本地新增能力，避免与原库能力混淆 |
@@ -39,7 +40,7 @@
 | readme / research | 本地项目介绍与原库能力研究 |
 | image | 项目说明图或真实截图；明确图片性质 |
 
-同时为新项目补充工作流中的构建检查步骤和路径触发条件，再更新根 README、子项目 README 的演示入口。打包按编号排序，并检查重复路径、引用文件和 JavaScript 语法。
+同时为新项目补充工作流中的构建检查步骤和路径触发条件，再更新根 README、子项目 README 的演示入口。打包按研究索引排序，同一研究内按存储编号排序，并检查重复路径、引用文件和 JavaScript 语法。
 
 所有子项目一次性汇总发布，避免后部署的项目覆盖先前演示。静态文件使用相对资源路径，确保放在子路径下仍可加载。包含后端的项目需另外配置服务，GitHub Pages 不运行后端。
 

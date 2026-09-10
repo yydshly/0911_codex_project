@@ -2,7 +2,7 @@
 <title id="title">LongHorizon-Harness 整体指导图</title>
 <desc id="desc">人给出目标、边界和标准；管理者动态派单，执行者使用现有 Agent 操作，审计者独立验收；账本支持下一轮。结果可为完成、请示、阻塞、停止或达到限制。</desc>
 <rect width="1600" height="1340" fill="#f5f3ec"/>
-<text x="70" y="55" fill="#146555" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" font-weight="700">研究指导图  /  003</text>
+<text x="70" y="55" fill="#146555" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" font-weight="700">研究指导图  /  002</text>
 <text x="70" y="129" fill="#152d34" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="51" font-weight="700">LongHorizon-Harness</text>
 <text x="70" y="171" fill="#152d34" font-family="Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="26" font-weight="400">动态拆解复杂目标，指导现有 Agent 分轮执行，以独立验收推动计划持续修正。</text>
 <rect x="70" y="207" width="1460" height="80" rx="8" fill="#e7efe8" stroke="#146555" stroke-width="2"/>

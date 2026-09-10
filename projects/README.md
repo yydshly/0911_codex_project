@@ -1,19 +1,20 @@
 # 研究项目
 
-按原库去重，目前已收录 **2 个研究项目**，对应 3 个历史目录；其中 002 是 001 的配套案例手册，不单独计数。
+按原库去重，目前已收录 **2 个研究项目**，对应 3 个历史目录；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002。
 
 | 编号 | 项目 | 原库 | 核心能力 | 状态 | 在线入口 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 001 | [Awesome Engineering Articles](001-awesome-engineering-articles/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 收集、分类并导航工程实践文章，帮助发现问题相关案例和原始资料 | 研究中 | [配套案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) |
-| 003 | [LongHorizon-Harness](003-longhorizon-harness/README.md) | [LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导 Agent 分轮执行，以独立验收、可信进度和失败反馈持续推进并支持续接 | 研究中（文档已整理，上游运行待复现） | [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
+| 002 | [LongHorizon-Harness](003-longhorizon-harness/README.md) | [LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导 Agent 分轮执行，以独立验收、可信进度和失败反馈持续推进并支持续接 | 研究中（文档已整理，上游运行待复现） | [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
 
 ## 编号与目录
 
-- [002 · 工程案例手册](002-engineering-casebook/README.md) 归属 001，保留独立目录、依赖和已发布地址，用于中文导读、搜索筛选和原文总结。
+- [工程案例手册（历史目录 002）](002-engineering-casebook/README.md) 归属 001，保留独立目录、依赖和已发布地址，用于中文导读、搜索筛选和原文总结。
 - 项目总索引按原库去重；同一原库的研究、展示与实验关联到同一个研究条目，不重复计数。
-- 使用 `001-project-slug` 格式：三位数字编号 + 小写英文短名，单词用连字符连接。
-- 首个项目为 `001`，之后按收录顺序递增；超过 `999` 后扩展编号宽度。
-- 分配后保持编号稳定。归档项目保留条目和编号，不重新编号或复用编号。
+- 研究索引与存储目录编号分开维护。LongHorizon 的研究索引为 002，历史目录与网址仍使用 `003-longhorizon-harness`；目录前缀不代表当前研究排序。
+- 存储目录使用 `001-project-slug` 格式，按历史目录最大编号加一；短名使用小写英文和连字符。
+- 研究索引从 `001` 开始，按独立原库收录顺序递增，配套演示不占用研究索引；超过 `999` 后扩展编号宽度。
+- 本次按用户要求将 LongHorizon 的研究索引修正为 002。此后研究索引与存储编号分别保持稳定；归档不复用。
 - 根 README 的索引与图片预览均按编号的数值升序排列。
 - 项目状态使用：`待研究`、`研究中`、`已完成`、`已归档`；演示是否部署单独记录。
 
