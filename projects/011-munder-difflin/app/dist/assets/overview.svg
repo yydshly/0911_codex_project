@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="2440" viewBox="0 0 1920 2440" role="img" aria-labelledby="title desc">
+<title id="title">Munder Difflin：核心能力、协作原理与同类差异总览</title><desc id="desc">中文原创研究图。说明本地多 CLI 管理、文件队列和空闲终端唤醒，与 Multica、MetaGPT、LongHorizon、Pi/OMP、Memmy 比较，并记录场景、按需扩展与未实测边界。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#137F7C"/></marker></defs>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<rect x="0" y="0" width="1920" height="2440" rx="0" fill="#EFF3F8" stroke="none"/>
+<rect x="0" y="0" width="1920" height="202" rx="0" fill="#172C42" stroke="none"/>
+<text x="64" y="49" font-size="22" font-weight="700" fill="#AFC6E4">GITHUB 项目研究集  /  研究索引 010</text>
+<text x="64" y="113" font-size="55" font-weight="700" fill="#FFFFFF">Munder Difflin</text>
+<text x="66" y="165" font-size="29" font-weight="400" fill="#E3ECF8">本地多 Agent 工作台：组织已有编程工具，协调任务、消息与记忆</text>
+<rect x="1457" y="41" width="397" height="51" rx="25" fill="#29455E" stroke="none"/>
+<text x="1481" y="75" font-size="24" font-weight="700" fill="#FFFFFF">能力整理与对比 · 暂不归档</text>
+<text x="1475" y="130" font-size="22" font-weight="400" fill="#BDCFDF">源码基线 0.4.6 · 9ce27e7</text>
+<text x="1475" y="166" font-size="22" font-weight="400" fill="#BDCFDF">2026-09-11 · 上游未实测</text>
+<rect x="56" y="225" width="1808" height="129" rx="22" fill="#E2F0EE" stroke="#BBDDD7"/>
+<text x="82" y="271" font-size="31" font-weight="700" fill="#137F7C">核心能力：多 Agent 工具   /   实现差异：通过本地文件收发箱通信</text>
+<text x="82" y="314" font-size="25" font-weight="400" fill="#172C42">管理多个已有 Agent 的身份、模型与任务；平台投递文件消息并适时唤醒。与 Multica 最接近，不代表效果必然更强。</text>
+<rect x="56" y="379" width="1808" height="302" rx="22" fill="#FFFFFF" stroke="#DCE4ED"/>
+<rect x="80" y="402" width="42" height="38" rx="10" fill="#2359A6" stroke="none"/>
+<text x="91" y="429" font-size="22" font-weight="700" fill="#FFFFFF">01</text>
+<text x="138" y="431" font-size="29" font-weight="700" fill="#172C42">谁负责什么？</text>
+<text x="138" y="463" font-size="20" font-weight="400" fill="#526579">角色由指令与配置定义；模型做判断，程序落实调度，CLI 执行工具。</text>
+<rect x="82" y="486" width="344" height="113" rx="15" fill="#F1F5FB" stroke="none"/>
+<text x="100" y="521" font-size="25" font-weight="700" fill="#2359A6">人 / 业务入口</text>
+<text x="100" y="553" font-size="22" font-weight="400" fill="#172C42">提出目标 · 查看结果</text>
+<text x="100" y="583" font-size="19" font-weight="400" fill="#526579">必要时澄清、干预与验收</text>
+<rect x="475" y="486" width="389" height="113" rx="15" fill="#F1F5FB" stroke="none"/>
+<text x="493" y="521" font-size="25" font-weight="700" fill="#2359A6">主管 Agent · Michael</text>
+<text x="493" y="553" font-size="22" font-weight="400" fill="#172C42">拆任务 · 选执行者 · 协调反馈</text>
+<text x="493" y="583" font-size="19" font-weight="400" fill="#526579">主管本身也由 CLI 与模型运行</text>
+<rect x="913" y="486" width="389" height="113" rx="15" fill="#F1F5FB" stroke="none"/>
+<text x="931" y="521" font-size="25" font-weight="700" fill="#2359A6">Munder 平台程序</text>
+<text x="931" y="553" font-size="22" font-weight="400" fill="#172C42">启动进程 · 投递消息 · 跟踪状态</text>
+<text x="931" y="583" font-size="19" font-weight="400" fill="#526579">Electron 主进程 / 终端 / 事件</text>
+<rect x="1351" y="486" width="487" height="113" rx="15" fill="#F1F5FB" stroke="none"/>
+<text x="1369" y="521" font-size="25" font-weight="700" fill="#2359A6">工作 Agent × N</text>
+<text x="1369" y="553" font-size="22" font-weight="400" fill="#172C42">Claude Code / Codex / Pi 等</text>
+<text x="1369" y="583" font-size="19" font-weight="400" fill="#526579">各自调用模型与工具，读写项目</text>
+<path d="M426,542 L465,542" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M864,542 L903,542" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1302,542 L1341,542" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="83" y="643" font-size="24" font-weight="400" fill="#526579">持续反馈：工具结果 → CLI / 模型继续判断 → 消息与任务记录 → 主管协调 / 人查看；办公室动画反映运行状态。</text>
+<rect x="56" y="705" width="1808" height="337" rx="22" fill="#FFFFFF" stroke="#DCE4ED"/>
+<rect x="80" y="728" width="42" height="38" rx="10" fill="#2359A6" stroke="none"/>
+<text x="91" y="755" font-size="22" font-weight="700" fill="#FFFFFF">02</text>
+<text x="138" y="757" font-size="29" font-weight="700" fill="#172C42">能力地图</text>
+<text x="138" y="789" font-size="20" font-weight="400" fill="#526579">上游已有能力；功能需相应配置、外部依赖与可用配额，各引擎接入深度不同。</text>
+<rect x="82" y="810" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="98" y="841" font-size="24" font-weight="700" fill="#172C42">01  引擎与身份</text>
+<text x="98" y="872" font-size="21" font-weight="400" fill="#526579">配置 CLI、模型、职责、目录与权限选项</text>
+<rect x="525" y="810" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="541" y="841" font-size="24" font-weight="700" fill="#172C42">02  任务与主管</text>
+<text x="541" y="872" font-size="21" font-weight="400" fill="#526579">分派、依赖、状态、反馈和人工问题</text>
+<rect x="968" y="810" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="984" y="841" font-size="24" font-weight="700" fill="#172C42">03  消息协作</text>
+<text x="984" y="872" font-size="21" font-weight="400" fill="#526579">文件收发箱、路由、提醒、回复与归档</text>
+<rect x="1411" y="810" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="1427" y="841" font-size="24" font-weight="700" fill="#172C42">04  团队记忆</text>
+<text x="1427" y="872" font-size="21" font-weight="400" fill="#526579">Markdown、可选语义检索与历史压缩</text>
+<rect x="82" y="917" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="98" y="948" font-size="24" font-weight="700" fill="#172C42">05  观察与操作</text>
+<text x="98" y="979" font-size="21" font-weight="400" fill="#526579">像素状态、真实终端、编辑器与 Git 查看</text>
+<rect x="525" y="917" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="541" y="948" font-size="24" font-weight="700" fill="#172C42">06  持续执行入口</text>
+<text x="541" y="979" font-size="21" font-weight="400" fill="#526579">定时、心跳、Slack / Webhook、语音</text>
+<rect x="968" y="917" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="984" y="948" font-size="24" font-weight="700" fill="#172C42">07  并行与扩展</text>
+<text x="984" y="979" font-size="21" font-weight="400" fill="#526579">可选 worktree；Skills、知识资料与模型</text>
+<text x="984" y="1005" font-size="21" font-weight="400" fill="#526579">接入</text>
+<rect x="1411" y="917" width="424" height="92" rx="13" fill="#F6F8FB" stroke="none"/>
+<text x="1427" y="948" font-size="24" font-weight="700" fill="#172C42">08  运行控制</text>
+<text x="1427" y="979" font-size="21" font-weight="400" fill="#526579">用量、异常检测、纠偏、暂停与停止</text>
+<rect x="56" y="1066" width="1808" height="361" rx="22" fill="#FFFFFF" stroke="#DCE4ED"/>
+<rect x="80" y="1089" width="42" height="38" rx="10" fill="#2359A6" stroke="none"/>
+<text x="91" y="1116" font-size="22" font-weight="700" fill="#FFFFFF">03</text>
+<text x="138" y="1118" font-size="29" font-weight="700" fill="#172C42">文件怎样让另一个 Agent 开始工作？</text>
+<text x="138" y="1150" font-size="20" font-weight="400" fill="#526579">文件负责持久化，轮询发现消息，事件帮助判断状态，终端输入触发下一轮执行。</text>
+<rect x="82" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="98" y="1211" font-size="25" font-weight="700" fill="#137F7C">A 写请求</text>
+<text x="98" y="1248" font-size="19" font-weight="400" fill="#172C42">自己的 outbox / JSON</text>
+<path d="M354,1222 L372,1222" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="379" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="395" y="1211" font-size="25" font-weight="700" fill="#137F7C">平台投递</text>
+<text x="395" y="1248" font-size="19" font-weight="400" fill="#172C42">约 1.5 秒轮询发件箱</text>
+<path d="M651,1222 L669,1222" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="676" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="692" y="1211" font-size="25" font-weight="700" fill="#137F7C">B 的 inbox</text>
+<text x="692" y="1248" font-size="19" font-weight="400" fill="#172C42">新消息 → 提醒排队</text>
+<path d="M948,1222 L966,1222" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="973" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="989" y="1211" font-size="25" font-weight="700" fill="#137F7C">等待可投递</text>
+<text x="989" y="1248" font-size="19" font-weight="400" fill="#172C42">空闲、未暂停等条件</text>
+<path d="M1245,1222 L1263,1222" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1270" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="1286" y="1211" font-size="25" font-weight="700" fill="#137F7C">终端输入</text>
+<text x="1286" y="1248" font-size="19" font-weight="400" fill="#172C42">输入提醒并提交</text>
+<path d="M1542,1222 L1560,1222" fill="none" stroke="#137F7C" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1567" y="1175" width="270" height="95" rx="14" fill="#E8F3F1" stroke="none"/>
+<text x="1583" y="1211" font-size="25" font-weight="700" fill="#137F7C">B 执行与回复</text>
+<text x="1583" y="1248" font-size="19" font-weight="400" fill="#172C42">读文件 → 处理 → 回复</text>
+<text x="83" y="1309" font-size="23" font-weight="400" fill="#172C42">状态来源：生命周期事件 + 终端活动；支持的桥接通过本地 Socket / Windows 命名管道传递事件。</text>
+<text x="83" y="1344" font-size="23" font-weight="400" fill="#526579">提醒检查：界面约 4 秒；主进程工作 Agent 补充检查约 15 秒。消息 ID、冷却和投递前复查减少重复提醒。</text>
+<text x="83" y="1384" font-size="23" font-weight="700" fill="#2359A6">版本纠正：当前 Stop 处理已取消“有未读消息就强制续跑”；改为空闲时机投递。检查间隔不等于送达保证。</text>
+<rect x="56" y="1451" width="1808" height="471" rx="22" fill="#FFFFFF" stroke="#DCE4ED"/>
+<rect x="80" y="1474" width="42" height="38" rx="10" fill="#2359A6" stroke="none"/>
+<text x="91" y="1501" font-size="22" font-weight="700" fill="#FFFFFF">04</text>
+<text x="138" y="1503" font-size="29" font-weight="700" fill="#172C42">与已研究工具的核心差异</text>
+<text x="138" y="1535" font-size="20" font-weight="400" fill="#526579">比较架构侧重点，不是功能互斥或效果排名；同类功能可以重叠，也可以通过扩展组合。</text>
+<text x="83" y="1573" font-size="23" font-weight="700" fill="#526579">工具</text>
+<text x="349" y="1573" font-size="23" font-weight="700" fill="#526579">组织与执行重心</text>
+<text x="937" y="1573" font-size="23" font-weight="700" fill="#526579">主要协作 / 状态载体</text>
+<text x="1350" y="1573" font-size="23" font-weight="700" fill="#526579">相对 Munder 的差异</text>
+<rect x="77" y="1593" width="1760" height="46" rx="7" fill="#E5EFEC" stroke="none"/>
+<text x="83" y="1623" font-size="21" font-weight="700" fill="#137F7C">Munder Difflin</text>
+<text x="349" y="1623" font-size="21" font-weight="400" fill="#137F7C">已有 CLI 的本机桌面团队</text>
+<text x="937" y="1623" font-size="21" font-weight="400" fill="#137F7C">收发箱文件 + 任务板 + 终端</text>
+<text x="1350" y="1623" font-size="21" font-weight="400" fill="#137F7C">会话、消息、记忆与实时管理</text>
+<rect x="77" y="1642" width="1760" height="46" rx="7" fill="#FFFFFF" stroke="none"/>
+<text x="83" y="1672" font-size="21" font-weight="700" fill="#172C42">Multica · 最接近</text>
+<text x="349" y="1672" font-size="21" font-weight="400" fill="#172C42">工单、Run 与执行节点 / Daemon</text>
+<text x="937" y="1672" font-size="21" font-weight="400" fill="#172C42">数据库队列、评论与事件</text>
+<text x="1350" y="1672" font-size="21" font-weight="400" fill="#172C42">更围绕工单交付与人机团队</text>
+<rect x="77" y="1691" width="1760" height="46" rx="7" fill="#F5F7FA" stroke="none"/>
+<text x="83" y="1721" font-size="21" font-weight="700" fill="#172C42">MetaGPT</text>
+<text x="349" y="1721" font-size="21" font-weight="400" fill="#172C42">可编程的角色、动作与团队流程</text>
+<text x="937" y="1721" font-size="21" font-weight="400" fill="#172C42">角色消息、状态与动作触发</text>
+<text x="1350" y="1721" font-size="21" font-weight="400" fill="#172C42">更适合定制业务分工和流程</text>
+<rect x="77" y="1740" width="1760" height="46" rx="7" fill="#FFFFFF" stroke="none"/>
+<text x="83" y="1770" font-size="21" font-weight="700" fill="#172C42">LongHorizon</text>
+<text x="349" y="1770" font-size="21" font-weight="400" fill="#172C42">复杂目标的管理—执行—审计循环</text>
+<text x="937" y="1770" font-size="21" font-weight="400" fill="#172C42">跨轮进度、契约与审计记录</text>
+<text x="1350" y="1770" font-size="21" font-weight="400" fill="#172C42">更聚焦持续推进与完成判定</text>
+<rect x="77" y="1789" width="1760" height="46" rx="7" fill="#F5F7FA" stroke="none"/>
+<text x="83" y="1819" font-size="21" font-weight="700" fill="#172C42">Pi / oh-my-pi</text>
+<text x="349" y="1819" font-size="21" font-weight="400" fill="#172C42">Agent 内部模型与工具执行循环</text>
+<text x="937" y="1819" font-size="21" font-weight="400" fill="#172C42">会话、工具结果；OMP 子任务</text>
+<text x="1350" y="1819" font-size="21" font-weight="400" fill="#172C42">强化执行底座；OMP 也有多 Agent</text>
+<rect x="77" y="1838" width="1760" height="46" rx="7" fill="#FFFFFF" stroke="none"/>
+<text x="83" y="1868" font-size="21" font-weight="700" fill="#172C42">Memmy Agent</text>
+<text x="349" y="1868" font-size="21" font-weight="400" fill="#172C42">跨会话 / 工具记忆；自带 Runtime</text>
+<text x="937" y="1868" font-size="21" font-weight="400" fill="#172C42">历史采集、提炼、索引与召回</text>
+<text x="1350" y="1868" font-size="21" font-weight="400" fill="#172C42">重点是经验复用，不等于团队派工</text>
+<text x="84" y="1900" font-size="20" font-weight="400" fill="#526579">验证基础：Multica 已有最小真实任务；MetaGPT 已跑固定动作、零模型实验；Munder / LongHorizon / OMP 的效果未在本机复现。</text>
+<rect x="56" y="1946" width="1808" height="206" rx="22" fill="#FFFFFF" stroke="#DCE4ED"/>
+<rect x="80" y="1969" width="42" height="38" rx="10" fill="#2359A6" stroke="none"/>
+<text x="91" y="1996" font-size="22" font-weight="700" fill="#FFFFFF">05</text>
+<text x="138" y="1998" font-size="29" font-weight="700" fill="#172C42">适用场景、对我们的意义与按需扩展</text>
+<text x="83" y="2045" font-size="25" font-weight="700" fill="#137F7C">适用场景</text>
+<text x="83" y="2082" font-size="22" font-weight="400" fill="#526579">本机管理多 CLI、分工调研、多模块开发。</text>
+<text x="83" y="2114" font-size="22" font-weight="400" fill="#526579">任务应可拆分、有明确产物和验收标准。</text>
+<text x="677" y="2045" font-size="25" font-weight="700" fill="#137F7C">对我们的意义</text>
+<text x="677" y="2082" font-size="22" font-weight="400" fill="#526579">已有 Multica 等样本，重点保留差异。</text>
+<text x="677" y="2114" font-size="22" font-weight="400" fill="#526579">参考本地会话管理、消息交接与观察体验。</text>
+<text x="1271" y="2045" font-size="25" font-weight="700" fill="#137F7C">有具体需求再扩展</text>
+<text x="1271" y="2082" font-size="22" font-weight="400" fill="#526579">证据验收、并行合并、硬权限与预算、</text>
+<text x="1271" y="2114" font-size="22" font-weight="400" fill="#526579">研究流程模板、可追溯记忆、路由评测。</text>
+<rect x="56" y="2176" width="1808" height="153" rx="22" fill="#FFF6E9" stroke="#EBD8B8"/>
+<text x="83" y="2214" font-size="26" font-weight="700" fill="#805B23">使用与验证边界</text>
+<text x="83" y="2253" font-size="23" font-weight="400" fill="#172C42">本地管理 ≠ 模型离线；已有订阅仍占配额；多 Agent ≠ 必然更好；消息送达 / 任务完成状态 ≠ 产物验收通过。</text>
+<text x="83" y="2293" font-size="23" font-weight="400" fill="#172C42">熔断硬停止默认关闭，约束阶段主要发消息；worktree 不等于安全沙箱。上游未运行，网页仅展示研究理解。</text>
+<text x="64" y="2370" font-size="21" font-weight="400" fill="#526579">上游  chaitanyagiri/munder-difflin  ·  固定提交 9ce27e76dae71ab1897a182c0cebbdcf94705a05</text>
+<text x="64" y="2406" font-size="21" font-weight="400" fill="#526579">原创研究示意图，非软件截图；来源见项目 notes.md。代码 MIT，部分上游像素素材另行许可；本图未使用上游素材。</text>
+</g></svg>

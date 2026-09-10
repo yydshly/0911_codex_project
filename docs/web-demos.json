@@ -110,6 +110,26 @@
       "imageCaption": "本地实际生成 PNG，沿用原库审美并增加多图参考与局部修改；非真实婚礼记录、截图或三维模型。",
       "showPreview": true,
       "previewAnchor": "miniatures.html#customize"
+    },
+    {
+      "id": "011",
+      "researchIndex": "010",
+      "slug": "011-munder-difflin",
+      "name": "Munder Difflin · 多 Agent 与文件通信",
+      "sourceDirectory": "projects/011-munder-difflin/app/dist",
+      "readme": "projects/011-munder-difflin/README.md",
+      "research": "projects/011-munder-difflin/notes.md",
+      "upstream": "https://github.com/chaitanyagiri/munder-difflin",
+      "upstreamName": "Munder Difflin",
+      "capability": "多 Agent 工具：管理多个已有 Agent 的模型、身份、任务与运行状态；通过本地文件收发箱实现协作通信，由平台投递消息并在空闲时唤醒处理。",
+      "extension": "完整中文能力说明、单图总览、六步文件交互讲解和同类比较；网页是研究展示，上游 Agent 运行未实测。",
+      "image": "projects/011-munder-difflin/assets/overview.png",
+      "kind": "能力与同类对比",
+      "entryLabel": "理解多 Agent 与文件通信 →",
+      "imageAlt": "Munder Difflin 多 Agent 工具与文件通信总览",
+      "imageCaption": "原创研究示意图，非软件截图；固定版本 0.4.6，解释能力、文件投递和空闲唤醒机制。",
+      "showPreview": true,
+      "previewAnchor": "#guide"
     }
   ]
 }

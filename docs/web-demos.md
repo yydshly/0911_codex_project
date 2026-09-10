@@ -106,3 +106,10 @@ node projects/006-drama-skills/app/check.cjs
 2026-09-10 首次发布提交 `76b886f986a20c3ff6e6ebc703a70069687fdf20`，[Pages 流程成功](https://github.com/yydshly/0911_codex_project/actions/runs/34498793268)。核对 29 个线上文件，覆盖完整新站、引导图、总入口和既有子站，全部返回 200 并与本地构建一致；文本按 LF 归一比较，图片按原始字节比较。[验证证据](../projects/008-freellmapi/deployment-verification.json)。
 
 [项目说明](../projects/008-freellmapi/README.md) · [我们的理解](../projects/008-freellmapi/understanding.md) · [同类产品](../projects/008-freellmapi/comparison.md)
+
+
+## Munder Difflin · 多 Agent 与文件通信
+
+研究 010，发布子路径 `011-munder-difflin/`，静态目录 `projects/011-munder-difflin/app/dist/`。原库是管理多个已有 Agent 的多 Agent 工具，以文件收发箱实现通信；本地新增能力说明、总览图与六步交互讲解，上游未运行，网页不是在线 Agent 服务。
+
+安装项目 `app/requirements.txt`，运行 `app/build.py` 与 `app/check.cjs` 后，由统一发布脚本合并产物；保留现有站点。发布结果以实际线上验证记录为准。
