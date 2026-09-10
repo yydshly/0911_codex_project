@@ -168,6 +168,26 @@
       "imageCaption": "原创研究示意图，非软件截图；固定版本 0.4.6，解释能力、文件投递和空闲唤醒机制。",
       "showPreview": true,
       "previewAnchor": "#guide"
+    },
+    {
+      "id": "012",
+      "slug": "012-gstack",
+      "researchIndex": "011",
+      "name": "gstack 工程方法实验室",
+      "sourceDirectory": "projects/012-gstack/app/dist",
+      "readme": "projects/012-gstack/README.md",
+      "research": "projects/012-gstack/research.md",
+      "upstream": "https://github.com/garrytan/gstack",
+      "upstreamName": "gstack",
+      "capability": "57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。",
+      "extension": "中文能力全图、完整范围摘要、57 项逐技能原理与九阶段收录检查器实践。21 项规则及 17 项浏览器检查通过，保留真实缺陷修复。采用方法适配执行，非全量原生复现；网页提供本地校验，不调用在线模型或执行生产操作。",
+      "image": "projects/012-gstack/assets/skills-capability-map.png",
+      "kind": "技能原理与方法实践",
+      "entryLabel": "打开工程方法实验室 →",
+      "imageAlt": "gstack 57 项技能能力与效果总览：本地研究图解",
+      "imageCaption": "基于固定版本整理的原创能力图，按 12 类逐项说明作用与产物，非上游截图；本地实测结果与上游能力分开说明。",
+      "showPreview": true,
+      "previewAnchor": "#overview"
     }
   ]
 }

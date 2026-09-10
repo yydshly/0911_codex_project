@@ -1,0 +1,123 @@
+{
+  "kind": "actual-node-test-run",
+  "recordedAt": "2026-09-10T14:18:34.563Z",
+  "runtime": "v22.15.0",
+  "platform": "win32",
+  "upstreamExecution": false,
+  "command": "node scripts/test.cjs",
+  "total": 21,
+  "passed": 20,
+  "failed": 1,
+  "files": {
+    "dist/validator.js": "da0f77a5538cfc0e21cae0c88dd142c75fc800013e623d1cfd0a0fd1787c4fd2",
+    "dist/fixtures.js": "9da8859f4475accbd68110adfca2b2c285af89dde57b72b5bea82629f186d4be",
+    "scripts/test.cjs": "deff3be7a888d544425345755e14fc10a000fd61326569f101891988da3507bd"
+  },
+  "tests": [
+    {
+      "name": "研究索引与历史目录编号允许不同",
+      "status": "passed",
+      "durationMs": 0.516
+    },
+    {
+      "name": "同一原库的配套演示不重复计数",
+      "status": "passed",
+      "durationMs": 0.1
+    },
+    {
+      "name": "GitHub 大小写、.git、尾斜杠与查询参数归一",
+      "status": "passed",
+      "durationMs": 0.027
+    },
+    {
+      "name": "同库跨研究索引冲突被发现",
+      "status": "passed",
+      "durationMs": 0.089
+    },
+    {
+      "name": "不同原库不允许同研究索引",
+      "status": "passed",
+      "durationMs": 0.031
+    },
+    {
+      "name": "禁止目录路径跳转",
+      "status": "passed",
+      "durationMs": 0.182
+    },
+    {
+      "name": "同一目录不复用",
+      "status": "passed",
+      "durationMs": 0.036
+    },
+    {
+      "name": "已发布记录必须提供地址与证据",
+      "status": "passed",
+      "durationMs": 0.078
+    },
+    {
+      "name": "字段完整不伪称已完成线上验证",
+      "status": "passed",
+      "durationMs": 0.082
+    },
+    {
+      "name": "HTTP 原库地址被拒绝",
+      "status": "passed",
+      "durationMs": 0.01
+    },
+    {
+      "name": "非 GitHub 和带凭据地址被拒绝",
+      "status": "passed",
+      "durationMs": 0.015
+    },
+    {
+      "name": "仓库子路径与空仓库名被拒绝",
+      "status": "passed",
+      "durationMs": 0.014
+    },
+    {
+      "name": "空输入数组有效且研究数为零",
+      "status": "passed",
+      "durationMs": 0.396
+    },
+    {
+      "name": "非数组与坏记录给出结构化错误",
+      "status": "passed",
+      "durationMs": 0.031
+    },
+    {
+      "name": "研究索引按数值而非字符串排序",
+      "status": "passed",
+      "durationMs": 0.07
+    },
+    {
+      "name": "索引倒序提示且不重新分配编号",
+      "status": "passed",
+      "durationMs": 0.022
+    },
+    {
+      "name": "无效索引和零目录前缀被拒绝",
+      "status": "passed",
+      "durationMs": 0.021
+    },
+    {
+      "name": "未知状态被拒绝",
+      "status": "passed",
+      "durationMs": 0.011
+    },
+    {
+      "name": "截图需要来源说明",
+      "status": "passed",
+      "durationMs": 0.01
+    },
+    {
+      "name": "大量输入被有界拒绝",
+      "status": "passed",
+      "durationMs": 0.026
+    },
+    {
+      "name": "原库路径中的空层级不能被默默忽略",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'garrytan/gstack'\n- null\n"
+    }
+  ]
+}

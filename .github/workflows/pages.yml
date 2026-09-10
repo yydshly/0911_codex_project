@@ -18,6 +18,7 @@ on:
       - 'projects/009-graphify/**'
       - 'projects/010-marketingskills/**'
       - 'projects/011-munder-difflin/**'
+      - 'projects/012-gstack/**'
   workflow_dispatch:
 
 permissions:
@@ -82,6 +83,8 @@ jobs:
           node projects/010-marketingskills/app/scripts/check-interactions.cjs
           node projects/010-marketingskills/app/scripts/check-upstream-preview.cjs
           node projects/010-marketingskills/app/scripts/check-real-case.cjs
+      - name: Check gstack engineering lab
+        run: node projects/012-gstack/app/scripts/check.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact

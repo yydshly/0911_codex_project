@@ -136,3 +136,14 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 2026-09-11，[Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34503602382)成功，53 个线上文件均返回 200 且与构建一致，包含新站、证据下载、完整图与八个已有子站。[验证记录](../projects/010-marketingskills/deployment-verification.json)。
 
 [范围与能力摘要](../projects/010-marketingskills/scope.md) · [项目说明](../projects/010-marketingskills/README.md)
+
+## gstack 工程方法实验室（发布中）
+
+研究索引 011，历史路径 `012-gstack/`。静态源目录 `projects/012-gstack/app/dist/`；已追加统一清单与校验步骤，当前正在发布。
+
+包含 57 项技能原理、九阶段收录检查器方法实践、21 项规则测试与 17 项实际浏览器检查、真实截图和修复前后报告。当前 Agent 采用固定方法并替换工具，非上游全量原生运行。原文来源与 MIT 许可随页面保存。
+
+本地检查：`node projects/012-gstack/app/scripts/check.cjs`。该检查核对已保存测试证据和当前源文件指纹，防止发布过期结果；真实浏览器检查在源文件改变后重跑。
+
+
+[范围与能力摘要](../projects/012-gstack/scope.md)：57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。

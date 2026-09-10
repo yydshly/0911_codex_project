@@ -1,0 +1,4 @@
+!app/dist/
+!app/dist/**
+__pycache__/
+node_modules/

@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3936" viewBox="0 0 2400 3936" role="img" aria-labelledby="title desc"><title id="title">gstack 57 项技能能力与效果总览</title><desc id="desc">按十二类逐项列出技能名称、作用和产物，并说明技术原理、本地案例证据、使用边界与扩展方向。</desc><rect width="2400" height="3936" fill="#f1f5f9"/><g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif"><rect x="0" y="0" width="2400" height="440" rx="0" fill="#102537" stroke="none"/>
+<text x="72" y="65" font-size="24" fill="#b9d1e4" font-weight="600" >GSTACK / SKILL CAPABILITY ATLAS</text>
+<text x="72" y="152" font-size="66" fill="#ffffff" font-weight="700" >57 个技能，一张图看懂能力与效果</text>
+<text x="72" y="208" font-size="32" fill="#d4e1ec" font-weight="400" >把软件研发经验写成可执行的工作方法：模型判断，工具行动，证据验收。</text>
+<rect x="72" y="253" width="422" height="78" rx="12" fill="#c2f362" stroke="none"/>
+<text x="283" y="303" font-size="31" fill="#173249" font-weight="600" text-anchor="middle">需求与计划</text>
+<text x="505" y="303" font-size="30" fill="#91b7d2" font-weight="400" >→</text>
+<rect x="531" y="253" width="422" height="78" rx="12" fill="#243e51" stroke="none"/>
+<text x="742" y="303" font-size="31" fill="#ffffff" font-weight="600" text-anchor="middle">设计与实现</text>
+<text x="964" y="303" font-size="30" fill="#91b7d2" font-weight="400" >→</text>
+<rect x="990" y="253" width="422" height="78" rx="12" fill="#243e51" stroke="none"/>
+<text x="1201" y="303" font-size="31" fill="#ffffff" font-weight="600" text-anchor="middle">评审与测试</text>
+<text x="1423" y="303" font-size="30" fill="#91b7d2" font-weight="400" >→</text>
+<rect x="1449" y="253" width="422" height="78" rx="12" fill="#243e51" stroke="none"/>
+<text x="1660" y="303" font-size="31" fill="#ffffff" font-weight="600" text-anchor="middle">交付与观察</text>
+<text x="1882" y="303" font-size="30" fill="#91b7d2" font-weight="400" >→</text>
+<rect x="1908" y="253" width="422" height="78" rx="12" fill="#243e51" stroke="none"/>
+<text x="2119" y="303" font-size="31" fill="#ffffff" font-weight="600" text-anchor="middle">文档与复盘</text>
+<text x="72" y="391" font-size="28" fill="#d4e1ec" font-weight="400" >阅读方式：技能名  /  做什么 → 可获得的产物或结果</text>
+<text x="2328" y="391" font-size="26" fill="#c2f362" font-weight="600" text-anchor="end">12 类能力 · 57 项独立定义</text>
+<rect x="72" y="468" width="2256" height="122" rx="16" fill="#e4eefb" stroke="none"/>
+<text x="102" y="512" font-size="28" fill="#245ce5" font-weight="700" >内部原理</text>
+<text x="287" y="512" font-size="28" fill="#173249" font-weight="400" >SKILL.md 定义步骤与验收  →  宿主模型读取上下文  →  调用工具执行  →  对照结果继续或修正</text>
+<text x="287" y="558" font-size="26" fill="#526b7f" font-weight="400" >配套代码：模板与宿主适配 · 浏览器运行时 · 命令/路径 hook · 证据记录。不同技能使用其中不同部分。</text>
+<rect x="72" y="622" width="1112" height="516" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="646" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="683" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">01</text>
+<text x="177" y="685" font-size="34" fill="#173249" font-weight="700" >需求与计划</text>
+<text x="1152" y="684" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">7 项</text>
+<text x="100" y="733" font-size="25" fill="#61798b" font-weight="400" >把模糊目标推进到有范围、可验收的方案。</text>
+<rect x="88" y="747" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="778" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">autoplan</text>
+<text x="515" y="778" font-size="25" fill="#27475f" font-weight="400" >串联多类评审 → 整合后的计划</text>
+<text x="102" y="830" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">office-hours</text>
+<text x="515" y="830" font-size="25" fill="#27475f" font-weight="400" >探索需求 → 设计文档与备选方案</text>
+<rect x="88" y="851" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="882" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">plan-ceo-review</text>
+<text x="515" y="882" font-size="25" fill="#27475f" font-weight="400" >审视产品范围 → 价值与取舍结论</text>
+<text x="102" y="934" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">plan-design-review</text>
+<text x="515" y="934" font-size="25" fill="#27475f" font-weight="400" >评审界面方案 → 层级与状态修订</text>
+<rect x="88" y="955" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="986" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">plan-devex-review</text>
+<text x="515" y="986" font-size="25" fill="#27475f" font-weight="400" >规划开发者体验 → 上手路径与基线</text>
+<text x="102" y="1038" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">plan-eng-review</text>
+<text x="515" y="1038" font-size="25" fill="#27475f" font-weight="400" >检查工程方案 → 架构与测试矩阵</text>
+<rect x="88" y="1059" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1090" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">spec</text>
+<text x="515" y="1090" font-size="25" fill="#27475f" font-weight="400" >细化需求 → 可验收规格或工作项</text>
+<rect x="1216" y="622" width="1112" height="516" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="646" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="683" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">02</text>
+<text x="1321" y="685" font-size="34" fill="#173249" font-weight="700" >设计与页面</text>
+<text x="2296" y="684" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">5 项</text>
+<text x="1244" y="733" font-size="25" fill="#61798b" font-weight="400" >把视觉方向推进到可预览、可检查的界面。</text>
+<rect x="1232" y="747" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="778" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">design-consultation</text>
+<text x="1659" y="778" font-size="25" fill="#27475f" font-weight="400" >建立设计规范 → DESIGN.md 与预览</text>
+<text x="1246" y="830" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">design-html</text>
+<text x="1659" y="830" font-size="25" fill="#27475f" font-weight="400" >实现已选设计 → HTML/CSS 页面</text>
+<rect x="1232" y="851" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="882" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">design-review</text>
+<text x="1659" y="882" font-size="25" fill="#27475f" font-weight="400" >审查实际页面 → 修复与前后截图</text>
+<text x="1246" y="934" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">design-shotgun</text>
+<text x="1659" y="934" font-size="25" fill="#27475f" font-weight="400" >比较视觉方向 → 变体与选定方案</text>
+<rect x="1232" y="955" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="986" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">diagram</text>
+<text x="1659" y="986" font-size="25" fill="#27475f" font-weight="400" >绘制结构关系 → 可编辑图与图片</text>
+<rect x="72" y="1162" width="1112" height="620" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="1186" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="1223" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">03</text>
+<text x="177" y="1225" font-size="34" fill="#173249" font-weight="700" >评审、排障与测试</text>
+<text x="1152" y="1224" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">9 项</text>
+<text x="100" y="1273" font-size="25" fill="#61798b" font-weight="400" >把“感觉没问题”推进到有发现、有复测的结论。</text>
+<rect x="88" y="1287" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1318" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">benchmark</text>
+<text x="515" y="1318" font-size="25" fill="#27475f" font-weight="400" >测量页面性能 → 基线与差异报告</text>
+<text x="102" y="1370" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">benchmark-models</text>
+<text x="515" y="1370" font-size="25" fill="#27475f" font-weight="400" >对比模型执行 → 质量、耗时与成本</text>
+<rect x="88" y="1391" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1422" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">cso</text>
+<text x="515" y="1422" font-size="25" fill="#27475f" font-weight="400" >检查攻击面 → 安全发现与建议</text>
+<text x="102" y="1474" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">devex-review</text>
+<text x="515" y="1474" font-size="25" fill="#27475f" font-weight="400" >实走开发者旅程 → 阻力与耗时记录</text>
+<rect x="88" y="1495" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1526" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">health</text>
+<text x="515" y="1526" font-size="25" fill="#27475f" font-weight="400" >运行已有质量工具 → 状态与趋势</text>
+<text x="102" y="1578" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">investigate</text>
+<text x="515" y="1578" font-size="25" fill="#27475f" font-weight="400" >验证根因假设 → 原因与复测结果</text>
+<rect x="88" y="1599" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1630" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">qa</text>
+<text x="515" y="1630" font-size="25" fill="#27475f" font-weight="400" >操作页面并修复 → QA 报告与回归</text>
+<text x="102" y="1682" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">qa-only</text>
+<text x="515" y="1682" font-size="25" fill="#27475f" font-weight="400" >只测试和报告 → 问题及复现证据</text>
+<rect x="88" y="1703" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1734" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">review</text>
+<text x="515" y="1734" font-size="25" fill="#27475f" font-weight="400" >审查代码变更 → 发现、修复与记录</text>
+<rect x="1216" y="1162" width="1112" height="620" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="1186" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="1223" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">04</text>
+<text x="1321" y="1225" font-size="34" fill="#173249" font-weight="700" >浏览器与网页数据</text>
+<text x="2296" y="1224" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">7 项</text>
+<text x="1244" y="1273" font-size="25" fill="#61798b" font-weight="400" >获得页面事实，执行交互，并固化已成功的提取。</text>
+<rect x="1232" y="1287" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="1318" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">browse</text>
+<text x="1659" y="1318" font-size="25" fill="#27475f" font-weight="400" >观察并操作页面 → 快照与交互证据</text>
+<text x="1246" y="1370" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">open-gstack-browser</text>
+<text x="1659" y="1370" font-size="25" fill="#27475f" font-weight="400" >打开可见浏览器 → 可观察的会话</text>
+<rect x="1232" y="1391" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="1422" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">pair-agent</text>
+<text x="1659" y="1422" font-size="25" fill="#27475f" font-weight="400" >配对远程 Agent → 受控会话入口</text>
+<text x="1246" y="1474" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">scrape</text>
+<text x="1659" y="1474" font-size="25" fill="#27475f" font-weight="400" >只读提取网页 → 结构化 JSON</text>
+<rect x="1232" y="1495" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="1526" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">setup-browser-cookies</text>
+<text x="1659" y="1526" font-size="25" fill="#27475f" font-weight="400" >导入选定登录态 → 可认证会话</text>
+<text x="1246" y="1578" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">skillify</text>
+<text x="1659" y="1578" font-size="25" fill="#27475f" font-weight="400" >固化成功提取 → 脚本、夹具与测试</text>
+<rect x="1232" y="1599" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="1630" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">hackernews-frontpage</text>
+<text x="1659" y="1630" font-size="25" fill="#27475f" font-weight="400" >执行 HN 提取示例 → 首页文章数据</text>
+<rect x="72" y="1806" width="1112" height="412" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="1830" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="1867" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">05</text>
+<text x="177" y="1869" font-size="34" fill="#173249" font-weight="700" >交付与部署</text>
+<text x="1152" y="1868" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">5 项</text>
+<text x="100" y="1917" font-size="25" fill="#61798b" font-weight="400" >把变更推进到可提交、可发布、可观察的状态。</text>
+<rect x="88" y="1931" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="1962" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">canary</text>
+<text x="515" y="1962" font-size="25" fill="#27475f" font-weight="400" >短期观察部署 → 健康与异常报告</text>
+<text x="102" y="2014" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">land-and-deploy</text>
+<text x="515" y="2014" font-size="25" fill="#27475f" font-weight="400" >合并部署并验证 → 发布结果与证据</text>
+<rect x="88" y="2035" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2066" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">landing-report</text>
+<text x="515" y="2066" font-size="25" fill="#27475f" font-weight="400" >盘点交付队列 → 版本与候选快照</text>
+<text x="102" y="2118" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">setup-deploy</text>
+<text x="515" y="2118" font-size="25" fill="#27475f" font-weight="400" >登记部署信息 → 后续交付配置</text>
+<rect x="88" y="2139" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2170" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ship</text>
+<text x="515" y="2170" font-size="25" fill="#27475f" font-weight="400" >准备提交与 PR → 变更及验证记录</text>
+<rect x="1216" y="1806" width="1112" height="412" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="1830" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="1867" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">06</text>
+<text x="1321" y="1869" font-size="34" fill="#173249" font-weight="700" >文档与知识表达</text>
+<text x="2296" y="1868" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">3 项</text>
+<text x="1244" y="1917" font-size="25" fill="#61798b" font-weight="400" >让使用者能理解、使用和跟上当前代码。</text>
+<rect x="1232" y="1931" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="1962" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">document-generate</text>
+<text x="1659" y="1962" font-size="25" fill="#27475f" font-weight="400" >从代码整理知识 → 教程与参考文档</text>
+<text x="1246" y="2014" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">document-release</text>
+<text x="1659" y="2014" font-size="25" fill="#27475f" font-weight="400" >对齐代码变更 → 更新说明与文档债</text>
+<rect x="1232" y="2035" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="2066" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">make-pdf</text>
+<text x="1659" y="2066" font-size="25" fill="#27475f" font-weight="400" >排版并导出文档 → PDF 与源文件</text>
+<rect x="72" y="2242" width="1112" height="516" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="2266" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="2303" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">07</text>
+<text x="177" y="2305" font-size="34" fill="#173249" font-weight="700" >复盘与上下文</text>
+<text x="1152" y="2304" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">7 项</text>
+<text x="100" y="2353" font-size="25" fill="#61798b" font-weight="400" >保留经验与任务背景，减少重复解释和探索。</text>
+<rect x="88" y="2367" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2398" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">context-restore</text>
+<text x="515" y="2398" font-size="25" fill="#27475f" font-weight="400" >加载历史快照 → 恢复背景与下一步</text>
+<text x="102" y="2450" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">context-save</text>
+<text x="515" y="2450" font-size="25" fill="#27475f" font-weight="400" >保存任务进展 → 上下文快照</text>
+<rect x="88" y="2471" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2502" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">learn</text>
+<text x="515" y="2502" font-size="25" fill="#27475f" font-weight="400" >整理项目经验 → 可复用经验条目</text>
+<text x="102" y="2554" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">plan-tune</text>
+<text x="515" y="2554" font-size="25" fill="#27475f" font-weight="400" >调整提问方式 → 偏好与观察记录</text>
+<rect x="88" y="2575" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2606" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">retro</text>
+<text x="515" y="2606" font-size="25" fill="#27475f" font-weight="400" >回顾工程活动 → 复盘与趋势记录</text>
+<text x="102" y="2658" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">setup-gbrain</text>
+<text x="515" y="2658" font-size="25" fill="#27475f" font-weight="400" >接入外部记忆 → 可调用的连接</text>
+<rect x="88" y="2679" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2710" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">sync-gbrain</text>
+<text x="515" y="2710" font-size="25" fill="#27475f" font-weight="400" >同步代码上下文 → 新索引与搜索指导</text>
+<rect x="1216" y="2242" width="1112" height="516" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="2266" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="2303" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">08</text>
+<text x="1321" y="2305" font-size="34" fill="#173249" font-weight="700" >会话操作保护</text>
+<text x="2296" y="2304" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">4 项</text>
+<text x="1244" y="2353" font-size="25" fill="#61798b" font-weight="400" >为已接入的命令与编辑工具增加明确检查。</text>
+<rect x="1232" y="2367" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="2398" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">careful</text>
+<text x="1659" y="2398" font-size="25" fill="#27475f" font-weight="400" >检查危险命令 → 提醒或特定拒绝</text>
+<text x="1246" y="2450" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">freeze</text>
+<text x="1659" y="2450" font-size="25" fill="#27475f" font-weight="400" >限定编辑目录 → 会话修改边界</text>
+<rect x="1232" y="2471" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="2502" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">guard</text>
+<text x="1659" y="2502" font-size="25" fill="#27475f" font-weight="400" >组合命令与路径检查 → 保护会话</text>
+<text x="1246" y="2554" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">unfreeze</text>
+<text x="1659" y="2554" font-size="25" fill="#27475f" font-weight="400" >清除目录限制 → 恢复编辑范围</text>
+<rect x="72" y="2782" width="1112" height="412" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="2806" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="2843" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">09</text>
+<text x="177" y="2845" font-size="34" fill="#173249" font-weight="700" >iOS 真机工作流</text>
+<text x="1152" y="2844" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">5 项</text>
+<text x="100" y="2893" font-size="25" fill="#61798b" font-weight="400" >将测试、修复和视觉检查延伸到移动端真机。</text>
+<rect x="88" y="2907" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="2938" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ios-clean</text>
+<text x="515" y="2938" font-size="25" fill="#27475f" font-weight="400" >移除调试桥 → 清理与验证结果</text>
+<text x="102" y="2990" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ios-design-review</text>
+<text x="515" y="2990" font-size="25" fill="#27475f" font-weight="400" >检查真机视觉 → iOS 设计报告</text>
+<rect x="88" y="3011" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="3042" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ios-fix</text>
+<text x="515" y="3042" font-size="25" fill="#27475f" font-weight="400" >修复真机缺陷 → 夹具与复测记录</text>
+<text x="102" y="3094" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ios-qa</text>
+<text x="515" y="3094" font-size="25" fill="#27475f" font-weight="400" >在真机上测试 → QA 与状态证据</text>
+<rect x="88" y="3115" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="3146" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">ios-sync</text>
+<text x="515" y="3146" font-size="25" fill="#27475f" font-weight="400" >同步调试桥 → 更新后的桥接代码</text>
+<rect x="1216" y="2782" width="1112" height="412" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="2806" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="2843" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">10</text>
+<text x="1321" y="2845" font-size="34" fill="#173249" font-weight="700" >跨模型第二意见</text>
+<text x="2296" y="2844" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">2 项</text>
+<text x="1244" y="2893" font-size="25" fill="#61798b" font-weight="400" >对同一问题取得外部审查或咨询结果。</text>
+<rect x="1232" y="2907" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="2938" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">claude</text>
+<text x="1659" y="2938" font-size="25" fill="#27475f" font-weight="400" >调用 Claude 第二意见 → 审查或答复</text>
+<text x="1246" y="2990" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">codex</text>
+<text x="1659" y="2990" font-size="25" fill="#27475f" font-weight="400" >调用 Codex 第二意见 → 审查或答复</text>
+<rect x="72" y="3218" width="1112" height="256" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="96" y="3242" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="127" y="3279" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">11</text>
+<text x="177" y="3281" font-size="34" fill="#173249" font-weight="700" >任务路由</text>
+<text x="1152" y="3280" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">1 项</text>
+<text x="100" y="3329" font-size="25" fill="#61798b" font-weight="400" >把用户目标分配给合适的工作方法。</text>
+<rect x="88" y="3343" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="102" y="3374" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">gstack</text>
+<text x="515" y="3374" font-size="25" fill="#27475f" font-weight="400" >识别任务类型 → 适合的技能入口</text>
+<rect x="1216" y="3218" width="1112" height="256" rx="20" fill="#ffffff" stroke="#d9e3eb"/>
+<rect x="1240" y="3242" width="62" height="52" rx="10" fill="#e4eefb" stroke="none"/>
+<text x="1271" y="3279" font-size="26" fill="#245ce5" font-weight="700" text-anchor="middle">12</text>
+<text x="1321" y="3281" font-size="34" fill="#173249" font-weight="700" >安装与宿主扩展</text>
+<text x="2296" y="3280" font-size="25" fill="#657d90" font-weight="500" text-anchor="end">2 项</text>
+<text x="1244" y="3329" font-size="25" fill="#61798b" font-weight="400" >维护技能版本，并接入新的运行宿主。</text>
+<rect x="1232" y="3343" width="1080" height="46" rx="7" fill="#f5f8fb" stroke="none"/>
+<text x="1246" y="3374" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">gstack-upgrade</text>
+<text x="1659" y="3374" font-size="25" fill="#27475f" font-weight="400" >更新已有安装 → 新版本与变更摘要</text>
+<text x="1246" y="3426" font-size="25" fill="#173249" font-weight="600" font-family="Consolas,monospace">add-host</text>
+<text x="1659" y="3426" font-size="25" fill="#27475f" font-weight="400" >贡献新宿主适配 → 配置与生成技能</text>
+<rect x="72" y="3498" width="2256" height="209" rx="20" fill="#102537" stroke="none"/>
+<text x="102" y="3550" font-size="33" fill="#ffffff" font-weight="700" >对我们的意义：把团队经验变成可复用的方法，让产物可以交接、结果可以追溯。</text>
+<text x="102" y="3603" font-size="29" fill="#c2f362" font-weight="600" >本次实际场景：研究项目收录检查器  ·  9 个阶段  ·  规则测试 21/21  ·  浏览器检查 17/17</text>
+<text x="102" y="3649" font-size="28" fill="#d4e1ec" font-weight="400" >实际发现并修复 1 个 URL 边界问题，保留 20/21 → 21/21 的回归记录。</text>
+<text x="102" y="3684" font-size="25" fill="#d4e1ec" font-weight="400" >方法适配执行 7 项，/ship 仅本地检查；这些数字属于本地案例，不代表 57 项上游技能均已原生实测。</text>
+<text x="72" y="3748" font-size="27" fill="#245ce5" font-weight="700" >使用边界</text>
+<text x="242" y="3748" font-size="27" fill="#173249" font-weight="400" >能力依赖模型、工具、账户与环境；产出报告不等于质量保证，保护 hook 也不等于完整沙箱。</text>
+<text x="72" y="3796" font-size="27" fill="#245ce5" font-weight="700" >扩展方向</text>
+<text x="242" y="3796" font-size="27" fill="#173249" font-weight="400" >接入团队规范与验收清单 → 增加领域工具 → 固化成功工作流 → 用真实任务持续评测。</text>
+<text x="72" y="3854" font-size="23" fill="#61798b" font-weight="400" >来源：garrytan/gstack · 固定提交 71f6048e8ada · package 1.84.1 · 2026-09-11 整理</text>
+<text x="72" y="3892" font-size="23" fill="#61798b" font-weight="400" >口径：54 个一级技能 + 总路由 + 贡献者适配 + 浏览器示例；生成副本不重复计数。此图为本地研究图解，非上游截图。</text></g></svg>

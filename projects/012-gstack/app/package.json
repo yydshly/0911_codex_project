@@ -1,0 +1,11 @@
+{
+  "name": "gstack-research-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gstack 中文技能原理与可操作研究收录实验",
+  "scripts": {
+    "test": "node scripts/test.cjs",
+    "check": "node scripts/check.cjs",
+    "start": "node scripts/serve.cjs"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "actual-static-check",
+  "recordedAt": "2026-09-10T16:50:14.719Z",
+  "skills": 57,
+  "sourceFiles": 103,
+  "staticFiles": 131,
+  "ruleEvidence": "fresh",
+  "browserEvidence": "fresh",
+  "checks": [
+    "技能唯一与完整字段",
+    "固定来源与原文指纹",
+    "脚本语法",
+    "HTML 本地资源",
+    "规则测试内容指纹",
+    "历史失败源码指纹",
+    "阶段记录存在"
+  ]
+}
