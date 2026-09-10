@@ -1,6 +1,6 @@
 # 研究项目
 
-按原库去重，目前已收录 **13 个研究项目**，研究索引与历史目录独立维护；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
+按原库去重，目前已收录 **14 个研究项目**，研究索引与历史目录独立维护；其中历史目录 `002-engineering-casebook` 是研究 001 的配套案例手册，不单独计数；LongHorizon 的研究索引为 002，oh-my-pi 的研究索引为 003，XXG 的研究索引为 004。
 
 | 编号 | 项目 | 原库 | 核心能力 | 状态 | 在线入口 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -17,8 +17,11 @@
 | 011 | [gstack](012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
 | 012 | [Gaussian Splatting](014-gaussian-splatting/README.md) | [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) | 多角度照片生成可交互三维效果：先求解相机与空间，再用 3DGS（三维高斯泼溅）优化场景，支持新视角实时浏览；原生输出是高斯资产，不自动等于精确网格。 | 已完成本轮文档与网页；上游训练未实测 | [在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)；已部署并验证 |
 | 013 | [Upscayl](013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图片超分辨率与批量放大：预训练模型 + NCNN / Vulkan，支持多模型、输出尺寸与对比；较生成式编辑更侧重结构保持与固定尺寸处理，仍不保证真实细节。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
+| 014 | [Browser-use](015-browser-use/README.md) | [browser-use/browser-use](https://github.com/browser-use/browser-use) | Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 | 12 节中文理解与完整图已整理；上游未实测 | [详细本地网页](015-browser-use/app/dist/index.html) · [完整文档](015-browser-use/understanding.md)；未部署 |
 
 ## 编号与目录
+
+- Browser-use 研究索引 014，历史目录 `015-browser-use`；用户话题序号 16 独立保留。完整理解、CDP 点击总览图与教学网页已整理，未部署。
 
 - Upscayl 研究索引 013，目录 `013-upscayl`；文档与网页研究已完成，上游未实测，网页已部署并验证。
 

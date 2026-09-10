@@ -168,3 +168,9 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 构建与检查：`node projects/014-gaussian-splatting/app/build.cjs`、`node projects/014-gaussian-splatting/app/check.cjs`。已纳入统一清单与工作流，静态源为 `projects/014-gaussian-splatting/app/dist/`。[正式研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。首次发布提交 `5d28334b5ce86265bcc941cd903cfd46ed89a70b` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34508962655)成功，42 项线上核验通过，覆盖新站文件、总入口、图片与既有子站。[验证记录](../projects/014-gaussian-splatting/deployment-verification.json)。
 
 [项目说明](../projects/014-gaussian-splatting/README.md) · [网页运行说明](../projects/014-gaussian-splatting/app/README.md)
+
+## Browser-use · 模型理解与 CDP 点击
+
+研究索引 014，历史目录 `015-browser-use`，静态源目录 `projects/015-browser-use/app/dist/`。已合并统一清单与工作流，未部署；[本地页面](../projects/015-browser-use/app/dist/index.html)与[完整文档](../projects/015-browser-use/understanding.md)可阅读。
+
+页面覆盖模型上下文、元素编号与定位、CDP 鼠标移动／按下／松开、浏览器响应、动作范围、同类比较与应用。完整图为原创示意，两个交互分支为本地预设教学，不连接模型或浏览器。构建与检查按子项目 README 执行；上游 Agent 未实测。

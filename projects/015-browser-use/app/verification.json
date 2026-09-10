@@ -1,0 +1,23 @@
+{
+  "scope": "静态网页、文档链接、教学状态和原创图一致性；非上游运行或站点浏览器 QA",
+  "passed": 8,
+  "checks": [
+    "本地资源与锚点可解析",
+    "完整正文、来源、关键澄清存在",
+    "本地文档无模板占位且相对文件存在",
+    "浏览器脚本语法与本地模拟范围",
+    "正常搜索覆盖定位、输入事件与最终反馈",
+    "失效目标必须刷新后才再次执行",
+    "步骤边界与异常分支输入",
+    "文档与图形下载和源文件一致"
+  ],
+  "fingerprints": {
+    "understanding.md": "38a09fd895678d90a3297c3fd0a8d7462ee6b97939733662be6e1e288900b476",
+    "app/dist/index.html": "7c36ef12a64a75cb36153e76e48b1866da75725d1c5046f757e26a488e132cc9",
+    "app/dist/style.css": "5ac0989755bef78ed4102a5a15d9d6896132a22b8d75ffebdbd29eda855b1515",
+    "app/dist/lesson.js": "6ca5cf738fbcac6da5147c6b352091e92a269935fbdee758169b84de3fe31d53",
+    "app/dist/app.js": "8a9f5fcd919b8b83c8510db535aad130886f743b0021afc2c61664e3bea14501",
+    "assets/understanding-map.svg": "13fc727c57148e468a6fd4219360cac633ff1944be97b913180b3cd5de2acb3a",
+    "assets/understanding-map.png": "5b86519c4ea08b6910e952e91ed2050eafaa53186d190da18e8c1c75d43c1ea8"
+  }
+}

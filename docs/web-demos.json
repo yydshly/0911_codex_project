@@ -190,6 +190,26 @@
       "previewAnchor": "#overview"
     },
     {
+      "id": "014",
+      "researchIndex": "012",
+      "slug": "014-gaussian-splatting",
+      "name": "照片如何成为三维 · Gaussian Splatting",
+      "sourceDirectory": "projects/014-gaussian-splatting/app/dist",
+      "readme": "projects/014-gaussian-splatting/README.md",
+      "research": "projects/014-gaussian-splatting/understanding.md",
+      "upstream": "https://github.com/graphdeco-inria/gaussian-splatting",
+      "upstreamName": "Gaussian Splatting",
+      "capability": "用同一物体或场景的多角度照片生成可交互三维效果，核心采用 3DGS 算法：先求解相机与空间点，再优化三维高斯，实时渲染新视角。原生输出为高斯场景，适合外观展示和空间浏览。",
+      "extension": "输入、输出与原理总览图，七章中文手册和 21 个产品对比；解释摄影测量、NeRF、神经表面、几何预测和生成式三维的区别与组合。关联此前 Splat.js 实测并标注 ChatGPT 的未知实现；官方库训练尚未复现。",
+      "image": "projects/014-gaussian-splatting/assets/core-understanding.png",
+      "kind": "技术原理与同类对比",
+      "entryLabel": "阅读照片到三维研究 →",
+      "imageAlt": "照片如何成为三维：输入、空间求解、高斯优化、输出及相关路线",
+      "imageCaption": "内置 ImageGen 生成的中文技术总览，包含输入、输出、训练反馈和能力边界；鞋子为示意，非历史实测结果或软件截图。",
+      "showPreview": true,
+      "previewAnchor": ""
+    },
+    {
       "id": "013",
       "researchIndex": "013",
       "slug": "013-upscayl",
@@ -210,24 +230,24 @@
       "previewAnchor": "#overview"
     },
     {
-      "id": "014",
-      "researchIndex": "012",
-      "slug": "014-gaussian-splatting",
-      "name": "照片如何成为三维 · Gaussian Splatting",
-      "sourceDirectory": "projects/014-gaussian-splatting/app/dist",
-      "readme": "projects/014-gaussian-splatting/README.md",
-      "research": "projects/014-gaussian-splatting/understanding.md",
-      "upstream": "https://github.com/graphdeco-inria/gaussian-splatting",
-      "upstreamName": "Gaussian Splatting",
-      "capability": "用同一物体或场景的多角度照片生成可交互三维效果，核心采用 3DGS 算法：先求解相机与空间点，再优化三维高斯，实时渲染新视角。原生输出为高斯场景，适合外观展示和空间浏览。",
-      "extension": "输入、输出与原理总览图，七章中文手册和 21 个产品对比；解释摄影测量、NeRF、神经表面、几何预测和生成式三维的区别与组合。关联此前 Splat.js 实测并标注 ChatGPT 的未知实现；官方库训练尚未复现。",
-      "image": "projects/014-gaussian-splatting/assets/core-understanding.png",
-      "kind": "技术原理与同类对比",
-      "entryLabel": "阅读照片到三维研究 →",
-      "imageAlt": "照片如何成为三维：输入、空间求解、高斯优化、输出及相关路线",
-      "imageCaption": "内置 ImageGen 生成的中文技术总览，包含输入、输出、训练反馈和能力边界；鞋子为示意，非历史实测结果或软件截图。",
+      "id": "015",
+      "researchIndex": "014",
+      "slug": "015-browser-use",
+      "name": "Browser-use · 模型理解与 CDP 点击",
+      "sourceDirectory": "projects/015-browser-use/app/dist",
+      "readme": "projects/015-browser-use/README.md",
+      "research": "projects/015-browser-use/understanding.md",
+      "upstream": "https://github.com/browser-use/browser-use",
+      "upstreamName": "Browser-use",
+      "capability": "Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。",
+      "extension": "12 节中文完整解释、单张原理总览图与正常搜索／旧按钮失效两个预设教学分支；说明浏览器内部事件和系统指针的区别。网页不调用模型或 CDP，上游运行待复现。",
+      "image": "projects/015-browser-use/assets/understanding-map.png",
+      "kind": "完整理解与交互原理",
+      "entryLabel": "理解模型如何看网页、程序如何点击 →",
+      "imageAlt": "Browser-use 页面理解、模型动作、程序定位、CDP 输入与反馈完整总览",
+      "imageCaption": "原创研究示意图，非上游截图或运行轨迹；坐标、商品与页面状态为教学预设。",
       "showPreview": true,
-      "previewAnchor": ""
+      "previewAnchor": "#overview"
     }
   ]
 }

@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Browser-use · 从模型理解到 CDP 点击</title><meta name="description" content="完整解释模型如何读取网页、程序如何定位按钮、CDP 如何发送鼠标事件，以及能力、场景和扩展。"><link rel="stylesheet" href="style.css"><script defer src="lesson.js"></script><script defer src="app.js"></script></head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="topbar"><a href="https://github.com/yydshly/0911_codex_project">GitHub 项目研究集</a><span>研究 014 / Browser-use</span><a href="https://github.com/browser-use/browser-use">上游仓库 ↗</a></header>
+<div class="layout">
+<aside><div class="nav-title">从看懂，到点下去</div><nav aria-label="阅读目录"><a href="#lesson"><span>↗</span>一步步看搜索如何发生</a><a href="#overview"><span>↗</span>完整理解总览图</a><a href="#s01"><span>01</span>它究竟是什么</a>
+<a href="#s02"><span>02</span>模型究竟怎么“看见”网页</a>
+<a href="#s03"><span>03</span>模型和浏览器之间有两条通信链路</a>
+<a href="#s04"><span>04</span>CDP 为什么能够控制浏览器</a>
+<a href="#s05"><span>05</span>“点击按钮”到底怎么发生</a>
+<a href="#s06"><span>06</span>鼠标为什么能“动”：补充我们的表述</a>
+<a href="#s07"><span>07</span>从“搜索无线耳机”走完一轮</a>
+<a href="#s08"><span>08</span>有哪些动作能力</a>
+<a href="#s09"><span>09</span>与之前研究的项目有什么区别</a>
+<a href="#s10"><span>10</span>场景、扩展和对我们的意义</a>
+<a href="#s11"><span>11</span>容易混淆的边界</a>
+<a href="#s12"><span>12</span>来源与证据</a></nav><p class="aside-note">固定研究版本 50f2055<br>源码与文档研究<br>上游运行待复现</p></aside>
+<main id="main">
+<section class="intro"><p class="eyebrow">BROWSER-USE / 原理与能力</p><h1>模型选择目标，<br>程序控制浏览器。</h1><p class="lead">支持网页搜索、点击、输入、滚动、信息提取与多步任务。模型选择目标；程序根据按钮当前布局<strong>计算点击坐标</strong>，再通过底层 <strong>CDP 协议</strong>发送鼠标移动、按下与松开事件，并读取结果。</p><div class="roles"><span>模型<span>决定做什么</span></span><b>→</b><span>程序 + CDP<span>定位并执行</span></span><b>→</b><span>真实浏览器<span>响应并反馈</span></span></div><p class="key-note">CDP 负责传递浏览器控制指令；按钮定位和坐标计算由程序完成。模拟鼠标事件在浏览器内部处理，桌面系统指针不一定会动。</p><div class="links"><a href="downloads/understanding.md" download>下载完整中文文档 ↓</a><a href="assets/understanding-map.svg" target="_blank" rel="noopener">打开高清总览图 ↗</a></div></section>
+
+<section class="lesson" id="lesson" aria-labelledby="lesson-title"><p class="eyebrow">用一个具体例子理解</p><h2 id="lesson-title">“帮我搜索无线耳机。”</h2><p>沿着同一个任务，看浏览器、模型和控制程序分别做了什么。下方为预设教学模拟，不调用模型或 CDP，不操作其他网站。</p>
+<div class="lesson-toolbar"><label for="scenario">结果分支</label><select id="scenario"><option value="success">正常搜索</option><option value="stale">旧按钮失效后重新定位</option></select><span id="step-count"></span></div>
+<ol class="steps" id="step-list" aria-label="教学步骤"></ol>
+<div class="lesson-panels">
+<section class="browser-panel"><h3>浏览器里的页面</h3><div class="mock-browser"><div class="address">教学商品站 / 本地示意</div><div class="mock-page"><span class="mock-brand">商品搜索</span><div class="mock-input" id="mock-input">搜索商品</div><div class="mock-button" id="mock-button">搜索</div><span class="pointer" id="mock-pointer" aria-hidden="true">↖</span><div id="mock-result" class="mock-result">尚未搜索</div></div></div><p class="mini">指针图标仅表示浏览器输入事件的位置。</p></section>
+<section class="model-panel"><h3>模型收到／返回的内容</h3><pre id="model-message"></pre></section>
+<section class="program-panel"><h3>程序与 CDP 正在做什么</h3><pre id="program-message"></pre></section>
+</div>
+<div class="lesson-explanation" aria-live="polite" aria-atomic="true"><strong id="step-title"></strong><p id="step-explanation"></p></div>
+<div class="lesson-controls"><button type="button" id="prev">← 上一步</button><button type="button" id="next" class="primary">下一步 →</button><button type="button" id="reset">从头看</button></div>
+<noscript><p>交互示例需要 JavaScript。下面的完整图和详细正文仍可直接阅读，正文第 07 节包含全部步骤。</p></noscript></section>
+
+<section id="overview" class="overview"><p class="eyebrow">把全部理解放进一张图</p><h2>从页面信息，到真实点击，再到结果反馈</h2><p>从上向下阅读：四方职责 → 页面如何进入模型 → 动作如何进入程序 → CDP 点击细节 → 反馈 → 能力与应用。展开大图可查看全部文字。</p><div class="links"><a href="assets/understanding-map.svg" target="_blank" rel="noopener">打开可放大 SVG ↗</a><a href="assets/understanding-map.svg" download>下载矢量图 ↓</a><a href="assets/understanding-map.png" download>下载高清 PNG ↓</a></div><a class="map-link" href="assets/understanding-map.svg" target="_blank" rel="noopener" aria-label="在新标签页打开完整理解图"><img src="assets/understanding-map.svg" alt="Browser-use 完整原理图：模型读取页面，程序定位按钮，通过 CDP 发送移动、按下、松开事件，浏览器响应后回传结果；附能力、差异、应用与边界。" width="1800" height="3200" loading="lazy"></a><p class="caption">原创研究示意图，非上游运行截图；坐标与商品均为教学示意。</p></section>
+<article class="reading"><p>这份文档整理我们从“它是不是一个浏览器”到“鼠标为什么能点击”的完整讨论。先给出已确认的分工：<strong>模型根据任务和页面信息选择动作；browser-use 程序定位元素并组织执行；CDP 传递具体指令；真实浏览器处理输入、运行网页；新页面再反馈给模型。</strong></p>
+<p><strong>能力摘要：</strong> Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。</p>
+<p><strong>准确表述：</strong> CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。</p>
+<p>研究日期：2026-09-11。上游固定提交：<code>50f205533fe10ba35b553d2a3689c77b87bd5d0a</code>。本文依据官方文档与源码分析；本地网页里的搜索示例是教学模拟，未运行上游 Agent、未调用真实模型、未操作商品网站。文末提供固定版本来源。</p>
+<h2 id="s01"><span>01</span>它究竟是什么</h2>
+<p>Browser-use 是基于真实浏览器执行任务的 Agent 框架。它可以启动和管理专用浏览器，也可以连接已有的可调试浏览器或云端浏览器。网页的网络访问、JavaScript 执行、布局和渲染，仍由 Chrome／Chromium 等浏览器完成。</p>
+<p>“内部浏览器”如果指框架启动的独立浏览器会话，可以这样理解；如果指 browser-use 自己开发了一套浏览器内核，则不准确。可见窗口与无头运行只是显示方式不同：无头浏览器仍会真实执行和渲染网页。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>组成</th>
+<th>负责什么</th>
+<th>不应误认为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大模型</td>
+<td>理解任务、阅读页面信息、选择下一步</td>
+<td>自己拥有浏览器连接或物理鼠标</td>
+</tr>
+<tr>
+<td>browser-use</td>
+<td>整理页面、调用模型、管理动作与历史、定位元素、处理结果</td>
+<td>浏览器内核，或只是一段提示词</td>
+</tr>
+<tr>
+<td>CDP</td>
+<td>浏览器检查和控制的协议</td>
+<td>AI 模型、任务规划器、网页业务 API</td>
+</tr>
+<tr>
+<td>Chrome／Chromium</td>
+<td>加载网站、执行脚本、渲染、处理输入事件</td>
+<td>自动知道用户的研究目标</td>
+</tr>
+<tr>
+<td>目标网站</td>
+<td>根据页面逻辑响应搜索、提交等操作</td>
+<td>任何操作都会成功的固定界面</td>
+</tr>
+</tbody>
+</table></div>
+<p>原库 Python Agent 包含浏览器任务的决策循环。官方还提供关联的 CLI／Browser Harness 入口，让已有 Agent 使用浏览器；云服务可以托管浏览器，或托管整个 Agent。三种入口的运行责任不同，不能混成一个产品。Python 库采用 MIT 许可证；模型和托管基础设施的成本另计。<a href="#source-1" class="cite">[S1]</a></p>
+<h2 id="s02"><span>02</span>模型究竟怎么“看见”网页</h2>
+<p>模型收到的是程序发送的文字和可选图片。它不会凭空知道你当前打开了什么页面，也没有通过 CDP 直接阅读你的屏幕。可以把这一过程理解为：程序给模型递交一张网页截图，再附上一份“页面上有什么、可以操作什么”的清单。</p>
+<p>浏览器本来就保存着页面结构和布局，因为它需要利用这些信息把网页画出来。browser-use 读取并整理这些资料：<a href="#source-2" class="cite">[S2]</a></p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>信息来源</th>
+<th>内容</th>
+<th>对模型的帮助</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOM（页面元素结构）</td>
+<td>链接、输入框、文字、属性和层级</td>
+<td>知道页面由哪些元素组成</td>
+</tr>
+<tr>
+<td>无障碍树</td>
+<td>元素角色、名称、状态，如“按钮：搜索”</td>
+<td>知道元素大致表示什么、有什么作用</td>
+</tr>
+<tr>
+<td>布局与可见性</td>
+<td>元素区域、位置、是否可见</td>
+<td>帮助过滤与定位，处理滚动和遮挡</td>
+</tr>
+<tr>
+<td>页面截图</td>
+<td>实际显示的画面</td>
+<td>补充视觉关系；需要模型支持图片输入并启用相关配置</td>
+</tr>
+<tr>
+<td>历史与执行结果</td>
+<td>前一步做了什么、出现了什么错误</td>
+<td>避免每一步从零开始，辅助纠错</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些资料不是简单地把完整 HTML 原样塞给模型。框架会选择和序列化适合使用的页面信息，维护元素编号与真实节点之间的对应关系。网页的名称和标签也可能缺失或含糊，因此模型理解不是百分之百准确。</p>
+<p>以“搜索无线耳机”为例，模型输入可以简化示意为：</p>
+<pre><code class="language-text">用户目标：搜索无线耳机，查看商品价格。
+当前页面：商品网站首页。
+[1] 输入框：搜索商品，当前为空。
+[2] 按钮：搜索。
+可用动作：输入文字、点击、滚动、读取页面、结束任务。
+</code></pre>
+<p>模型原有的文字与图像能力，让它能够把“搜索无线耳机”与“搜索商品输入框”“搜索按钮”关联起来。它在当前上下文中推理下一步，不需要每访问一个网站就重新训练。这里的“理解”是依据输入生成判断，仍可能出错。</p>
+<h2 id="s03"><span>03</span>模型和浏览器之间有两条通信链路</h2>
+<p><strong>浏览器 ← CDP → browser-use ← 模型接口 → 大模型。</strong> 中间的 browser-use 程序连接两端，它负责两次转换：把页面状态变成模型上下文，再把模型输出变成可执行动作。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>链路</th>
+<th>发送的内容</th>
+<th>接收的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>browser-use 与模型</td>
+<td>用户目标、页面文字、可选截图、历史、工具定义</td>
+<td>结构化动作、阶段状态、最终结果</td>
+</tr>
+<tr>
+<td>browser-use 与浏览器</td>
+<td>导航、读结构、截图、鼠标和键盘等具体命令</td>
+<td>页面数据、命令响应、导航和下载等事件</td>
+</tr>
+</tbody>
+</table></div>
+<p>模型返回的动作可以简化表示为：</p>
+<pre><code class="language-json">{&quot;action&quot;:[{&quot;input&quot;:{&quot;index&quot;:1,&quot;text&quot;:&quot;无线耳机&quot;}},{&quot;click&quot;:{&quot;index&quot;:2}}]}
+</code></pre>
+<p>这是动作意图示意，具体字段以固定版本工具定义为准。模型不只是输出一句给人阅读的“请点击搜索”；框架通过工具定义和结构化输出要求，使结果能够被程序解析、校验和分发。<a href="#source-3" class="cite">[S3]</a><a href="#source-4" class="cite">[S4]</a></p>
+<p><strong>元素编号 2 是框架提供的引用，不是 CDP 原生编号，也不是网站的业务编号。</strong> 框架需要将它查回对应的 DOM 节点。页面变化可能使旧引用失效，程序应重新获取状态，不能一直沿用上一步的位置。</p>
+<h2 id="s04"><span>04</span>CDP 为什么能够控制浏览器</h2>
+<p>CDP 全称 Chrome DevTools Protocol，即 Chrome 开发者工具协议。浏览器内部实现了调试与控制接口，开发者工具也通过这一协议检查页面。CDP 按 Page、DOM、Input、Runtime、Network 等类别组织命令和事件。<a href="#source-6" class="cite">[S6]</a></p>
+<p>一种常见连接方式是：开启浏览器的远程调试接口，获取目标的调试地址，建立 WebSocket 长连接，再发送 JSON 命令并接收响应与事件。CDP 定义消息规则，WebSocket 是承载这些消息的一种通道；协议本身不等于 WebSocket，也存在管道或扩展等接入方式。</p>
+<p>浏览器可能同时存在多个标签页、框架和工作线程。程序要连接正确目标或会话，再向它发指令。能连接本地或云浏览器，也不意味着自动拥有任意网站的登录状态。</p>
+<p>例如，对已连接的页面发送导航命令：</p>
+<pre><code class="language-json">{&quot;id&quot;:1,&quot;method&quot;:&quot;Page.navigate&quot;,&quot;params&quot;:{&quot;url&quot;:&quot;https://example.com&quot;}}
+</code></pre>
+<p>响应以相同 id 对应请求；浏览器还会主动发送页面加载等事件。收到导航响应不代表页面已经可操作，更不代表业务任务完成。程序仍要等待、读取状态并检查结果。<a href="#source-7" class="cite">[S7]</a></p>
+<p>CDP 不理解“找到团队版价格”，只理解明确的程序指令。任务判断来自模型，调用组织和执行管理来自框架。</p>
+<h2 id="s05"><span>05</span>“点击按钮”到底怎么发生</h2>
+<p>以模型选择“点击编号 2”为例，固定源码中的元素点击路径可以概括为：<a href="#source-4" class="cite">[S4]</a><a href="#source-5" class="cite">[S5]</a></p>
+<ol>
+<li><strong>解析动作</strong>：读取模型输出，校验动作名称和参数。</li>
+<li><strong>查找目标</strong>：通过编号映射找到真实页面节点。</li>
+<li><strong>准备位置</strong>：必要时把目标滚入视口，获取当前布局并进行可点击性相关检查。</li>
+<li><strong>确定点击点</strong>：根据元素区域计算点击坐标；常见做法是选择元素内的中心或可点击点。</li>
+<li><strong>发送移动事件</strong>：通过 CDP 告诉浏览器，鼠标移动到这个位置。</li>
+<li><strong>发送按下与松开</strong>：在相应坐标发送左键按下、左键松开事件。</li>
+<li><strong>浏览器响应</strong>：浏览器处理输入，页面上的按钮或链接依据自己的代码响应。</li>
+<li><strong>再次观察</strong>：重新读取页面，检查是否出现搜索结果、弹窗、错误或新标签页。</li>
+</ol>
+<p>假设按钮点击点是页面视口中的 <code>(420, 180)</code>，指令可简化为：</p>
+<pre><code class="language-text">Input.dispatchMouseEvent：mouseMoved   → x=420, y=180
+Input.dispatchMouseEvent：mousePressed → x=420, y=180, button=left
+Input.dispatchMouseEvent：mouseReleased→ x=420, y=180, button=left
+</code></pre>
+<p>这些数字是教学示意，不是任何真实网站的按钮坐标。CDP 鼠标输入通常使用相对主框架视口的 CSS 像素，不能直接把操作系统屏幕坐标、截图像素和页面坐标混用。缩放、滚动、截图尺寸和框架位置都可能需要转换。<a href="#source-8" class="cite">[S8]</a></p>
+<p>有两种需要分开的定位方式：<strong>按元素点击</strong>由模型选元素编号、程序定位；<strong>按坐标点击</strong>在启用相应能力后，可以接受模型选择的图像位置，再换算成浏览器坐标。它们最终都要由程序执行；具体动作的回退路径以源码为准，不能宣称所有点击都只靠一种机制。</p>
+<h2 id="s06"><span>06</span>鼠标为什么能“动”：补充我们的表述</h2>
+<p>我们确认的理解是：<strong>底层程序根据模型选中的目标，获取按钮当前的位置，通过 CDP 向浏览器发送移动、按下和松开事件，形成点击效果。</strong></p>
+<p>这里的“鼠标移动”可以只是浏览器内部接收到模拟鼠标输入。桌面上你能看见的系统鼠标指针不一定移动；无头运行时也没有一个必须显示出来的鼠标。网页中的教学指针只是解释事件位置，不能作为系统鼠标被移动的证据。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>你手动操作</th>
+<th>程序操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>眼睛看到按钮</td>
+<td>程序读取结构／截图，模型选择目标</td>
+</tr>
+<tr>
+<td>手移动鼠标到按钮</td>
+<td>程序定位并发送浏览器鼠标移动事件</td>
+</tr>
+<tr>
+<td>按下、松开左键</td>
+<td>程序通过 CDP 发送按下、松开事件</td>
+</tr>
+<tr>
+<td>网页处理点击</td>
+<td>同样由浏览器与网页逻辑处理输入</td>
+</tr>
+<tr>
+<td>观察网页有没有变化</td>
+<td>程序读取新状态，模型或检查规则判断结果</td>
+</tr>
+</tbody>
+</table></div>
+<p>动作事件被接受，不保证目标业务成功。按钮可能禁用、被覆盖、已失效，网站可能返回错误；浏览器自动化也不保证与人工行为在所有网站中完全等同。真实结果需要另行验收。</p>
+<h2 id="s07"><span>07</span>从“搜索无线耳机”走完一轮</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>模型或程序做什么</th>
+<th>产生什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 读取页面</td>
+<td>程序读取结构、布局和可选截图</td>
+<td>输入框 1、按钮 2、当前网址等状态</td>
+</tr>
+<tr>
+<td>2 交给模型</td>
+<td>程序发送任务、状态、工具定义</td>
+<td>模型可理解的上下文</td>
+</tr>
+<tr>
+<td>3 选择动作</td>
+<td>模型要求输入文字并点击搜索</td>
+<td>可解析的动作指令</td>
+</tr>
+<tr>
+<td>4 输入文字</td>
+<td>程序定位输入框、聚焦、执行输入</td>
+<td>输入框显示“无线耳机”</td>
+</tr>
+<tr>
+<td>5 定位按钮</td>
+<td>程序查询按钮节点与当前区域</td>
+<td>页面坐标示意 <code>(420, 180)</code></td>
+</tr>
+<tr>
+<td>6 模拟点击</td>
+<td>CDP 移动、左键按下、左键松开</td>
+<td>浏览器收到输入，触发网页逻辑</td>
+</tr>
+<tr>
+<td>7 获取反馈</td>
+<td>程序读取搜索结果或错误提示</td>
+<td>新页面状态与动作结果</td>
+</tr>
+<tr>
+<td>8 继续或结束</td>
+<td>模型根据结果继续，业务规则验收</td>
+<td>商品信息、来源或未完成原因</td>
+</tr>
+</tbody>
+</table></div>
+<p>正常分支可能是商品列表出现；异常分支可能是需要登录、网络错误、按钮已经移动或旧节点失效。框架有历史管理、超时、失败处理与步骤限制等机制，模型可以根据反馈调整；它并不能保证每个任务都成功。<a href="#source-3" class="cite">[S3]</a></p>
+<p>本地网页提供“正常搜索”和“旧按钮失效”两个预设教学分支。操作仅改变本页的示意状态，不启动 CDP，不连接浏览器调试端口，不把输入发送给模型，也不操作其他网站。</p>
+<h2 id="s08"><span>08</span>有哪些动作能力</h2>
+<p>下面整理固定版本工具注册中的主要动作。能否让某次模型调用使用某个动作，还取决于配置、排除列表、模型能力、页面和执行环境。<a href="#source-4" class="cite">[S4]</a></p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>主要能力</th>
+<th>如何落地与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导航与搜索</td>
+<td>打开网址、网页搜索、后退</td>
+<td>浏览器访问网址；搜索结果受站点与网络影响</td>
+</tr>
+<tr>
+<td>点击</td>
+<td>元素编号点击、可配置的坐标点击</td>
+<td>定位后发输入事件；不是保证任意元素可点击</td>
+</tr>
+<tr>
+<td>输入</td>
+<td>填写、清空、追加文字</td>
+<td>定位、聚焦并输入；网页可能自动格式化内容</td>
+</tr>
+<tr>
+<td>键盘</td>
+<td>Enter、Tab、快捷键</td>
+<td>向页面派发按键事件；不代表控制所有桌面快捷键</td>
+</tr>
+<tr>
+<td>滚动</td>
+<td>页面／指定区域滚动、滚到文字</td>
+<td>通过滚动或定位机制改变可见内容</td>
+</tr>
+<tr>
+<td>下拉框</td>
+<td>读取选项、选择选项</td>
+<td>标准控件与自绘控件可能需要不同处理</td>
+</tr>
+<tr>
+<td>标签页</td>
+<td>打开新页的导航、切换、关闭</td>
+<td>管理浏览器目标与会话</td>
+</tr>
+<tr>
+<td>观察与定位</td>
+<td>截图、页内文字搜索、元素查找</td>
+<td>提供下一步判断的信息</td>
+</tr>
+<tr>
+<td>内容提取</td>
+<td>按目标提取页面、结构化结果</td>
+<td>模型提取仍可能遗漏，格式正确不等于事实正确</td>
+</tr>
+<tr>
+<td>文件与产物</td>
+<td>上传指定文件、PDF 保存、任务文件读写</td>
+<td>受可用文件配置与环境影响；下载由页面动作触发并跟踪</td>
+</tr>
+<tr>
+<td>等待与结束</td>
+<td>等待、报告完成／未完成</td>
+<td>等待不是任务调度；完成自报需要结果验证</td>
+</tr>
+<tr>
+<td>页面脚本</td>
+<td>执行 JavaScript</td>
+<td>在页面执行上下文中操作，受环境与页面机制影响</td>
+</tr>
+</tbody>
+</table></div>
+<p>CDP 还提供触摸、拖拽、缩放等底层接口，但<strong>底层协议有接口，不等于 browser-use 默认向模型开放了对应工具</strong>。如果需要稳定的复杂拖拽或特殊控件处理，应核对工具封装或添加自定义动作，而不是把整份协议目录当作现成产品能力。<a href="#source-8" class="cite">[S8]</a><a href="#source-9" class="cite">[S9]</a></p>
+<h2 id="s09"><span>09</span>与之前研究的项目有什么区别</h2>
+<p>我们之前分析过的最接近项目是 gstack 的浏览器能力，另有 oh-my-pi 的浏览器工具。下表是各自固定研究版本的架构比较，未进行同任务成功率或速度对照实验。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>对比</th>
+<th>browser-use Python Agent</th>
+<th>gstack 浏览器相关能力</th>
+<th>oh-my-pi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要目标</td>
+<td>执行多步网页任务</td>
+<td>软件研发、质量检查与交付</td>
+<td>通用 AI 编程工作</td>
+</tr>
+<tr>
+<td>决策循环</td>
+<td>框架内部调用所接模型</td>
+<td>宿主 Agent 读取技能再调用工具</td>
+<td>OMP Agent 调用工具</td>
+</tr>
+<tr>
+<td>浏览器位置</td>
+<td>核心执行对象</td>
+<td>研发工具之一</td>
+<td>编程 Agent 工具之一</td>
+</tr>
+<tr>
+<td>已研究控制路径</td>
+<td>CDP / cdp-use 与事件处理</td>
+<td>Aside，或 CLI→本地服务→Playwright→Chromium</td>
+<td>浏览器 Eval 接口</td>
+</tr>
+<tr>
+<td>适合借鉴</td>
+<td>页面表征、动作定位、浏览器任务反馈</td>
+<td>测试方法、证据、发现问题后修复回归</td>
+<td>编程工作流与工具扩展</td>
+</tr>
+</tbody>
+</table></div>
+<p>gstack 固定研究提交 <code>71f6048e8ada25180e61438abc1d98cb151fe9a7</code>；OMP 固定研究提交 <code>d884057f09c50ad096ccd4ca16cec79602e9879c</code>。关联来源见文末。browser-use 的 CLI 也可由外部 Agent 决策，因此要区分 Python Agent 与工具入口，不能简单把整个品牌概括成一种运行方式。<a href="#source-1" class="cite">[S1]</a><a href="#source-10" class="cite">[S10]</a><a href="#source-11" class="cite">[S11]</a></p>
+<h2 id="s10"><span>10</span>场景、扩展和对我们的意义</h2>
+<p>这些是根据能力提出的应用方向，尚未在本项目实际接通。对当前研究工作，优先考虑“GitHub 与官网研究采集助手”：输入仓库与官网，收集能力、原理、场景、限制、版本和来源，再输出可核对的中文资料。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<thead>
+<tr>
+<th>场景／组合</th>
+<th>browser-use 补充什么</th>
+<th>需要自己增加什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目与竞品研究</td>
+<td>点击功能页、展开说明、访问交互演示</td>
+<td>字段规范、来源存档、缺失项与事实检查</td>
+</tr>
+<tr>
+<td>Graphify</td>
+<td>获取网页资料并保存为带来源的文件</td>
+<td>导入流程、更新策略、关系整理与追溯</td>
+</tr>
+<tr>
+<td>Marketing Skills</td>
+<td>采集产品、竞品和页面证据</td>
+<td>产品背景、营销方法、评估与业务验证</td>
+</tr>
+<tr>
+<td>LongHorizon-Harness</td>
+<td>承接长期目标中的浏览器子任务</td>
+<td>调度、持久化、恢复与独立验收</td>
+</tr>
+<tr>
+<td>gstack</td>
+<td>辅助按用户目标检查网页流程</td>
+<td>测试断言、缺陷记录与代码回归</td>
+</tr>
+<tr>
+<td>业务后台</td>
+<td>查询、填写、导出等网页流程</td>
+<td>登录管理、任务队列、权限和结果校验</td>
+</tr>
+</tbody>
+</table></div>
+<p>工程取舍建议：资料已有稳定 API 时优先使用 API；固定高频步骤适合确定性脚本；需要临场理解网页的环节再使用浏览器 Agent。这样更容易控制模型成本、速度与验证复杂度。</p>
+<p>产品价值应以“可交付的结果”衡量。例如“十家供应商的可追溯比较表”，比“自动点过十个网站”更能说明价值。首次实验应记录成功率、字段准确率、来源覆盖、人工干预次数、耗时与成本，不能用一个成功演示推断全面可靠。</p>
+<h2 id="s11"><span>11</span>容易混淆的边界</h2>
+<ul>
+<li><strong>模型理解 ≠ 浏览器控制</strong>：前者生成判断，后者执行指令，框架连接两者。</li>
+<li><strong>CDP ≠ AI</strong>：没有模型也可以用 CDP 写固定自动化脚本。</li>
+<li><strong>模拟鼠标事件 ≠ 必然移动系统指针</strong>：浏览器内部即可处理这些事件。</li>
+<li><strong>收到动作响应 ≠ 业务成功</strong>：应检查页面、记录编号、文件或目标数据。</li>
+<li><strong>截图 ≠ 全部信息</strong>：页面结构与语义信息也很重要，视觉使用依赖配置。</li>
+<li><strong>网页操作 ≠ 整台电脑控制</strong>：本项目讨论的是浏览器和网页范围。</li>
+<li><strong>开源库免费 ≠ 运行零成本</strong>：模型、浏览器资源、托管与维护仍有成本。</li>
+<li><strong>支持登录态 ≠ 自动完成所有认证</strong>：验证码、二次验证、站点变化仍可能阻断。</li>
+<li><strong>本地教学动画 ≠ 上游原生运行</strong>：本页的坐标、商品、状态均为说明用预设。</li>
+</ul>
+<h2 id="s12"><span>12</span>来源与证据</h2>
+<p>以下源码链接固定到研究提交，官方在线文档可能继续更新。本文为中文原创解释，没有导入上游实现代码；保留上游 MIT 许可证原文供追溯。</p>
+<ul>
+<li id="source-1"><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/README.md">S1 · 官方 README：Python 库、CLI 与云服务</a></li>
+<li id="source-2"><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/browser_use/dom/service.py">S2 · 页面结构、无障碍信息与布局：DomService</a></li>
+<li id="source-3"><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/browser_use/agent/service.py">S3 · Agent 上下文、模型调用、动作与反馈循环</a></li>
+<li id="source-4"><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/browser_use/tools/service.py">S4 · 工具注册、动作参数与元素编号映射</a></li>
+<li id="source-5"><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/browser_use/browser/watchdogs/default_action_watchdog.py">S5 · 点击、坐标、鼠标及键盘事件处理</a></li>
+<li id="source-6"><a href="https://chromedevtools.github.io/devtools-protocol/">S6 · Chrome DevTools Protocol 总览与连接</a></li>
+<li id="source-7"><a href="https://chromedevtools.github.io/devtools-protocol/tot/Page/">S7 · CDP Page：导航与页面事件</a></li>
+<li id="source-8"><a href="https://chromedevtools.github.io/devtools-protocol/tot/Input/">S8 · CDP Input：鼠标、键盘与触摸事件</a></li>
+<li id="source-9"><a href="https://docs.browser-use.com/open-source/customize/tools/add">S9 · 自定义工具与人工协助</a></li>
+<li id="source-10"><a href="https://github.com/garrytan/gstack/tree/71f6048e8ada25180e61438abc1d98cb151fe9a7">S10 · gstack 固定研究版本</a></li>
+<li id="source-11"><a href="https://github.com/can1357/oh-my-pi/blob/d884057f09c50ad096ccd4ca16cec79602e9879c/docs/tools/browser.md">S11 · OMP 固定版本浏览器文档</a></li>
+<li><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/browser_use/browser/session.py">浏览器会话与 CDP 连接源码</a></li>
+<li><a href="https://docs.browser-use.com/open-source/customize/agent/all-parameters">Agent 参数：视觉、失败处理与输出</a></li>
+<li><a href="https://github.com/browser-use/browser-use/blob/50f205533fe10ba35b553d2a3689c77b87bd5d0a/LICENSE">上游 MIT 许可证</a></li>
+</ul></article>
+<footer><p>中文原创研究 · 2026-09-11 · 上游 MIT</p><p>本地新增：研究文档、完整总览图与教学网页。上游 Agent 尚未实测。本页无模型调用和远程浏览器控制。</p><a href="downloads/LICENSE.browser-use">上游许可证</a> · <a href="downloads/notes.md">研究与验证记录</a></footer>
+</main></div>
+</body></html>
+

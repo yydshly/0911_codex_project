@@ -21,6 +21,7 @@ on:
       - 'projects/012-gstack/**'
       - 'projects/014-gaussian-splatting/**'
       - 'projects/013-upscayl/**'
+      - 'projects/015-browser-use/**'
   workflow_dispatch:
 
 permissions:
@@ -96,6 +97,11 @@ jobs:
         run: |
           node projects/014-gaussian-splatting/app/build.cjs
           node projects/014-gaussian-splatting/app/check.cjs
+      - name: Build and check Browser-use understanding
+        run: |
+          python -m pip install -r projects/015-browser-use/app/requirements.txt
+          python projects/015-browser-use/app/build.py
+          node projects/015-browser-use/app/scripts/check.cjs
       - name: Assemble project demos
         run: node scripts/build-pages.cjs
       - name: Upload Pages artifact

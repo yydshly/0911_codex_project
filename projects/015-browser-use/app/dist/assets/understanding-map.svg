@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="3200" viewBox="0 0 1800 3200" role="img" aria-labelledby="title desc">
+<title id="title">Browser-use：从网页理解到 CDP 点击的完整总览</title><desc id="desc">模型根据页面文字和可选截图选择目标。程序映射元素、滚动、定位并计算点击坐标，通过 CDP 发送鼠标移动、左键按下和松开事件。浏览器执行网页逻辑，结果返回模型。还包括动作能力、同类项目、场景、扩展和边界。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6" fill="#476278"/></marker></defs>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<rect x="0" y="0" width="1800" height="3200" rx="0" fill="#edf3f9" stroke="#edf3f9"/>
+<rect x="0" y="0" width="1800" height="215" rx="0" fill="#132b46" stroke="#132b46"/>
+<text x="70" y="54.0" font-size="22" fill="#b8d4ef" font-weight="600">BROWSER-USE / 中文研究总览 / 2026-09-11</text>
+<text x="70" y="116.0" font-size="48" fill="#ffffff" font-weight="700">模型选择目标，程序控制浏览器。</text>
+<text x="70" y="170.0" font-size="26" fill="#dce9f7" font-weight="400">底层通过 CDP 传递操作指令；鼠标移动与点击由程序发送浏览器输入事件实现。</text>
+<rect x="70" y="255" width="385" height="118" rx="18" fill="#e4edff" stroke="#ccd8e5"/>
+<text x="94" y="301.0" font-size="28" fill="#175bb7" font-weight="700">大模型</text>
+<text x="94" y="342.0" font-size="22" fill="#1b3147" font-weight="400">理解任务 / 选择动作</text>
+<rect x="495" y="255" width="385" height="118" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="519" y="301.0" font-size="28" fill="#142b45" font-weight="700">browser-use 程序</text>
+<text x="519" y="342.0" font-size="22" fill="#1b3147" font-weight="400">整理上下文 / 定位 / 执行</text>
+<rect x="920" y="255" width="385" height="118" rx="18" fill="#fff0e0" stroke="#ccd8e5"/>
+<text x="944" y="301.0" font-size="28" fill="#b34a11" font-weight="700">CDP 协议</text>
+<text x="944" y="342.0" font-size="22" fill="#1b3147" font-weight="400">命令 / 响应 / 事件</text>
+<rect x="1345" y="255" width="385" height="118" rx="18" fill="#e2f3ee" stroke="#ccd8e5"/>
+<text x="1369" y="301.0" font-size="28" fill="#16624f" font-weight="700">真实浏览器</text>
+<text x="1369" y="342.0" font-size="22" fill="#1b3147" font-weight="400">加载 / 渲染 / 处理输入</text>
+<path d="M464 314 L488 314" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M889 314 L913 314" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M1314 314 L1338 314" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="70" y="410.0" font-size="25" fill="#476278" font-weight="400">模型接口连接“程序与模型”；CDP 连接“程序与浏览器”。两条链路由程序衔接。</text>
+<text x="70" y="475.0" font-size="24" fill="#b34a11" font-weight="700">01</text>
+<text x="125" y="475.0" font-size="33" fill="#142b45" font-weight="700">网页如何交给模型</text>
+<text x="125" y="515.0" font-size="22" fill="#476278" font-weight="400">模型看到的是程序提供的信息；不会自动知道你当前打开了哪个网页。</text>
+<rect x="70" y="540" width="800" height="265" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="98" y="586.0" font-size="28" fill="#16624f" font-weight="700">浏览器提供的原始资料</text>
+<text x="98" y="632.0" font-size="24" fill="#1b3147" font-weight="400">DOM：元素、文字、属性与层级</text>
+<text x="98" y="671.6" font-size="24" fill="#1b3147" font-weight="400">无障碍信息：按钮名称、角色与状态</text>
+<text x="98" y="711.2" font-size="24" fill="#1b3147" font-weight="400">布局：元素位置、可见性与区域</text>
+<text x="98" y="750.8" font-size="24" fill="#1b3147" font-weight="400">截图：实际画面，视觉输入按配置使用</text>
+<rect x="930" y="540" width="800" height="265" rx="18" fill="#eaf1ff" stroke="#ccd8e5"/>
+<text x="958" y="586.0" font-size="28" fill="#175bb7" font-weight="700">程序整理后的模型上下文（示意）</text>
+<text x="958" y="632.0" font-size="24" fill="#1b3147" font-weight="400">任务：搜索无线耳机，查看价格</text>
+<text x="958" y="671.6" font-size="24" fill="#1b3147" font-weight="400">[1] 输入框：搜索商品，当前为空</text>
+<text x="958" y="711.2" font-size="24" fill="#1b3147" font-weight="400">[2] 按钮：搜索</text>
+<text x="958" y="750.8" font-size="24" fill="#1b3147" font-weight="400">另附可用动作、历史结果与可选截图</text>
+<path d="M878 675 L920 675" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="70" y="880.0" font-size="24" fill="#b34a11" font-weight="700">02</text>
+<text x="125" y="880.0" font-size="33" fill="#142b45" font-weight="700">模型做判断，程序接收动作</text>
+<text x="125" y="920.0" font-size="22" fill="#476278" font-weight="400">模型凭已有的文字和图像能力理解任务；浏览网页时不需要重新训练。</text>
+<rect x="70" y="945" width="800" height="255" rx="18" fill="#eaf1ff" stroke="#ccd8e5"/>
+<text x="98" y="991.0" font-size="28" fill="#175bb7" font-weight="700">模型输出：下一步做什么</text>
+<text x="98" y="1037.0" font-size="24" fill="#1b3147" font-weight="400">① 向元素 1 输入“无线耳机”</text>
+<text x="98" y="1076.6" font-size="24" fill="#1b3147" font-weight="400">② 点击元素 2</text>
+<text x="98" y="1116.2" font-size="24" fill="#1b3147" font-weight="400">结构化动作可由程序解析与校验</text>
+<text x="98" y="1155.8" font-size="24" fill="#1b3147" font-weight="400">模型本身不移动物理鼠标</text>
+<rect x="930" y="945" width="800" height="255" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="958" y="991.0" font-size="28" fill="#142b45" font-weight="700">程序处理：把目标变成可执行操作</text>
+<text x="958" y="1037.0" font-size="24" fill="#1b3147" font-weight="400">动作解析 → 参数校验 → 工具分发</text>
+<text x="958" y="1076.6" font-size="24" fill="#1b3147" font-weight="400">编号 2 → 当前网页中的搜索按钮节点</text>
+<text x="958" y="1116.2" font-size="24" fill="#1b3147" font-weight="400">编号由框架维护，不是 CDP 原生编号</text>
+<text x="958" y="1155.8" font-size="24" fill="#1b3147" font-weight="400">页面变化后，旧引用可能需要刷新</text>
+<path d="M878 1070 L920 1070" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="70" y="1280.0" font-size="24" fill="#b34a11" font-weight="700">03</text>
+<text x="125" y="1280.0" font-size="33" fill="#142b45" font-weight="700">点击如何真正执行：底层程序 + CDP</text>
+<text x="125" y="1320.0" font-size="22" fill="#476278" font-weight="400">以按钮当前点击点 (420, 180) 为例。数字仅为教学示意。</text>
+<rect x="70" y="1345" width="800" height="270" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="98" y="1391.0" font-size="28" fill="#142b45" font-weight="700">A · 定位和计算坐标</text>
+<text x="98" y="1437.0" font-size="24" fill="#1b3147" font-weight="400">查找真实节点 → 必要时滚入视口</text>
+<text x="98" y="1476.6" font-size="24" fill="#1b3147" font-weight="400">读取当前布局 → 确定可点击位置</text>
+<text x="98" y="1516.2" font-size="24" fill="#1b3147" font-weight="400">按元素点击：模型选编号，程序找坐标</text>
+<text x="98" y="1555.8" font-size="24" fill="#1b3147" font-weight="400">坐标点击：需启用并处理坐标换算</text>
+<rect x="930" y="1345" width="800" height="270" rx="18" fill="#fff0e0" stroke="#ccd8e5"/>
+<text x="958" y="1391.0" font-size="28" fill="#b34a11" font-weight="700">B · CDP 传递具体浏览器指令</text>
+<text x="958" y="1437.0" font-size="24" fill="#1b3147" font-weight="400">常见通道：WebSocket 长连接</text>
+<text x="958" y="1476.6" font-size="24" fill="#1b3147" font-weight="400">消息：JSON 命令、对应响应、异步事件</text>
+<text x="958" y="1516.2" font-size="24" fill="#1b3147" font-weight="400">程序选择正确页面目标／会话</text>
+<text x="958" y="1555.8" font-size="24" fill="#1b3147" font-weight="400">浏览器内部实现这些控制接口</text>
+<path d="M878 1480 L920 1480" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="70" y="1650" width="1660" height="205" rx="18" fill="#132b46" stroke="#132b46"/>
+<text x="104" y="1695.0" font-size="29" fill="#ffffff" font-weight="700">C · Input.dispatchMouseEvent：移动 → 按下 → 松开</text>
+<text x="105" y="1752.0" font-size="27" fill="#ffcf99" font-weight="600">① mouseMoved</text>
+<text x="105" y="1801.0" font-size="25" fill="#e4edf7" font-weight="400">移动到 (420, 180)</text>
+<text x="665" y="1752.0" font-size="27" fill="#ffcf99" font-weight="600">② mousePressed</text>
+<text x="665" y="1801.0" font-size="25" fill="#e4edf7" font-weight="400">左键在该位置按下</text>
+<text x="1225" y="1752.0" font-size="27" fill="#ffcf99" font-weight="600">③ mouseReleased</text>
+<text x="1225" y="1801.0" font-size="25" fill="#e4edf7" font-weight="400">左键在该位置松开</text>
+<path d="M540 1770 L620 1770" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M1100 1770 L1180 1770" fill="none" stroke="#476278" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="70" y="1880" width="1660" height="180" rx="18" fill="#e2f3ee" stroke="#ccd8e5"/>
+<text x="98" y="1926.0" font-size="28" fill="#16624f" font-weight="700">D · 浏览器接收输入，网页运行自己的响应逻辑</text>
+<text x="98" y="1972.0" font-size="25" fill="#1b3147" font-weight="400">浏览器处理目标位置的鼠标事件 → 按钮触发搜索逻辑 → 网站可能返回商品列表或错误。</text>
+<text x="98" y="2013.25" font-size="25" fill="#1b3147" font-weight="400">坐标通常相对页面视口，以 CSS 像素计；截图像素、缩放、滚动与框架位置可能需要换算。</text>
+<text x="70" y="2130.0" font-size="24" fill="#b34a11" font-weight="700">04</text>
+<text x="125" y="2130.0" font-size="33" fill="#142b45" font-weight="700">再次观察，才能知道是否达成目标</text>
+<rect x="70" y="2165" width="1660" height="210" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="98" y="2211.0" font-size="28" fill="#142b45" font-weight="700">反馈回路：新页面 → 程序整理 → 模型继续／结束</text>
+<text x="98" y="2257.0" font-size="25" fill="#1b3147" font-weight="400">正常：搜索结果出现 → 提取商品和价格 → 按目标验收。</text>
+<text x="98" y="2298.25" font-size="25" fill="#1b3147" font-weight="400">异常：按钮失效、登录弹窗或页面错误 → 获取新状态 → 调整动作、有限重试或报告未完成。</text>
+<text x="98" y="2339.5" font-size="25" fill="#1b3147" font-weight="400">程序已发出点击 ≠ 业务成功；框架管理历史、超时与步骤，结果仍需要证据验证。</text>
+<text x="70" y="2445.0" font-size="24" fill="#b34a11" font-weight="700">05</text>
+<text x="125" y="2445.0" font-size="33" fill="#142b45" font-weight="700">动作、同类项目与我们可以怎样使用</text>
+<rect x="70" y="2480" width="800" height="295" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="98" y="2526.0" font-size="28" fill="#175bb7" font-weight="700">原库主要动作（按配置开放）</text>
+<text x="98" y="2572.0" font-size="23" fill="#1b3147" font-weight="400">打开 / 搜索 / 后退 / 切换与关闭标签页</text>
+<text x="98" y="2609.95" font-size="23" fill="#1b3147" font-weight="400">点击 / 输入 / 键盘 / 滚动 / 下拉选择</text>
+<text x="98" y="2647.9" font-size="23" fill="#1b3147" font-weight="400">截图 / 页内查找 / 提取 / 结构化输出</text>
+<text x="98" y="2685.85" font-size="23" fill="#1b3147" font-weight="400">上传 / 下载跟踪 / PDF / 任务文件读写</text>
+<text x="98" y="2723.8" font-size="23" fill="#1b3147" font-weight="400">等待 / 页面脚本 / 自定义工具</text>
+<rect x="930" y="2480" width="800" height="295" rx="18" fill="#ffffff" stroke="#ccd8e5"/>
+<text x="958" y="2526.0" font-size="28" fill="#16624f" font-weight="700">定位与应用（组合方向尚未实测）</text>
+<text x="958" y="2572.0" font-size="23" fill="#1b3147" font-weight="400">browser-use：浏览器任务的 Agent 框架</text>
+<text x="958" y="2609.95" font-size="23" fill="#1b3147" font-weight="400">gstack：研发方法 + 浏览器工具</text>
+<text x="958" y="2647.9" font-size="23" fill="#1b3147" font-weight="400">OMP：编程 Agent + 浏览器工具</text>
+<text x="958" y="2685.85" font-size="23" fill="#1b3147" font-weight="400">可用于研究采集、后台流程、网页检查</text>
+<text x="958" y="2723.8" font-size="23" fill="#1b3147" font-weight="400">可衔接 Graphify、营销技能与长期任务</text>
+<rect x="70" y="2820" width="1660" height="220" rx="18" fill="#fff0e0" stroke="#e7c8a8"/>
+<text x="104" y="2867.0" font-size="31" fill="#963f12" font-weight="700">最重要的补充：这里的鼠标不一定是桌面可见指针。</text>
+<text x="104" y="2916.0" font-size="25" fill="#553c28" font-weight="400">程序可以直接给浏览器发送模拟鼠标事件；即使系统指针不动、浏览器无可见窗口，也能操作网页。</text>
+<text x="104" y="2957.25" font-size="25" fill="#553c28" font-weight="400">CDP 不是模型，browser-use 不是浏览器内核；协议有某个接口，也不等于模型默认有对应工具。</text>
+<text x="104" y="2998.5" font-size="25" fill="#553c28" font-weight="400">稳定 API 优先、固定步骤可用脚本；对结果检查来源、准确率、耗时、成本和人工干预。</text>
+<text x="70" y="3100.0" font-size="23" fill="#476278" font-weight="400">原创研究示意图，非上游截图或真实 Agent 运行轨迹。教学坐标、商品与状态均为预设。</text>
+<text x="70" y="3145.0" font-size="23" fill="#476278" font-weight="400">依据 browser-use 固定提交 50f2055 / MIT；CDP 官方协议。完整来源与适用边界见配套中文文档。</text>
+</g></svg>

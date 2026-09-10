@@ -1,0 +1,9 @@
+{
+  "kind": "original-diagram-render",
+  "renderer": "sharp; Chromium text bounds",
+  "width": 1800,
+  "height": 3200,
+  "textCount": 87,
+  "outsideCanvas": [],
+  "svgSha256": "13fc727c57148e468a6fd4219360cac633ff1944be97b913180b3cd5de2acb3a"
+}

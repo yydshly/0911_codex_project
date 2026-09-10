@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Browser-use · 从模型理解到 CDP 点击</title><meta name="description" content="完整解释模型如何读取网页、程序如何定位按钮、CDP 如何发送鼠标事件，以及能力、场景和扩展。"><link rel="stylesheet" href="style.css"><script defer src="lesson.js"></script><script defer src="app.js"></script></head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="topbar"><a href="https://github.com/yydshly/0911_codex_project">GitHub 项目研究集</a><span>研究 014 / Browser-use</span><a href="https://github.com/browser-use/browser-use">上游仓库 ↗</a></header>
+<div class="layout">
+<aside><div class="nav-title">从看懂，到点下去</div><nav aria-label="阅读目录"><a href="#lesson"><span>↗</span>一步步看搜索如何发生</a><a href="#overview"><span>↗</span>完整理解总览图</a><!-- TOC --></nav><p class="aside-note">固定研究版本 50f2055<br>源码与文档研究<br>上游运行待复现</p></aside>
+<main id="main">
+<section class="intro"><p class="eyebrow">BROWSER-USE / 原理与能力</p><h1>模型选择目标，<br>程序控制浏览器。</h1><p class="lead">支持网页搜索、点击、输入、滚动、信息提取与多步任务。模型选择目标；程序根据按钮当前布局<strong>计算点击坐标</strong>，再通过底层 <strong>CDP 协议</strong>发送鼠标移动、按下与松开事件，并读取结果。</p><div class="roles"><span>模型<span>决定做什么</span></span><b>→</b><span>程序 + CDP<span>定位并执行</span></span><b>→</b><span>真实浏览器<span>响应并反馈</span></span></div><p class="key-note">CDP 负责传递浏览器控制指令；按钮定位和坐标计算由程序完成。模拟鼠标事件在浏览器内部处理，桌面系统指针不一定会动。</p><div class="links"><a href="downloads/understanding.md" download>下载完整中文文档 ↓</a><a href="assets/understanding-map.svg" target="_blank" rel="noopener">打开高清总览图 ↗</a></div></section>
+
+<section class="lesson" id="lesson" aria-labelledby="lesson-title"><p class="eyebrow">用一个具体例子理解</p><h2 id="lesson-title">“帮我搜索无线耳机。”</h2><p>沿着同一个任务，看浏览器、模型和控制程序分别做了什么。下方为预设教学模拟，不调用模型或 CDP，不操作其他网站。</p>
+<div class="lesson-toolbar"><label for="scenario">结果分支</label><select id="scenario"><option value="success">正常搜索</option><option value="stale">旧按钮失效后重新定位</option></select><span id="step-count"></span></div>
+<ol class="steps" id="step-list" aria-label="教学步骤"></ol>
+<div class="lesson-panels">
+<section class="browser-panel"><h3>浏览器里的页面</h3><div class="mock-browser"><div class="address">教学商品站 / 本地示意</div><div class="mock-page"><span class="mock-brand">商品搜索</span><div class="mock-input" id="mock-input">搜索商品</div><div class="mock-button" id="mock-button">搜索</div><span class="pointer" id="mock-pointer" aria-hidden="true">↖</span><div id="mock-result" class="mock-result">尚未搜索</div></div></div><p class="mini">指针图标仅表示浏览器输入事件的位置。</p></section>
+<section class="model-panel"><h3>模型收到／返回的内容</h3><pre id="model-message"></pre></section>
+<section class="program-panel"><h3>程序与 CDP 正在做什么</h3><pre id="program-message"></pre></section>
+</div>
+<div class="lesson-explanation" aria-live="polite" aria-atomic="true"><strong id="step-title"></strong><p id="step-explanation"></p></div>
+<div class="lesson-controls"><button type="button" id="prev">← 上一步</button><button type="button" id="next" class="primary">下一步 →</button><button type="button" id="reset">从头看</button></div>
+<noscript><p>交互示例需要 JavaScript。下面的完整图和详细正文仍可直接阅读，正文第 07 节包含全部步骤。</p></noscript></section>
+
+<section id="overview" class="overview"><p class="eyebrow">把全部理解放进一张图</p><h2>从页面信息，到真实点击，再到结果反馈</h2><p>从上向下阅读：四方职责 → 页面如何进入模型 → 动作如何进入程序 → CDP 点击细节 → 反馈 → 能力与应用。展开大图可查看全部文字。</p><div class="links"><a href="assets/understanding-map.svg" target="_blank" rel="noopener">打开可放大 SVG ↗</a><a href="assets/understanding-map.svg" download>下载矢量图 ↓</a><a href="assets/understanding-map.png" download>下载高清 PNG ↓</a></div><a class="map-link" href="assets/understanding-map.svg" target="_blank" rel="noopener" aria-label="在新标签页打开完整理解图"><img src="assets/understanding-map.svg" alt="Browser-use 完整原理图：模型读取页面，程序定位按钮，通过 CDP 发送移动、按下、松开事件，浏览器响应后回传结果；附能力、差异、应用与边界。" width="1800" height="3200" loading="lazy"></a><p class="caption">原创研究示意图，非上游运行截图；坐标与商品均为教学示意。</p></section>
+<article class="reading"><!-- ARTICLE --></article>
+<footer><p>中文原创研究 · 2026-09-11 · 上游 MIT</p><p>本地新增：研究文档、完整总览图与教学网页。上游 Agent 尚未实测。本页无模型调用和远程浏览器控制。</p><a href="downloads/LICENSE.browser-use">上游许可证</a> · <a href="downloads/notes.md">研究与验证记录</a></footer>
+</main></div>
+</body></html>
+

@@ -4,7 +4,7 @@
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 按原库统计，已收录 **13** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
+**当前进度：** 按原库统计，已收录 **14** 个研究项目。Awesome Engineering Articles 提供工程文章的收集、分类与导航，其配套案例手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 聚焦复杂目标拆解与 Agent 持续执行；oh-my-pi 是基于 Pi 二次开发、类似 Codex CLI 的 AI 编程 Agent 工具，依靠接入模型并完善工具与执行流程。案例手册与 LongHorizon 研究存档已发布到 GitHub Pages；OMP 当前为文档研究，运行待复现、未部署演示。XXG 通过光源与阴影描述指导图像大模型结合原图生成编辑结果；本地已完成三次人像布光及商品布光实验，提供实际效果、逐字提示词和偏差观察，已发布并验证展示。
 
 FreeLLMAPI 是一个自托管模型网关，对外统一模型接口，对内负责选路、适配、额度与失败管理。研究索引 005，历史目录 `008-freellmapi/`；已整理共同架构、七个产品对比与开发取舍，网页已部署并验证，上游网关运行待复现。
 
@@ -30,6 +30,8 @@ Upscayl 是开源本地图片超分辨率桌面工具：输入单张图片或文
 
 Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库，核心采用 3DGS 算法：先定位相机与空间点，再优化高斯外观并实时渲染。其他路线还有摄影测量、NeRF 和神经隐式表面；预训练几何预测与生成式三维也可参与流程。本地新增完整总览图、原理和 21 个产品对比，关联 Splat.js 实测；[在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)已部署并验证。
 
+Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 CDP 是浏览器控制协议，本身不理解任务或计算按钮位置；定位与坐标计算由程序完成。这里的鼠标事件在浏览器内部处理，桌面系统指针不一定移动。 本地新增 12 节中文理解、完整图与两个教学分支；上游未实测，网页发布状态见项目说明。
+
 ## 项目索引
 
 按原库去重、按研究索引升序排列：001 为工程文章库，002 为 LongHorizon-Harness，003 为 oh-my-pi，004 为 XXG Portrait Rebuild Light。案例手册归属 001，不单独计数。研究索引与历史存储路径分开：保留已发布的 `002-engineering-casebook/` 和 `003-longhorizon-harness/`，旧链接继续有效；003 的资料存于 `004-oh-my-pi/`，004 存于 `005-xxg-portrait-rebuild-light/`。
@@ -49,6 +51,7 @@ Gaussian Splatting 是一个用多角度照片生成可交互三维效果的库�
 | 011 | [gstack](projects/012-gstack/README.md) | [garrytan/gstack](https://github.com/garrytan/gstack) | 57 项独立技能覆盖需求规划、设计页面、质量排障、浏览器数据、交付、文档、记忆、保护、iOS 真机、跨模型协作、路由与安装适配；宿主结合模型和工具执行，产出方案、修改、测试与交付证据。 | 57 项技能已解读；方法实践、21 项规则测试和 17 项浏览器检查通过；全量原生运行未复现 | [在线工程方法实验室](https://yydshly.github.io/0911_codex_project/012-gstack/)；已部署并验证 |
 | 012 | [Gaussian Splatting](projects/014-gaussian-splatting/README.md) | [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) | 多角度照片生成可交互三维效果：先求解相机与空间，再用 3DGS（三维高斯泼溅）优化场景，支持新视角实时浏览；原生输出是高斯资产，不自动等于精确网格。 | 已完成本轮文档与网页；上游训练未实测 | [在线研究网页](https://yydshly.github.io/0911_codex_project/014-gaussian-splatting/)；已部署并验证 |
 | 013 | [Upscayl](projects/013-upscayl/README.md) | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 本地图片超分辨率与批量放大：预训练模型 + NCNN / Vulkan，支持多模型、输出尺寸与对比；较生成式编辑更侧重结构保持与固定尺寸处理，仍不保证真实细节。 | 能力、原理、部署、同类及大模型差异已整理；上游未实测 | [完整研究](projects/013-upscayl/notes.md)；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证 |
+| 014 | [Browser-use](projects/015-browser-use/README.md) | [browser-use/browser-use](https://github.com/browser-use/browser-use) | Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。 | 12 节中文理解与完整图已整理；上游未实测 | [详细本地网页](projects/015-browser-use/app/dist/index.html) · [完整文档](projects/015-browser-use/understanding.md)；未部署 |
 
 Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录 `006-drama-skills/`；其余已登记研究由各自任务提交，编号不复用。
 
@@ -196,6 +199,16 @@ Drama Skills 的研究索引保留本次登记的 008，资料存于历史目录
 本地原创技术图解，非软件截图或增强样张；暂无真实软件截图。本地手册完整覆盖十章、同类产品、模型路线、大模型取舍及部署条件，并给出验证与扩展建议。上游运行与竞品效果未实测；[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
 
 [项目介绍](projects/013-upscayl/README.md) · [完整手册](projects/013-upscayl/notes.md) · [原库](https://github.com/upscayl/upscayl) · [高清总览图](projects/013-upscayl/assets/capability-overview.png) · [矢量图](projects/013-upscayl/assets/capability-overview.svg)
+
+### 014 · Browser-use
+
+**原库能力：模型决策、程序定位与 CDP 浏览器操作。** Browser-use 是浏览器任务的 AI Agent 框架，支持网页导航、搜索、点击、输入、滚动、信息提取及多步流程。模型根据页面结构与可选截图选择目标；程序读取按钮当前布局、计算点击坐标，再通过底层 CDP 协议向真实浏览器发送鼠标移动、按下和松开事件，并读取结果继续执行。
+
+![Browser-use 从页面理解到 CDP 点击的完整总览](projects/015-browser-use/assets/understanding-map.png)
+
+本地原创研究示意图，非上游运行截图。固定提交 `50f2055`；详细网页包含完整原理、主要动作、gstack / OMP 比较、应用扩展及两个预设教学分支。浏览器内部模拟鼠标事件不一定移动系统指针；上游未实测，网页未部署。
+
+[项目说明](projects/015-browser-use/README.md) · [完整中文文档](projects/015-browser-use/understanding.md) · [详细本地网页](projects/015-browser-use/app/dist/index.html) · [可放大总览图](projects/015-browser-use/assets/understanding-map.svg) · [上游仓库](https://github.com/browser-use/browser-use)
 
 ## 仓库导航
 
