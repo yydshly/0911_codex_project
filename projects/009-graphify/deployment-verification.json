@@ -1,0 +1,306 @@
+{
+  "verifiedAt": "2026-09-10T16:28:41.705561+00:00",
+  "commit": "18cdac156fb85d1b5e8e89e8a75b08c445ec3e9c",
+  "url": "https://yydshly.github.io/0911_codex_project/009-graphify/",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34502181725",
+  "workflowConclusion": "success",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "f61f117d83dd36e4584aa1a0311318e0376f3bbf9d369a1872de1de82b37b460",
+      "bytes": 15034
+    },
+    {
+      "path": "assets/009-graphify.png",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "bytes",
+      "sha256": "6c7f333400a6ca131e1b93b61efe22a5b8ad86c8a59723dc01f3b4831c09645c",
+      "bytes": 724577
+    },
+    {
+      "path": "009-graphify/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "a78c8f3e17570dddf8939ef4659c26eec1f179f9d453f2e1e210bcb6acada51c",
+      "bytes": 20760
+    },
+    {
+      "path": "009-graphify/native.css",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "636ae84ac2241043f872737cdfed2c3ec45540e00bfc4955ba2ef8f17ccb3126",
+      "bytes": 9414
+    },
+    {
+      "path": "009-graphify/native.js",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "eb6b7d8f36772ef14be9056cb2cfb2f83b16b7a24fae763b70a97db121ad234d",
+      "bytes": 5524
+    },
+    {
+      "path": "009-graphify/native-data.js",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "6dfad338c1f1343b3bcf5e5ba71788b42059cf24a55a9ba6f104eda0f36a7d58",
+      "bytes": 149184
+    },
+    {
+      "path": "009-graphify/understanding-map.png",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "bytes",
+      "sha256": "6c7f333400a6ca131e1b93b61efe22a5b8ad86c8a59723dc01f3b4831c09645c",
+      "bytes": 724577
+    },
+    {
+      "path": "009-graphify/understanding-map.svg",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "992ed96672b4fdea33e29d0658e6aa70b79cf3f793bef7ddd35c16b845eef0a9",
+      "bytes": 24026
+    },
+    {
+      "path": "009-graphify/understanding.md",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "4a7e35c49d63bc56a925dc2f24cec8051d210eaef903f9c01058b66e6a0daff0",
+      "bytes": 7507
+    },
+    {
+      "path": "009-graphify/tutorial.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "ed280d280e6b4e4772e7009b1de7a4a6c576e35b5ee777a6c0983d9e5879536c",
+      "bytes": 7842
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "8d9ddb68d16f53e024d8c65a6507f8889ac4d14d853394f37241ad0898770ed9",
+      "bytes": 736962
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.upstream.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "d9a1403c407569e74243315dae55c0ef4248b03b9bfd1636626c008ba88fe9a9",
+      "bytes": 737003
+    },
+    {
+      "path": "009-graphify/native/fastapi/tree.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "a184088aabad24de3c19cb53c509f8164369058e38e1029e3d7a713dca5c3dc5",
+      "bytes": 55815
+    },
+    {
+      "path": "009-graphify/native/fastapi/callflow.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "3e045709a767d59f60aa303dfb9d40c1a6a3ee2f26683fc0299813df94381445",
+      "bytes": 369192
+    },
+    {
+      "path": "009-graphify/native/fastapi/report.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "c9dfa50f70226a1828f3f73e6dafa66a30dbb7ff77a11f0a12f1a92883e4f799",
+      "bytes": 16076
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.svg",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "7e9dc08867ad865010a5cfa5e15efc0b91dbc61a9d48e0b1b8b4945f4f5dd9cb",
+      "bytes": 2428851
+    },
+    {
+      "path": "009-graphify/native/fastapi/wiki/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "84d8f005cd7d539d814ed0acac8faff062240e17bd04396244207e6de79372ca",
+      "bytes": 5809
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.json",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "0c79c94ea107d154d321c2704362e082f314472319aa7dfef5e247710d6cfd2e",
+      "bytes": 918736
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.graphml",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "ebbe83e0074fd4458f6cbdfd377fb7cf8a26f4a1e806b803a05f1266ce7b9553",
+      "bytes": 789359
+    },
+    {
+      "path": "009-graphify/native/fastapi/cypher.txt",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "bccebfa9a07d36aa926439513b98fb01b5cd24108e91608550493817b8e06d8f",
+      "bytes": 340075
+    },
+    {
+      "path": "009-graphify/native/fastapi/graph.canvas",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "da6f829fab7fec24106c3b0cf76abdd37d4c89a35b5d0fd0b00ae7bb68c3b65d",
+      "bytes": 198191
+    },
+    {
+      "path": "009-graphify/native/fastapi/obsidian.zip",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "bytes",
+      "sha256": "f0a783e98e268efdd36fca62e9a2ef61628678d7dc1856596272f965eb90e0a5",
+      "bytes": 303452
+    },
+    {
+      "path": "009-graphify/native/fastapi/source.zip",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "bytes",
+      "sha256": "92213a2d957f39312a23e0edd463d7da6c9b79a675f6d40ac1b4127d36b87d64",
+      "bytes": 111461
+    },
+    {
+      "path": "009-graphify/native/fastapi/queries.json",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "1a86658ccde536d05dfb4f97d1af5891a7a49c7dcb96602f080481c718623006",
+      "bytes": 138771
+    },
+    {
+      "path": "009-graphify/native/fastapi/integration.json",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "01eefaabf42f7f716155f4b4e7b15c99c840ca67adde2f086fb9e4ef4f68a1d8",
+      "bytes": 25700
+    },
+    {
+      "path": "009-graphify/native/fastapi/integration.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "eb94928911f99778d34ad64387c1f762c136d1fded4758ac6103483f9c44d4d8",
+      "bytes": 27904
+    },
+    {
+      "path": "009-graphify/native/fastapi/receipt.json",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "7b6fc24d9ba2e14024cd9fcf80c4c27673e7c759f859b110d1492f791b7f3471",
+      "bytes": 151727
+    },
+    {
+      "path": "009-graphify/native/vendor/vis-network.min.js",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "576bb887733eb01bb52ee75b90ef46d818454de5fddb5b616fb8a298d307ca12",
+      "bytes": 702611
+    },
+    {
+      "path": "009-graphify/native/vendor/d3.min.js",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "bytes": 279706
+    },
+    {
+      "path": "009-graphify/native/vendor/mermaid.min.js",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "07e37dfa97b337ccc85365d57eddf99b9706f09db3b59b260d0333b23b343c4b",
+      "bytes": 2748992
+    },
+    {
+      "path": "002-engineering-casebook/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370",
+      "bytes": 5410
+    },
+    {
+      "path": "003-longhorizon-harness/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4",
+      "bytes": 33181
+    },
+    {
+      "path": "005-xxg-portrait-rebuild-light/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72",
+      "bytes": 19537
+    },
+    {
+      "path": "008-freellmapi/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70",
+      "bytes": 11332
+    },
+    {
+      "path": "006-drama-skills/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a",
+      "bytes": 8649
+    },
+    {
+      "path": "007-xxd-panel-028/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216",
+      "bytes": 40886
+    },
+    {
+      "path": "011-munder-difflin/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "comparison": "LF-normalized",
+      "sha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206",
+      "bytes": 16253
+    }
+  ],
+  "scope": "HTTP content and artifact parity; browser interactions not tested. Static Pages preserves native viewers and saved query evidence; live CLI needs local server."
+}

@@ -2,7 +2,7 @@
 
 > **支持将源码、文档、PDF、Word/Excel、图片、音视频及 SQL 结构提取为可查询知识图谱；代码本地解析，语义资料需模型。输出交互网络、层级树、调用流程、SVG/Canvas、报告/Wiki，以及 JSON、GraphML、Cypher，辅助研究、依赖追踪与证据交付。** 本项目保留真实运行结果，逐项说明实测与未验证范围。
 
-[返回总索引](../../README.md#项目索引) · [完整理解](understanding.md) · [能力与原生演示](app/dist/index.html) · [研究笔记](notes.md) · [完整图](app/dist/native/fastapi/graph.json) · [生成凭证](app/dist/native/fastapi/receipt.json)
+[在线能力与原生演示](https://yydshly.github.io/0911_codex_project/009-graphify/) · [返回总索引](../../README.md#项目索引) · [完整理解](understanding.md) · [能力与原生演示](app/dist/index.html) · [研究笔记](notes.md) · [完整图](app/dist/native/fastapi/graph.json) · [生成凭证](app/dist/native/fastapi/receipt.json)
 
 ## 一张图理解完整链路
 
@@ -64,7 +64,7 @@ Archify 的核心是接收用户或 Agent 整理的 JSON 设计规格并画架�
 | FastAPI 输入 | [fastapi/fastapi](https://github.com/fastapi/fastapi/tree/50113da16fec53b66b80d75e80a89296de4fa5a5/fastapi)，提交 `50113da16fec53b66b80d75e80a89296de4fa5a5` |
 | Graphify 许可证 | [Apache-2.0](upstream-licenses/LICENSE)、[历史 MIT](upstream-licenses/LICENSE-MIT)、[NOTICE](upstream-licenses/NOTICE) |
 | 输入与查看器许可证 | [FastAPI MIT](app/dist/native/fastapi/LICENSE-FastAPI)；[查看器版本和校验清单](app/dist/native/vendor/manifest.json)，许可证随文件保留 |
-| 发布状态 | 本地真实服务可运行；已加入 Pages 合并清单，未部署 |
+| 发布状态 | 已发布并完成线上核对；[在线演示](https://yydshly.github.io/0911_codex_project/009-graphify/)，实时 CLI 查询需本地服务 |
 
 ## 运行与复现
 
@@ -98,3 +98,7 @@ node app/check.cjs
 可先用于本研究仓库的源码导航和重构检查，再关联已精读文章中的问题、约束、方案与证据。面向持续执行任务，可把相关实现和约束作为 Agent 上下文，但节省成本与提高成功率需独立评测。
 
 本地值得扩展的是中文术语统一、结论过期提醒、代码与测试/业务需求关联，以及用编译器或运行时证据校验静态关系。上游已有的增量更新、全局图和 MCP 应直接集成，不重复计为原创能力。
+
+## 部署验证
+
+2026-09-11 发布提交 `18cdac156fb85d1b5e8e89e8a75b08c445ec3e9c` 的 [Pages 工作流](https://github.com/yydshly/0911_codex_project/actions/runs/34502181725)成功。37 个线上文件返回 200，涵盖总入口、六种原生结果、总览图、主要下载及已有子站；文本按 LF 归一后与构建一致，PNG/ZIP 按原始字节一致。[完整验证记录](deployment-verification.json)。线上提供原生交互与真实查询记录，实时 CLI 查询在本地服务执行；未进行浏览器交互验收。

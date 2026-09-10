@@ -118,7 +118,10 @@ node projects/006-drama-skills/app/check.cjs
 Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yydshly.github.io/0911_codex_project/011-munder-difflin/)。提交 `21f6bac31d06ff70ea5a4b152718577f8a94c017` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34500138183)成功；19 个线上文件与构建一致，覆盖新页、总入口、已有子站及预览图。[验证记录](../projects/011-munder-difflin/deployment-verification.json)。
 
 
-## Graphify 待发布展示
+## Graphify 已发布展示
 
-`009-graphify/` 已加入合并发布清单，静态源目录为 `projects/009-graphify/app/dist/`，检查命令为 `node projects/009-graphify/app/check.cjs` 和 `node projects/009-graphify/app/check-native.cjs`。当前仅完成本地验证，尚未部署，不提供未经验证的线上入口。展示包含完整 FastAPI 核心包的上游原生网络、树、调用流程、报告、SVG、Wiki 与导出。 页面新增完整理解区及 SVG / PNG 总览，按入口、输入、处理、输出与扩展组织，并有可展开的文字表格说明及文档下载。安装子项目固定环境后运行 `app/server.py`，本地端口 8769 提供真实 CLI 查询；Pages 静态站仅提供原生交互与已保存的真实查询结果，自动标明实时查询不可用。
+`009-graphify/` 已加入合并发布清单，静态源目录为 `projects/009-graphify/app/dist/`，检查命令为 `node projects/009-graphify/app/check.cjs` 和 `node projects/009-graphify/app/check-native.cjs`。[在线能力与原生演示](https://yydshly.github.io/0911_codex_project/009-graphify/)已发布并验证。展示包含完整 FastAPI 核心包的上游原生网络、树、调用流程、报告、SVG、Wiki 与导出。 页面新增完整理解区及 SVG / PNG 总览，按入口、输入、处理、输出与扩展组织，并有可展开的文字表格说明及文档下载。安装子项目固定环境后运行 `app/server.py`，本地端口 8769 提供真实 CLI 查询；Pages 静态站仅提供原生交互与已保存的真实查询结果，自动标明实时查询不可用。
 
+
+
+2026-09-11，[提交 18cdac1 的 Pages 工作流](https://github.com/yydshly/0911_codex_project/actions/runs/34502181725)成功；37 个线上文件与构建一致，覆盖新站、完整输入/输出总览、原生产物与既有子站。[验证记录](../projects/009-graphify/deployment-verification.json)。
