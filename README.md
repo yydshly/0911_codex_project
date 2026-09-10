@@ -4,7 +4,9 @@
 
 这里是研究总入口：先通过有序索引了解项目，再进入子目录查看研究笔记、界面截图和 Web 演示。
 
-**当前进度：** 已收录 **3** 个项目。原库提供工程案例的收集、分类与导航；配套手册在其基础上提供 343 条中文导读、6 篇原文总结和可搜索的展示页，正在配置 GitHub Pages 发布。新增 LongHorizon-Harness 研究，整理复杂目标拆解、分轮执行、独立验收、可信进度及同类产品对比。
+**当前进度：** 已收录 **3** 个项目。工程文章库研究聚焦案例收集、分类与导航；配套手册提供 343 条中文导读与 6 篇原文总结；LongHorizon-Harness 研究聚焦复杂目标拆解与 Agent 持续执行。案例手册与研究存档均已发布到 GitHub Pages。
+
+[打开在线总入口](https://yydshly.github.io/0911_codex_project/) · [工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [LongHorizon-Harness 存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)
 
 ## 项目索引
 
@@ -12,9 +14,9 @@
 
 | 编号 | 项目 / 研究入口 | 原库 | 核心能力摘要 | 研究状态 | 演示 / 关联 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 001 | [Awesome Engineering Articles](projects/001-awesome-engineering-articles/README.md) | [ashishps1/awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 按公司、技术主题和年份汇集 343 篇工程实践文章，帮助快速发现相关案例、定位原始资料，为架构调研、技术学习和实验选题提供入口。 | 初步研究完成，持续精读 | [配套案例手册](projects/002-engineering-casebook/README.md) |
-| 002 | [工程案例手册](projects/002-engineering-casebook/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 将原库案例索引转化为中文阅读入口：支持中英文关键词搜索、公司与主题筛选、排序及详情，提供 343 条标题导读与 6 篇有依据的原文总结。 | 研究中（展示页已实现） | GitHub Pages 发布中；[使用说明](projects/002-engineering-casebook/README.md#运行与演示) |
-| 003 | [LongHorizon-Harness](projects/003-longhorizon-harness/README.md) | [AMAP-ML/LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导现有 Agent 按计划分轮执行，以独立验收、可信进度和失败反馈持续修正计划，支持任务续接及无需持续盯守的推进。 | 文档与源码已整理，上游运行待复现 | [Web 存档](projects/003-longhorizon-harness/web/dist/index.html)（未部署） |
+| 001 | [Awesome Engineering Articles](projects/001-awesome-engineering-articles/README.md) | [ashishps1/awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 按公司、技术主题和年份汇集 343 篇工程实践文章，帮助快速发现相关案例、定位原始资料，为架构调研、技术学习和实验选题提供入口。 | 研究中（初步分析完成） | [配套在线手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) |
+| 002 | [工程案例手册](projects/002-engineering-casebook/README.md) | [awesome-engineering-articles](https://github.com/ashishps1/awesome-engineering-articles) | 将原库案例索引转化为中文阅读入口：支持中英文关键词搜索、公司与主题筛选、排序及详情，提供 343 条标题导读与 6 篇有依据的原文总结。 | 研究中（展示页已上线） | [在线展示](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [使用说明](projects/002-engineering-casebook/README.md#运行与演示) |
+| 003 | [LongHorizon-Harness](projects/003-longhorizon-harness/README.md) | [AMAP-ML/LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness) | 动态拆解复杂目标，指导现有 Agent 按计划分轮执行，以独立验收、可信进度和失败反馈持续修正计划，支持任务续接及无需持续盯守的推进。 | 文档与源码已整理，上游运行待复现 | [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
 
 ## 项目预览
 
@@ -22,21 +24,21 @@
 
 **原库能力：工程案例收集、分类与导航。** 研究版本收录 39 个公司／品牌的 343 个文章条目，标注主题、年份并链接原文，降低寻找工程经验的成本。复杂系统的实现位于原文中，上游本身是轻量的 Markdown 索引。
 
-暂无截图；未部署演示。该项目是文章索引，当前没有可运行应用。
+暂无截图。原库是文章索引，可通过配套在线手册浏览其案例；在线手册是本地新增的展示能力。
 
-[查看研究](projects/001-awesome-engineering-articles/README.md) · [上游仓库](https://github.com/ashishps1/awesome-engineering-articles)
+[查看研究](projects/001-awesome-engineering-articles/README.md) · [上游仓库](https://github.com/ashishps1/awesome-engineering-articles) · [配套在线手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/)
 
 ### 002 · 工程案例手册
 
 **配套能力：中文案例检索与结构化阅读。** 基于原库的资料组织能力，补充搜索、组合筛选、排序和详情展示。已接入全部条目，其中 6 篇记录问题、做法、结果、代价和研究启示，其余 337 篇仍为标题导读。
 
-暂无真实截图；展示页已完成数据与逻辑检查，GitHub Pages 正在发布。
+暂无真实截图；展示页已通过数据与逻辑检查，并已验证 GitHub Pages 页面及主要资源与发布提交一致。
 
 ![工程案例手册：整体理解引导图](projects/002-engineering-casebook/assets/overview-guide.png)
 
 上图为 AI 生成的整体说明图，非软件截图；记录 2026-09-10 部署前的理解快照。图中部署状态是历史记录，当前状态以索引和项目说明为准。
 
-[查看项目](projects/002-engineering-casebook/README.md) · [阅读中文案例目录](projects/002-engineering-casebook/cases.md) · [网页入口文件](projects/002-engineering-casebook/app/dist/index.html)
+[在线展示](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [查看项目](projects/002-engineering-casebook/README.md) · [阅读中文案例目录](projects/002-engineering-casebook/cases.md) · [原库](https://github.com/ashishps1/awesome-engineering-articles)
 
 ### 003 · LongHorizon-Harness
 
@@ -46,7 +48,7 @@
 
 原创指导图，非上游界面或运行截图。研究固定 v0.1.7；完整覆盖与 Codex、Claude Code、OpenClaw、Hermes 和 MetaGPT 的比较，区分源码事实、作者报告与待验证事项。
 
-[完整研究](projects/003-longhorizon-harness/research.md) · [Web 存档](projects/003-longhorizon-harness/web/dist/index.html)（未部署） · [可编辑指导图](projects/003-longhorizon-harness/assets/guide.svg)
+[完整研究](projects/003-longhorizon-harness/research.md) · [在线研究存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) · [可编辑指导图](projects/003-longhorizon-harness/assets/guide.svg)
 
 ## 仓库导航
 

@@ -17,8 +17,8 @@
 | 类型与技术栈 | 资料索引；Markdown、Git、GitHub 页面展示 |
 | 上游许可证 | [MIT 原文](https://github.com/ashishps1/awesome-engineering-articles/blob/9ef9509126254406440c0e5ee09f609d0876418a/LICENSE) |
 | 研究状态 | 研究中；已完成初步分析及三篇原文抽查 |
-| 在线演示 | 未部署；上游 README 是阅读入口 |
-| 演示部署方式 | 不适用，当前没有应用实现 |
+| 关联展示 | [在线工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/)，由 002 项目提供 |
+| 展示部署方式 | GitHub Pages；原库本身仍为 Markdown 文章索引 |
 
 ## 为什么研究
 

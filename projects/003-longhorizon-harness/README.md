@@ -2,7 +2,7 @@
 
 > **核心能力：将复杂目标动态拆解为可执行、可验证的子任务，指导现有模型与 Agent 按计划分轮推进；通过管理与执行分工、独立审查、可信进度记录和失败反馈持续修正计划，并支持中断后的任务续接。在目标、工具、权限与验收条件充分时，可以无需人持续盯守地推进，直到完成、需要人介入、遇到阻塞或达到运行限制。**
 
-[返回总索引](../../README.md) · [完整研究](research.md) · [Web 存档](web/dist/index.html) · [研究记录](notes.md) · [指导图 PNG](assets/guide.png) · [可编辑 SVG](assets/guide.svg)
+[返回总索引](../../README.md) · [完整研究](research.md) · [在线存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) · [离线网页](web/dist/index.html) · [研究记录](notes.md) · [指导图 PNG](assets/guide.png) · [可编辑 SVG](assets/guide.svg)
 
 ## 项目信息
 
@@ -16,7 +16,8 @@
 | 上游许可 | [MIT 原文](https://github.com/AMAP-ML/LongHorizon-Harness/blob/a1dd930614972b92361c1b9cd6aac441a6db5a65/LICENSE) |
 | 研究状态 | 已整理：文档与核心源码研究完成；上游任务运行未复现 |
 | Web 存档 | 纯静态 HTML，可离线打开；不是上游工作台或真实 Agent 演示 |
-| 在线地址 | 未部署；本次会话没有可调用的 Sites 发布工具 |
+| 在线地址 | [GitHub Pages 正式存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/) |
+| 首次部署 | [成功的发布任务](https://github.com/yydshly/0911_codex_project/actions/runs/34477023345)，提交 `9dc501b1926baac79be8c371b07eebe96ba299e0` |
 
 ## 整体指导图
 
@@ -37,7 +38,7 @@
 
 ## 阅读与运行
 
-直接打开 [Web 存档](web/dist/index.html) 即可离线阅读。无远程脚本、无账户、无模型调用；包含全部正文与指导图，浏览器打印可保存 PDF。
+访问 [正式在线存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)，或直接打开 [离线网页](web/dist/index.html)。无远程脚本、无账户、无模型调用；包含全部正文与指导图，浏览器打印可保存 PDF。
 
 可选本地服务（仓库根目录）：
 
@@ -59,7 +60,9 @@ python verify_archive.py
 
 生成器同步 HTML、可下载正文和指导图，避免内容分叉。依赖仅属于存档工具，不是上游依赖。纯阅读无需安装。
 
-已合并到仓库统一静态发布清单 `docs/web-demos.json`，后续统一构建会包含本存档；加入清单不代表已部署成功。Sites 静态目录配置也已保留，未创建任何 Sites 项目。
+已通过仓库统一 GitHub Pages 流程发布，清单为 `docs/web-demos.json`。Sites 静态目录配置作为可选移交配置保留，未创建任何 Sites 项目。发布后应对实际线上文件进行校验，不能把本地构建成功当作部署成功。
+
+线上验证可使用 `python verify_archive.py --online-url https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/ --online-commit 完整已发布提交号`。验证器对比该提交的实际文件字节，并分别记录已验证的线上版本与当前本地文件是否一致；仅运行本地检查不会冒充新的线上检查。
 
 ## 研究边界
 
@@ -68,7 +71,7 @@ python verify_archive.py
 - [x] 检查正文同步、内部链接、图片和本地 HTTP 访问
 - [ ] 本机运行上游 MEA 任务与复现成效
 - [ ] Windows 桌面操作和后端权限实测
-- [ ] 在线部署并验证实际地址
+- [x] 在线部署并验证实际地址（已验证版本与文件记录见 verification.json）
 
 ## 来源与改动
 

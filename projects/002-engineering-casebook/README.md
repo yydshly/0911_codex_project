@@ -15,7 +15,8 @@
 | 技术栈 | 原生 HTML、CSS、JavaScript；Node.js 数据生成、预览与检查，无第三方依赖 |
 | 上游许可证 | [MIT 本地副本](sources/LICENSE)；保留原作者版权声明 |
 | 研究状态 | 研究中；展示页已实现，全文精读持续扩展 |
-| 在线演示 | GitHub Pages 发布中，验证成功后补充正式入口 |
+| 在线演示 | [打开工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) |
+| 部署平台 | GitHub Pages；[站点总入口](https://yydshly.github.io/0911_codex_project/) |
 | 展示内容 | 343 个条目、39 个公司／品牌、16 个主题、6 篇原文总结 |
 
 ## 展示与总结
@@ -73,7 +74,9 @@ node scripts/check.cjs
 
 ### GitHub Pages 发布
 
-按用户指定使用 GitHub Pages。根目录的 [发布工作流](../../.github/workflows/pages.yml) 执行本项目检查，并由 [站点打包脚本](../../scripts/build-pages.cjs) 将静态文件汇入独立的 `002-engineering-casebook/` 子路径。网站首页关联原库、能力分析、研究文档与案例手册。部署成功并实际验证后，在本页补充正式链接。
+按用户指定使用 GitHub Pages。根目录的 [发布工作流](../../.github/workflows/pages.yml) 执行本项目检查，并由 [站点打包脚本](../../scripts/build-pages.cjs) 将静态文件汇入独立的 `002-engineering-casebook/` 子路径。网站首页关联原库、能力分析、研究文档与案例手册。
+
+正式入口：[在线工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/)。2026-09-10 首次部署成功，已核对首页、案例页面、数据、脚本、样式、图标、许可证与说明图，HTTP 响应正常且内容与发布提交一致。首次发布提交为 `9dc501b1926baac79be8c371b07eebe96ba299e0`，见[成功工作流](https://github.com/yydshly/0911_codex_project/actions/runs/34477023345)。此验证不代替浏览器交互或上游实验复现。
 
 [hosting.json](app/.openai/hosting.json) 保留静态目录描述，不参与 GitHub Pages 构建，也不代表已注册 Sites 项目。
 
@@ -102,7 +105,7 @@ node scripts/check.cjs
 - [x] 同步总索引、数量、预览和演示状态
 - [ ] 继续精读原文，逐条将标题导读升级为原文总结
 - [ ] 浏览器交互与截图验收
-- [ ] 在具备发布接口后部署并验证线上地址
+- [x] 部署至 GitHub Pages 并验证线上页面及主要资源
 
 ## 来源与改动
 

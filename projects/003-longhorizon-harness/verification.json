@@ -13,5 +13,44 @@
   "http_checks": [],
   "browser_automation_tested": false,
   "upstream_agent_run_tested": false,
-  "online_deployed": false
+  "online_deployed": true,
+  "online_checked_this_run": false,
+  "last_verified_deployment": {
+    "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
+    "commit": "9dc501b1926baac79be8c371b07eebe96ba299e0",
+    "verified_at_utc": "2026-09-10T12:33:07.101676+00:00",
+    "checks": [
+      {
+        "path": "index.html",
+        "status": 200,
+        "bytes": 32510,
+        "sha256": "32adcf46f751209298347d2261f3382631b58dd3c98b6b8947300b548ee1ed49"
+      },
+      {
+        "path": "style.css",
+        "status": 200,
+        "bytes": 3756,
+        "sha256": "d6c505f8a45ded0ec034e175c180c0d1df539a92af81ea30a92b4b0e53ebdf8a"
+      },
+      {
+        "path": "research.md",
+        "status": 200,
+        "bytes": 23319,
+        "sha256": "2e867270a638ce4ec6136a9ec19d77c153cf2f5f0d018421afc3237b691d8a76"
+      },
+      {
+        "path": "assets/guide.png",
+        "status": 200,
+        "bytes": 294718,
+        "sha256": "074297afef7268eed67ea771f23be0aed448bf0d0672fc0b1cf8e19806adfaf0"
+      },
+      {
+        "path": "assets/guide.svg",
+        "status": 200,
+        "bytes": 11084,
+        "sha256": "20caa08a38e12891d85471bea2a38d1c70e148cde817105d9a42314d67b5b638"
+      }
+    ]
+  },
+  "current_local_assets_match_verified_deployment": false
 }

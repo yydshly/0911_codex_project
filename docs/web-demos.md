@@ -4,10 +4,13 @@
 
 ## 当前发布方式
 
-使用 GitHub Pages，由 [发布工作流](../.github/workflows/pages.yml) 将 [部署清单](web-demos.json) 中的项目统一发布。当前正在首次发布 002 工程案例手册，尚未验证线上地址；验证后补充正式入口。
+使用 GitHub Pages，由 [发布工作流](../.github/workflows/pages.yml) 将 [部署清单](web-demos.json) 中的项目统一发布。首次发布已于 2026-09-10 完成并验证。
+
+[站点总入口](https://yydshly.github.io/0911_codex_project/) · [002 工程案例手册](https://yydshly.github.io/0911_codex_project/002-engineering-casebook/) · [003 LongHorizon-Harness 存档](https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/)
 
 - 站点根目录：能力与演示总入口，关联原库、能力研究和案例展示。
 - `002-engineering-casebook/`：工程案例手册的独立访问路径。
+- `003-longhorizon-harness/`：LongHorizon-Harness 研究存档，不是上游 Agent 实测演示。
 - `assets/`：站点展示所需的整体引导图。
 - 本地预览仅用于本机，不作为线上部署结果。
 
@@ -53,7 +56,10 @@
 | 002 静态源目录 | `projects/002-engineering-casebook/app/dist/` |
 | 002 路径 | `002-engineering-casebook/` |
 | 上游研究版本 | `9ef9509126254406440c0e5ee09f609d0876418a` |
-| 首次发布状态 | 发布准备完成，等待线上验证 |
+| 首次发布状态 | 成功；2026-09-10 验证首页、两个子路径及主要静态资源正常，内容与提交一致 |
+| 首次发布提交 | `9dc501b1926baac79be8c371b07eebe96ba299e0` |
+| 工作流证据 | [Actions 运行记录](https://github.com/yydshly/0911_codex_project/actions/runs/34477023345) |
+| HTTPS | 已启用并强制使用 |
 
 权限由 GitHub Actions 的 `contents: read`、`pages: write` 和 `id-token: write` 控制，无需将访问令牌放入仓库。
 
