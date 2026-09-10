@@ -156,4 +156,6 @@ Munder Difflin 首次发布验证：2026-09-11，[在线理解展示](https://yy
 
 新增的是只读研究网页，不提供图片上传或 GPU 推理。技术图是本地原创示意，非软件截图或增强样张；上游运行与竞品性能未实测。
 
-构建与检查：安装 `projects/013-upscayl/app/requirements.txt`，执行 `python projects/013-upscayl/app/build.py` 和 `node projects/013-upscayl/app/check.cjs`，再通过原有统一脚本合并全部子站。网页已构建，发布待验证。
+构建与检查：安装 `projects/013-upscayl/app/requirements.txt`，执行 `python projects/013-upscayl/app/build.py` 和 `node projects/013-upscayl/app/check.cjs`，再通过原有统一脚本合并全部子站。[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) 已部署并验证。
+
+2026-09-11 首次发布提交 `637b6307feb0f37d3e32206997acbb3b242a3d44` 的 [Pages 流程](https://github.com/yydshly/0911_codex_project/actions/runs/34508069093)成功。18 项线上核验通过：新站 6 个文件与总入口预览图按原始字节一致，总入口包含新站链接，10 个既有子站入口正常。未进行浏览器视觉测试或模型效果测试。[验证记录](../projects/013-upscayl/deployment-verification.json)。

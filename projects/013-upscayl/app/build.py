@@ -38,5 +38,5 @@ manifest = {
     'sources': dict(re.findall(r'^\[(s\d+)\]: (https://\S+)$', source, re.M)),
     'scope': '文档与源码研究；未执行上游推理、竞品基准或浏览器视觉测试'
 }
-(DIST / 'research-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+(DIST / 'research-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 print(f'Built {len(chapters)} chapters, {len(manifest["sources"])} sources: {DIST}')

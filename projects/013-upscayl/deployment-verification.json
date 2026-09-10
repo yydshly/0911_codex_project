@@ -1,0 +1,117 @@
+{
+  "verifiedAt": "2026-09-10T17:27:04.142270+00:00",
+  "deploymentCommit": "637b6307feb0f37d3e32206997acbb3b242a3d44",
+  "workflow": "https://github.com/yydshly/0911_codex_project/actions/runs/34508069093",
+  "status": "passed",
+  "resources": [
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/app.js",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "b255abfc80009c5211234992d112706e44d0d6b556f0fd00ed2b38d3800bc675"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/index.html",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "6ce222648d4eb67ad0f7e8c584d5e4fef22e9f7f7d94aab9ecc62f9c53e5b75a"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/research-manifest.json",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "ed6f1125c0acf6fe58517ba25038781d05a53bd6e76d37b888473ce72b370d08"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/styles.css",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "bb97a9789ce37f84eaa584c7e16e5a7e5223870f9ba44c26d0789662a9d3ebc2"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/assets/architecture.svg",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "268acb6c21e7474e165130fcb5dedc95b9067a9580039347f10affbc973115bc"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/013-upscayl/downloads/upscayl-research.md",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "2ea87b974536f0ca4c926e696e51c33de80e7de15c671afa5497f4f32681d0ee"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/assets/013-upscayl.svg",
+      "status": 200,
+      "check": "byte-match",
+      "sha256": "268acb6c21e7474e165130fcb5dedc95b9067a9580039347f10affbc973115bc"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/",
+      "status": 200,
+      "check": "contains",
+      "sha256": "43aaf64b1c45d126037ab76152d15ac88c0ddaa779b91852e0ef006d22fcebd4"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/002-engineering-casebook/",
+      "status": 200,
+      "check": "available",
+      "sha256": "cf2a341aaef7214f1ce92b685b34f8e1ae6ca5a2550ce7589df4b50f00489370"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/003-longhorizon-harness/",
+      "status": 200,
+      "check": "available",
+      "sha256": "e023a8438ec12398b3a0d60486ced7b67e82e0dc42dcbf1d0b3f5cf1444538c4"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/005-xxg-portrait-rebuild-light/",
+      "status": 200,
+      "check": "available",
+      "sha256": "7337a0bd185a2173a8f19fe2215510ff9b2468360bd45d2fa0ba31e790ae7f72"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/008-freellmapi/",
+      "status": 200,
+      "check": "available",
+      "sha256": "5bbd26dc740b3fbb74306e399c31cf08f58d58a9ad225a4e98aceb188ea92f70"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/009-graphify/",
+      "status": 200,
+      "check": "available",
+      "sha256": "a78c8f3e17570dddf8939ef4659c26eec1f179f9d453f2e1e210bcb6acada51c"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/010-marketingskills/",
+      "status": 200,
+      "check": "available",
+      "sha256": "cc4f52a7610bc0462187cd8544332a6e724747882e003c9a1ea55cec95851066"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/006-drama-skills/",
+      "status": 200,
+      "check": "available",
+      "sha256": "9d52ba5cc356c8a2b934f0655aba7aded08c4ae802cac5a7c410e2236e7ef40a"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/007-xxd-panel-028/",
+      "status": 200,
+      "check": "available",
+      "sha256": "919cafe17bc88a56143a477cc0db1d334465816dde481e6350f6874710ae0216"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/011-munder-difflin/",
+      "status": 200,
+      "check": "available",
+      "sha256": "75cd166ea0b5c41026e0b174429486fb578ca4f6156dc8fdc8d7b5c7436f3206"
+    },
+    {
+      "url": "https://yydshly.github.io/0911_codex_project/012-gstack/",
+      "status": 200,
+      "check": "available",
+      "sha256": "ad5deef64f062ac0fd481c3ecb62e7b1283c2d177bf2ba0877d11c83bd63c86b"
+    }
+  ],
+  "scope": "6个新站文件及总入口预览图与本地逐字节一致；总入口包含新站链接；10个既有子站入口HTTP200。未进行浏览器视觉测试或模型效果测试。"
+}

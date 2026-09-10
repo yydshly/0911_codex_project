@@ -2,7 +2,7 @@
 
 > 本地图像超分辨率工具：将预训练模型、GPU 推理和批量文件处理整合为跨平台桌面应用，在尽量保留内容的前提下放大图片、改善细节观感。稳定输出与细节真实是两回事。
 
-[返回总索引](../../README.md#项目索引) · [完整中文研究手册](notes.md) · [配图说明](assets/README.md)
+[在线研究手册](https://yydshly.github.io/0911_codex_project/013-upscayl/) · [返回总索引](../../README.md#项目索引) · [完整中文研究手册](notes.md) · [配图说明](assets/README.md)
 
 ## 项目信息
 
@@ -16,7 +16,7 @@
 | 技术栈 | Electron / React / Next.js / TypeScript；C++ / NCNN / Vulkan |
 | 上游许可证 | [AGPL-3.0](https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/LICENSE)，模型与依赖分别核查 |
 | 研究状态 | 研究中：文档与相关源码已整理；上游运行和竞品效果未实测 |
-| 网页状态 | 本地已生成；尚未部署验证 |
+| 网页状态 | [已部署并验证](https://yydshly.github.io/0911_codex_project/013-upscayl/) |
 | 发布方式 | 接入仓库统一 GitHub Pages 清单，独立子路径 013-upscayl/ |
 
 ## 我们的理解
@@ -59,3 +59,9 @@ node serve.cjs
 ## 来源与范围
 
 仅原创中文解读、网页和 SVG，没有引入上游权重、二进制或代码副本。主项目和后端版本分别固定；其他产品使用核对日的官方资料，未冻结其全部版本。来源与判断边界见[完整手册](notes.md)，机器可读记录见[研究清单](app/dist/research-manifest.json)。
+
+## 发布验证
+
+2026-09-11 首次发布提交 `637b6307feb0f37d3e32206997acbb3b242a3d44`，[Pages 工作流成功](https://github.com/yydshly/0911_codex_project/actions/runs/34508069093)。18 项线上检查通过：全部 6 个新站文件和总入口 SVG 与本地逐字节一致；总入口包含新站链接；原有 10 个子站入口返回 HTTP 200。
+
+本地静态检查覆盖十章、30 个来源、21 个本地链接与锚点、下载文档同步、模板占位和脚本语法。未进行浏览器视觉测试、上游图片增强或竞品性能测试。[机器可读验证证据](deployment-verification.json)。
